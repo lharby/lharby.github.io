@@ -4,7 +4,7 @@
     <h1><span class="header">Welcome to Hogarth Worldwide</span></h1>
 </div> 
 
-<!--
+
 <script type="text/javascript">
     for (i = 20; i >= 0; i--) {
         if(i < 3) {
@@ -26,6 +26,5 @@
 	}	
     }
 </script>
--->
 
 <?php include "common/footer.php"; ?>
