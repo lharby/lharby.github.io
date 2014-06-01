@@ -1,0 +1,163 @@
+/* 
+    Document   : layout.css
+    Created on : Aug 13, 2012, 3:08:54 PM
+    Author     : Luke Harby
+    Description: Main Layout
+*/
+
+
+/* ******************************
+
+    @Section: Layout
+
+****************************** */
+
+
+root { 
+    display: block;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:11px;
+}
+
+#main-wrapper {
+    margin: 0;
+    padding: 0;
+}
+
+#page-wrapper {
+    width:960px;
+    /*
+    Set this for same margin around document edge
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    */
+    margin:50px auto;
+    padding:0 10px 10px 10px;
+    resize:both;
+}
+
+#page-content {
+    margin: 10px 0 0 0;
+    padding: 10px 0 25px 2px;
+    background: #EEEEEE;
+    height: 850px;
+}
+
+#footer-wrapper {
+    padding: 10px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    background: #DDDDDD;
+}
+
+
+/* ******************************
+
+    @Section: Navigation
+
+****************************** */
+
+ul#main-nav {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+ul#main-nav li {
+    float: left;
+    padding: 0;
+    margin: 0 1px 0 0;
+}
+
+ul#main-nav li a:link, 
+ul#main-nav li a:visited {
+    padding: 10px 0 0 25px;
+    color: #666666;
+    text-decoration: none;
+}
+
+ul#main-nav li a:hover {
+    color: #EEEEEE;
+    background: #C5B5C5;
+}
+
+.btn-nav {
+    display: block;
+    background: #CCBBCC;
+    padding: 5px;  
+}
+
+.gecko ul#main-nav li a:link, 
+.gecko ul#main-nav li a:visited,
+.gecko ul#main-nav li a:hover {
+    background: -moz-linear-gradient(225deg, transparent 2px, #C5B5C5 2px) repeat scroll 0 0 transparent;
+}
+
+ul#main-nav li a.nav_on {
+    background: transparent;
+    color: #000000;
+}
+
+.gecko ul#main-nav li a.nav_on {
+    background: transparent;
+}
+
+/* ******************************
+
+    @Section: Sub-Navigation
+
+****************************** */
+
+#sub-nav ul {
+    margin: 0;
+    padding: 5px 0 0 2px;
+    list-style: none;
+}
+
+#sub-nav ul li {
+    padding: 2px;
+    
+}
+
+#sub-nav ul li a:link,
+#sub-nav ul li a:visited {
+    color: #666666;
+}
+
+#sub-nav ul li a:hover,
+#sub-nav ul li a.sub_nav_on {
+    background: #666666;
+    color: #EEEEEE;
+}
+
+
+/* ******************************
+
+    @Section: Generic Styles
+
+****************************** */
+
+#page-content h1 {
+    position: relative;
+    height: 46px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+#page-content h1 span.header {
+    color: #000000;
+    font-size: 54px;
+    letter-spacing: -4px;
+    margin-left: -9px;
+    text-decoration: none;
+    opacity: 0.1;
+}

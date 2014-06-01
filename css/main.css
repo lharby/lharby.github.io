@@ -1,0 +1,9 @@
+/* 
+    Document   : main.css
+    Created on : Aug 13, 2012, 2:45:29 PM
+    Author     : Luke Harby
+    Description: Import CSS
+*/
+
+@import "normalize.css"; /* master reset */
+@import "layout.css"; /* main layout */
