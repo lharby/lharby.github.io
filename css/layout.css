@@ -161,3 +161,17 @@ ul#main-nav li a.nav_on {
     text-decoration: none;
     opacity: 0.1;
 }
+
+.nav {
+    margin: 0;
+    padding: 0;
+    list-style:none;
+}
+
+.nav li {
+    float:left;
+}
+
+.close {
+    text-decoration:none;
+}
