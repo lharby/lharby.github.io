@@ -95,12 +95,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_global__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 /* harmony import */ var _js_global__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_js_global__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _js_navigation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _js_indexPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
+/* harmony import */ var _js_date__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
+
+
 
 
  // global
 
 $(document).ready(function () {
   Object(_js_navigation__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  Object(_js_indexPage__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  Object(_js_date__WEBPACK_IMPORTED_MODULE_4__["default"])();
 });
 
 /***/ }),
@@ -165,6 +171,76 @@ var navigation = function navigation() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (navigation);
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+/* index page */
+var indexPage = function indexPage() {
+  var url = document.location.pathname;
+  var primaryDir = url.split("/")[1];
+  var indexPageContent = document.querySelectorAll('.index-page');
+  var postsContent = document.querySelector('#posts');
+
+  if (!primaryDir) {
+    document.body.classList.add('index');
+
+    _toConsumableArray(indexPageContent).forEach(function (item) {
+      item.classList.remove(hiddenClass);
+    });
+  } else {
+    postsContent.classList.remove(hiddenClass);
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (indexPage);
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-only"); }
+
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+/* date function */
+var date = function date() {
+  var dateWrapper = $('.dateWrapper');
+  var getYear = new Date();
+  getYear.getFullYear(), _readOnlyError("getYear");
+  dateWrapper.text(getYear);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (date);
 
 /***/ })
 /******/ ]);

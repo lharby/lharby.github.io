@@ -8,9 +8,9 @@ https://slackwise.org.uk
 /* navigation */ 
 
 const navigation = () => {
-    var target = document.querySelector('#navWrapper');
-    var overlay = document.querySelector('.overlay');
-    var trigger = document.querySelectorAll('.menu__toggle');
+    const target = document.querySelector('#navWrapper');
+    const overlay = document.querySelector('.overlay');
+    const trigger = document.querySelectorAll('.menu__toggle');
     [...trigger].forEach(function(item) {
         item.addEventListener('click', function(event) {
             event.preventDefault();
