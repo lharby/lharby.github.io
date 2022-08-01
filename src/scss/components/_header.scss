@@ -11,11 +11,15 @@ https://slackwise.org.uk
     }
 
     header {
-        height: 7rem;
+        height: 10rem;
         position: fixed;
         z-index: 1;
         background-color: $colour__orange;
         width: 100%;
+
+        @include mobile(0, $mobile-size) {
+            height: 8rem;
+        }
 
         ul {
             li {
@@ -32,6 +36,12 @@ https://slackwise.org.uk
         position: fixed;
         top: $default__spacer;
         left: $default__spacer;
+        max-width: 100%;
+        width: 22rem;
+
+        @include mobile(0, $mobile-size) {
+            width: 17rem;
+        }
     }
 
     .menu__toggle {
