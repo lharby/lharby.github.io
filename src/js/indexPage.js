@@ -7,16 +7,12 @@ https://slackwise.org.uk
 
 /* index page */
 
-// const global = require('./global');
-
 const indexPage = () => {
     const dom = document.querySelector('html');
     const url = document.location.pathname.split('/');
     const primaryDir = url[1];
     const secondaryDir = url[2];
     const tertiaryDir = url[3];
-    // const indexPageContent = document.querySelectorAll('.index-page');
-    // const postsContent = document.querySelector('#posts');
 
     if (!primaryDir) {
         dom.classList.add('index');

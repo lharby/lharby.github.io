@@ -189,14 +189,12 @@ https://slackwise.org.uk
 */
 
 /* index page */
-// const global = require('./global');
 var indexPage = function indexPage() {
   var dom = document.querySelector('html');
   var url = document.location.pathname.split('/');
   var primaryDir = url[1];
   var secondaryDir = url[2];
-  var tertiaryDir = url[3]; // const indexPageContent = document.querySelectorAll('.index-page');
-  // const postsContent = document.querySelector('#posts');
+  var tertiaryDir = url[3];
 
   if (!primaryDir) {
     dom.classList.add('index');
