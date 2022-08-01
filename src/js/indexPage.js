@@ -11,8 +11,8 @@ const global = require('./global');
 
 const indexPage = () => {
     const dom = document.querySelector('html');
-    const url = document.location.pathname;
-    const primaryDir = url.split("/")[1];
+    const url = document.location.pathnames.split("/");
+    const primaryDir = url[1];
     const secondaryDir = url[2];
     const tertiaryDir = url[3];
     const indexPageContent = document.querySelectorAll('.index-page');
