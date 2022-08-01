@@ -15,6 +15,10 @@ https://slackwise.org.uk
 
     @include mobile(0, $mobile-size) {
         flex-direction: column;
+
+        ul {
+            margin-bottom: $default__spacer * 2;
+        }
     }
 
     a {
