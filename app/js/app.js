@@ -219,9 +219,9 @@ var indexPage = function indexPage() {
       item.classList.remove(global.HIDDEN_CLASS);
     });
   } else if (tertiaryDir) {
-    dom.classList.add(primaryDir + ' ' + secondaryDir + ' ' + tertiaryDir);
+    dom.classList.add("".concat(primaryDir, " ").concat(secondaryDir, " ").concat(tertiaryDir));
   } else if (secondaryDir) {
-    dom.classList.add(primaryDir + ' ' + secondaryDir);
+    dom.classList.add("".concat(primaryDir, " ").concat(secondaryDir));
   } else {
     dom.classList.add(primaryDir);
     postsContent.classList.remove(global.HIDDEN_CLASS);
