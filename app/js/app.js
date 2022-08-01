@@ -93,6 +93,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_main_scss__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _js_global__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _js_global__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_js_global__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _js_navigation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _js_indexPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var _js_date__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
@@ -116,11 +117,8 @@ $(document).ready(function () {
 
 /***/ }),
 /* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hiddenClass", function() { return hiddenClass; });
 /*
 Luke Harby
 slackwise LTD
@@ -130,7 +128,9 @@ https://slackwise.org.uk
 
 /* global */
 $('html').removeClass('no-js');
-var hiddenClass = 'hidden';
+module.exports = Object.freeze({
+  HIDDEN_CLASS: 'hidden'
+});
 
 /***/ }),
 /* 3 */
@@ -181,7 +181,6 @@ var navigation = function navigation() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -202,7 +201,7 @@ https://slackwise.org.uk
 */
 
 /* index page */
-
+var global = __webpack_require__(2);
 
 var indexPage = function indexPage() {
   var url = document.location.pathname;
@@ -214,10 +213,10 @@ var indexPage = function indexPage() {
     document.body.classList.add('index');
 
     _toConsumableArray(indexPageContent).forEach(function (item) {
-      item.classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["hiddenClass"]);
+      item.classList.remove(global.HIDDEN_CLASS);
     });
   } else {
-    postsContent.classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["hiddenClass"]);
+    postsContent.classList.remove(global.HIDDEN_CLASS);
   }
 };
 

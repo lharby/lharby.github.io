@@ -8,4 +8,6 @@ https://slackwise.org.uk
 /* global */
 $('html').removeClass('no-js');
 
-export const hiddenClass = 'hidden';
+module.exports = Object.freeze({
+    HIDDEN_CLASS: 'hidden'
+});

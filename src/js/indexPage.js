@@ -7,7 +7,7 @@ https://slackwise.org.uk
 
 /* index page */
 
-import { hiddenClass } from "./global";
+const global = require('./global');
 
 const indexPage = () => {
     const url = document.location.pathname;
@@ -18,10 +18,10 @@ const indexPage = () => {
     if(!primaryDir){
         document.body.classList.add('index');
         [...indexPageContent].forEach(function(item) {
-            item.classList.remove(hiddenClass);
+            item.classList.remove(global.HIDDEN_CLASS);
         });
     } else {
-        postsContent.classList.remove(hiddenClass);
+        postsContent.classList.remove(global.HIDDEN_CLASS);
     }
 }
 
