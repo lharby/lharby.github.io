@@ -1,0 +1,27 @@
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+.pages {
+    display: flex;
+    flex-direction: column;
+
+    li,
+    a {
+        font-family: $primary-font;
+        font-size: 3.25rem;
+        color: $colour__white;
+        text-decoration: none;
+    }
+
+    a {
+        border-bottom: 1px solid $colour__white;
+
+        &:hover {
+            border-bottom: 1px solid transparent;
+        }
+    }
+}

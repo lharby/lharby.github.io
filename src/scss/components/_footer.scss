@@ -1,0 +1,43 @@
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+.footer {
+    display: flex;
+    padding: $default__spacer $default__spacer 2rem;
+    background-color: $colour__dark-grey;
+    color: $colour__white;
+    font-size: 1.4rem;
+    justify-content: space-between;
+
+    a {
+        position: relative;
+        color: $colour__white;
+        border-bottom: 1px solid $colour__white;
+
+        &:hover {
+            border-bottom: 1px solid transparent;
+        }
+
+        &:after {
+            position: absolute;
+            font-family: $icon-font;
+            content: "\f30f";
+            transform: rotate(-45deg);
+            top: 0.4rem;
+            right: -1.4rem;
+        }
+    }
+
+    li[class^="ion-"]:before {
+        margin-right: 0.5rem;
+    }
+}
+
+.legal {
+    display: flex;
+    align-self: end;
+}

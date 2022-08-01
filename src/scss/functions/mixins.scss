@@ -1,0 +1,10 @@
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+@mixin hover($type, $speed, $ease) {
+    transition: $type $speed $ease;
+}

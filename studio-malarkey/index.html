@@ -1,0 +1,702 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="tumblr no-js">
+<head>
+    <!--
+                    __________
+                     \       | 
+                      \______|  
+                     __|_____|.-'
+      .-=-.           /    - -\
+     / .-. \          {  =   Y}=
+    (_/   \ \          \      / 
+           \ \        _/`'`'`b
+            \ `.__.-'`        \-._
+             |            '.__ `'-;_
+             |            _.' `'-.__)
+              \    ;_..-`'      //   
+              |   /  /         //    
+              \  \ \__)       //    
+               \__)          //
+    -->
+    <!--
+    Author: Luke Harby
+    Site: slackwise.org.uk
+    Date: September 2020
+    Client: Studio Malarkey
+    -->
+    <title>{block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
+    <link rel="icon" href="{Favicon}"/>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}"/>
+    {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0">
+    <!-- DEFAULT COLORS -->
+    <meta name="text:Disqus Shortname" content="" />
+    <meta name="color:Background" content="#eeeeee"/>
+    <meta name="color:Content Background" content="#ffffff"/>
+    <meta name="color:Description Background" content="#eeeeee"/>
+    <meta name="color:Chat Background Even" content="#ffffff"/>
+    <meta name="color:Chat Background Odd" content="#eeeeee"/>
+    <meta name="color:Sidebar Background" content="#e0e0e0"/>
+    <meta name="color:Code Background" content="#eeeeee"/>
+    <meta name="color:Code Border" content="#dddddd"/>
+    <meta name="color:Content Background" content="#ffffff"/>
+    <meta name="color:Content Background" content="#ffffff"/>
+    <meta name="color:Description Shadow" content="#dddddd"/>
+    <meta name="color:Sidebar Shadow" content="#dddddd"/>
+    <meta name="color:Content Border" content="#cccccc"/>
+    <meta name="color:Footer Border" content="#cccccc"/>
+    <meta name="color:Blockquote Border" content="#cccccc"/>
+    <meta name="color:Chat Border" content="#cccccc"/>
+    <meta name="color:Chat Odd" content="#9B3321"/>
+    <meta name="color:Chat Even" content="#7F99B4"/>
+    <meta name="color:Content Font" content="#222222"/>
+    <meta name="color:Header and Footer Font" content="#222222"/>
+    <meta name="color:Headings" content="#aaaaaa"/>
+    <meta name="color:Hyperlink" content="#596C86"/>
+    <meta name="color:Sidebar Hyperlink" content="#555555"/>
+    <meta name="color:Sidebar Hyperlink Border" content="#999999"/>
+    <meta name="color:Visited Hyperlink" content="#582525"/>
+    <!-- END DEFAULT COLORS -->
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="https://slackwise.org.uk/app/css/app.min.css" /> -->
+    <link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+    <style media="screen">
+        /* html {
+            background-color: transparent !important;
+        }
+        body {
+            margin: 0;
+            padding: 0;;
+            background-color: #ff6b37;
+            color: #fff;
+            font-family: "EB Garamond", serif;
+            font-size: 3.25em;
+        }
+        body.scroll-lock {
+            overflow: hidden;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .overlay__open {
+            display: block;
+        }
+        a {
+            text-decoration: none;
+            transition: all 200ms ease-out; 
+        }
+        a:hover {
+            text-decoration: none;
+            color: #eee;
+            transition: all 200ms ease-out;
+        }
+        ul, ol {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .tumblr #header {
+            margin: 7px 0 0 7px;
+        }
+        header {
+            height: 7rem;
+            position: fixed;
+            z-index: 1;
+            background-color: #ff6b37;
+            width: 100%;
+        }
+        #pageWrapper {
+            margin: 0;
+            padding: 7rem 1.5rem 1.5rem 1.5rem;
+            min-height: 100vh;
+        }
+        .tumblr #header ul li {
+            padding: 0 0 1.5rem 0;
+        }
+        .tumblr #header ul li a {
+            text-transform: initial;
+        }
+        .tumblr #contents {
+            width: initial;
+        }
+        .tumblr #contents a {
+            color: #fff;
+            border-bottom: 1px solid #fff;
+        }
+        .tumblr #contents a:hover {
+            border-bottom: 1px solid transparent;
+        }
+        .tumblr .description {
+            background-color: transparent;
+        }
+        .tumblr .description {
+            margin-top: 10px;
+        }
+        .search-input {
+            background-color: #fff !important;
+        }
+        .tumblr .pagination,
+        .icon-link,
+        .link,
+        .description {
+            display: none;
+        }
+        .tumblr iframe[class^=tmblr-iframe] {
+            display: none !important;
+        }
+        .logo {
+            position: fixed;
+            top: 1.5rem;
+            left: 1.5rem;
+        }
+        .menu__toggle {
+            position: fixed;
+            right: 1.5rem;
+            top: 1.5rem;
+            font-size: 3rem;
+            color:#fff;
+            background: none;
+        }
+        .menu__toggle--close {
+            color: #fff !important;
+            font-size: 4rem;
+            top: 1rem;
+        }
+        #navWrapper {
+            position: fixed;
+            right:0;
+            transform: translateX(200%);
+            transition: all 300ms ease-in;
+            height: 100%;
+            width: 50%;
+            z-index: 5;
+            background-color: #444;
+            padding: 5rem 0 0 1.5rem;
+            overflow-y: auto;
+        }
+        #navWrapper.nav-wrapper--open {
+            transform: translateX(0%);
+            transition: all 300ms ease-in;
+        }
+        .pages {
+            display: flex;
+            flex-direction: column;
+        }
+        .pages li,
+        .pages li a {
+            font-family: "EB Garamond", serif;
+            font-size: 3.25rem;
+            color: #fff;
+            text-decoration: none;
+        }
+        .pages li a {
+            border-bottom: 1px solid #fff;
+        }
+        .pages li a:hover {
+            border-bottom: 1px solid transparent;
+        }
+        #posts a,
+        #posts a:hover {
+            border-bottom: none !important;
+        }
+        #posts [href] {
+            border-bottom: 1px solid #fff !important;
+        }
+        #posts [href]:hover {
+            border-bottom: 1px solid transparent !important;
+        }
+        .footer {
+            display: flex;
+            padding: 1.5rem 1.5rem 2rem;
+            background-color: #444;
+            color: #fff;
+            font-size: 1.4rem;
+            justify-content: space-between;
+        }
+        .footer a {
+            position: relative;
+            color: #fff;
+            border-bottom: 1px solid #fff;
+        }
+        .footer a:hover {
+            border-bottom: 1px solid transparent;
+        }
+        .footer a::after {
+            position: absolute;
+            font-family: "ionicons";
+            content: "\f30f";
+            transform: rotate(-45deg);
+            top: 0.4rem;
+            right: -1.4rem;
+        }
+        .footer li[class^="ion-"]:before {
+            margin-right: 0.5rem;
+        }
+        .legal {
+            display: flex;
+            align-self: end;
+        }
+        .underline {
+            border-bottom: 1px solid #fff;
+        }
+        .hidden {
+            display: none;
+        }
+        @media screen and (min-width: 1px) and (max-width: 768px) {
+            body {
+                font-size: 2rem;
+            }
+            .pages {
+                padding-left: 1.5rem;
+            }
+            .pages li,
+            .pages li a {
+                font-size: 2rem;
+            }
+            #navWrapper {
+                width: 100%;
+            }
+        }
+        @media screen and (min-width: 769px) {
+            body.scroll-lock .logo {
+                filter: grayscale(1) brightness(0) invert(1) blur(1px);
+            }
+        } */
+    </style>
+    <!-- scripts -->
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+</head>
+<body>
+    <header class="navigation-header">
+        <a href="/" class="logo">
+            <?xml version="1.0" encoding="utf-8"?>
+            <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+            <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+            <svg version="1.1" id="Layer_1" class="logo__image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                width="189.921px" height="56.693px" viewBox="0 0 189.921 56.693" enable-background="new 0 0 189.921 56.693"
+                xml:space="preserve">
+                <g enable-background="new">
+                <path d="M1.92,20.825c0.416,2.111,1.696,3.903,4.032,3.903c1.888,0,2.592-1.152,2.592-2.271c0-3.776-6.976-2.561-6.976-7.712
+                    c0-1.792,1.44-4.096,4.959-4.096c1.024,0,2.4,0.288,3.648,0.928l0.224,3.264H9.663c-0.32-2.016-1.439-3.167-3.487-3.167
+                    c-1.28,0-2.496,0.735-2.496,2.111c0,3.744,7.423,2.592,7.423,7.615c0,2.112-1.696,4.352-5.503,4.352
+                    c-1.28,0-2.784-0.447-3.904-1.088l-0.352-3.68L1.92,20.825z"/>
+                <path d="M17.728,21.337c0,2.111,1.152,2.688,2.016,2.688s1.504-0.288,2.24-0.928l0.48,0.479c-1.12,1.152-2.528,2.176-4.255,2.176
+                    c-2.048,0-3.04-1.088-3.04-2.976v-9.919h-2.112v-0.512c1.664-1.28,2.656-1.888,4.288-4.479h0.384v3.264h4.768v1.728h-4.768V21.337z
+                    "/>
+                <path d="M37.854,23.512c0,0.576,0.352,0.607,0.896,0.607c0.384,0,0.864-0.031,1.28-0.031v0.672c-1.376,0.128-4,0.8-4.607,0.991
+                    l-0.16-0.096v-2.592c-1.92,1.568-3.392,2.688-5.664,2.688c-1.728,0-3.52-1.119-3.52-3.808v-8.191c0-0.832-0.128-1.632-1.919-1.791
+                    v-0.608c1.152-0.032,3.711-0.224,4.127-0.224c0.352,0,0.352,0.224,0.352,0.928v8.255c0,0.96,0,3.712,2.784,3.712
+                    c1.088,0,2.528-0.832,3.872-1.952v-8.607c0-0.64-1.536-0.991-2.688-1.312v-0.576c2.88-0.191,4.671-0.447,4.992-0.447
+                    c0.256,0,0.256,0.224,0.256,0.575V23.512z"/>
+                <path d="M55.71,22.52c0,1.312,0.32,1.312,1.568,1.312h0.544v0.64H57.79c-0.479,0.096-1.344,0.352-2.271,0.64
+                    c-0.992,0.32-1.824,0.64-2.016,0.64c-0.32,0-0.352-0.479-0.352-0.863v-1.472h-0.064c-1.152,1.184-2.943,2.335-4.896,2.335
+                    c-3.84,0-5.952-3.359-5.952-6.943c0-4.319,3.488-8.159,7.904-8.159c1.024,0,2.08,0.192,3.007,0.576V5.561
+                    c0-2.079-0.479-2.144-1.696-2.495V2.553c1.28-0.416,2.624-0.991,3.296-1.376c0.352-0.191,0.608-0.352,0.704-0.352
+                    c0.192,0,0.256,0.192,0.256,0.448V22.52z M53.15,14.617c0-2.368-1.983-2.943-3.392-2.943c-2.272,0-4.768,1.695-4.768,6.016
+                    c0,3.52,2.144,6.144,5.056,6.144c0.96,0,3.104-0.704,3.104-1.889V14.617z"/>
+                <path d="M59.711,24.44h0.608c0.896,0,1.536,0,1.536-1.056v-8.672c0-1.407-0.48-1.6-1.664-2.239v-0.512
+                    c1.504-0.448,3.296-1.057,3.424-1.152c0.224-0.128,0.416-0.16,0.576-0.16c0.16,0,0.224,0.192,0.224,0.448v12.287
+                    c0,1.056,0.704,1.056,1.6,1.056h0.544v0.832c-1.088,0-2.208-0.064-3.36-0.064s-2.304,0.032-3.488,0.064V24.44z M63.135,5.721
+                    c-0.832,0-1.568-0.768-1.568-1.6c0-0.8,0.768-1.536,1.568-1.536c0.832,0,1.568,0.672,1.568,1.536S63.999,5.721,63.135,5.721z"/>
+                <path d="M76.255,10.649c4.448,0,7.775,2.944,7.775,7.487c0,4.128-3.264,7.615-7.359,7.615c-4.256,0-7.744-2.943-7.744-7.487
+                    C68.927,14.137,71.967,10.649,76.255,10.649z M76.639,24.921c3.2,0,4.448-3.712,4.448-6.464c0-2.624-1.408-6.976-4.799-6.976
+                    c-3.168,0-4.416,3.712-4.416,6.464C71.871,20.568,73.279,24.921,76.639,24.921z"/>
+            </g>
+            <g enable-background="new">
+                <path fill="#EE4800" d="M26.768,31.992c0.117,0.118,0.176,0.283,0.176,0.496V54.6c0,0.213-0.059,0.379-0.176,0.496
+                    c-0.118,0.117-0.283,0.176-0.496,0.176h-1.984c-0.213,0-0.379-0.059-0.496-0.176c-0.118-0.117-0.176-0.283-0.176-0.496V39.496
+                    c0-0.17-0.032-0.304-0.096-0.399c-0.064-0.097-0.139-0.145-0.224-0.145c-0.171,0-0.32,0.14-0.448,0.416L16.416,54.76
+                    c-0.128,0.341-0.395,0.512-0.8,0.512h-1.472c-0.406,0-0.672-0.171-0.8-0.512L6.88,39.337c-0.128-0.277-0.267-0.416-0.416-0.416
+                    c-0.107,0-0.192,0.048-0.256,0.144s-0.096,0.24-0.096,0.432V54.6c0,0.213-0.059,0.379-0.176,0.496
+                    c-0.118,0.117-0.283,0.176-0.496,0.176H3.456c-0.213,0-0.379-0.059-0.496-0.176c-0.118-0.117-0.176-0.283-0.176-0.496V32.488
+                    c0-0.213,0.058-0.378,0.176-0.496c0.117-0.117,0.283-0.176,0.496-0.176h3.328c0.405,0,0.672,0.171,0.8,0.512l6.848,16.513
+                    c0.128,0.277,0.277,0.416,0.448,0.416c0.213,0,0.363-0.139,0.448-0.416l6.848-16.513c0.128-0.341,0.395-0.512,0.8-0.512h3.296
+                    C26.485,31.816,26.65,31.875,26.768,31.992z"/>
+            </g>
+            <g enable-background="new">
+                <path fill="#010000" d="M51.744,54.76c0,0.341-0.203,0.512-0.608,0.512h-2.688c-0.384,0-0.64-0.181-0.768-0.544l-2.112-5.888
+                    c-0.128-0.363-0.384-0.544-0.768-0.544h-8.128c-0.384,0-0.64,0.181-0.768,0.544l-2.112,5.888c-0.128,0.363-0.384,0.544-0.768,0.544
+                    h-2.688c-0.406,0-0.608-0.171-0.608-0.512l0.064-0.256l8.512-22.145c0.128-0.362,0.384-0.544,0.768-0.544H42.4
+                    c0.384,0,0.64,0.182,0.768,0.544l8.512,22.145L51.744,54.76z M40.736,36.072c-0.085,0-0.171,0.043-0.256,0.128
+                    c-0.085,0.086-0.149,0.192-0.192,0.32l-2.784,7.904L37.44,44.68c0,0.341,0.203,0.512,0.608,0.512h5.376
+                    c0.405,0,0.608-0.171,0.608-0.512l-0.064-0.256l-2.784-7.904C41.077,36.221,40.928,36.072,40.736,36.072z"/>
+            </g>
+            <g enable-background="new">
+                <path fill="#D6FF00" d="M58.128,31.992c0.117,0.118,0.176,0.283,0.176,0.496v19.008c0,0.214,0.059,0.379,0.176,0.496
+                    c0.117,0.118,0.282,0.177,0.496,0.177h14.432c0.213,0,0.378,0.059,0.496,0.176c0.117,0.117,0.176,0.283,0.176,0.496v1.76
+                    c0,0.213-0.059,0.379-0.176,0.496c-0.118,0.117-0.283,0.176-0.496,0.176h-17.92c-0.213,0-0.379-0.059-0.496-0.176
+                    s-0.176-0.283-0.176-0.496V32.488c0-0.213,0.059-0.378,0.176-0.496c0.117-0.117,0.283-0.176,0.496-0.176h2.144
+                    C57.845,31.816,58.01,31.875,58.128,31.992z"/>
+            </g>
+            <g enable-background="new">
+                <path fill="#FF7F00" d="M97.281,54.76c0,0.341-0.203,0.512-0.609,0.512h-2.688c-0.384,0-0.64-0.181-0.768-0.544l-2.112-5.888
+                    c-0.128-0.363-0.384-0.544-0.768-0.544h-8.128c-0.384,0-0.64,0.181-0.768,0.544l-2.112,5.888c-0.128,0.363-0.384,0.544-0.768,0.544
+                    h-2.688c-0.406,0-0.608-0.171-0.608-0.512l0.064-0.256L83.84,32.36c0.128-0.362,0.384-0.544,0.768-0.544h3.328
+                    c0.384,0,0.64,0.182,0.768,0.544l8.512,22.145L97.281,54.76z M86.272,36.072c-0.085,0-0.171,0.043-0.256,0.128
+                    c-0.085,0.086-0.149,0.192-0.192,0.32l-2.784,7.904l-0.064,0.256c0,0.341,0.203,0.512,0.608,0.512h5.376
+                    c0.405,0,0.608-0.171,0.608-0.512l-0.064-0.256L86.72,36.52C86.613,36.221,86.464,36.072,86.272,36.072z"/>
+            </g>
+            <g enable-background="new">
+                <path fill="#3BD596" d="M114.175,45.64c0,0.085,0.053,0.213,0.16,0.384l5.695,8.448c0.085,0.106,0.128,0.234,0.128,0.384
+                    c0,0.277-0.192,0.416-0.575,0.416h-2.656c-0.342,0-0.608-0.149-0.801-0.448l-5.855-8.896c-0.191-0.299-0.459-0.448-0.801-0.448
+                    h-4.959c-0.214,0-0.379,0.059-0.496,0.176c-0.117,0.118-0.176,0.283-0.176,0.496V54.6c0,0.213-0.06,0.379-0.176,0.496
+                    c-0.118,0.117-0.283,0.176-0.496,0.176h-2.145c-0.213,0-0.379-0.059-0.496-0.176s-0.176-0.283-0.176-0.496V32.488
+                    c0-0.213,0.059-0.378,0.176-0.496c0.117-0.117,0.283-0.176,0.496-0.176h11.264c2.176,0,3.957,0.55,5.344,1.648
+                    s2.08,2.821,2.08,5.168c0,1.855-0.453,3.312-1.359,4.367c-0.907,1.057-2.128,1.776-3.664,2.16
+                    C114.345,45.267,114.175,45.427,114.175,45.64z M104.511,34.888c-0.214,0-0.379,0.059-0.496,0.176s-0.176,0.283-0.176,0.496v6.144
+                    c0,0.214,0.059,0.379,0.176,0.496c0.117,0.118,0.282,0.176,0.496,0.176h5.791c1.195,0,2.193-0.063,2.992-0.191
+                    c0.801-0.128,1.482-0.469,2.049-1.024c0.564-0.554,0.848-1.396,0.848-2.527s-0.283-1.974-0.848-2.528
+                    c-0.566-0.555-1.248-0.896-2.049-1.024c-0.799-0.128-1.797-0.191-2.992-0.191H104.511z"/>
+            </g>
+            <g enable-background="new">
+                <path fill="#FF6CCC" d="M143.839,54.856c0,0.277-0.203,0.416-0.608,0.416h-2.56c-0.342,0-0.608-0.139-0.801-0.416l-7.168-9.888
+                    c-0.128-0.192-0.288-0.288-0.48-0.288c-0.17,0-0.33,0.075-0.479,0.224l-3.487,3.68c-0.214,0.235-0.32,0.513-0.32,0.832V54.6
+                    c0,0.213-0.059,0.379-0.176,0.496c-0.118,0.117-0.283,0.176-0.496,0.176h-2.145c-0.213,0-0.379-0.059-0.496-0.176
+                    s-0.176-0.283-0.176-0.496V32.488c0-0.213,0.059-0.378,0.176-0.496c0.117-0.117,0.283-0.176,0.496-0.176h2.145
+                    c0.213,0,0.378,0.059,0.496,0.176c0.117,0.118,0.176,0.283,0.176,0.496v10.656c0,0.384,0.128,0.576,0.384,0.576
+                    c0.128,0,0.276-0.085,0.448-0.256l10.592-11.296c0.213-0.235,0.48-0.353,0.8-0.353h2.784c0.17,0,0.309,0.037,0.416,0.112
+                    c0.106,0.075,0.16,0.165,0.16,0.271c0,0.107-0.075,0.256-0.225,0.448l-8.287,8.8c-0.15,0.149-0.225,0.32-0.225,0.513
+                    c0,0.128,0.053,0.277,0.16,0.447l8.736,12.032C143.785,54.611,143.839,54.75,143.839,54.856z"/>
+            </g>
+            <g enable-background="new">
+                <path fill="#00FFFF" d="M165.263,31.992c0.117,0.118,0.176,0.283,0.176,0.496v1.729c0,0.213-0.059,0.379-0.176,0.496
+                    s-0.283,0.176-0.496,0.176h-13.504c-0.214,0-0.379,0.059-0.496,0.176s-0.176,0.283-0.176,0.496v5.344
+                    c0,0.214,0.059,0.379,0.176,0.496s0.282,0.176,0.496,0.176h8c0.213,0,0.379,0.06,0.496,0.177s0.176,0.282,0.176,0.495v1.729
+                    c0,0.214-0.059,0.379-0.176,0.496s-0.283,0.176-0.496,0.176h-8c-0.214,0-0.379,0.059-0.496,0.176
+                    c-0.117,0.118-0.176,0.283-0.176,0.496v6.208c0,0.214,0.059,0.379,0.176,0.496s0.282,0.176,0.496,0.176h13.504
+                    c0.213,0,0.379,0.06,0.496,0.176c0.117,0.118,0.176,0.283,0.176,0.496V54.6c0,0.213-0.059,0.379-0.176,0.496
+                    s-0.283,0.176-0.496,0.176h-16.992c-0.213,0-0.379-0.059-0.496-0.176s-0.176-0.283-0.176-0.496V32.488
+                    c0-0.213,0.059-0.378,0.176-0.496c0.117-0.117,0.283-0.176,0.496-0.176h16.992C164.98,31.816,165.146,31.875,165.263,31.992z"/>
+            </g>
+            <g enable-background="new">
+                <path fill="#ABA5A7" d="M185.087,31.816h2.848c0.17,0,0.309,0.037,0.416,0.112c0.106,0.075,0.16,0.176,0.16,0.304
+                    c0,0.107-0.054,0.245-0.16,0.416L180,44.552c-0.172,0.256-0.256,0.533-0.256,0.832V54.6c0,0.213-0.06,0.379-0.177,0.496
+                    s-0.282,0.176-0.496,0.176h-2.144c-0.214,0-0.379-0.059-0.496-0.176s-0.176-0.283-0.176-0.496v-9.185
+                    c0-0.298-0.086-0.575-0.256-0.832l-8.353-11.936c-0.106-0.171-0.16-0.309-0.16-0.416c0-0.128,0.054-0.229,0.16-0.304
+                    s0.245-0.112,0.416-0.112h2.976c0.342,0,0.608,0.139,0.801,0.416l5.664,8.448c0.17,0.213,0.33,0.319,0.479,0.319
+                    c0.171,0,0.331-0.106,0.479-0.319l5.824-8.448C184.479,31.955,184.746,31.816,185.087,31.816z"/>
+            </g>
+            </svg>
+
+        </a>
+        <a href="#" class="menu__toggle ion-navicon"></a>
+        <div id="navWrapper"><!-- navWrapper -->
+            <a href="#" class="menu__toggle menu__toggle--close ion-ios-close-empty"></a>
+            <div id="header">
+                {block:IfLogoImage}
+                <h1><img src="{image:Logo}"/></h1>
+                {/block:IfLogoImage}
+                {block:IfNotLogoImage}
+                {block:IfCropLogoText}
+                <h1 class="cropped"><a href="/">{Title}</a></h1>
+                {/block:IfCropLogoText}
+                {block:IfNotCropLogoText}
+                <h1><a href="/">{Title}</a></h1>
+                {/block:IfNotCropLogoText}
+                {/block:IfNotLogoImage}
+                <ul class="pages">
+                    <li>
+                    <a href="/">Index</a>
+                    </li>
+                    {block:HasPages}
+                    {block:Pages}
+                    <li><a href="{URL}">{Label}</a></li>
+                    {/block:Pages}
+                    {/block:HasPages}
+                    {block:AskEnabled}
+                    <li><a href="/ask">{AskLabel}</a></li>
+                    {/block:AskEnabled}
+                    {block:SubmissionsEnabled}
+                    <li><a href="/submit">{SubmitLabel}</a></li>
+                    {/block:SubmissionsEnabled}
+                    <!-- <li><a href="/tagged/submission">Submitted posts</a></li> -->
+                </ul>
+                {block:IfHeaderText}
+                <p>{text:Header text}</p>
+                {block:IfHeaderText}
+                {block:IfNotHeaderText}
+                {/block:IfNotHeaderText}
+            </div>
+        </div><!-- end navWrapper -->
+        <div class="overlay"></div>
+    </header>
+    <div id="pageWrapper"><!-- pageWrapper -->
+        <div id="container"><!-- container -->
+            <div id="contents"><!-- contents -->
+                <ul class="index-page hidden">
+                    <li>
+                        <p>Welcome to Studio Malarkey.</p>
+                        <p>We occupy a vibrant studio space situated in central Northampton in an historic building.</p>
+                        <p>To see some of our most recent events check our <a href="/tagged/events">events</a> page.</p>
+                        <p>If you want to know more about who we are check our <a href="/about-us">about us</a> page.</p>
+                        <p>Please do <a href="/contact">get in touch</a> and see how we can help you.</p>
+                    </li>    
+                </ul>
+                <ol id="posts" class="hidden"><!-- posts -->
+                    {block:Posts}
+                        {block:Text}
+                            <li class="post text">
+                                <div class="go">{Body}</div>
+                                <p>
+                                    <a href="{Permalink}" class="link">{block:Date}{DayOfMonthWithZero}.{MonthNumberWithZero}.{ShortYear}{/block:Date}</a>
+                                </p>
+                            </li>
+                        {/block:Text}
+                        {block:Photo}
+                            <li class="post photo">
+                                {LinkOpenTag}
+                                    <img src="{PhotoURL-500}" {block:HighRes}style="display:none"{/block:HighRes} />
+                                    {block:HighRes}
+                                    <img src="{PhotoURL-HighRes}" class="highres">
+                                    {/block:HighRes}
+                                {LinkCloseTag}
+                                {block:Caption}
+                                    <div class="description">{Caption}</div>
+                                {/block:Caption}
+                                <p>
+                                    <a href="{Permalink}" class="link">{block:Date}{DayOfMonthWithZero}.{MonthNumberWithZero}.{ShortYear}{/block:Date}</a>
+                                </p>
+                            </li>
+                        {/block:Photo}
+                        {block:Panorama}
+                            <li class="post panorama">
+                                {LinkOpenTag}
+                                    <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+                                {LinkCloseTag}
+                                {block:Caption}
+                                    <div class="caption">{Caption}</div>
+                                {/block:Caption}
+                            </li>
+                        {/block:Panorama}
+                        {block:Photoset}
+                            <li class="post photoset">
+                                {block:Photos}
+                                    <img src="{PhotoURL-500}" {block:HighRes}style="display:none"{/block:HighRes} />
+                                    {block:HighRes}
+                                        <img src="{PhotoURL-HighRes}" class="highres" />
+                                    {/block:HighRes}
+                                {/block:Photos}
+                                {block:Caption}
+                                    <div class="description">{Caption}</div>
+                                {/block:Caption}
+                                <p>
+                                    <a href="{Permalink}" class="link">{block:Date}{DayOfMonthWithZero}.{MonthNumberWithZero}.{ShortYear}{/block:Date}</a>
+                                </p>
+                            </li>
+                        {/block:Photoset}
+                        {block:Quote}
+                            <li class="post quote">
+                                <div class="symbol">&#147;</div>
+                                <div class="quote">
+                                    {Quote}
+                                </div>
+                                {block:Source}
+                                    <div class="description">&mdash; {Source}</div>
+                                {/block:Source}
+                                <p>
+                                    <a href="{Permalink}" class="link">{block:Date}{DayOfMonthWithZero}.{MonthNumberWithZero}.{ShortYear}{/block:Date}</a>
+                                </p>
+                            </li>
+                        {/block:Quote}
+                        {block:Link}
+                            <li class="post link">
+                                {block:Thumbnail}
+                                    <img src="{Thumbnail-HighRes}" />
+                                {/block:Thumbnail}
+                                <a href="{URL}" class="link" {Target}>{Name}</a>
+                                {block:Description}
+                                    <div class="description">{Description}</div>
+                                {/block:Description}
+                                <p>
+                                    <a href="{Permalink}" class="link">{block:Date}{DayOfMonthWithZero}.{MonthNumberWithZero}.{ShortYear}{/block:Date}</a>
+                                </p>
+                            </li>
+                        {/block:Link}
+                        {block:Chat}
+                            <li class="post chat">
+                                {block:Title}
+                                    <h3><a href="{Permalink}">{Title}</a></h3>
+                                {/block:Title}
+                                <ul class="chat">
+                                    {block:Lines}
+                                        <li class="{Alt} user_{UserNumber}">
+                                            {block:Label}
+                                                <span class="label">{Label}</span>
+                                            {/block:Label}{Line}
+                                        </li>
+                                    {/block:Lines}
+                                </ul>
+                                <p>
+                                    <span class="icon-link icon-link ion-ios-infinite-outline"></span>
+                                    <a href="{Permalink}" class="link">{block:Date}{DayOfMonthWithZero}.{MonthNumberWithZero}.{ShortYear}{/block:Date}</a>
+                                </p>
+                            </li>
+                        {/block:Chat}
+                        {block:Video}
+                            <li class="post video">
+                                {Video-400}
+                                {block:Caption}
+                                    <div class="description">{Caption}</div>
+                                {/block:Caption}
+                                <p>
+                                    <a href="{Permalink}" class="link">{block:Date}{DayOfMonthWithZero}.{MonthNumberWithZero}.{ShortYear}{/block:Date}</a>
+                                </p>
+                            </li>
+                        {/block:Video}
+                        {block:Audio}
+                            <li class="post audio">
+                                {AudioPlayerGrey}
+                                {block:Caption}
+                                    <div class="description">{Caption}</div>
+                                {/block:Caption}
+                                <p>
+                                    <a href="{Permalink}" class="link">{block:Date}{DayOfMonthWithZero}.{MonthNumberWithZero}.{ShortYear}{/block:Date}</a>
+                                </p>
+                            </li>
+                        {/block:Audio}
+                        {block:RebloggedFrom}
+                            <li>
+                                <p class="description">{lang:Reblogged from ReblogParentTitle 2}</p>
+                            </li>
+                        {/block:RebloggedFrom}
+                        {block:HasTags}
+                            <li>
+                                <ol class="description tags ion-ios-pricetag-outline">
+                                    {block:Tags}<li><a href="{TagURL}">{Tag}</a></li> {/block:Tags}
+                                </ol>
+                            </li>
+                        {/block:HasTags}
+                        {block:PostNotes}
+                            <li>
+                                {block:Permalink}
+                                    {block:IfDisqusShortname}
+                                        <div id="disqus_thread"></div>
+                                        <script type="text/javascript" src="https://disqus.com/forums/{text:Disqus Shortname}/embed.js"></script>
+                                        <noscript><a href="https://{text:Disqus Shortname}.disqus.com/?url=ref">{lang:View the discussion thread}</a></noscript>
+                                    {/block:IfDisqusShortname}
+                                {/block:Permalink}
+                                {PostNotes}
+                            </li>
+                        {/block:PostNotes}
+                    {/block:Posts}
+                    {block:SearchPage}
+                        <li class="post">
+                            {block:NoSearchResults}
+                                <p>Sorry, no posts are tagged with "{SearchQuery}."</p>
+                                <p>Blog <a href="/">index</a> page</p>
+                            {/block:NoSearchResults}
+                        </li>
+                    {/block:SearchPage}
+                </ol><!-- end posts -->
+                {block:IndexPage}
+                    <ol class="post nav navigation pagination lower-case">
+                        {block:PreviousPage}
+                            <li class="m-r-1">
+                                <a href="{PreviousPage}" class="prev">{lang:Prev}</a>
+                            </li>
+                        {/block:PreviousPage}
+                        <li class="total-pages">({CurrentPage}/<li>{TotalPages})</li>
+                        {block:NextPage}
+                            <li class="m-l-1">
+                                <a href="{NextPage}" class="next">{lang:Next}</a>
+                            </li>
+                        {/block:NextPage}
+                        </li>
+                    </ol>
+                {/block:IndexPage}
+            </div><!-- end contents -->
+        </div><!-- end container -->
+    </div><!-- end pageWrapper -->
+    <footer id="footer" class="footer"><!-- footer -->
+        <ul>
+            <li>Studio MALARKEY</li>
+            <li>Kingswell St</li>
+            <li>Northampton</li> 
+            <li>NN1 1PP</li>
+            <li class="ion-ios-location-outline"><a href="https://www.google.co.uk/maps/place/Phipps+Northampton+Brewery+Company/@52.2348978,-0.9000615,17z/data=!3m2!4b1!5s0x48770ee165e876b3:0x1f310add1054f9a0!4m5!3m4!1s0x4877736c5f378f23:0x2f2141e5d4b9274f!8m2!3d52.2348978!4d-0.8978675" target="_blank">Map</a></li>
+            <li class="ion-paper-airplane"><a href="#">email</a></li>
+        </ul>
+        <ul>
+            <li>Connect</li>
+            <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+            <li><a href="https://www.twitter.com" target="_blank">Twitter</a></li>
+        </ul>
+        <div class="legal">&copy; Studio MALARKEY&nbsp;<span class="dateWrapper"></span></div>
+    </foote><!-- end footer -->
+
+    {block:IfDisqusShortname}
+    <script type="text/javascript">
+    //<![CDATA[
+    (function() {
+        var links = document.getElementsByTagName('a');
+        var query = '?';
+        for(var i = 0; i < links.length; i++) {
+        if(links[i].href.indexOf('#disqus_thread') >= 0) {
+            query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+        }
+        }
+        document.write('<script charset="utf-8" type="text/javascript" src="https://disqus.com/forums/{text:Disqus Shortname}/get_num_replies.js' + query + '"></' + 'script>');
+    })();
+    //]]>
+    </script>
+    {/block:IfDisqusShortname}
+    <script type="text/javascript" src="https://slackwise.org.uk/app/js/sw.js"></script>
+    <script type="text/javascript" src="https://slackwise.org.uk/app/js/app.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            
+            /* global */
+            $('html').removeClass('no-js');
+            var hiddenClass = 'hidden';
+
+            /* navigation */ 
+            var target = document.querySelector('#navWrapper');
+            var overlay = document.querySelector('.overlay');
+            var trigger = document.querySelectorAll('.menu__toggle');
+            [...trigger].forEach(function(item) {
+                item.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    target.classList.toggle('nav-wrapper--open');
+                    document.body.classList.toggle('scroll-lock');
+                    overlay.classList.toggle('overlay__open');
+                });
+            });
+
+            /* index page */
+            var url = document.location.pathname;
+            var primaryDir = url.split("/")[1];
+            var indexPageContent = document.querySelectorAll('.index-page');
+            var postsContent = document.querySelector('#posts');
+            
+            if(!primaryDir){
+                document.body.classList.add('index');
+                [...indexPageContent].forEach(function(item) {
+                    item.classList.remove(hiddenClass);
+                });
+            } else {
+                postsContent.classList.remove(hiddenClass);
+            }
+
+            /* date function */                
+            var outputDate = function() {
+                var dateWrapper = $('.dateWrapper');
+                var getYear = new Date();
+                getYear = getYear.getFullYear();
+                dateWrapper.text(getYear);
+            }();
+
+        });
+    </script>
+</body>
+</html>

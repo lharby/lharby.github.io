@@ -1,0 +1,26 @@
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+.tumblr {
+    #contents {
+        width: initial;
+
+        a {
+            color: $colour__white;
+            border-bottom: 1px solid $colour__white;
+
+            &:hover {
+                border-bottom: 1px solid transparent;
+            }
+        }
+    }
+
+    .description {
+        background-color: transparent;
+        margin-top: 0.75rem;
+    }
+}

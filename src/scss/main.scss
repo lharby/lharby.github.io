@@ -5,5 +5,8 @@ https://slackwise.org.uk
 2012 - present
 */
 
-@import 'normalize';
-@import 'variables';
+// @import 'functions/screensizes';
+@import 'functions/variables';
+@import 'functions/mixins';
+
+@import 'components/*.scss';

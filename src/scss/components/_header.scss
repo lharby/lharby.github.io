@@ -1,0 +1,69 @@
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+.tumblr {
+    #header {
+        margin: 7px 0 0 7px;
+    }
+
+    header {
+        height: 7rem;
+        position: fixed;
+        z-index: 1;
+        background-color: $colour__orange;
+        width: 100%;
+
+        ul {
+            li {
+                padding: 0 0 $default__spacer 0;
+            }
+
+            a {
+                text-transform: initial;
+            }
+        }
+    }
+
+    .logo {
+        position: fixed;
+        top: $default__spacer;
+        left: $default__spacer;
+    }
+
+    .menu__toggle {
+        position: fixed;
+        right: $default__spacer;
+        top: $default__spacer;
+        font-size: $default__spacer * 2;
+        color: $colour__white;
+        background: none;
+
+        &--close {
+            color:  $colour__white !important;
+            font-size: 4rem;
+            top: 1rem;
+        }
+    }
+
+    #navWrapper {
+        @include hover($animation__type-default, 300ms, $animation__ease-default);
+        position: fixed;
+        right:0;
+        transform: translateX(200%);
+        height: 100%;
+        width: 50%;
+        z-index: 5;
+        background-color: $colour__dark-grey;
+        padding: 5rem 0 0 1.5rem;
+        overflow-y: auto;
+
+        &.nav-wrapper--open {
+            @include hover($animation__type-default, 300ms, $animation__ease-default);
+            transform: translateX(0%);
+        }
+    }
+}

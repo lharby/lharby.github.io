@@ -1,0 +1,43 @@
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+// colours
+$colour__orange: #ff6b37;
+$colour__white: #fff;
+$colour__pale-grey: #eee;
+$colour__dark-grey: #444;
+$colour__black: #000;
+$colour__overlay: rgba(0, 0, 0, 0.2);
+
+// fonts
+$primary-font: "EB Garamond", serif;
+$secondary-font: helvetica, arial, sans-serif;
+$icon-font: 'ionicons';
+$default-font-size: 0.85rem;
+$icon-size: 24px;
+
+$img-path: '/img/';
+
+$default__spacer: 1.5rem;
+
+// responsive
+$mobile-size: 740px !default;
+$tablet-size: 900px !default;
+$desktop-size: 1024px !default;
+
+// animations
+$animation__type-default: all;
+$animation__speed-fast: 100ms;
+$animation__speed-default: 400ms;
+$animation__speed-slow: 1000ms;
+$animation__ease-default: ease-in;
+
+// z-index
+$z-top: 1;
+$z-mid: 0;
+$z-bottom: -1;
+$hi-number: 1000000;

@@ -3,10 +3,10 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const jsonImporter = require('node-sass-json-importer');
+const globImporter = require('node-sass-glob-importer');
 const srcFolder = './src/';
-const outputFolder = './app/';
-
-console.log(__dirname, srcFolder, outputFolder);
+const outputFolder = 'app/';
 
 const configFE = {
     entry: {
@@ -15,12 +15,12 @@ const configFE = {
     },
     target: 'web',
     output: {
-        path: path.resolve(__dirname, + outputFolder + './js/'),
+        path: path.join(__dirname, outputFolder + 'js/'),
         filename: '[name].js'
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: './css/[name].css',
+            filename: '../css/[name].css',
             allChunks: true
         })
     ],
@@ -40,10 +40,19 @@ const configFE = {
                 test: /\.s[ac]ss$/i,
                 use: [
                     {
-                        loader: MiniCssExtractPlugin.loader
+                        loader: MiniCssExtractPlugin.loader,
                     },
-                    'css-loader',
-                    'sass-loader'
+                    {
+                        loader: 'css-loader'
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sassOptions: {
+                              importer: globImporter()
+                            }
+                        }
+                    }
                 ]
             }
         ]
