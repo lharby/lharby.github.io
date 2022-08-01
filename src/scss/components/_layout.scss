@@ -27,6 +27,10 @@ body {
 
         .logo {
             filter: grayscale(1) brightness(0) invert(1) blur(1px);
+
+            @include mobile(0, $mobile-size) {
+                filter: none;
+            }
         }
     }
 }
