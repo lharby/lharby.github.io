@@ -5,21 +5,8 @@ https://slackwise.org.uk
 2012 - present
 */
 
-
-@media screen and (min-width: 1px) and (max-width: 768px) {
-    .pages {
-        padding-left: 1.5rem;
-    }
-    .pages li,
-    .pages li a {
-        font-size: 2rem;
-    }
-    #navWrapper {
-        width: 100%;
-    }
-}
-@media screen and (min-width: 769px) {
-    body.scroll-lock .logo {
-        filter: grayscale(1) brightness(0) invert(1) blur(1px);
-    }
-}
+// @media screen and (min-width: 769px) {
+//     body.scroll-lock .logo {
+//         filter: grayscale(1) brightness(0) invert(1) blur(1px);
+//     }
+// }

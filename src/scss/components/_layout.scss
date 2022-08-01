@@ -23,6 +23,10 @@ body {
 
     &.scroll-lock {
         overflow: hidden;
+
+        .logo {
+            filter: grayscale(1) brightness(0) invert(1) blur(1px);
+        }
     }
 }
 

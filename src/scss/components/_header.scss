@@ -65,5 +65,9 @@ https://slackwise.org.uk
             @include hover($animation__type-default, 300ms, $animation__ease-default);
             transform: translateX(0%);
         }
+
+        @include mobile(0, $mobile-size) {
+            width: 100%;
+        }
     }
 }

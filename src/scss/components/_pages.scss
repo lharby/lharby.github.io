@@ -9,12 +9,20 @@ https://slackwise.org.uk
     display: flex;
     flex-direction: column;
 
+    @include mobile(0, $mobile-size) {
+        padding-left: 1.5rem;
+    }
+
     li,
     a {
         font-family: $primary-font;
         font-size: 3.25rem;
         color: $colour__white;
         text-decoration: none;
+
+        @include mobile(0, $mobile-size) {
+            font-size: 2rem;
+        }
     }
 
     a {
