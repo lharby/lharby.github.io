@@ -204,20 +204,36 @@ https://slackwise.org.uk
 var global = __webpack_require__(2);
 
 var indexPage = function indexPage() {
+  var dom = document.querySelector('html');
   var url = document.location.pathname;
   var primaryDir = url.split("/")[1];
+  var secondaryDir = url[2];
+  var tertiaryDir = url[3];
   var indexPageContent = document.querySelectorAll('.index-page');
   var postsContent = document.querySelector('#posts');
 
   if (!primaryDir) {
-    document.body.classList.add('index');
+    dom.classList.add('index');
 
     _toConsumableArray(indexPageContent).forEach(function (item) {
       item.classList.remove(global.HIDDEN_CLASS);
     });
+  } else if (tertiaryDir) {
+    dom.classList.add(primaryDir + ' ' + secondaryDir + ' ' + tertiaryDir);
+  } else if (secondaryDir) {
+    dom.classList.add(primaryDir + ' ' + secondaryDir);
   } else {
+    dom.classList.add(primaryDir);
     postsContent.classList.remove(global.HIDDEN_CLASS);
-  }
+  } // if(!primaryDir){
+  //     document.body.classList.add('index');
+  //     [...indexPageContent].forEach(function(item) {
+  //         item.classList.remove(global.HIDDEN_CLASS);
+  //     });
+  // } else {
+  //     postsContent.classList.remove(global.HIDDEN_CLASS);
+  // }
+
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (indexPage);

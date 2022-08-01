@@ -36,6 +36,7 @@ https://slackwise.org.uk
         position: fixed;
         top: $default__spacer;
         left: $default__spacer;
+        margin-right: $default__spacer;
 
         &__image {
             max-width: 100%;
@@ -50,7 +51,7 @@ https://slackwise.org.uk
     .menu__toggle {
         position: fixed;
         right: $default__spacer;
-        top: $default__spacer;
+        top: 1rem;
         font-size: $default__spacer * 2;
         color: $colour__white;
         background: none;
@@ -58,7 +59,7 @@ https://slackwise.org.uk
         &--close {
             color:  $colour__white !important;
             font-size: 4rem;
-            top: 1rem;
+            top: 0.5rem;
         }
     }
 
