@@ -36,11 +36,14 @@ https://slackwise.org.uk
         position: fixed;
         top: $default__spacer;
         left: $default__spacer;
-        max-width: 100%;
-        width: 22rem;
 
-        @include mobile(0, $mobile-size) {
-            width: 17rem;
+        &__image {
+            max-width: 100%;
+            width: 22rem;
+    
+            @include mobile(0, $mobile-size) {
+                width: 17rem;
+            }
         }
     }
 
