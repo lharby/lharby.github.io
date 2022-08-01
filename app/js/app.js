@@ -205,7 +205,7 @@ var global = __webpack_require__(2);
 
 var indexPage = function indexPage() {
   var dom = document.querySelector('html');
-  var url = document.location.pathnames.split("/");
+  var url = document.location.pathname.split("/");
   var primaryDir = url[1];
   var secondaryDir = url[2];
   var tertiaryDir = url[3];
