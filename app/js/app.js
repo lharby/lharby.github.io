@@ -228,8 +228,6 @@ var indexPage = function indexPage() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-only"); }
-
 /*
 Luke Harby
 slackwise LTD
@@ -241,7 +239,7 @@ https://slackwise.org.uk
 var date = function date() {
   var dateWrapper = $('.dateWrapper');
   var getYear = new Date();
-  getYear.getFullYear(), _readOnlyError("getYear");
+  getYear = getYear.getFullYear();
   dateWrapper.text(getYear);
 };
 
