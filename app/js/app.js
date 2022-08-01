@@ -205,7 +205,7 @@ var global = __webpack_require__(2);
 
 var indexPage = function indexPage() {
   var dom = document.querySelector('html');
-  var url = document.location.pathname.split("/");
+  var url = document.location.pathname.split('/');
   var primaryDir = url[1];
   var secondaryDir = url[2];
   var tertiaryDir = url[3];
@@ -219,9 +219,9 @@ var indexPage = function indexPage() {
       item.classList.remove(global.HIDDEN_CLASS);
     });
   } else if (tertiaryDir) {
-    dom.classList.add("".concat(primaryDir, " ").concat(secondaryDir, " ").concat(tertiaryDir));
+    dom.classList.add(primaryDir + ' ' + secondaryDir + ' ' + tertiaryDir);
   } else if (secondaryDir) {
-    dom.classList.add("".concat(primaryDir, " ").concat(secondaryDir));
+    dom.classList.add(primaryDir + ' ' + secondaryDir);
   } else {
     dom.classList.add(primaryDir);
     postsContent.classList.remove(global.HIDDEN_CLASS);

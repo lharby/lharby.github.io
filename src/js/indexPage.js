@@ -11,7 +11,7 @@ const global = require('./global');
 
 const indexPage = () => {
     const dom = document.querySelector('html');
-    const url = document.location.pathname.split("/");
+    const url = document.location.pathname.split('/');
     const primaryDir = url[1];
     const secondaryDir = url[2];
     const tertiaryDir = url[3];
@@ -24,9 +24,9 @@ const indexPage = () => {
             item.classList.remove(global.HIDDEN_CLASS);
         });
     } else if (tertiaryDir) {
-        dom.classList.add(`${primaryDir} ${secondaryDir} ${tertiaryDir}`);
+        dom.classList.add(primaryDir + ' ' + secondaryDir + ' ' + tertiaryDir);
     } else if (secondaryDir) {
-        dom.classList.add(`${primaryDir} ${secondaryDir}`);
+        dom.classList.add(primaryDir + ' ' + secondaryDir);
     } else {
         dom.classList.add(primaryDir);
         postsContent.classList.remove(global.HIDDEN_CLASS);
