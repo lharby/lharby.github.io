@@ -13,6 +13,10 @@ https://slackwise.org.uk
     font-size: 1.4rem;
     justify-content: space-between;
 
+    @include mobile(0, $mobile-size) {
+        flex-direction: column;
+    }
+
     a {
         position: relative;
         color: $colour__white;
