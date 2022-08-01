@@ -224,16 +224,9 @@ var indexPage = function indexPage() {
     dom.classList.add(primaryDir, secondaryDir);
   } else {
     dom.classList.add(primaryDir);
-    postsContent.classList.remove(global.HIDDEN_CLASS);
-  } // if(!primaryDir){
-  //     document.body.classList.add('index');
-  //     [...indexPageContent].forEach(function(item) {
-  //         item.classList.remove(global.HIDDEN_CLASS);
-  //     });
-  // } else {
-  //     postsContent.classList.remove(global.HIDDEN_CLASS);
-  // }
+  }
 
+  postsContent.classList.remove(global.HIDDEN_CLASS);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (indexPage);
