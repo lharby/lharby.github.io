@@ -444,50 +444,5 @@
     </script>
     {/block:IfDisqusShortname}
     <script type="text/javascript" src="https://lharby.github.io/app/js/app.min.js"></script>
-    <!-- <script>
-        $(document).ready(function() {
-            
-            /* global */
-            $('html').removeClass('no-js');
-            var hiddenClass = 'hidden';
-
-            /* navigation */ 
-            var target = document.querySelector('#navWrapper');
-            var overlay = document.querySelector('.overlay');
-            var trigger = document.querySelectorAll('.menu__toggle');
-            [...trigger].forEach(function(item) {
-                item.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    target.classList.toggle('nav-wrapper--open');
-                    document.body.classList.toggle('scroll-lock');
-                    overlay.classList.toggle('overlay__open');
-                });
-            });
-
-            /* index page */
-            var url = document.location.pathname;
-            var primaryDir = url.split("/")[1];
-            var indexPageContent = document.querySelectorAll('.index-page');
-            var postsContent = document.querySelector('#posts');
-            
-            if(!primaryDir){
-                document.body.classList.add('index');
-                [...indexPageContent].forEach(function(item) {
-                    item.classList.remove(hiddenClass);
-                });
-            } else {
-                postsContent.classList.remove(hiddenClass);
-            }
-
-            /* date function */                
-            var outputDate = function() {
-                var dateWrapper = $('.dateWrapper');
-                var getYear = new Date();
-                getYear = getYear.getFullYear();
-                dateWrapper.text(getYear);
-            }();
-
-        }); -->
-    </script>
 </body>
 </html>

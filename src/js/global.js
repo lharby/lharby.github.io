@@ -7,3 +7,5 @@ https://slackwise.org.uk
 
 /* global */
 $('html').removeClass('no-js');
+
+const hiddenClass = 'hidden';

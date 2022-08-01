@@ -128,6 +128,7 @@ https://slackwise.org.uk
 
 /* global */
 $('html').removeClass('no-js');
+var hiddenClass = 'hidden';
 
 /***/ }),
 /* 3 */
