@@ -33,3 +33,13 @@ https://slackwise.org.uk
         }
     }
 }
+
+.index-page {
+    display: none;
+}
+
+.index {
+    .index-page {
+        display: block;
+    }
+}

@@ -181,18 +181,6 @@ var navigation = function navigation() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
 /*
 Luke Harby
 slackwise LTD
@@ -201,23 +189,17 @@ https://slackwise.org.uk
 */
 
 /* index page */
-var global = __webpack_require__(2);
-
+// const global = require('./global');
 var indexPage = function indexPage() {
   var dom = document.querySelector('html');
   var url = document.location.pathname.split('/');
   var primaryDir = url[1];
   var secondaryDir = url[2];
-  var tertiaryDir = url[3];
-  var indexPageContent = document.querySelectorAll('.index-page');
-  var postsContent = document.querySelector('#posts');
+  var tertiaryDir = url[3]; // const indexPageContent = document.querySelectorAll('.index-page');
+  // const postsContent = document.querySelector('#posts');
 
   if (!primaryDir) {
     dom.classList.add('index');
-
-    _toConsumableArray(indexPageContent).forEach(function (item) {
-      item.classList.remove(global.HIDDEN_CLASS);
-    });
   } else if (tertiaryDir) {
     dom.classList.add(primaryDir, secondaryDir, tertiaryDir);
   } else if (secondaryDir) {
