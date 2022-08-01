@@ -181,6 +181,7 @@ var navigation = function navigation() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -201,6 +202,8 @@ https://slackwise.org.uk
 */
 
 /* index page */
+
+
 var indexPage = function indexPage() {
   var url = document.location.pathname;
   var primaryDir = url.split("/")[1];
@@ -211,10 +214,10 @@ var indexPage = function indexPage() {
     document.body.classList.add('index');
 
     _toConsumableArray(indexPageContent).forEach(function (item) {
-      item.classList.remove(hiddenClass);
+      item.classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["hiddenClass"]);
     });
   } else {
-    postsContent.classList.remove(hiddenClass);
+    postsContent.classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["hiddenClass"]);
   }
 };
 

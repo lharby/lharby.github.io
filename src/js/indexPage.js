@@ -6,6 +6,9 @@ https://slackwise.org.uk
 */
 
 /* index page */
+
+import { hiddenClass } from "./global";
+
 const indexPage = () => {
     const url = document.location.pathname;
     const primaryDir = url.split("/")[1];
