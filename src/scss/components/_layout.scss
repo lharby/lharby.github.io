@@ -8,6 +8,7 @@ https://slackwise.org.uk
 html {
     background-color: transparent !important;
 }
+
 body {
     margin: 0;
     padding: 0;
@@ -15,6 +16,10 @@ body {
     color: $colour__white;
     font-family: $primary-font;
     font-size: 3.25em;
+
+    @include mobile(0, $mobile-size) {
+        font-size: 2rem;
+    }
 
     &.scroll-lock {
         overflow: hidden;

@@ -8,3 +8,21 @@ https://slackwise.org.uk
 @mixin hover($type, $speed, $ease) {
     transition: $type $speed $ease;
 }
+
+@mixin desktop($width) {
+    @media screen and (min-width: $width + 1) {
+        @content;
+    }
+}
+
+@mixin tablet($width) {
+    @media screen and (min-width: 1px) and (max-width: $width) {
+        @content;
+    }
+}
+
+@mixin mobile($min, $max) {
+    @media screen and (min-width: $min) and (max-width: $max - 1) {
+        @content;
+    }
+}
