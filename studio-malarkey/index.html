@@ -68,216 +68,6 @@
     
     <!-- SCRIPTS -->
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <style media="screen">
-        /* html {
-            background-color: transparent !important;
-        }
-        body {
-            margin: 0;
-            padding: 0;;
-            background-color: #ff6b37;
-            color: #fff;
-            font-family: "EB Garamond", serif;
-            font-size: 3.25em;
-        }
-        body.scroll-lock {
-            overflow: hidden;
-        }
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background-color: rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
-        .overlay__open {
-            display: block;
-        }
-        a {
-            text-decoration: none;
-            transition: all 200ms ease-out; 
-        }
-        a:hover {
-            text-decoration: none;
-            color: #eee;
-            transition: all 200ms ease-out;
-        }
-        ul, ol {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-        .tumblr #header {
-            margin: 7px 0 0 7px;
-        }
-        header {
-            height: 7rem;
-            position: fixed;
-            z-index: 1;
-            background-color: #ff6b37;
-            width: 100%;
-        }
-        #pageWrapper {
-            margin: 0;
-            padding: 7rem 1.5rem 1.5rem 1.5rem;
-            min-height: 100vh;
-        }
-        .tumblr #header ul li {
-            padding: 0 0 1.5rem 0;
-        }
-        .tumblr #header ul li a {
-            text-transform: initial;
-        }
-        .tumblr #contents {
-            width: initial;
-        }
-        .tumblr #contents a {
-            color: #fff;
-            border-bottom: 1px solid #fff;
-        }
-        .tumblr #contents a:hover {
-            border-bottom: 1px solid transparent;
-        }
-        .tumblr .description {
-            background-color: transparent;
-        }
-        .tumblr .description {
-            margin-top: 10px;
-        }
-        .search-input {
-            background-color: #fff !important;
-        }
-        .tumblr .pagination,
-        .icon-link,
-        .link,
-        .description {
-            display: none;
-        }
-        .tumblr iframe[class^=tmblr-iframe] {
-            display: none !important;
-        }
-        .logo {
-            position: fixed;
-            top: 1.5rem;
-            left: 1.5rem;
-        }
-        .menu__toggle {
-            position: fixed;
-            right: 1.5rem;
-            top: 1.5rem;
-            font-size: 3rem;
-            color:#fff;
-            background: none;
-        }
-        .menu__toggle--close {
-            color: #fff !important;
-            font-size: 4rem;
-            top: 1rem;
-        }
-        #navWrapper {
-            position: fixed;
-            right:0;
-            transform: translateX(200%);
-            transition: all 300ms ease-in;
-            height: 100%;
-            width: 50%;
-            z-index: 5;
-            background-color: #444;
-            padding: 5rem 0 0 1.5rem;
-            overflow-y: auto;
-        }
-        #navWrapper.nav-wrapper--open {
-            transform: translateX(0%);
-            transition: all 300ms ease-in;
-        }
-        .pages {
-            display: flex;
-            flex-direction: column;
-        }
-        .pages li,
-        .pages li a {
-            font-family: "EB Garamond", serif;
-            font-size: 3.25rem;
-            color: #fff;
-            text-decoration: none;
-        }
-        .pages li a {
-            border-bottom: 1px solid #fff;
-        }
-        .pages li a:hover {
-            border-bottom: 1px solid transparent;
-        }
-        #posts a,
-        #posts a:hover {
-            border-bottom: none !important;
-        }
-        #posts [href] {
-            border-bottom: 1px solid #fff !important;
-        }
-        #posts [href]:hover {
-            border-bottom: 1px solid transparent !important;
-        }
-        .footer {
-            display: flex;
-            padding: 1.5rem 1.5rem 2rem;
-            background-color: #444;
-            color: #fff;
-            font-size: 1.4rem;
-            justify-content: space-between;
-        }
-        .footer a {
-            position: relative;
-            color: #fff;
-            border-bottom: 1px solid #fff;
-        }
-        .footer a:hover {
-            border-bottom: 1px solid transparent;
-        }
-        .footer a::after {
-            position: absolute;
-            font-family: "ionicons";
-            content: "\f30f";
-            transform: rotate(-45deg);
-            top: 0.4rem;
-            right: -1.4rem;
-        }
-        .footer li[class^="ion-"]:before {
-            margin-right: 0.5rem;
-        }
-        .legal {
-            display: flex;
-            align-self: end;
-        }
-        .underline {
-            border-bottom: 1px solid #fff;
-        }
-        .hidden {
-            display: none;
-        }
-        @media screen and (min-width: 1px) and (max-width: 768px) {
-            body {
-                font-size: 2rem;
-            }
-            .pages {
-                padding-left: 1.5rem;
-            }
-            .pages li,
-            .pages li a {
-                font-size: 2rem;
-            }
-            #navWrapper {
-                width: 100%;
-            }
-        }
-        @media screen and (min-width: 769px) {
-            body.scroll-lock .logo {
-                filter: grayscale(1) brightness(0) invert(1) blur(1px);
-            }
-        } */
-    </style>
 </head>
 <body>
     <header class="navigation-header">
@@ -653,7 +443,8 @@
     //]]>
     </script>
     {/block:IfDisqusShortname}
-    <script>
+    <script type="text/javascript" src="https://lharby.github.io/app/js/app.min.js"></script>
+    <!-- <script>
         $(document).ready(function() {
             
             /* global */
@@ -696,7 +487,7 @@
                 dateWrapper.text(getYear);
             }();
 
-        });
+        }); -->
     </script>
 </body>
 </html>

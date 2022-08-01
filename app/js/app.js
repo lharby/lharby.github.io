@@ -94,11 +94,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_main_scss__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _js_global__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 /* harmony import */ var _js_global__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_js_global__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _js_navigation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+
 
  // global
 
 $(document).ready(function () {
-  console.log('js available');
+  Object(_js_navigation__WEBPACK_IMPORTED_MODULE_2__["default"])();
 });
 
 /***/ }),
@@ -111,8 +113,58 @@ $(document).ready(function () {
 /* 2 */
 /***/ (function(module, exports) {
 
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
 /* global */
 $('html').removeClass('no-js');
+
+/***/ }),
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+/* navigation */
+var navigation = function navigation() {
+  var target = document.querySelector('#navWrapper');
+  var overlay = document.querySelector('.overlay');
+  var trigger = document.querySelectorAll('.menu__toggle');
+
+  _toConsumableArray(trigger).forEach(function (item) {
+    item.addEventListener('click', function (event) {
+      event.preventDefault();
+      target.classList.toggle('nav-wrapper--open');
+      document.body.classList.toggle('scroll-lock');
+      overlay.classList.toggle('overlay__open');
+    });
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (navigation);
 
 /***/ })
 /******/ ]);
