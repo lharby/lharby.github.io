@@ -30,7 +30,6 @@ const indexPage = () => {
     } else {
         dom.classList.add(primaryDir);
     }
-    postsContent.classList.remove(global.HIDDEN_CLASS);
 }
 
 export default indexPage;

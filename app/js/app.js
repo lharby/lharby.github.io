@@ -225,8 +225,6 @@ var indexPage = function indexPage() {
   } else {
     dom.classList.add(primaryDir);
   }
-
-  postsContent.classList.remove(global.HIDDEN_CLASS);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (indexPage);
