@@ -159,18 +159,39 @@ https://slackwise.org.uk
 
 /* navigation */
 var navigation = function navigation() {
-  var target = document.querySelector('#navWrapper');
+  var wrapper = 'nav-wrapper';
+  var target = document.querySelector(".".concat(wrapper));
   var overlay = document.querySelector('.overlay');
   var trigger = document.querySelectorAll('.menu__toggle');
+  var overlayOpenClass = 'overlay__open';
+  var scrollLockClass = 'scroll-lock';
 
   _toConsumableArray(trigger).forEach(function (item) {
     item.addEventListener('click', function (event) {
       event.preventDefault();
-      target.classList.toggle('nav-wrapper--open');
-      document.body.classList.toggle('scroll-lock');
-      overlay.classList.toggle('overlay__open');
+
+      if (item.classList.contains('menu__toggle--close')) {
+        closeNavigation();
+      } else {
+        openNavigation();
+      } // target.classList.toggle(`${wrapper}--open`);
+      // document.body.classList.toggle('scroll-lock');
+      // overlay.classList.toggle('overlay__open');
+
     });
   });
+
+  openNavigation = function openNavigation() {
+    target.classList.add("".concat(wrapper, "--open"));
+    document.body.classList.add(scrollLockClass);
+    overlay.classList.add(overlayOpenClass);
+  };
+
+  closeNavigation = function closeNavigation() {
+    target.classList.remove("".concat(wrapper, "--open"));
+    document.body.classList.remove(scrollLockClass);
+    overlay.classList.remove(overlayOpenClass);
+  };
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (navigation);
