@@ -28,13 +28,13 @@ const navigation = () => {
         });
     });
 
-    openNavigation = () => {
+    const openNavigation = () => {
         target.classList.add(`${wrapper}--open`);
         document.body.classList.add(scrollLockClass);
         overlay.classList.add(overlayOpenClass);
     }
 
-    closeNavigation = () => {
+    const closeNavigation = () => {
         target.classList.remove(`${wrapper}--open`);
         document.body.classList.remove(scrollLockClass);
         overlay.classList.remove(overlayOpenClass);

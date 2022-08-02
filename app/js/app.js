@@ -181,13 +181,13 @@ var navigation = function navigation() {
     });
   });
 
-  openNavigation = function openNavigation() {
+  var openNavigation = function openNavigation() {
     target.classList.add("".concat(wrapper, "--open"));
     document.body.classList.add(scrollLockClass);
     overlay.classList.add(overlayOpenClass);
   };
 
-  closeNavigation = function closeNavigation() {
+  var closeNavigation = function closeNavigation() {
     target.classList.remove("".concat(wrapper, "--open"));
     document.body.classList.remove(scrollLockClass);
     overlay.classList.remove(overlayOpenClass);
