@@ -7,10 +7,10 @@ https://slackwise.org.uk
 
 /* date function */  
 const date = () => {          
-    const dateWrapper = $('.dateWrapper');
+    const dateWrapper = document.querySelector('.date-wrapper');
     let getYear = new Date();
     getYear = getYear.getFullYear();
-    dateWrapper.text(getYear);
+    dateWrapper.textContent = getYear;
 }
 
 export default date;

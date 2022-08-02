@@ -253,10 +253,10 @@ https://slackwise.org.uk
 
 /* date function */
 var date = function date() {
-  var dateWrapper = $('.dateWrapper');
+  var dateWrapper = document.querySelector('.date-wrapper');
   var getYear = new Date();
   getYear = getYear.getFullYear();
-  dateWrapper.text(getYear);
+  dateWrapper.textContent = getYear;
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (date);
