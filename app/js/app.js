@@ -174,11 +174,19 @@ var navigation = function navigation() {
         closeNavigation();
       } else {
         openNavigation();
-      } // target.classList.toggle(`${wrapper}--open`);
-      // document.body.classList.toggle('scroll-lock');
-      // overlay.classList.toggle('overlay__open');
-
+      }
     });
+  });
+
+  overlay.addEventListener('click', function () {
+    if (overlay.classList.contains(overlayOpenClass)) {
+      closeNavigation();
+    }
+  });
+  window.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && overlay.classList.contains(overlayOpenClass)) {
+      closeNavigation();
+    }
   });
 
   var openNavigation = function openNavigation() {
