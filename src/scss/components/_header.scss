@@ -63,7 +63,7 @@ https://slackwise.org.uk
         }
     }
 
-    .nav-rapper {
+    .nav-wrapper {
         @include hover($animation__type-default, 300ms, $animation__ease-default);
         position: fixed;
         right:0;
