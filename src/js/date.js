@@ -8,8 +8,7 @@ https://slackwise.org.uk
 /* date function */  
 const date = () => {          
     const dateWrapper = document.querySelector('.date-wrapper');
-    let getYear = new Date();
-    getYear = getYear.getFullYear();
+    const getYear = new Date().getFullYear();
     dateWrapper.textContent = getYear;
 }
 
