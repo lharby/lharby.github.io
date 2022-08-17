@@ -40,6 +40,8 @@ https://slackwise.org.uk
         margin-top: $default__spacer * 2;
 
         li {
+            padding: 0;
+
             &:first-of-type {
                 margin-right: 2rem;
             }
