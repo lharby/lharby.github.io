@@ -8,10 +8,12 @@ https://slackwise.org.uk
 /* global */
 $('html').removeClass('no-js');
 
-const HIDDEN_CLASS  = 'hidden';
 const DOM = document.querySelector('html');
+const HIDDEN_CLASS  = 'hidden';
+const EMAIL_ADDRESS = 'studiomalarkeyuk@gmail.com';
 
 export {
+    DOM,
     HIDDEN_CLASS,
-    DOM
+    EMAIL_ADDRESS
 };

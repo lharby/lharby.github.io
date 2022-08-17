@@ -61,6 +61,12 @@ html {
             filter: grayscale(1) brightness(0);
         }
 
+        #posts {
+            [href] {
+                border-bottom: 1px solid $colour__black !important;        
+            }
+        }
+
         .toggle-contrast {
             &:after {
                 content: "Reduce contrast";

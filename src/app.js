@@ -5,6 +5,7 @@ import navigation from './js/navigation';
 import indexPage from './js/indexPage';
 import date from './js/date';
 import toggleContrast from './js/toggleContrast';
+import obfuscateEmail from './js/obfuscateEmail';
 
 // global
 $(document).ready(() => {
@@ -12,4 +13,5 @@ $(document).ready(() => {
     indexPage();
     date();
     toggleContrast();
+    obfuscateEmail();
 });
