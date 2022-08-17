@@ -96,6 +96,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_navigation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _js_indexPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var _js_date__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
+/* harmony import */ var _js_toggleContrast__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
+
 
 
 
@@ -106,6 +108,7 @@ $(document).ready(function () {
   Object(_js_navigation__WEBPACK_IMPORTED_MODULE_2__["default"])();
   Object(_js_indexPage__WEBPACK_IMPORTED_MODULE_3__["default"])();
   Object(_js_date__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  Object(_js_toggleContrast__WEBPACK_IMPORTED_MODULE_5__["default"])();
 });
 
 /***/ }),
@@ -121,6 +124,7 @@ $(document).ready(function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HIDDEN_CLASS", function() { return HIDDEN_CLASS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DOM", function() { return DOM; });
 /*
 Luke Harby
 slackwise LTD
@@ -131,6 +135,7 @@ https://slackwise.org.uk
 /* global */
 $('html').removeClass('no-js');
 var HIDDEN_CLASS = 'hidden';
+var DOM = document.querySelector('html');
 
 
 /***/ }),
@@ -260,6 +265,33 @@ var date = function date() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (date);
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+/* toggle contrast function */
+
+
+var toggleContrast = function toggleContrast() {
+  var trigger = document.querySelector('.toggle-contrast');
+  var contrastClass = 'high-contrast';
+  trigger.addEventListener('click', function () {
+    _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.contains(contrastClass) ? _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.remove(contrastClass) : _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.add(contrastClass);
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (toggleContrast);
 
 /***/ })
 /******/ ]);

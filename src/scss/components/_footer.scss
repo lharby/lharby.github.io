@@ -47,6 +47,10 @@ https://slackwise.org.uk
     .no-link {
         border-bottom: none;
 
+        &:hover {
+            border-bottom: none;
+        }
+
         &:after {
             content: "";
         }

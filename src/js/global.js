@@ -9,7 +9,9 @@ https://slackwise.org.uk
 $('html').removeClass('no-js');
 
 const HIDDEN_CLASS  = 'hidden';
+const DOM = document.querySelector('html');
 
 export {
-    HIDDEN_CLASS
+    HIDDEN_CLASS,
+    DOM
 };
