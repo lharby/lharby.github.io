@@ -63,7 +63,11 @@ html {
 
         #posts {
             [href] {
-                border-bottom: 1px solid $colour__black !important;        
+                border-bottom: 1px solid $colour__black !important;
+        
+                &:hover {
+                    border-bottom: 1px solid transparent !important;
+                }
             }
         }
 
