@@ -286,7 +286,8 @@ https://slackwise.org.uk
 var toggleContrast = function toggleContrast() {
   var trigger = document.querySelector('.toggle-contrast');
   var contrastClass = 'high-contrast';
-  trigger.addEventListener('click', function () {
+  trigger.addEventListener('click', function (event) {
+    event.preventDefault();
     _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.contains(contrastClass) ? _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.remove(contrastClass) : _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.add(contrastClass);
   });
 };
