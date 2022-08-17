@@ -9,10 +9,35 @@ https://slackwise.org.uk
 html {
     &.high-contrast {
         body,
-        .header,
-        .footer {
-            background-color: initial;
+        header,
+        .footer,
+        .menu__toggle {
+            background-color: initial !important;
             color: $colour__black;
+
+            a {
+                color: initial !important;
+
+                &:hover {
+                    color: transparentize($color: ($colour__black), $amount: 0.2) !important;
+                }
+            }
+        }
+
+        .nav-wrapper {
+            background-color: $colour__black;
+        }
+
+        .logo {
+            filter: grayscale(1) brightness(0);
+        }
+
+        body {
+            &.scroll-lock {
+                .logo {
+                    filter: grayscale(1) brightness(0) blur(1px);
+                }
+            }
         }
     }
 }
