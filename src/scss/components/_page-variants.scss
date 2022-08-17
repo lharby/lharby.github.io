@@ -23,17 +23,32 @@ html {
             }
         }
 
+        body {
+            &.scroll-lock {
+                .logo {
+                    filter: grayscale(1) brightness(0) blur(1px);
+                }
+            }
+        }
+
         .nav-wrapper {
             background-color: $colour__black;
 
             a,
             .menu__toggle {
                 background-color: transparent;
-                color: $colour__white;
 
                 &:hover {
-                    color: transparentize($color: ($colour__white), $amount: 0.6);
+                    color: transparentize($color: ($colour__white), $amount: 0.3);
+
+                    img {
+                        opacity: 0.7;
+                    }
                 }
+            }
+
+            .menu__toggle--close {
+                color: $colour__black;
             }
         }
 
@@ -41,11 +56,9 @@ html {
             filter: grayscale(1) brightness(0);
         }
 
-        body {
-            &.scroll-lock {
-                .logo {
-                    filter: grayscale(1) brightness(0) blur(1px);
-                }
+        .toggle-contrast {
+            &:after {
+                content: "Reduce contrast";
             }
         }
     }

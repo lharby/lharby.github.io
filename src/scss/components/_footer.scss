@@ -55,6 +55,12 @@ https://slackwise.org.uk
             content: "";
         }
     }
+
+    .toggle-contrast {
+        &:after {
+            content: "Increase contrast";
+        }
+    }
 }
 
 .legal {
