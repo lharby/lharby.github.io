@@ -58,8 +58,8 @@ https://slackwise.org.uk
 
     .toggle-contrast {
         &:after {
-            position: relative;
             content: "Increase contrast";
+            position: static;
         }
     }
 }
