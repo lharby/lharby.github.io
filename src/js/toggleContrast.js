@@ -6,29 +6,26 @@ https://slackwise.org.uk
 */
 
 /* toggle contrast function */
-
 import { DOM } from "./global";
 
 const toggleContrast = () => {
-    const contrastIsSet = window.localStorage.getItem('high-contrast');
+    const trigger = document.querySelector('.toggle-contrast');
+    const contrastClass = 'high-contrast';
+    const contrastIsSet = window.localStorage.getItem(contrastClass);
     contrastIsSet === 1
         ?
         DOM.classList.add(contrastClass)
         :
         null;
-
-    const trigger = document.querySelector('.toggle-contrast');
-    const contrastClass = 'high-contrast';
     trigger.addEventListener('click', event => {
         event.preventDefault();
-        DOM.classList.contains(contrastClass)
-            ?
-            DOM.classList.remove(contrastClass)
-            :
-            (
-                DOM.classList.add(contrastClass),
-                window.localStorage.setItem('high-contrast', 1)
-            )
+        if (DOM.classList.contains(contrastClass)) {
+            DOM.classList.remove(contrastClass);
+            window.localStorage.removeItem(contrastClass);
+        } else {
+            DOM.classList.add(contrastClass);
+            window.localStorage.setItem(contrastClass, 1);
+        }
     });
 }
 
