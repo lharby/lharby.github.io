@@ -18,6 +18,16 @@ https://slackwise.org.uk
             border-bottom: 1px solid transparent !important;
         }
     }
+
+    .post {
+        .image {
+            width: 100%;
+
+            @include mobile(0, $mobile-size) {
+                width: 50%;
+            }
+        }
+    }
 }
 
 .index {
