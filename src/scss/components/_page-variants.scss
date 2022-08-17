@@ -48,8 +48,12 @@ html {
                 }
             }
 
-            .menu__toggle--close {
+            .menu__toggle {
                 color: $colour__black;
+
+                &--close {
+                    color: $colour__white !important;
+                }
             }
         }
 
