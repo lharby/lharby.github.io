@@ -32,6 +32,10 @@ https://slackwise.org.uk
             border-bottom: 3px solid transparent;
         }
     }
+
+    &__social-links li a {
+        border-bottom: 0;
+    }
 }
 
 .index-page {
