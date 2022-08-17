@@ -8,6 +8,7 @@ https://slackwise.org.uk
 .pages {
     display: flex;
     flex-direction: column;
+    margin-bottom: 5rem;
 
     @include mobile(0, $mobile-size) {
         padding-left: 1.5rem;
@@ -35,18 +36,25 @@ https://slackwise.org.uk
 
     &__social-links {
         display: flex;
+        align-items: center;
         margin-top: $default__spacer * 2;
 
-        li a {
-            border-bottom: 0;
-
-            &:hover {
-                border-bottom: 0;
+        li {
+            &:first-of-type {
+                margin-right: 2rem;
             }
 
-            img {
-                max-width: 3rem;
-                filter: invert(1);
+            a {
+                border-bottom: 0;
+
+                &:hover {
+                    border-bottom: 0;
+                }
+
+                img {
+                    width: 3rem;
+                    filter: invert(1);
+                }
             }
         }
     }
