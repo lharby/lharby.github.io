@@ -10,7 +10,8 @@ html {
     &.high-contrast {
         body,
         header,
-        .footer {
+        .footer,
+        #contents {
             background-color: $colour__white;
             color: $colour__black;
 
