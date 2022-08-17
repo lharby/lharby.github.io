@@ -52,9 +52,14 @@ https://slackwise.org.uk
 
                 &:hover {
                     border-bottom: 0;
+
+                    img {
+                        @include hover($animation__type-default, $animation__speed-default, $animation__ease-default);
+                    }
                 }
 
                 img {
+                    @include hover($animation__type-default, $animation__speed-default, $animation__ease-default);
                     width: 3rem;
                     filter: invert(1);
                 }

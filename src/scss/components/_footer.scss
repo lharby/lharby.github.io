@@ -58,6 +58,7 @@ https://slackwise.org.uk
 
     .toggle-contrast {
         &:after {
+            font-family: $primary-font;
             content: "Increase contrast";
             position: static;
         }
