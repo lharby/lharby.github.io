@@ -41,7 +41,7 @@ https://slackwise.org.uk
         &__image {
             max-width: 100%;
             width: 22rem;
-    
+
             @include mobile(0, $mobile-size) {
                 width: 17rem;
             }
@@ -49,6 +49,7 @@ https://slackwise.org.uk
     }
 
     .menu__toggle {
+        @include no-outline;
         position: fixed;
         right: $default__spacer;
         top: 1rem;

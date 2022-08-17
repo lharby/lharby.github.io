@@ -26,3 +26,11 @@ https://slackwise.org.uk
         @content;
     }
 }
+
+@mixin no-outline {
+    &,
+    &:active,
+    &:focus {
+        outline: none;
+    }
+}
