@@ -35,8 +35,8 @@ html {
         .nav-wrapper {
             background-color: $colour__black;
 
-            a,
-            .menu__toggle {
+            a {
+                color: $colour__white;
                 background-color: transparent;
 
                 &:hover {
@@ -47,13 +47,13 @@ html {
                     }
                 }
             }
+        }
 
-            .menu__toggle {
-                color: $colour__black;
+        .menu__toggle {
+            color: $colour__black;
 
-                &--close {
-                    color: $colour__white !important;
-                }
+            &--close {
+                color: $colour__white !important;
             }
         }
 
