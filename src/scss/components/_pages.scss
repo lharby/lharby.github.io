@@ -45,6 +45,11 @@ https://slackwise.org.uk
             &:first-of-type {
                 margin-right: 2rem;
                 margin-top: 0.35rem;
+
+                @include mobile(0, $mobile-size) {
+                    margin-right: $default__spacer;
+                }
+                
             }
 
             a {
@@ -62,6 +67,10 @@ https://slackwise.org.uk
                     @include hover($animation__type-default, $animation__speed-default, $animation__ease-default);
                     width: 3rem;
                     filter: invert(1);
+                    
+                    @include mobile(0, $mobile-size) {
+                        width: 2rem;
+                    }
                 }
             }
         }

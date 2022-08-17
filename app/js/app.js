@@ -284,11 +284,13 @@ https://slackwise.org.uk
 
 
 var toggleContrast = function toggleContrast() {
+  var contrastIsSet = window.localStorage.getItem('high-contrast');
+  contrastIsSet === 1 ? _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.add(contrastClass) : null;
   var trigger = document.querySelector('.toggle-contrast');
   var contrastClass = 'high-contrast';
   trigger.addEventListener('click', function (event) {
     event.preventDefault();
-    _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.contains(contrastClass) ? _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.remove(contrastClass) : _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.add(contrastClass);
+    _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.contains(contrastClass) ? _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.remove(contrastClass) : (_global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.add(contrastClass), window.localStorage.setItem('high-contrast', 1));
   });
 };
 
