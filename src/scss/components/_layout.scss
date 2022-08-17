@@ -24,6 +24,7 @@ body {
     &.scroll-lock {
         position: fixed;
         overflow: hidden;
+        width: 100%;
 
         .logo {
             filter: grayscale(1) brightness(0) invert(1) blur(1px);

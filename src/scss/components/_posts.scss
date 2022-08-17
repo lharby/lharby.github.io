@@ -21,10 +21,10 @@ https://slackwise.org.uk
 
     .post {
         .image {
-            width: 100%;
+            width: 50%;
 
             @include mobile(0, $mobile-size) {
-                width: 50%;
+                width: 100%;
             }
         }
     }

@@ -10,22 +10,31 @@ html {
     &.high-contrast {
         body,
         header,
-        .footer,
-        .menu__toggle {
-            background-color: initial !important;
+        .footer {
+            background-color: $color__white;
             color: $colour__black;
 
             a {
-                color: initial !important;
+                color: initial;
 
                 &:hover {
-                    color: transparentize($color: ($colour__black), $amount: 0.2) !important;
+                    color: transparentize($color: ($colour__black), $amount: 0.5);
                 }
             }
         }
 
         .nav-wrapper {
             background-color: $colour__black;
+
+            a,
+            .menu__toggle {
+                background-color: transparent;
+                color: $color__white;
+
+                &:hover {
+                    color: transparentize($color: ($color__white), $amount: 0.6);
+                }
+            }
         }
 
         .logo {
