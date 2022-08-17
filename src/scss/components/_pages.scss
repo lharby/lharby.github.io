@@ -33,8 +33,22 @@ https://slackwise.org.uk
         }
     }
 
-    &__social-links li a {
-        border-bottom: 0;
+    &__social-links {
+        display: flex;
+        margin-top: $default__spacer * 2;
+
+        li a {
+            border-bottom: 0;
+
+            &:hover {
+                border-bottom: 0;
+            }
+
+            img {
+                max-width: 3rem;
+                filter: invert(1);
+            }
+        }
     }
 }
 
