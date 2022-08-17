@@ -20,7 +20,6 @@ const toggleContrast = () => {
         :
         DOM.classList.add(contrastClass)
     });
-    
 }
 
 export default toggleContrast;
