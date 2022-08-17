@@ -43,6 +43,14 @@ https://slackwise.org.uk
     li[class^="ion-"]:before {
         margin-right: 0.5rem;
     }
+
+    .no-link {
+        border-bottom: none;
+
+        &:after {
+            content: "";
+        }
+    }
 }
 
 .legal {
