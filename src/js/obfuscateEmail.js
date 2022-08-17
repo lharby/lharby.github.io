@@ -11,7 +11,7 @@ import { EMAIL_ADDRESS } from "./global";
 const obfuscateEmail = () => {          
     const trigger = document.querySelector('.email-address');
     trigger.addEventListener('click', event => {
-        event.preventDefault();
+        // event.preventDefault();
         trigger.setAttribute('href', `mailto:${EMAIL_ADDRESS}`);
     });
 }

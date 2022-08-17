@@ -328,7 +328,7 @@ https://slackwise.org.uk
 var obfuscateEmail = function obfuscateEmail() {
   var trigger = document.querySelector('.email-address');
   trigger.addEventListener('click', function (event) {
-    event.preventDefault();
+    // event.preventDefault();
     trigger.setAttribute('href', "mailto:".concat(_global__WEBPACK_IMPORTED_MODULE_0__["EMAIL_ADDRESS"]));
   });
 };
