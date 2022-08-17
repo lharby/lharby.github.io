@@ -11,7 +11,7 @@ html {
         body,
         header,
         .footer {
-            background-color: $color__white;
+            background-color: $colour__white;
             color: $colour__black;
 
             a {
@@ -29,10 +29,10 @@ html {
             a,
             .menu__toggle {
                 background-color: transparent;
-                color: $color__white;
+                color: $colour__white;
 
                 &:hover {
-                    color: transparentize($color: ($color__white), $amount: 0.6);
+                    color: transparentize($color: ($colour__white), $amount: 0.6);
                 }
             }
         }
