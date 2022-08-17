@@ -12,7 +12,7 @@ const toggleContrast = () => {
     const trigger = document.querySelector('.toggle-contrast');
     const contrastClass = 'high-contrast';
     const contrastIsSet = window.localStorage.getItem(contrastClass);
-    contrastIsSet === 1
+    contrastIsSet === '1'
         ?
         DOM.classList.add(contrastClass)
         :
@@ -24,7 +24,7 @@ const toggleContrast = () => {
             window.localStorage.removeItem(contrastClass);
         } else {
             DOM.classList.add(contrastClass);
-            window.localStorage.setItem(contrastClass, 1);
+            window.localStorage.setItem(contrastClass, '1');
         }
     });
 }
