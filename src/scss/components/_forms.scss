@@ -34,4 +34,10 @@ https://slackwise.org.uk
             background-color: $colour__white;
         }
     }
+
+    @include tablet($tablet-size) {
+        [class^='el'] {
+            @include emptyContent;
+        }
+    }
 }

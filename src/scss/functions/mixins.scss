@@ -34,3 +34,9 @@ https://slackwise.org.uk
         outline: none;
     }
 }
+
+@mixin emptyContent {
+    &:empty {
+        display: none;
+    }
+}

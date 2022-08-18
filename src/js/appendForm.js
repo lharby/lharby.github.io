@@ -31,7 +31,7 @@ const template = `
             <textarea class="el-5" name="comments" id="comments" rows="5"></textarea>
         </div>
         <div class="form-control">
-            <div class="el-4">&nbsp;</div>
+            <div class="el-4"></div>
             <div class="el-5">
                 <button type="submit">Submit</button>
             </div>
