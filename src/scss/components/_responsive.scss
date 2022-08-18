@@ -69,6 +69,7 @@ https://slackwise.org.uk
 
 @include tablet($tablet-size) {
     [class^='el'] {
+        display: flex;
         flex: 0 0 100%;
         max-width: 100%;
     }

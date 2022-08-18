@@ -12,31 +12,26 @@ import { DOM } from './global';
 const template = `
     <form action="" class="form">
         <div class="form-control">
-            <label for="name">
-                Name
-                <input type="text" name="name" id="name">
-            </label>
+            <label class="el-4" for="name">Name</label>
+            <input class="el-8" type="text" name="name" id="name">
         </div>
         <div class="form-control">
-            <label for="email">
-                Email
-                <input type="text" name="email" id="email">
-            </label>
+            <label class="el-4" for="email">Email</label>
+            <input class="el-8" type="text" name="email" id="email"> 
         </div>
         <div class="form-control">
-            <label for="contact-no">
-                Contact number
-                <input type="contact-no" id="contact-no">
-            </label>
+            <label class="el-4" for="contact-no">Contact number</label>
+            <input class="el-8" type="contact-no" id="contact-no">
         </div>
         <div class="form-control">
-            <label for="comments">
-                Comments
-                <textarea name="comments" id="comments" rows="5"></textarea>
-            </label>    
+            <label class="el-4" for="comments">Comments</label>
+            <textarea class="el-8" name="comments" id="comments" rows="5"></textarea>
         </div>
         <div class="form-control">
-            <button type="submit">Submit</button>
+            <div class="el-4">&nbsp;</div>
+            <div class="el-8">
+                <button type="submit">Submit</button>
+            </div>
         </div>
     </form>
 `;
