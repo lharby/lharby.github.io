@@ -362,7 +362,7 @@ var template = "\n    <form action=\"\" class=\"form\">\n        <div class=\"fo
 
 var appendForm = function appendForm() {
   var wrapper = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.form-wrapper');
-  wrapper.appendChild(template);
+  wrapper.innerHTML = template;
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (appendForm);

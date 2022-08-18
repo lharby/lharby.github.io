@@ -43,7 +43,7 @@ const template = `
 
 const appendForm = () => {
     const wrapper = DOM.querySelector('.form-wrapper');
-    wrapper.appendChild(template);
+    wrapper.innerHTML = template;
 };
 
 export default appendForm;
