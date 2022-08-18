@@ -5,11 +5,30 @@ https://slackwise.org.uk
 2012 - present
 */
 
-.form-control {
-    margin-bottom: 5rem;
-    display: flex;
-    
-    @include mobile(0, $mobile-size) {
-        margin-bottom: $default__spacer * 2;
+
+.form {
+
+    &-control {
+        margin-bottom: 5rem;
+        display: flex;
+        
+        @include mobile(0, $mobile-size) {
+            margin-bottom: $default__spacer * 2;
+            flex-direction: column;
+        }
+    }
+
+    input {
+        border: none;
+        padding: 0.5rem;
+    }
+
+    button {
+        padding: 0.5rem $default__spacer;
+        background-color: $colour__pale-grey;
+
+        &:hover {
+            background-color: $colour__white;
+        }
     }
 }

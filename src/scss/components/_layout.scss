@@ -36,7 +36,8 @@ body {
     }
 }
 
-a {
+a,
+button {
     @include hover($animation__type-default, $animation__speed-default, $animation__ease-default);
     text-decoration: none;
     transition: all 200ms ease-out;
@@ -46,6 +47,12 @@ a {
         text-decoration: none;
         color: $colour__pale-grey;
         transition: all 200ms ease-out;
+    }
+}
+
+button {
+    &:hover {
+        color: inherit;
     }
 }
 
