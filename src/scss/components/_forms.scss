@@ -1,0 +1,14 @@
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+.form-control {
+    margin-bottom: 5rem;
+    
+    @include mobile(0, $mobile-size) {
+        margin-bottom: $default__spacer * 2;
+    }
+}
