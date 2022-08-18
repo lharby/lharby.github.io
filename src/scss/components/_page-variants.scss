@@ -76,5 +76,17 @@ html {
                 content: "Reduce contrast";
             }
         }
+
+        .form {
+            input,
+            textarea {
+                border: 1px solid $colour__black;
+                padding: 0.5rem;
+            }
+
+            button {
+                border: 1px solid $colour__black;
+            }
+        }
     }
 }
