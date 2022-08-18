@@ -13,7 +13,7 @@ import {
 } from './global';
 
 const template = `
-    <form action="" class="form">
+    <form action="" method="post" class="form">
         <div class="form-control">
             <label class="el-4" for="name">Name</label>
             <input class="el-5" type="text" name="name" id="name">
