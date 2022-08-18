@@ -98,6 +98,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_date__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
 /* harmony import */ var _js_toggleContrast__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
 /* harmony import */ var _js_obfuscateEmail__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7);
+/* harmony import */ var _js_appendForm__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(8);
+
 
 
 
@@ -112,6 +114,10 @@ $(document).ready(function () {
   Object(_js_date__WEBPACK_IMPORTED_MODULE_4__["default"])();
   Object(_js_toggleContrast__WEBPACK_IMPORTED_MODULE_5__["default"])();
   Object(_js_obfuscateEmail__WEBPACK_IMPORTED_MODULE_6__["default"])();
+
+  if (DOM.classList.contains('contact')) {
+    Object(_js_appendForm__WEBPACK_IMPORTED_MODULE_7__["default"])();
+  }
 });
 
 /***/ }),
@@ -334,6 +340,31 @@ var obfuscateEmail = function obfuscateEmail() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (obfuscateEmail);
+
+/***/ }),
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+/* append form */
+
+var template = "\n    <form action=\"\" class=\"form\">\n        <div class=\"form-control\">\n            <label for=\"name\">\n                Name\n                <input type=\"text\" name=\"name\" id=\"name\">\n            </label>\n        </div>\n        <div class=\"form-control\">\n            <label for=\"email\">\n                Email\n                <input type=\"text\" name=\"email\" id=\"email\">\n            </label>\n        </div>\n        <div class=\"form-control\">\n            <label for=\"contact-no\">\n                Contact number\n                <input type=\"contact-no\" id=\"contact-no\">\n            </label>\n        </div>\n        <div class=\"form-control\">\n            <label for=\"comments\">\n                Comments\n                <textarea name=\"comments\" id=\"comments\" rows=\"5\"></textarea>\n            </label>    \n        </div>\n        <div class=\"form-control\">\n            <button type=\"submit\">Submit</button>\n        </div>\n    </form>\n";
+
+var appendForm = function appendForm() {
+  var wrapper = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.form-wrapper');
+  wrapper.appendChild(template);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (appendForm);
 
 /***/ })
 /******/ ]);
