@@ -12,9 +12,12 @@ https://slackwise.org.uk
         margin-bottom: 5rem;
         display: flex;
         
+        @include tablet($tablet-size) {
+            flex-direction: column;
+        }
+
         @include mobile(0, $mobile-size) {
             margin-bottom: $default__spacer * 2;
-            flex-direction: column;
         }
     }
 
