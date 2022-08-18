@@ -6,7 +6,6 @@ https://slackwise.org.uk
 */
 
 /* navigation */ 
-
 const navigation = () => {
     const wrapper = 'nav-wrapper';
     const target = document.querySelector(`.${wrapper}`);

@@ -6,7 +6,6 @@ https://slackwise.org.uk
 */
 
 /* index page */
-
 const indexPage = () => {
     const dom = document.querySelector('html');
     const url = document.location.pathname.split('/');

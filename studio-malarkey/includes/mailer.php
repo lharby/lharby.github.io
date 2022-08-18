@@ -27,7 +27,7 @@
     $headers .= "From: $email_from \r\n";
     $headers .= "MIME-Version: 1.0 \r\n";
     $headers .= "Content-Transfer-Encoding: 8bit \r\n";
-    $headers .= "cc: lharby@gmail.com \r\n";
+    $headers .= "cc: studiomalarkeyuk@gmail.com \r\n";
     mail($to, $email_subject, $email_body, $headers);
 
     // ideally we want to capture errors, and if there is
@@ -36,5 +36,5 @@
     // header("Location: error.php");
 
     // redirect to success page
-    header("Location: https://studiomalarkey.co.uk/contact-confirm");
+    header("Location: https://studiomalarkey.co.uk/contact-success");
  ?>

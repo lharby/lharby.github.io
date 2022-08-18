@@ -10,8 +10,7 @@ import { EMAIL_ADDRESS } from "./global";
 
 const obfuscateEmail = () => {          
     const trigger = document.querySelector('.email-address');
-    trigger.addEventListener('click', event => {
-        // event.preventDefault();
+    trigger.addEventListener('click', () => {
         trigger.setAttribute('href', `mailto:${EMAIL_ADDRESS}`);
     });
 }

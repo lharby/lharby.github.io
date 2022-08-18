@@ -136,6 +136,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DOM", function() { return DOM; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HIDDEN_CLASS", function() { return HIDDEN_CLASS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EMAIL_ADDRESS", function() { return EMAIL_ADDRESS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOTE_DOMAIN", function() { return REMOTE_DOMAIN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOTE_PATH", function() { return REMOTE_PATH; });
 /*
 Luke Harby
 slackwise LTD
@@ -148,6 +150,8 @@ $('html').removeClass('no-js');
 var DOM = document.querySelector('html');
 var HIDDEN_CLASS = 'hidden';
 var EMAIL_ADDRESS = 'studiomalarkeyuk@gmail.com';
+var REMOTE_DOMAIN = 'https://lharby.github.io/';
+var REMOTE_PATH = 'studio-malarkey';
 
 
 /***/ }),
@@ -334,8 +338,7 @@ https://slackwise.org.uk
 
 var obfuscateEmail = function obfuscateEmail() {
   var trigger = document.querySelector('.email-address');
-  trigger.addEventListener('click', function (event) {
-    // event.preventDefault();
+  trigger.addEventListener('click', function () {
     trigger.setAttribute('href', "mailto:".concat(_global__WEBPACK_IMPORTED_MODULE_0__["EMAIL_ADDRESS"]));
   });
 };
@@ -363,6 +366,8 @@ var template = "\n    <form action=\"\" class=\"form\">\n        <div class=\"fo
 var appendForm = function appendForm() {
   var wrapper = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.form-wrapper');
   wrapper.innerHTML = template;
+  var form = wrapper.querySelector('.form');
+  form.setAttribute('action', "".concat(_global__WEBPACK_IMPORTED_MODULE_0__["REMOTE_DOMAIN"]).concat(_global__WEBPACK_IMPORTED_MODULE_0__["REMOTE_PATH"], "/includes/mailer.php"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (appendForm);
