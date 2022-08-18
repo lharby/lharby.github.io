@@ -106,6 +106,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
  // global
 
 $(document).ready(function () {
@@ -115,7 +116,7 @@ $(document).ready(function () {
   Object(_js_toggleContrast__WEBPACK_IMPORTED_MODULE_5__["default"])();
   Object(_js_obfuscateEmail__WEBPACK_IMPORTED_MODULE_6__["default"])();
 
-  if (DOM.classList.contains('contact')) {
+  if (_js_global__WEBPACK_IMPORTED_MODULE_1__["DOM"].classList.contains('contact')) {
     Object(_js_appendForm__WEBPACK_IMPORTED_MODULE_7__["default"])();
   }
 });
