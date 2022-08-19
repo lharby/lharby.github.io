@@ -6,7 +6,6 @@ https://slackwise.org.uk
 */
 
 /* global */
-// require('dotenv').config();
 $('html').removeClass('no-js');
 
 const DOM = document.querySelector('html');

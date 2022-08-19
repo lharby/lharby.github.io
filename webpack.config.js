@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const dotenv = require('dotenv').config();
+const Dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -23,7 +23,8 @@ const configFE = {
         new MiniCssExtractPlugin({
             filename: '../css/[name].css',
             allChunks: true
-        })
+        }),
+        new Dotenv()
     ],
     module: {
         rules: [
