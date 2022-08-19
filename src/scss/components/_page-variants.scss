@@ -17,10 +17,19 @@ html {
 
             a {
                 color: initial;
-                border-bottom: 1px solid $colour__black;
 
                 &:hover {
                     color: transparentize($color: ($colour__black), $amount: 0.5);
+                }
+            }
+        }
+
+        #contents {
+
+            a {
+                border-bottom: 1px solid $colour__black;
+
+                &:hover {
                     border-bottom: 1px solid transparent;
                 }
             }

@@ -8,7 +8,7 @@ https://slackwise.org.uk
 /* append form */
 import { 
     DOM,
-    REMOTE_DOMAIN,
+    REMOTE_SERVER,
     REMOTE_PATH
 } from './global';
 
@@ -43,7 +43,7 @@ const appendForm = () => {
     const wrapper = DOM.querySelector('.form-wrapper');
     wrapper.innerHTML = template;
     const form = wrapper.querySelector('.form');
-    form.setAttribute('action', `${REMOTE_DOMAIN}${REMOTE_PATH}/includes/mailer.php`);
+    form.setAttribute('action', `${REMOTE_SERVER}sites/${REMOTE_PATH}/includes/mailer.php`);
 };
 
 export default appendForm;
