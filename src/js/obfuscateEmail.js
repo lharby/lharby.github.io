@@ -12,7 +12,7 @@ const obfuscateEmail = () => {
     const trigger = document.querySelectorAll('.email-address');
     trigger.forEach(item => {
         item.addEventListener('click', () => {
-            trigger.setAttribute('href', `mailto:${EMAIL_ADDRESS}`);
+            item.setAttribute('href', `mailto:${EMAIL_ADDRESS}`);
         });
     });
 }
