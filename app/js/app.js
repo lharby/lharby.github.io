@@ -152,7 +152,6 @@ var HIDDEN_CLASS = 'hidden';
 var EMAIL_ADDRESS = "studiomalarkeyuk@gmail.com";
 var REMOTE_DOMAIN = "https://lharby.github.io/";
 var REMOTE_PATH = "studio-malarkey";
-console.log("EMAIL_ADDRESS ".concat(EMAIL_ADDRESS, " process.env.NEXT_PUBLIC_EMAIL_ADDRESS ").concat("studiomalarkeyuk@gmail.com"));
 
 
 /***/ }),
