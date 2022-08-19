@@ -530,9 +530,11 @@ https://slackwise.org.uk
 
 
 var obfuscateEmail = function obfuscateEmail() {
-  var trigger = document.querySelector('.email-address');
-  trigger.addEventListener('click', function () {
-    trigger.setAttribute('href', "mailto:".concat(_global__WEBPACK_IMPORTED_MODULE_0__["EMAIL_ADDRESS"]));
+  var trigger = document.querySelectorAll('.email-address');
+  trigger.forEach(function (item) {
+    item.addEventListener('click', function () {
+      trigger.setAttribute('href', "mailto:".concat(_global__WEBPACK_IMPORTED_MODULE_0__["EMAIL_ADDRESS"]));
+    });
   });
 };
 

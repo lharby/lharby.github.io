@@ -9,9 +9,11 @@ https://slackwise.org.uk
 import { EMAIL_ADDRESS } from "./global";
 
 const obfuscateEmail = () => {          
-    const trigger = document.querySelector('.email-address');
-    trigger.addEventListener('click', () => {
-        trigger.setAttribute('href', `mailto:${EMAIL_ADDRESS}`);
+    const trigger = document.querySelectorAll('.email-address');
+    trigger.forEach(item => {
+        item.addEventListener('click', () => {
+            trigger.setAttribute('href', `mailto:${EMAIL_ADDRESS}`);
+        });
     });
 }
 
