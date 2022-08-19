@@ -9,6 +9,11 @@ html {
     background-color: transparent !important;
 }
 
+::selection {
+    background-color: $colour__black;
+    color: $colour__white;
+}
+
 body {
     margin: 0;
     padding: 0;
