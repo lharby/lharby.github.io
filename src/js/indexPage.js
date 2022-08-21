@@ -9,7 +9,7 @@ https://slackwise.org.uk
 import { DOM } from './global';
 
 const indexPage = () => {
-    const url = DOM.location.pathname.split('/');
+    const url = document.location.pathname.split('/');
     const primaryDir = url[1];
     const secondaryDir = url[2];
     const tertiaryDir = url[3];

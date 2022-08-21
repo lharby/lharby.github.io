@@ -251,7 +251,7 @@ https://slackwise.org.uk
 
 
 var indexPage = function indexPage() {
-  var url = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].location.pathname.split('/');
+  var url = document.location.pathname.split('/');
   var primaryDir = url[1];
   var secondaryDir = url[2];
   var tertiaryDir = url[3];
