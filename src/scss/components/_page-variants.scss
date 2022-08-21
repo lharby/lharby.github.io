@@ -39,6 +39,10 @@ html {
             &.scroll-lock {
                 .logo {
                     filter: grayscale(1) brightness(0) blur(1px);
+
+                    @include mobile(0, $mobile-size) {
+                        filter: none;
+                    }
                 }
             }
         }
@@ -75,7 +79,7 @@ html {
         #posts {
             [href] {
                 border-bottom: 1px solid $colour__black !important;
-        
+
                 &:hover {
                     border-bottom: 1px solid transparent !important;
                 }
