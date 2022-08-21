@@ -15,7 +15,7 @@ const navigation = () => {
     const trigger = DOM.querySelectorAll('.menu__toggle');
     const overlayOpenClass = 'overlay__open';
     const scrollLockClass = 'scroll-lock';
-    [...trigger].forEach(item, () => {
+    [...trigger].forEach(item => {
         item.addEventListener('click', event => {
             event.preventDefault();
             if (item.classList.contains('menu__toggle--close')) {
