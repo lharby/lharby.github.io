@@ -45,8 +45,8 @@ const appendForm = () => {
     wrapper.innerHTML = template;
     const form = wrapper.querySelector('.form');
     DOM.addEventListener('click', event => {
-        event.preventDefault();
         if(event.target.classList.contains('submit')) {
+            event.preventDefault();
             form.setAttribute('action', `${REMOTE_SERVER}${REMOTE_PATH}/includes/mailer.php`);
             form.submit();
         }

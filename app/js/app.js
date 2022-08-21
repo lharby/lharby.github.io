@@ -372,9 +372,8 @@ var appendForm = function appendForm() {
   wrapper.innerHTML = template;
   var form = wrapper.querySelector('.form');
   _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].addEventListener('click', function (event) {
-    event.preventDefault();
-
     if (event.target.classList.contains('submit')) {
+      event.preventDefault();
       form.setAttribute('action', "".concat(_global__WEBPACK_IMPORTED_MODULE_0__["REMOTE_SERVER"]).concat(_global__WEBPACK_IMPORTED_MODULE_0__["REMOTE_PATH"], "/includes/mailer.php"));
       form.submit();
     }
