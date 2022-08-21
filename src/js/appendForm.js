@@ -15,8 +15,9 @@ import {
 const template = `
     <form action="" method="post" class="form">
         <div class="form-control">
-            <label class="el-4" for="name">Name</label>
-            <input class="el-5" type="text" name="name" id="name">
+            <label class="el-4" for="actual_name">Name</label>
+            <input class="el-5" type="text" name="actual_name" id="actual_name">
+            <input name="name" type="text" id="name" class="hidden">
         </div>
         <div class="form-control">
             <label class="el-4" for="email">Email</label>
@@ -33,7 +34,7 @@ const template = `
         <div class="form-control">
             <div class="el-4 mobile-hidden"></div>
             <div class="el-5">
-                <button type="submit">Submit</button>
+                <button class="submit">Submit</button>
             </div>
         </div>
     </form>
@@ -43,7 +44,13 @@ const appendForm = () => {
     const wrapper = DOM.querySelector('.form-wrapper');
     wrapper.innerHTML = template;
     const form = wrapper.querySelector('.form');
-    form.setAttribute('action', `${REMOTE_SERVER}${REMOTE_PATH}/includes/mailer.php`);
+    DOM.addEventListener('click', event => {
+        event.preventDefault();
+        if(event.target.classList.contains('submit')) {
+            form.setAttribute('action', `${REMOTE_SERVER}${REMOTE_PATH}/includes/mailer.php`);
+            form.submit();
+        }
+    });
 };
 
 export default appendForm;

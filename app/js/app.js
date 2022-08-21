@@ -365,13 +365,20 @@ https://slackwise.org.uk
 
 /* append form */
 
-var template = "\n    <form action=\"\" method=\"post\" class=\"form\">\n        <div class=\"form-control\">\n            <label class=\"el-4\" for=\"name\">Name</label>\n            <input class=\"el-5\" type=\"text\" name=\"name\" id=\"name\">\n        </div>\n        <div class=\"form-control\">\n            <label class=\"el-4\" for=\"email\">Email</label>\n            <input class=\"el-5\" type=\"text\" name=\"email\" id=\"email\">\n        </div>\n        <div class=\"form-control\">\n            <label class=\"el-4\" for=\"contact-no\">Contact number</label>\n            <input class=\"el-5\" type=\"contact-no\" id=\"contact-no\">\n        </div>\n        <div class=\"form-control\">\n            <label class=\"el-4\" for=\"comments\">Comments</label>\n            <textarea class=\"el-5\" name=\"comments\" id=\"comments\" rows=\"5\"></textarea>\n        </div>\n        <div class=\"form-control\">\n            <div class=\"el-4 mobile-hidden\"></div>\n            <div class=\"el-5\">\n                <button type=\"submit\">Submit</button>\n            </div>\n        </div>\n    </form>\n";
+var template = "\n    <form action=\"\" method=\"post\" class=\"form\">\n        <div class=\"form-control\">\n            <label class=\"el-4\" for=\"actual_name\">Name</label>\n            <input class=\"el-5\" type=\"text\" name=\"actual_name\" id=\"actual_name\">\n            <input name=\"name\" type=\"text\" id=\"name\" class=\"hidden\">\n        </div>\n        <div class=\"form-control\">\n            <label class=\"el-4\" for=\"email\">Email</label>\n            <input class=\"el-5\" type=\"text\" name=\"email\" id=\"email\">\n        </div>\n        <div class=\"form-control\">\n            <label class=\"el-4\" for=\"contact-no\">Contact number</label>\n            <input class=\"el-5\" type=\"contact-no\" id=\"contact-no\">\n        </div>\n        <div class=\"form-control\">\n            <label class=\"el-4\" for=\"comments\">Comments</label>\n            <textarea class=\"el-5\" name=\"comments\" id=\"comments\" rows=\"5\"></textarea>\n        </div>\n        <div class=\"form-control\">\n            <div class=\"el-4 mobile-hidden\"></div>\n            <div class=\"el-5\">\n                <button class=\"submit\">Submit</button>\n            </div>\n        </div>\n    </form>\n";
 
 var appendForm = function appendForm() {
   var wrapper = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.form-wrapper');
   wrapper.innerHTML = template;
   var form = wrapper.querySelector('.form');
-  form.setAttribute('action', "".concat(_global__WEBPACK_IMPORTED_MODULE_0__["REMOTE_SERVER"]).concat(_global__WEBPACK_IMPORTED_MODULE_0__["REMOTE_PATH"], "/includes/mailer.php"));
+  _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].addEventListener('click', function (event) {
+    event.preventDefault();
+
+    if (event.target.classList.contains('submit')) {
+      form.setAttribute('action', "".concat(_global__WEBPACK_IMPORTED_MODULE_0__["REMOTE_SERVER"]).concat(_global__WEBPACK_IMPORTED_MODULE_0__["REMOTE_PATH"], "/includes/mailer.php"));
+      form.submit();
+    }
+  });
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (appendForm);
