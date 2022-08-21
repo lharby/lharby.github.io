@@ -6,10 +6,10 @@ https://slackwise.org.uk
 */
 
 /* obfuscate email */
-import { EMAIL_ADDRESS } from "./global";
+import { DOM, EMAIL_ADDRESS } from './global';
 
-const obfuscateEmail = () => {          
-    const trigger = document.querySelectorAll('.email-address');
+const obfuscateEmail = () => {
+    const trigger = DOM.querySelectorAll('.email-address');
     trigger.forEach(item => {
         item.addEventListener('click', () => {
             item.setAttribute('href', `mailto:${EMAIL_ADDRESS}`);

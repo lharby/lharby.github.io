@@ -9,7 +9,7 @@ https://slackwise.org.uk
 import { DOM } from "./global";
 
 const toggleContrast = () => {
-    const trigger = document.querySelector('.toggle-contrast');
+    const trigger = DOM.querySelector('.toggle-contrast');
     const contrastClass = 'high-contrast';
     const contrastIsSet = window.localStorage.getItem(contrastClass);
     contrastIsSet === '1'

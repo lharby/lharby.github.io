@@ -5,15 +5,17 @@ https://slackwise.org.uk
 2012 - present
 */
 
-/* navigation */ 
+/* navigation */
+import { DOM, BODY } from './global';
+
 const navigation = () => {
     const wrapper = 'nav-wrapper';
-    const target = document.querySelector(`.${wrapper}`);
-    const overlay = document.querySelector('.overlay');
-    const trigger = document.querySelectorAll('.menu__toggle');
+    const target = DOM.querySelector(`.${wrapper}`);
+    const overlay = DOM.querySelector('.overlay');
+    const trigger = DOM.querySelectorAll('.menu__toggle');
     const overlayOpenClass = 'overlay__open';
     const scrollLockClass = 'scroll-lock';
-    [...trigger].forEach(function(item) {
+    [...trigger].forEach(item, () => {
         item.addEventListener('click', event => {
             event.preventDefault();
             if (item.classList.contains('menu__toggle--close')) {
@@ -38,13 +40,13 @@ const navigation = () => {
 
     const openNavigation = () => {
         target.classList.add(`${wrapper}--open`);
-        document.body.classList.add(scrollLockClass);
+        BODY.classList.add(scrollLockClass);
         overlay.classList.add(overlayOpenClass);
     }
 
     const closeNavigation = () => {
         target.classList.remove(`${wrapper}--open`);
-        document.body.classList.remove(scrollLockClass);
+        BODY.classList.remove(scrollLockClass);
         overlay.classList.remove(overlayOpenClass);
     }
 }
