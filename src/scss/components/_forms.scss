@@ -10,7 +10,7 @@ https://slackwise.org.uk
     &-control {
         margin-bottom: 5rem;
         display: flex;
-        
+
         @include tablet($tablet-size) {
             flex-direction: column;
         }
@@ -32,12 +32,6 @@ https://slackwise.org.uk
 
         &:hover {
             background-color: $colour__white;
-        }
-    }
-
-    @include tablet($tablet-size) {
-        [class^='el'] {
-            @include emptyContent;
         }
     }
 }

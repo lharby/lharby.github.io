@@ -5,6 +5,14 @@ https://slackwise.org.uk
 2012 - present
 */
 
+.desktop-hidden {
+    display: none;
+}
+
+.desktop-visible {
+    display: block;
+}
+
 .el {
     &-1 {
         flex: 0 0 8.33333%;
@@ -72,5 +80,17 @@ https://slackwise.org.uk
         display: flex;
         flex: 0 0 100%;
         max-width: 100%;
+    }
+}
+
+@include mobile(0, $mobile-size) {
+    .mobile-hidden,
+    .mobile-visible {
+        display: block;
+    }
+
+    .desktop-hidden,
+    .desktop-visible {
+        display: none;
     }
 }

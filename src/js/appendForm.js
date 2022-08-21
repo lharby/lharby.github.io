@@ -6,7 +6,7 @@ https://slackwise.org.uk
 */
 
 /* append form */
-import { 
+import {
     DOM,
     REMOTE_SERVER,
     REMOTE_PATH
@@ -20,7 +20,7 @@ const template = `
         </div>
         <div class="form-control">
             <label class="el-4" for="email">Email</label>
-            <input class="el-5" type="text" name="email" id="email"> 
+            <input class="el-5" type="text" name="email" id="email">
         </div>
         <div class="form-control">
             <label class="el-4" for="contact-no">Contact number</label>
@@ -31,7 +31,7 @@ const template = `
             <textarea class="el-5" name="comments" id="comments" rows="5"></textarea>
         </div>
         <div class="form-control">
-            <div class="el-4"></div>
+            <div class="el-4 mobile-hidden"></div>
             <div class="el-5">
                 <button type="submit">Submit</button>
             </div>
