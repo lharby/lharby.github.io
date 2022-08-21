@@ -372,7 +372,6 @@ var appendForm = function appendForm() {
   wrapper.innerHTML = template;
   var form = wrapper.querySelector('.form');
   form.setAttribute('action', "".concat(_global__WEBPACK_IMPORTED_MODULE_0__["REMOTE_SERVER"]).concat(_global__WEBPACK_IMPORTED_MODULE_0__["REMOTE_PATH"], "/includes/mailer.php"));
-  console.log('REMOTE_SERVER: ', _global__WEBPACK_IMPORTED_MODULE_0__["REMOTE_SERVER"]);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (appendForm);

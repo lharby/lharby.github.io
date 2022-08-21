@@ -44,7 +44,6 @@ const appendForm = () => {
     wrapper.innerHTML = template;
     const form = wrapper.querySelector('.form');
     form.setAttribute('action', `${REMOTE_SERVER}${REMOTE_PATH}/includes/mailer.php`);
-    console.log('REMOTE_SERVER: ', REMOTE_SERVER);
 };
 
 export default appendForm;
