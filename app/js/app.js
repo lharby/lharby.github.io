@@ -94,11 +94,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_main_scss__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _js_global__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 /* harmony import */ var _js_navigation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
-/* harmony import */ var _js_indexPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
-/* harmony import */ var _js_date__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
-/* harmony import */ var _js_toggleContrast__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
-/* harmony import */ var _js_obfuscateEmail__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7);
-/* harmony import */ var _js_appendForm__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(8);
+/* harmony import */ var _js_indexPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
+/* harmony import */ var _js_date__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
+/* harmony import */ var _js_toggleContrast__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7);
+/* harmony import */ var _js_obfuscateEmail__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8);
+/* harmony import */ var _js_appendForm__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(9);
 
 
 
@@ -165,7 +165,7 @@ var REMOTE_PATH = "studio-malarkey";
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -243,165 +243,6 @@ var navigation = function navigation() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/*
-Luke Harby
-slackwise LTD
-https://slackwise.org.uk
-2012 - present
-*/
-
-/* index page */
-
-
-var indexPage = function indexPage() {
-  var url = document.location.pathname.split('/');
-  var primaryDir = url[1];
-  var secondaryDir = url[2];
-  var tertiaryDir = url[3];
-
-  if (!primaryDir) {
-    _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.add('index');
-  } else if (tertiaryDir) {
-    _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.add(primaryDir, secondaryDir, tertiaryDir);
-  } else if (secondaryDir) {
-    _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.add(primaryDir, secondaryDir);
-  } else {
-    _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.add(primaryDir);
-  }
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (indexPage);
-
-/***/ }),
-/* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/*
-Luke Harby
-slackwise LTD
-https://slackwise.org.uk
-2012 - present
-*/
-
-/* date function */
-
-
-var date = function date() {
-  var dateWrapper = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.date-wrapper');
-  var getYear = new Date().getFullYear();
-  dateWrapper.textContent = getYear;
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (date);
-
-/***/ }),
-/* 6 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/*
-Luke Harby
-slackwise LTD
-https://slackwise.org.uk
-2012 - present
-*/
-
-/* toggle contrast function */
-
-
-var toggleContrast = function toggleContrast() {
-  var trigger = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.toggle-contrast');
-  var contrastClass = 'high-contrast';
-  var contrastIsSet = window.localStorage.getItem(contrastClass);
-  contrastIsSet === '1' ? _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.add(contrastClass) : null;
-  trigger.addEventListener('click', function (event) {
-    event.preventDefault();
-
-    if (_global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.contains(contrastClass)) {
-      _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.remove(contrastClass);
-      window.localStorage.removeItem(contrastClass);
-    } else {
-      _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.add(contrastClass);
-      window.localStorage.setItem(contrastClass, '1');
-    }
-  });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (toggleContrast);
-
-/***/ }),
-/* 7 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/*
-Luke Harby
-slackwise LTD
-https://slackwise.org.uk
-2012 - present
-*/
-
-/* obfuscate email */
-
-
-var obfuscateEmail = function obfuscateEmail() {
-  var trigger = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelectorAll('.email-address');
-  trigger.forEach(function (item) {
-    item.addEventListener('click', function () {
-      item.setAttribute('href', "mailto:".concat(_global__WEBPACK_IMPORTED_MODULE_0__["EMAIL_ADDRESS"]));
-    });
-  });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (obfuscateEmail);
-
-/***/ }),
-/* 8 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/*
-Luke Harby
-slackwise LTD
-https://slackwise.org.uk
-2012 - present
-*/
-
-/* append form */
-
-var template = "\n    <form action=\"\" method=\"post\" class=\"form\">\n        <div class=\"form-control\">\n            <label class=\"el-4\" for=\"actual_name\">Name</label>\n            <input class=\"el-5\" type=\"text\" name=\"actual_name\" id=\"actual_name\">\n            <input name=\"name\" type=\"text\" id=\"name\" class=\"hidden\">\n        </div>\n        <div class=\"form-control\">\n            <label class=\"el-4\" for=\"email\">Email</label>\n            <input class=\"el-5\" type=\"text\" name=\"email\" id=\"email\">\n        </div>\n        <div class=\"form-control\">\n            <label class=\"el-4\" for=\"contact-no\">Contact number</label>\n            <input class=\"el-5\" type=\"contact-no\" id=\"contact-no\">\n        </div>\n        <div class=\"form-control\">\n            <label class=\"el-4\" for=\"comments\">Comments</label>\n            <textarea class=\"el-5\" name=\"comments\" id=\"comments\" rows=\"5\"></textarea>\n        </div>\n        <div class=\"form-control\">\n            <div class=\"el-4 mobile-hidden\"></div>\n            <div class=\"el-5\">\n                <button class=\"submit\">Submit</button>\n            </div>\n        </div>\n    </form>\n";
-
-var appendForm = function appendForm() {
-  var wrapper = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.form-wrapper');
-  wrapper.innerHTML = template;
-  var form = wrapper.querySelector('.form');
-  _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].addEventListener('click', function (event) {
-    if (event.target.classList.contains('submit')) {
-      event.preventDefault();
-      form.setAttribute('action', "".concat(_global__WEBPACK_IMPORTED_MODULE_0__["REMOTE_SERVER"]).concat(_global__WEBPACK_IMPORTED_MODULE_0__["REMOTE_PATH"], "/includes/mailer.php"));
-      form.submit();
-    }
-  });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (appendForm);
-
-/***/ }),
-/* 9 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isElement", function() { return isElement; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getElementScroll", function() { return getElementScroll; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isScrollLocked", function() { return isScrollLocked; });
@@ -473,10 +314,10 @@ function enableScrollLock() {
     window.scrollTo(scrollPosition.left, 0);
     var htmlTag = document.documentElement;
     htmlTag.classList.add(className);
-    htmlTag.style.marginTop = "".concat(-scrollPosition.top, "px");
-    htmlTag.style.position = "fixed";
-    htmlTag.style.overflow = "hidden";
-    htmlTag.style.width = "100%"; // Trigger event on target. You can listen for it using document.body.addEventListener("akqa.scrollLock:enable", callbackHere)
+    htmlTag.style.marginTop = "".concat(-scrollPosition.top, "px"); //    htmlTag.style.position = "fixed";
+    //    htmlTag.style.overflow = "hidden";
+    //    htmlTag.style.width = "100%";
+    // Trigger event on target. You can listen for it using document.body.addEventListener("akqa.scrollLock:enable", callbackHere)
     // triggerCustomEvent(document.body, "akqa.scrollLock:enable");
     // Remember state
 
@@ -500,10 +341,10 @@ function disableScrollLock() {
     var scrollPosition = getElementScroll();
     var htmlTag = document.documentElement;
     htmlTag.classList.remove(className);
-    htmlTag.style.marginTop = "";
-    htmlTag.style.position = "";
-    htmlTag.style.overflow = "";
-    htmlTag.style.width = ""; // Set the scroll position to what it was before
+    htmlTag.style.marginTop = ""; //    htmlTag.style.position = "";
+    //    htmlTag.style.overflow = "";
+    //    htmlTag.style.width = "";
+    // Set the scroll position to what it was before
 
     window.scrollTo(scrollPosition.left, scrollTop); // Trigger event on target. You can listen for it using document.body.addEventListener("akqa.scrollLock:disable", callbackHere)
     // (document.body, "akqa.scrollLock:disable");
@@ -519,6 +360,165 @@ function disableScrollLock() {
 */
 
 var disable = disableScrollLock;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+/* index page */
+
+
+var indexPage = function indexPage() {
+  var url = document.location.pathname.split('/');
+  var primaryDir = url[1];
+  var secondaryDir = url[2];
+  var tertiaryDir = url[3];
+
+  if (!primaryDir) {
+    _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.add('index');
+  } else if (tertiaryDir) {
+    _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.add(primaryDir, secondaryDir, tertiaryDir);
+  } else if (secondaryDir) {
+    _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.add(primaryDir, secondaryDir);
+  } else {
+    _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.add(primaryDir);
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (indexPage);
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+/* date function */
+
+
+var date = function date() {
+  var dateWrapper = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.date-wrapper');
+  var getYear = new Date().getFullYear();
+  dateWrapper.textContent = getYear;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (date);
+
+/***/ }),
+/* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+/* toggle contrast function */
+
+
+var toggleContrast = function toggleContrast() {
+  var trigger = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.toggle-contrast');
+  var contrastClass = 'high-contrast';
+  var contrastIsSet = window.localStorage.getItem(contrastClass);
+  contrastIsSet === '1' ? _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.add(contrastClass) : null;
+  trigger.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    if (_global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.contains(contrastClass)) {
+      _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.remove(contrastClass);
+      window.localStorage.removeItem(contrastClass);
+    } else {
+      _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.add(contrastClass);
+      window.localStorage.setItem(contrastClass, '1');
+    }
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (toggleContrast);
+
+/***/ }),
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+/* obfuscate email */
+
+
+var obfuscateEmail = function obfuscateEmail() {
+  var trigger = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelectorAll('.email-address');
+  trigger.forEach(function (item) {
+    item.addEventListener('click', function () {
+      item.setAttribute('href', "mailto:".concat(_global__WEBPACK_IMPORTED_MODULE_0__["EMAIL_ADDRESS"]));
+    });
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (obfuscateEmail);
+
+/***/ }),
+/* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+/* append form */
+
+var template = "\n    <form action=\"\" method=\"post\" class=\"form\">\n        <div class=\"form-control\">\n            <label class=\"el-4\" for=\"actual_name\">Name</label>\n            <input class=\"el-5\" type=\"text\" name=\"actual_name\" id=\"actual_name\">\n            <input name=\"name\" type=\"text\" id=\"name\" class=\"hidden\">\n        </div>\n        <div class=\"form-control\">\n            <label class=\"el-4\" for=\"email\">Email</label>\n            <input class=\"el-5\" type=\"text\" name=\"email\" id=\"email\">\n        </div>\n        <div class=\"form-control\">\n            <label class=\"el-4\" for=\"contact-no\">Contact number</label>\n            <input class=\"el-5\" type=\"contact-no\" id=\"contact-no\">\n        </div>\n        <div class=\"form-control\">\n            <label class=\"el-4\" for=\"comments\">Comments</label>\n            <textarea class=\"el-5\" name=\"comments\" id=\"comments\" rows=\"5\"></textarea>\n        </div>\n        <div class=\"form-control\">\n            <div class=\"el-4 mobile-hidden\"></div>\n            <div class=\"el-5\">\n                <button class=\"submit\">Submit</button>\n            </div>\n        </div>\n    </form>\n";
+
+var appendForm = function appendForm() {
+  var wrapper = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.form-wrapper');
+  wrapper.innerHTML = template;
+  var form = wrapper.querySelector('.form');
+  _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].addEventListener('click', function (event) {
+    if (event.target.classList.contains('submit')) {
+      event.preventDefault();
+      form.setAttribute('action', "".concat(_global__WEBPACK_IMPORTED_MODULE_0__["REMOTE_SERVER"]).concat(_global__WEBPACK_IMPORTED_MODULE_0__["REMOTE_PATH"], "/includes/mailer.php"));
+      form.submit();
+    }
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (appendForm);
 
 /***/ })
 /******/ ]);

@@ -68,9 +68,9 @@ export function enableScrollLock() {
        const htmlTag = document.documentElement;
        htmlTag.classList.add(className);
        htmlTag.style.marginTop = `${-scrollPosition.top}px`;
-       htmlTag.style.position = "fixed";
-       htmlTag.style.overflow = "hidden";
-       htmlTag.style.width = "100%";
+    //    htmlTag.style.position = "fixed";
+    //    htmlTag.style.overflow = "hidden";
+    //    htmlTag.style.width = "100%";
 
        // Trigger event on target. You can listen for it using document.body.addEventListener("akqa.scrollLock:enable", callbackHere)
        // triggerCustomEvent(document.body, "akqa.scrollLock:enable");
@@ -98,9 +98,9 @@ export function disableScrollLock() {
        const htmlTag = document.documentElement;
        htmlTag.classList.remove(className);
        htmlTag.style.marginTop = "";
-       htmlTag.style.position = "";
-       htmlTag.style.overflow = "";
-       htmlTag.style.width = "";
+    //    htmlTag.style.position = "";
+    //    htmlTag.style.overflow = "";
+    //    htmlTag.style.width = "";
 
        // Set the scroll position to what it was before
        window.scrollTo(scrollPosition.left, scrollTop);
