@@ -50,6 +50,8 @@
 *
 * @type {boolean}
 */
+const className = "doc-scroll-lock";
+let scrollTop = 0;
 export let isScrollLocked = false;
 
 /**

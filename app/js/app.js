@@ -458,6 +458,8 @@ function getElementScroll() {
 * @type {boolean}
 */
 
+var className = "doc-scroll-lock";
+var scrollTop = 0;
 var isScrollLocked = false;
 /**
 * Enable the scroll lock.
