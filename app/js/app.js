@@ -165,6 +165,7 @@ var REMOTE_PATH = "studio-malarkey";
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9);
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -185,6 +186,7 @@ https://slackwise.org.uk
 */
 
 /* navigation */
+
 
 
 var navigation = function navigation() {
@@ -222,12 +224,14 @@ var navigation = function navigation() {
     target.classList.add("".concat(wrapper, "--open"));
     _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.add(scrollLockClass);
     overlay.classList.add(overlayOpenClass);
+    Object(_utils__WEBPACK_IMPORTED_MODULE_1__["enableScrollLock"])();
   };
 
   var closeNavigation = function closeNavigation() {
     target.classList.remove("".concat(wrapper, "--open"));
     _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(scrollLockClass);
     overlay.classList.remove(overlayOpenClass);
+    Object(_utils__WEBPACK_IMPORTED_MODULE_1__["disableScrollLock"])();
   };
 };
 
@@ -391,6 +395,128 @@ var appendForm = function appendForm() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (appendForm);
+
+/***/ }),
+/* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isElement", function() { return isElement; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getElementScroll", function() { return getElementScroll; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isScrollLocked", function() { return isScrollLocked; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "enableScrollLock", function() { return enableScrollLock; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "enable", function() { return enable; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "disableScrollLock", function() { return disableScrollLock; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "disable", function() { return disable; });
+/**
+ * A bunch of utilities to check whether or not a symbol fits certain criteria.
+ *
+ */
+
+/**
+ * Find out whether or not the given argument is an element that would react somewhat normally to DOM-manipulations.
+ *
+ * @since 3.7.0
+ * @param {*} element - The element to check.
+ * @returns {boolean} `true` if the given argument is an element (or document, or window), and `false` otherwise.
+ */
+function isElement(element) {
+  return element instanceof Element || element instanceof Document || element instanceof Window;
+}
+/**
+ * Get the current scroll values of the given element (or window). Will return an object containing
+ * "left" and "top" properties, which are set to the scroll values, or false if no compatible element
+ * was given.
+ *
+ * @param {Element|Window} [element=window]
+ * @returns {{ left: number, top: number } | boolean}
+ */
+
+function getElementScroll() {
+  var element = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : window;
+
+  if (isElement(element)) {
+    if (element instanceof Window) {
+      return {
+        left: element.pageXOffset || document.documentElement.scrollLeft,
+        top: element.pageYOffset || document.documentElement.scrollTop
+      };
+    } else {
+      return {
+        left: element.scrollX || element.scrollLeft,
+        top: element.scrollY || element.scrollTop
+      };
+    }
+  } else {
+    return false;
+  }
+}
+/*
+* Get the current state of the scroll lock. `true` if the scroll lock is enabled, otherwise `false`.
+*
+* @type {boolean}
+*/
+
+var isScrollLocked = false;
+/**
+* Enable the scroll lock.
+*/
+
+function enableScrollLock() {
+  if (!isScrollLocked) {
+    // Get scroll position
+    var scrollPosition = getElementScroll(); // Reset scroll position
+
+    window.scrollTo(scrollPosition.left, 0);
+    var htmlTag = document.documentElement;
+    htmlTag.classList.add(className);
+    htmlTag.style.marginTop = "".concat(-scrollPosition.top, "px");
+    htmlTag.style.position = "fixed";
+    htmlTag.style.overflow = "hidden";
+    htmlTag.style.width = "100%"; // Trigger event on target. You can listen for it using document.body.addEventListener("akqa.scrollLock:enable", callbackHere)
+    // triggerCustomEvent(document.body, "akqa.scrollLock:enable");
+    // Remember state
+
+    isScrollLocked = true;
+    scrollTop = scrollPosition.top;
+  }
+}
+/**
+* @type {function}
+* @ignore
+* @deprecated
+*/
+
+var enable = enableScrollLock;
+/**
+* Disable the scroll lock
+*/
+
+function disableScrollLock() {
+  if (isScrollLocked) {
+    var scrollPosition = getElementScroll();
+    var htmlTag = document.documentElement;
+    htmlTag.classList.remove(className);
+    htmlTag.style.marginTop = "";
+    htmlTag.style.position = "";
+    htmlTag.style.overflow = "";
+    htmlTag.style.width = ""; // Set the scroll position to what it was before
+
+    window.scrollTo(scrollPosition.left, scrollTop); // Trigger event on target. You can listen for it using document.body.addEventListener("akqa.scrollLock:disable", callbackHere)
+    // (document.body, "akqa.scrollLock:disable");
+    // Remember state
+
+    isScrollLocked = false;
+  }
+}
+/**
+* @type {function}
+* @ignore
+* @deprecated
+*/
+
+var disable = disableScrollLock;
 
 /***/ })
 /******/ ]);

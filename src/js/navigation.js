@@ -7,6 +7,7 @@ https://slackwise.org.uk
 
 /* navigation */
 import { DOM, BODY } from './global';
+import { enableScrollLock, disableScrollLock } from './utils';
 
 const navigation = () => {
     const wrapper = 'nav-wrapper';
@@ -42,12 +43,14 @@ const navigation = () => {
         target.classList.add(`${wrapper}--open`);
         BODY.classList.add(scrollLockClass);
         overlay.classList.add(overlayOpenClass);
+        enableScrollLock();
     }
 
     const closeNavigation = () => {
         target.classList.remove(`${wrapper}--open`);
         BODY.classList.remove(scrollLockClass);
         overlay.classList.remove(overlayOpenClass);
+        disableScrollLock();
     }
 }
 
