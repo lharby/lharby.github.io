@@ -67,7 +67,8 @@ https://slackwise.org.uk
     .nav-wrapper {
         @include hover($animation__type-default, 300ms, $animation__ease-default);
         position: fixed;
-        right:0;
+        right: 0;
+        top: 0;
         transform: translateX(200%);
         height: 100%;
         width: 50%;
