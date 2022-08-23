@@ -38,6 +38,8 @@ html {
         body {
             &.scroll-lock {
                 .logo {
+                    filter: blur(1px);
+
                     @include mobile(0, $mobile-size) {
                         filter: none;
                     }
