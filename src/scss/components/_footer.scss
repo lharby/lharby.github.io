@@ -14,7 +14,7 @@ https://slackwise.org.uk
     justify-content: space-between;
 
     @include mobile(0, $mobile-size) {
-        flex-direction: column;
+        flex-direction: column-reverse;
 
         ul {
             margin-bottom: $default__spacer * 2;
@@ -70,4 +70,8 @@ https://slackwise.org.uk
     align-self: end;
     font-size: 1rem;
     margin-bottom: - $default__spacer;
+
+    @include mobile(0, $mobile-size) {
+        position: absolute;
+    }
 }
