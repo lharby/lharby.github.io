@@ -19,7 +19,7 @@ const navigation = () => {
     [...trigger].forEach(item => {
         item.addEventListener('click', event => {
             event.preventDefault();
-            if (item.classList.contains(`${trigger}--close`)) {
+            if (item.classList.contains('menu__toggle--close')) {
                 closeNavigation();
             } else {
                 openNavigation();

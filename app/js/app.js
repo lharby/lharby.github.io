@@ -201,7 +201,7 @@ var navigation = function navigation() {
     item.addEventListener('click', function (event) {
       event.preventDefault();
 
-      if (item.classList.contains("".concat(trigger, "--close"))) {
+      if (item.classList.contains('menu__toggle--close')) {
         closeNavigation();
       } else {
         openNavigation();
