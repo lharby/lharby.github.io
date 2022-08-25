@@ -19,7 +19,7 @@ const navigation = () => {
     [...trigger].forEach(item => {
         item.addEventListener('click', event => {
             event.preventDefault();
-            if (item.classList.contains('menu__toggle--close')) {
+            if (item.classList.contains(`${trigger}--close`)) {
                 closeNavigation();
             } else {
                 openNavigation();
@@ -33,8 +33,8 @@ const navigation = () => {
         }
     });
 
-    window.addEventListener("keydown", event => {
-        if (event.key === "Escape" && overlay.classList.contains(overlayOpenClass)) {
+    window.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && overlay.classList.contains(overlayOpenClass)) {
             closeNavigation();
         }
     });

@@ -201,7 +201,7 @@ var navigation = function navigation() {
     item.addEventListener('click', function (event) {
       event.preventDefault();
 
-      if (item.classList.contains('menu__toggle--close')) {
+      if (item.classList.contains("".concat(trigger, "--close"))) {
         closeNavigation();
       } else {
         openNavigation();
@@ -214,8 +214,8 @@ var navigation = function navigation() {
       closeNavigation();
     }
   });
-  window.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && overlay.classList.contains(overlayOpenClass)) {
+  window.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && overlay.classList.contains(overlayOpenClass)) {
       closeNavigation();
     }
   });
