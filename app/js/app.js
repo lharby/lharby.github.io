@@ -95,12 +95,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_global__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 /* harmony import */ var _js_navigation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _js_indexPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
-/* harmony import */ var _js_indexPageContent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(10);
-/* harmony import */ var _js_date__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
-/* harmony import */ var _js_toggleContrast__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7);
-/* harmony import */ var _js_obfuscateEmail__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(8);
-/* harmony import */ var _js_appendForm__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(9);
-
+/* harmony import */ var _js_date__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
+/* harmony import */ var _js_toggleContrast__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7);
+/* harmony import */ var _js_obfuscateEmail__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8);
+/* harmony import */ var _js_appendForm__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(9);
 
 
 
@@ -114,13 +112,12 @@ __webpack_require__.r(__webpack_exports__);
 $(document).ready(function () {
   Object(_js_navigation__WEBPACK_IMPORTED_MODULE_2__["default"])();
   Object(_js_indexPage__WEBPACK_IMPORTED_MODULE_3__["default"])();
-  Object(_js_indexPageContent__WEBPACK_IMPORTED_MODULE_4__["default"])();
-  Object(_js_date__WEBPACK_IMPORTED_MODULE_5__["default"])();
-  Object(_js_toggleContrast__WEBPACK_IMPORTED_MODULE_6__["default"])();
-  Object(_js_obfuscateEmail__WEBPACK_IMPORTED_MODULE_7__["default"])();
+  Object(_js_date__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  Object(_js_toggleContrast__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  Object(_js_obfuscateEmail__WEBPACK_IMPORTED_MODULE_6__["default"])();
 
   if (_js_global__WEBPACK_IMPORTED_MODULE_1__["DOM"].classList.contains('contact')) {
-    Object(_js_appendForm__WEBPACK_IMPORTED_MODULE_8__["default"])();
+    Object(_js_appendForm__WEBPACK_IMPORTED_MODULE_7__["default"])();
   }
 });
 
@@ -522,31 +519,6 @@ var appendForm = function appendForm() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (appendForm);
-
-/***/ }),
-/* 10 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/*
-Luke Harby
-slackwise LTD
-https://slackwise.org.uk
-2012 - present
-*/
-
-/* index page content */
-var indexPageContent = function indexPageContent() {
-  fetch('/post/695199151221309440/').then(function (response) {
-    return response.text();
-  }).then(function (data) {
-    document.querySelector('#indexPage').innerHTML = data;
-    console.log("body ".concat(data));
-  });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (indexPageContent);
 
 /***/ })
 /******/ ]);
