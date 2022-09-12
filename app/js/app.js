@@ -440,19 +440,19 @@ https://slackwise.org.uk
 
 
 var toggleContrast = function toggleContrast() {
-  var trigger = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.toggle-contrast');
-  var contrastClass = 'high-contrast';
-  var contrastIsSet = window.localStorage.getItem(contrastClass);
-  contrastIsSet === '1' ? _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.add(contrastClass) : null;
-  trigger.addEventListener('click', function (event) {
+  var trigger = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector(".toggle-contrast");
+  var contrastClass = "high-contrast";
+  var lowContrast = window.localStorage.getItem(contrastClass);
+  lowContrast === "0" ? _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.remove(contrastClass) : null;
+  trigger.addEventListener("click", function (event) {
     event.preventDefault();
 
-    if (_global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.contains(contrastClass)) {
-      _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.remove(contrastClass);
+    if (!_global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.contains(contrastClass)) {
+      _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.add(contrastClass);
       window.localStorage.removeItem(contrastClass);
     } else {
-      _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.add(contrastClass);
-      window.localStorage.setItem(contrastClass, '1');
+      _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.remove(contrastClass);
+      window.localStorage.setItem(contrastClass, "0");
     }
   });
 };

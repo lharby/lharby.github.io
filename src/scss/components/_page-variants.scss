@@ -5,99 +5,97 @@ https://slackwise.org.uk
 2012 - present
 */
 
-
 html {
-    &.high-contrast {
-        body,
-        header,
-        .footer,
-        #contents {
-            background-color: $colour__white;
-            color: $colour__black;
+  &.high-contrast {
+    body,
+    header,
+    .footer,
+    #contents {
+      background-color: $colour__white;
+      color: $colour__black;
 
-            a {
-                color: initial;
+      a {
+        color: initial;
 
-                &:hover {
-                    color: transparentize($color: ($colour__black), $amount: 0.5);
-                }
-            }
+        &:hover {
+          color: transparentize($colour__black, 0.5);
         }
-
-        #contents {
-
-            a {
-                border-bottom: 1px solid $colour__black;
-
-                &:hover {
-                    border-bottom: 1px solid transparent;
-                }
-            }
-        }
-
-        body {
-            &.scroll-lock {
-                .logo {
-                    filter: blur(1px);
-
-                    @include mobile(0, $mobile-size) {
-                        filter: none;
-                    }
-                }
-            }
-        }
-
-        .nav-wrapper {
-            background-color: $colour__black;
-
-            a {
-                color: $colour__white;
-                background-color: transparent;
-
-                &:hover {
-                    color: transparentize($color: ($colour__white), $amount: 0.3);
-
-                    img {
-                        opacity: 0.7;
-                    }
-                }
-            }
-        }
-
-        .menu__toggle {
-            color: $colour__black;
-
-            &--close {
-                color: $colour__white !important;
-            }
-        }
-
-        #posts {
-            [href] {
-                border-bottom: 1px solid $colour__black !important;
-
-                &:hover {
-                    border-bottom: 1px solid transparent !important;
-                }
-            }
-        }
-
-        .toggle-contrast {
-            &:after {
-                content: "Reduce contrast";
-            }
-        }
-
-        .form {
-            input,
-            textarea {
-                border: 1px solid $colour__black;
-                padding: 0.5rem;
-            }
-
-            button {
-                border: 1px solid $colour__black;
-            }
-        }
+      }
     }
+
+    #contents {
+      a {
+        border-bottom: 1px solid $colour__black;
+
+        &:hover {
+          border-bottom: 1px solid transparent;
+        }
+      }
+    }
+
+    body {
+      &.scroll-lock {
+        .logo {
+          filter: blur(1px);
+
+          @include mobile(0, $mobile-size) {
+            filter: none;
+          }
+        }
+      }
+    }
+
+    .nav-wrapper {
+      background-color: $colour__black;
+
+      a {
+        color: $colour__white;
+        background-color: transparent;
+
+        &:hover {
+          color: transparentize($colour__white, 0.3);
+
+          img {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+
+    .menu__toggle {
+      color: $colour__black;
+
+      &--close {
+        color: $colour__white !important;
+      }
+    }
+
+    #posts {
+      [href] {
+        border-bottom: 1px solid $colour__black !important;
+
+        &:hover {
+          border-bottom: 1px solid transparent !important;
+        }
+      }
+    }
+
+    .toggle-contrast {
+      &:after {
+        content: "Colour version";
+      }
+    }
+
+    .form {
+      input,
+      textarea {
+        border: 1px solid $colour__black;
+        padding: 0.5rem;
+      }
+
+      button {
+        border: 1px solid $colour__black;
+      }
+    }
+  }
 }
