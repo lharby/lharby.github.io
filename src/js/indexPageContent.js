@@ -9,13 +9,11 @@ https://slackwise.org.uk
 const indexPageContent = () => {
     fetch('/post/695199151221309440/')
         .then(response => {
-            console.log(response);
-            const body = response.text();
-            document.querySelector('#posts .go ul').innerHTML = body;
-            console.log(`body ${body}`);
+            return response.text();
         })
-        .catch(err => {
-            console.log(err);
+        .then(data => {
+            document.querySelector('#posts .go ul').innerHTML = data;
+            console.log(`body ${data}`);
         });
 };
 
