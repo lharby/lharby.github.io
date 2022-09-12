@@ -540,10 +540,11 @@ https://slackwise.org.uk
 var indexPageContent = function indexPageContent() {
   fetch('/post/695199151221309440/').then(function (response) {
     console.log(response);
-  }).then(function (result) {
-    var body = result.text();
+    var body = response.text();
     document.querySelector('#posts .go ul').innerHTML = body;
     console.log("body ".concat(body));
+  })["catch"](function (err) {
+    console.log(err);
   });
 };
 

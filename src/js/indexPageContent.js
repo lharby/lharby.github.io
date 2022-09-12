@@ -10,11 +10,12 @@ const indexPageContent = () => {
     fetch('/post/695199151221309440/')
         .then(response => {
             console.log(response);
-        })
-        .then(result => {
-            const body = result.text();
+            const body = response.text();
             document.querySelector('#posts .go ul').innerHTML = body;
             console.log(`body ${body}`);
+        })
+        .catch(err => {
+            console.log(err);
         });
 };
 
