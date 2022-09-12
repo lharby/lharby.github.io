@@ -541,7 +541,7 @@ var indexPageContent = function indexPageContent() {
   fetch('/post/695199151221309440/').then(function (response) {
     return response.text();
   }).then(function (data) {
-    document.querySelector('#posts .go ul').innerHTML = data;
+    document.querySelector('#indexPage').innerHTML = data;
     console.log("body ".concat(data));
   });
 };

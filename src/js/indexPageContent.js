@@ -12,7 +12,7 @@ const indexPageContent = () => {
             return response.text();
         })
         .then(data => {
-            document.querySelector('#posts .go ul').innerHTML = data;
+            document.querySelector('#indexPage').innerHTML = data;
             console.log(`body ${data}`);
         });
 };
