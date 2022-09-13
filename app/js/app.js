@@ -115,7 +115,7 @@ $(document).ready(function () {
   Object(_js_navigation__WEBPACK_IMPORTED_MODULE_2__["default"])();
   Object(_js_indexPage__WEBPACK_IMPORTED_MODULE_3__["default"])();
   Object(_js_date__WEBPACK_IMPORTED_MODULE_4__["default"])();
-  Object(_js_getScrollbarWidth__WEBPACK_IMPORTED_MODULE_8__["getScrollbarWidth"])();
+  Object(_js_getScrollbarWidth__WEBPACK_IMPORTED_MODULE_8__["default"])();
   Object(_js_toggleContrast__WEBPACK_IMPORTED_MODULE_5__["default"])();
   Object(_js_obfuscateEmail__WEBPACK_IMPORTED_MODULE_6__["default"])();
 
@@ -529,7 +529,6 @@ var appendForm = function appendForm() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getScrollBarWidth", function() { return getScrollBarWidth; });
 /*
 Luke Harby
 slackwise LTD
@@ -541,6 +540,8 @@ https://slackwise.org.uk
 var getScrollBarWidth = function getScrollBarWidth() {
   return document.documentElement.style.setProperty('--scrollbar-width', window.innerWidth - document.documentElement.clientWidth + 'px');
 };
+
+/* harmony default export */ __webpack_exports__["default"] = (getScrollBarWidth);
 
 /***/ })
 /******/ ]);

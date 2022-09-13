@@ -6,9 +6,11 @@ https://slackwise.org.uk
 */
 
 /* scrollbar width function */
-export const getScrollBarWidth = () => {
+const getScrollBarWidth = () => {
     return document.documentElement.style.setProperty(
         '--scrollbar-width',
         window.innerWidth - document.documentElement.clientWidth + 'px'
     );
 };
+
+export default getScrollBarWidth;

@@ -7,7 +7,7 @@ import date from './js/date';
 import toggleContrast from './js/toggleContrast';
 import obfuscateEmail from './js/obfuscateEmail';
 import appendForm from './js/appendForm';
-import { getScrollbarWidth } from './js/getScrollbarWidth';
+import getScrollbarWidth from './js/getScrollbarWidth';
 
 import { DOM } from './js/global';
 
