@@ -27,9 +27,7 @@ body {
     }
 
     &.scroll-lock {
-        // position: fixed;
-        // overflow: hidden;
-        // width: 100%;
+        margin-right: var(--scrollbar-width) !important;
 
         .logo {
             filter: grayscale(1) brightness(0) invert(1) blur(1px);
@@ -43,12 +41,20 @@ body {
 
 a,
 button {
-    @include hover($animation__type-default, $animation__speed-default, $animation__ease-default);
+    @include hover(
+        $animation__type-default,
+        $animation__speed-default,
+        $animation__ease-default
+    );
     text-decoration: none;
     transition: all 200ms ease-out;
 
     &:hover {
-        @include hover($animation__type-default, $animation__speed-default, $animation__ease-default);
+        @include hover(
+            $animation__type-default,
+            $animation__speed-default,
+            $animation__ease-default
+        );
         text-decoration: none;
         color: $colour__pale-grey;
         transition: all 200ms ease-out;
@@ -61,7 +67,8 @@ button {
     }
 }
 
-ul, ol {
+ul,
+ol {
     margin: 0;
     padding: 0;
     list-style: none;

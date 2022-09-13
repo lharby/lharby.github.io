@@ -7,6 +7,7 @@ import date from './js/date';
 import toggleContrast from './js/toggleContrast';
 import obfuscateEmail from './js/obfuscateEmail';
 import appendForm from './js/appendForm';
+import { getScrollbarWidth } from './js/getScrollbarWidth';
 
 import { DOM } from './js/global';
 
@@ -15,6 +16,7 @@ $(document).ready(() => {
     navigation();
     indexPage();
     date();
+    getScrollbarWidth();
     toggleContrast();
     obfuscateEmail();
     if (DOM.classList.contains('contact')) {
