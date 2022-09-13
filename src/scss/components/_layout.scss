@@ -7,6 +7,10 @@ https://slackwise.org.uk
 
 html {
     background-color: transparent !important;
+
+    &.doc-scroll-lock {
+        margin-right: var(--scrollbar-width) !important;
+    }
 }
 
 ::selection {
@@ -27,8 +31,6 @@ body {
     }
 
     &.scroll-lock {
-        margin-right: var(--scrollbar-width) !important;
-
         .logo {
             filter: grayscale(1) brightness(0) invert(1) blur(1px);
 
