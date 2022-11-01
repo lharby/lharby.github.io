@@ -20,7 +20,8 @@ https://slackwise.org.uk
     }
 
     .post {
-        .image {
+        .image,
+        img {
             width: 50%;
 
             @include mobile(0, $mobile-size) {
