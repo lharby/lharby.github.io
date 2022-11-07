@@ -40,10 +40,6 @@ body {
         }
     }
 
-    &::-webkit-scrollbar {
-        width: 1.8em;
-    }
-
     &::-webkit-scrollbar-track {
         background-color: $colour__pale-grey;
     }

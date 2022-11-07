@@ -100,6 +100,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_obfuscateEmail__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8);
 /* harmony import */ var _js_appendForm__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(9);
 /* harmony import */ var _js_getScrollbarWidth__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(10);
+/* harmony import */ var _js_lazyLoad__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(11);
+
 
 
 
@@ -116,6 +118,7 @@ $(document).ready(function () {
   Object(_js_indexPage__WEBPACK_IMPORTED_MODULE_3__["default"])();
   Object(_js_date__WEBPACK_IMPORTED_MODULE_4__["default"])();
   Object(_js_getScrollbarWidth__WEBPACK_IMPORTED_MODULE_8__["default"])();
+  Object(_js_lazyLoad__WEBPACK_IMPORTED_MODULE_9__["setImageSource"])();
   Object(_js_toggleContrast__WEBPACK_IMPORTED_MODULE_5__["default"])();
   Object(_js_obfuscateEmail__WEBPACK_IMPORTED_MODULE_6__["default"])();
 
@@ -542,6 +545,44 @@ var getScrollBarWidth = function getScrollBarWidth() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (getScrollBarWidth);
+
+/***/ }),
+/* 11 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setImageSource", function() { return setImageSource; });
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+/* lazyload function */
+var setImageSource = function setImageSource() {
+  var images = document.querySelectorAll('#posts img');
+
+  _toConsumableArray(images).forEach(function (item) {
+    var newSrc = item.src.replace('500', '1280');
+    item.setAttribute('data-src', newSrc);
+  });
+};
+
+
 
 /***/ })
 /******/ ]);
