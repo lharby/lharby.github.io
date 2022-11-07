@@ -33,6 +33,10 @@ const lazyLoad = elements => {
             if (item.intersectionRatio > 0) {
                 item.target.src = item.target.dataset.src;
                 observer.unobserve(item.target);
+                console.log(`item: ${item}`);
+                console.log(
+                    `item.target.src: ${item.target.src}. item.target.dataset.src: ${item.target.dataset.src}`
+                );
             }
         });
     }

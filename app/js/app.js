@@ -601,6 +601,8 @@ var lazyLoad = function lazyLoad(elements) {
       if (item.intersectionRatio > 0) {
         item.target.src = item.target.dataset.src;
         observer.unobserve(item.target);
+        console.log("item: ".concat(item));
+        console.log("item.target.src: ".concat(item.target.src, ". item.target.dataset.src: ").concat(item.target.dataset.src));
       }
     });
   }
