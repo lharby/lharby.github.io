@@ -28,9 +28,9 @@ const options = {
 };
 
 const lazyLoad = elements => {
-    elements.forEach(image => {
-        if (image.intersectionRatio > 0) {
-            image.target.src = image.target.dataset.src;
+    elements.forEach(item => {
+        if (item.intersectionRatio > 0) {
+            item.target.src = item.target.dataset.src;
             observer.unobserve(item.target);
         }
     });

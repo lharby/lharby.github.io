@@ -596,9 +596,9 @@ var options = {
 };
 
 var lazyLoad = function lazyLoad(elements) {
-  elements.forEach(function (image) {
-    if (image.intersectionRatio > 0) {
-      image.target.src = image.target.dataset.src;
+  elements.forEach(function (item) {
+    if (item.intersectionRatio > 0) {
+      item.target.src = item.target.dataset.src;
       observer.unobserve(item.target);
     }
   });
