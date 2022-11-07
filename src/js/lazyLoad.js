@@ -22,10 +22,12 @@ const setImageSource = () => {
     observeImages();
 };
 
-let observer = new IntersectionObserver(lazyLoad, {
-    rootMargin: '100px',
+const options = {
+    rootMargin: '1px',
     threshold: 1.0,
-});
+};
+
+const observer = new IntersectionObserver(lazyLoad, options);
 
 const lazyLoad = elements => {
     elements.forEach(image => {

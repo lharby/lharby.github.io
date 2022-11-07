@@ -590,10 +590,11 @@ var setImageSource = function setImageSource() {
   observeImages();
 };
 
-var observer = new IntersectionObserver(lazyLoad, {
-  rootMargin: '100px',
+var options = {
+  rootMargin: '1px',
   threshold: 1.0
-});
+};
+var observer = new IntersectionObserver(lazyLoad, options);
 
 var lazyLoad = function lazyLoad(elements) {
   elements.forEach(function (image) {
