@@ -573,15 +573,38 @@ https://slackwise.org.uk
 */
 
 /* lazyload function */
-var setImageSource = function setImageSource() {
-  var images = document.querySelectorAll('#posts img');
+var images = document.querySelectorAll('#posts img');
 
+var observeImages = function observeImages() {
+  images.forEach(function (img) {
+    observer.observe(img);
+  });
+};
+
+var setImageSource = function setImageSource() {
   _toConsumableArray(images).forEach(function (item) {
     var newSrc = item.src.replace('500', '1280');
     item.setAttribute('data-src', newSrc);
   });
+
+  observeImages();
 };
 
+var observer = new IntersectionObserver(lazyLoad, {
+  rootMargin: '100px',
+  threshold: 1.0
+});
+
+var lazyLoad = function lazyLoad(elements) {
+  elements.forEach(function (image) {
+    if (image.intersectionRatio > 0) {
+      image.target.src = image.target.dataset.src;
+      observer.unobserve(item.target);
+    }
+  });
+};
+
+lazyLoad(images);
 
 
 /***/ })

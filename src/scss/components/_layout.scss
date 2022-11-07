@@ -40,6 +40,10 @@ body {
         }
     }
 
+    &::-webkit-scrollbar {
+        width: var(--scrollbar-width);
+    }
+
     &::-webkit-scrollbar-track {
         background-color: $colour__pale-grey;
     }
