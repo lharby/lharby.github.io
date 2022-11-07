@@ -15,7 +15,7 @@ const observeImages = () => {
 };
 
 const setImageSource = () => {
-    [...images].forEach(item => {
+    images.forEach(item => {
         const newSrc = item.src.replace('500', '1280');
         item.setAttribute('data-src', newSrc);
     });
@@ -32,22 +32,14 @@ const lazyLoad = elements => {
         elements.forEach(item => {
             if (item.intersectionRatio > 0) {
                 item.target.src = item.target.dataset.src;
+                item.target.classList.add('loaded');
                 observer.unobserve(item.target);
-                console.log(`item: ${item}`);
-                console.log(
-                    `item.target.src: ${item.target.src}. item.target.dataset.src: ${item.target.dataset.src}`
-                );
+                console.log(`item.target: ${item.target}.`);
             }
         });
     }
 };
 
 const observer = new IntersectionObserver(lazyLoad, options);
-
-lazyLoad(images);
-
-document.addEventListener('scroll', () => {
-    observeImages();
-});
 
 export { setImageSource };
