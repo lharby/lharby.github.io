@@ -22,7 +22,7 @@ const setImageSource = () => {
     observeImages();
 };
 
-const observer = new IntersectionObserver(lazyLoad, {
+let observer = new IntersectionObserver(lazyLoad, {
     rootMargin: '100px',
     threshold: 1.0,
 });
