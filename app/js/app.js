@@ -594,7 +594,6 @@ var options = {
   rootMargin: '1px',
   threshold: 1.0
 };
-var observer = new IntersectionObserver(lazyLoad, options);
 
 var lazyLoad = function lazyLoad(elements) {
   elements.forEach(function (image) {
@@ -605,6 +604,7 @@ var lazyLoad = function lazyLoad(elements) {
   });
 };
 
+var observer = new IntersectionObserver(lazyLoad, options);
 lazyLoad(images);
 
 

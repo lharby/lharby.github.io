@@ -27,8 +27,6 @@ const options = {
     threshold: 1.0,
 };
 
-const observer = new IntersectionObserver(lazyLoad, options);
-
 const lazyLoad = elements => {
     elements.forEach(image => {
         if (image.intersectionRatio > 0) {
@@ -37,6 +35,8 @@ const lazyLoad = elements => {
         }
     });
 };
+
+const observer = new IntersectionObserver(lazyLoad, options);
 
 lazyLoad(images);
 
