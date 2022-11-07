@@ -596,16 +596,21 @@ var options = {
 };
 
 var lazyLoad = function lazyLoad(elements) {
-  elements.forEach(function (item) {
-    if (item.intersectionRatio > 0) {
-      item.target.src = item.target.dataset.src;
-      observer.unobserve(item.target);
-    }
-  });
+  if (elements.length) {
+    elements.forEach(function (item) {
+      if (item.intersectionRatio > 0) {
+        item.target.src = item.target.dataset.src;
+        observer.unobserve(item.target);
+      }
+    });
+  }
 };
 
 var observer = new IntersectionObserver(lazyLoad, options);
 lazyLoad(images);
+document.addEventListener('scroll', function () {
+  lazyLoad(images);
+});
 
 
 /***/ })

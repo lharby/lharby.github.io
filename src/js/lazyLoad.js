@@ -28,16 +28,22 @@ const options = {
 };
 
 const lazyLoad = elements => {
-    elements.forEach(item => {
-        if (item.intersectionRatio > 0) {
-            item.target.src = item.target.dataset.src;
-            observer.unobserve(item.target);
-        }
-    });
+    if (elements.length) {
+        elements.forEach(item => {
+            if (item.intersectionRatio > 0) {
+                item.target.src = item.target.dataset.src;
+                observer.unobserve(item.target);
+            }
+        });
+    }
 };
 
 const observer = new IntersectionObserver(lazyLoad, options);
 
 lazyLoad(images);
+
+document.addEventListener('scroll', () => {
+    lazyLoad(images);
+});
 
 export { setImageSource };
