@@ -21,7 +21,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-color: $colour__orange;
+    background-color: $colour__orange-background;
     color: $colour__white;
     font-family: $primary-font;
     font-size: 3.25em;
@@ -38,6 +38,19 @@ body {
                 filter: none;
             }
         }
+    }
+
+    &::-webkit-scrollbar {
+        width: 1.8em;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $colour__pale-grey;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $colour__pink;
+        outline: none;
     }
 }
 

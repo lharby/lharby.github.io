@@ -14,7 +14,7 @@ https://slackwise.org.uk
         height: 10rem;
         position: fixed;
         z-index: 1;
-        background-color: $colour__orange;
+        background-color: $colour__orange-background;
         width: 100%;
 
         @include mobile(0, $mobile-size) {
@@ -58,14 +58,18 @@ https://slackwise.org.uk
         background: none;
 
         &--close {
-            color:  $colour__white !important;
+            color: $colour__white !important;
             font-size: 4rem;
             top: 0.5rem;
         }
     }
 
     .nav-wrapper {
-        @include hover($animation__type-default, 300ms, $animation__ease-default);
+        @include hover(
+            $animation__type-default,
+            300ms,
+            $animation__ease-default
+        );
         position: fixed;
         right: 0;
         top: 0;
@@ -78,7 +82,11 @@ https://slackwise.org.uk
         overflow-y: auto;
 
         &--open {
-            @include hover($animation__type-default, 300ms, $animation__ease-default);
+            @include hover(
+                $animation__type-default,
+                300ms,
+                $animation__ease-default
+            );
             transform: translateX(0%);
         }
 
