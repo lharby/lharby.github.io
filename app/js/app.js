@@ -609,7 +609,7 @@ var lazyLoad = function lazyLoad(elements) {
 var observer = new IntersectionObserver(lazyLoad, options);
 lazyLoad(images);
 document.addEventListener('scroll', function () {
-  lazyLoad(images);
+  observeImages();
 });
 
 

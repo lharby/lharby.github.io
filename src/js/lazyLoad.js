@@ -43,7 +43,7 @@ const observer = new IntersectionObserver(lazyLoad, options);
 lazyLoad(images);
 
 document.addEventListener('scroll', () => {
-    lazyLoad(images);
+    observeImages();
 });
 
 export { setImageSource };
