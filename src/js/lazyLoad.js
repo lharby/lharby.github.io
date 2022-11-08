@@ -24,7 +24,7 @@ const setImageSource = () => {
 
 const options = {
     rootMargin: '1px',
-    threshold: 1.0,
+    threshold: 0.1,
 };
 
 const lazyLoad = elements => {

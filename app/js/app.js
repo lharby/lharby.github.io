@@ -579,7 +579,7 @@ var setImageSource = function setImageSource() {
 
 var options = {
   rootMargin: '1px',
-  threshold: 1.0
+  threshold: 0.1
 };
 
 var lazyLoad = function lazyLoad(elements) {
