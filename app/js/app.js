@@ -129,7 +129,7 @@ $(document).ready(function () {
   }
 
   if (_js_global__WEBPACK_IMPORTED_MODULE_1__["DOM"].classList.contains('high-contrast')) {
-    Object(_js_randomColours__WEBPACK_IMPORTED_MODULE_10__["setRandomColour"])();
+    setTimeout(_js_randomColours__WEBPACK_IMPORTED_MODULE_10__["setRandomColour"], 100);
   }
 });
 

@@ -26,6 +26,6 @@ $(document).ready(() => {
         appendForm();
     }
     if (DOM.classList.contains('high-contrast')) {
-        setRandomColour();
+        setTimeout(setRandomColour, 100);
     }
 });
