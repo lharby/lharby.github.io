@@ -24,7 +24,7 @@ https://slackwise.org.uk
         img {
             width: 50%;
 
-            @include mobile(0, $mobile-size) {
+            @include tablet($tablet-size) {
                 width: 100%;
             }
         }
