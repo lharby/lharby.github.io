@@ -9,6 +9,7 @@ import obfuscateEmail from './js/obfuscateEmail';
 import appendForm from './js/appendForm';
 import getScrollbarWidth from './js/getScrollbarWidth';
 import { setImageSource } from './js/lazyLoad';
+import { setRandomColour } from './js/randomColours';
 
 import { DOM } from './js/global';
 
@@ -23,5 +24,8 @@ $(document).ready(() => {
     obfuscateEmail();
     if (DOM.classList.contains('contact')) {
         appendForm();
+    }
+    if (DOM.classList.contains('high-contrast')) {
+        setRandomColour();
     }
 });

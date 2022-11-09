@@ -5,10 +5,14 @@ https://slackwise.org.uk
 2012 - present
 */
 
+:root {
+    --selection-background: $color__black;
+}
+
 .hidden {
     display: none;
 }
 
-.tumblr iframe[class^=tmblr-iframe] {
+.tumblr iframe[class^='tmblr-iframe'] {
     display: none !important;
 }

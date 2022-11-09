@@ -101,6 +101,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_appendForm__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(9);
 /* harmony import */ var _js_getScrollbarWidth__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(10);
 /* harmony import */ var _js_lazyLoad__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(11);
+/* harmony import */ var _js_randomColours__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(12);
+
 
 
 
@@ -124,6 +126,10 @@ $(document).ready(function () {
 
   if (_js_global__WEBPACK_IMPORTED_MODULE_1__["DOM"].classList.contains('contact')) {
     Object(_js_appendForm__WEBPACK_IMPORTED_MODULE_7__["default"])();
+  }
+
+  if (_js_global__WEBPACK_IMPORTED_MODULE_1__["DOM"].classList.contains('high-contrast')) {
+    Object(_js_randomColours__WEBPACK_IMPORTED_MODULE_10__["setRandomColour"])();
   }
 });
 
@@ -596,6 +602,30 @@ var lazyLoad = function lazyLoad(elements) {
 };
 
 var observer = new IntersectionObserver(lazyLoad, options);
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setRandomColour", function() { return setRandomColour; });
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+/* random colours function */
+var colours = ['#ee4800', '#60c600', '#00ffff', '#ff7f00', '#ff6ccc', '#848382', '#d2dd26'];
+var rndColour = Math.floor(Math.random() * colours.length);
+
+var setRandomColour = function setRandomColour() {
+  document.documentElement.style.setProperty('--selection-background', colours[rndColour]);
+};
+
 
 
 /***/ })
