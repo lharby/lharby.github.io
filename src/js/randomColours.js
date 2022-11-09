@@ -27,9 +27,17 @@ const setRandomColour = () => {
     );
 };
 
-const attachClickEvent = () => {
-    const edge = DOM.querySelector('.edge');
-    edge.click();
+const attachEvent = () => {
+    const element = document.querySelector('.edge');
+    element.addEventListener('mouseover', function () {
+        console.log('Event triggered');
+    });
+    const event = new MouseEvent('mouseover', {
+        view: window,
+        bubbles: true,
+        cancelable: true,
+    });
+    element.dispatchEvent(event);
 };
 
-export { setRandomColour, attachClickEvent };
+export { setRandomColour, attachEvent };
