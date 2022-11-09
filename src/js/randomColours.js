@@ -6,6 +6,8 @@ https://slackwise.org.uk
 */
 
 /* random colours function */
+import { DOM } from './global';
+
 const colours = [
     '#ee4800',
     '#60c600',
@@ -25,4 +27,9 @@ const setRandomColour = () => {
     );
 };
 
-export { setRandomColour };
+const attachClickEvent = () => {
+    const edge = DOM.querySelector('.edge');
+    edge.click();
+};
+
+export { setRandomColour, attachClickEvent };

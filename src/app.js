@@ -9,7 +9,7 @@ import obfuscateEmail from './js/obfuscateEmail';
 import appendForm from './js/appendForm';
 import getScrollbarWidth from './js/getScrollbarWidth';
 import { setImageSource } from './js/lazyLoad';
-import { setRandomColour } from './js/randomColours';
+import { setRandomColour, attachClickEvent } from './js/randomColours';
 
 import { DOM } from './js/global';
 
@@ -26,6 +26,7 @@ $(document).ready(() => {
         appendForm();
     }
     if (DOM.classList.contains('high-contrast')) {
-        setTimeout(setRandomColour, 100);
+        setRandomColour();
+        setTimeout(attachClickEvent, 100);
     }
 });

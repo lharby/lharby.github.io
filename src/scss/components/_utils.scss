@@ -16,3 +16,11 @@ https://slackwise.org.uk
 .tumblr iframe[class^='tmblr-iframe'] {
     display: none !important;
 }
+
+.edge {
+    position: fixed;
+    top: 0;
+    right: -1.8rem;
+    bottom: 0;
+    width: 1.8rem;
+}

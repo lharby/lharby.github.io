@@ -129,7 +129,8 @@ $(document).ready(function () {
   }
 
   if (_js_global__WEBPACK_IMPORTED_MODULE_1__["DOM"].classList.contains('high-contrast')) {
-    setTimeout(_js_randomColours__WEBPACK_IMPORTED_MODULE_10__["setRandomColour"], 100);
+    Object(_js_randomColours__WEBPACK_IMPORTED_MODULE_10__["setRandomColour"])();
+    setTimeout(_js_randomColours__WEBPACK_IMPORTED_MODULE_10__["attachClickEvent"], 100);
   }
 });
 
@@ -611,6 +612,8 @@ var observer = new IntersectionObserver(lazyLoad, options);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setRandomColour", function() { return setRandomColour; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "attachClickEvent", function() { return attachClickEvent; });
+/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /*
 Luke Harby
 slackwise LTD
@@ -619,11 +622,17 @@ https://slackwise.org.uk
 */
 
 /* random colours function */
+
 var colours = ['#ee4800', '#60c600', '#00ffff', '#ff7f00', '#ff6ccc', '#848382', '#d2dd26'];
 var rndColour = Math.floor(Math.random() * colours.length);
 
 var setRandomColour = function setRandomColour() {
   document.documentElement.style.setProperty('--selection-background', colours[rndColour]);
+};
+
+var attachClickEvent = function attachClickEvent() {
+  var edge = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.edge');
+  edge.click();
 };
 
 
