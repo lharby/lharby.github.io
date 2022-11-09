@@ -632,7 +632,7 @@ var setRandomColour = function setRandomColour() {
 
 var attachClickEvent = function attachClickEvent() {
   var menuOpen = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.menu__toggle');
-  var menuClose = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector("".concat(menuOpen, "--close"));
+  var menuClose = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.menu__toggle--close');
   menuOpen.click();
   menuClose.click();
   console.log(menuOpen, menuClose);
