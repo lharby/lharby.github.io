@@ -34,7 +34,6 @@ const lazyLoad = elements => {
                 item.target.src = item.target.dataset.src;
                 item.target.classList.add('loaded');
                 observer.unobserve(item.target);
-                console.log(`item.target: ${item.target}.`);
             }
         });
     }
