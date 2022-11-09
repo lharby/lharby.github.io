@@ -43,6 +43,7 @@ html {
 
         body {
             @include scrollBar;
+            @include scrollBarColour;
 
             &.scroll-lock {
                 .logo {

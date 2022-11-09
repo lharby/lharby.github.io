@@ -20,7 +20,6 @@ html {
 
 body {
     @include scrollBar;
-    @include scrollBarColour;
     margin: 0;
     padding: 0;
     background-color: $colour__orange-background;
