@@ -57,6 +57,8 @@ html {
         }
 
         .nav-wrapper {
+            @include scrollBar;
+            @include scrollBarColour;
             background-color: $colour__black;
 
             a {
