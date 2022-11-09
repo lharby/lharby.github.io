@@ -27,17 +27,12 @@ const setRandomColour = () => {
     );
 };
 
-const attachEvent = () => {
-    const element = document.querySelector('.edge');
-    element.addEventListener('mouseover', function () {
-        console.log('Event triggered');
-    });
-    const event = new MouseEvent('mouseover', {
-        view: window,
-        bubbles: true,
-        cancelable: true,
-    });
-    element.dispatchEvent(event);
+const attachClickEvent = () => {
+    const menuOpen = DOM.querySelector('.menu__toggle');
+    const menuClose = DOM.querySelector(`${menuOpen}--close`);
+    menuOpen.click();
+    menuClose.click();
+    console.log(menuOpen, menuClose);
 };
 
-export { setRandomColour, attachEvent };
+export { setRandomColour, attachClickEvent };

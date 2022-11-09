@@ -130,7 +130,7 @@ $(document).ready(function () {
 
   if (_js_global__WEBPACK_IMPORTED_MODULE_1__["DOM"].classList.contains('high-contrast')) {
     Object(_js_randomColours__WEBPACK_IMPORTED_MODULE_10__["setRandomColour"])();
-    setTimeout(_js_randomColours__WEBPACK_IMPORTED_MODULE_10__["attachEvent"], 100);
+    setTimeout(_js_randomColours__WEBPACK_IMPORTED_MODULE_10__["attachClickEvent"], 100);
   }
 });
 
@@ -612,7 +612,7 @@ var observer = new IntersectionObserver(lazyLoad, options);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setRandomColour", function() { return setRandomColour; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "attachEvent", function() { return attachEvent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "attachClickEvent", function() { return attachClickEvent; });
 /* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /*
 Luke Harby
@@ -630,17 +630,12 @@ var setRandomColour = function setRandomColour() {
   document.documentElement.style.setProperty('--selection-background', colours[rndColour]);
 };
 
-var attachEvent = function attachEvent() {
-  var element = document.querySelector('.edge');
-  element.addEventListener('mouseover', function () {
-    console.log('Event triggered');
-  });
-  var event = new MouseEvent('mouseover', {
-    view: window,
-    bubbles: true,
-    cancelable: true
-  });
-  element.dispatchEvent(event);
+var attachClickEvent = function attachClickEvent() {
+  var menuOpen = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.menu__toggle');
+  var menuClose = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector("".concat(menuOpen, "--close"));
+  menuOpen.click();
+  menuClose.click();
+  console.log(menuOpen, menuClose);
 };
 
 
