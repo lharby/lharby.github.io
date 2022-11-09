@@ -132,6 +132,8 @@ $(document).ready(function () {
     Object(_js_randomColours__WEBPACK_IMPORTED_MODULE_10__["setRandomColour"])();
     setTimeout(_js_randomColours__WEBPACK_IMPORTED_MODULE_10__["attachClickEvent"], 100);
   }
+
+  console.log("isDesktop: ".concat(_js_global__WEBPACK_IMPORTED_MODULE_1__["site"].isDesktop, ". isTablet: ").concat(_js_global__WEBPACK_IMPORTED_MODULE_1__["site"].isTablet, ". isMobile: ").concat(_js_global__WEBPACK_IMPORTED_MODULE_1__["site"].isMobile));
 });
 
 /***/ }),
@@ -153,6 +155,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOTE_DOMAIN", function() { return REMOTE_DOMAIN; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOTE_SERVER", function() { return REMOTE_SERVER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOTE_PATH", function() { return REMOTE_PATH; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "site", function() { return site; });
 /*
 Luke Harby
 slackwise LTD
@@ -169,6 +172,17 @@ var EMAIL_ADDRESS = "studiomalarkeyuk@gmail.com";
 var REMOTE_DOMAIN = "https://lharby.github.io/";
 var REMOTE_SERVER = "https://slackwise.org.uk/sites/";
 var REMOTE_PATH = "studio-malarkey";
+var site = {
+  width: {
+    small: 480,
+    medium: 768,
+    large: 992
+  },
+  isMobile: false,
+  isTablet: false,
+  isDesktop: false,
+  winWidth: $(window).width()
+};
 
 
 /***/ }),
@@ -263,6 +277,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "enable", function() { return enable; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "disableScrollLock", function() { return disableScrollLock; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "disable", function() { return disable; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "siteResponsiveness", function() { return siteResponsiveness; });
+/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+
 /**
  * A bunch of utilities to check whether or not a symbol fits certain criteria.
  *
@@ -275,6 +292,7 @@ __webpack_require__.r(__webpack_exports__);
  * @param {*} element - The element to check.
  * @returns {boolean} `true` if the given argument is an element (or document, or window), and `false` otherwise.
  */
+
 function isElement(element) {
   return element instanceof Element || element instanceof Document || element instanceof Window;
 }
@@ -307,17 +325,17 @@ function getElementScroll() {
   }
 }
 /*
-* Get the current state of the scroll lock. `true` if the scroll lock is enabled, otherwise `false`.
-*
-* @type {boolean}
-*/
+ * Get the current state of the scroll lock. `true` if the scroll lock is enabled, otherwise `false`.
+ *
+ * @type {boolean}
+ */
 
-var className = "doc-scroll-lock";
+var className = 'doc-scroll-lock';
 var scrollTop = 0;
 var isScrollLocked = false;
 /**
-* Enable the scroll lock.
-*/
+ * Enable the scroll lock.
+ */
 
 function enableScrollLock() {
   if (!isScrollLocked) {
@@ -328,9 +346,9 @@ function enableScrollLock() {
     var htmlTag = document.documentElement;
     htmlTag.classList.add(className);
     htmlTag.style.marginTop = "".concat(-scrollPosition.top, "px");
-    htmlTag.style.position = "fixed";
-    htmlTag.style.overflow = "hidden";
-    htmlTag.style.width = "100%"; // Trigger event on target. You can listen for it using document.body.addEventListener("akqa.scrollLock:enable", callbackHere)
+    htmlTag.style.position = 'fixed';
+    htmlTag.style.overflow = 'hidden';
+    htmlTag.style.width = '100%'; // Trigger event on target. You can listen for it using document.body.addEventListener("akqa.scrollLock:enable", callbackHere)
     // triggerCustomEvent(document.body, "akqa.scrollLock:enable");
     // Remember state
 
@@ -339,25 +357,25 @@ function enableScrollLock() {
   }
 }
 /**
-* @type {function}
-* @ignore
-* @deprecated
-*/
+ * @type {function}
+ * @ignore
+ * @deprecated
+ */
 
 var enable = enableScrollLock;
 /**
-* Disable the scroll lock
-*/
+ * Disable the scroll lock
+ */
 
 function disableScrollLock() {
   if (isScrollLocked) {
     var scrollPosition = getElementScroll();
     var htmlTag = document.documentElement;
     htmlTag.classList.remove(className);
-    htmlTag.style.marginTop = "";
-    htmlTag.style.position = "";
-    htmlTag.style.overflow = "";
-    htmlTag.style.width = ""; // Set the scroll position to what it was before
+    htmlTag.style.marginTop = '';
+    htmlTag.style.position = '';
+    htmlTag.style.overflow = '';
+    htmlTag.style.width = ''; // Set the scroll position to what it was before
 
     window.scrollTo(scrollPosition.left, scrollTop); // Trigger event on target. You can listen for it using document.body.addEventListener("akqa.scrollLock:disable", callbackHere)
     // (document.body, "akqa.scrollLock:disable");
@@ -367,12 +385,33 @@ function disableScrollLock() {
   }
 }
 /**
-* @type {function}
-* @ignore
-* @deprecated
-*/
+ * @type {function}
+ * @ignore
+ * @deprecated
+ */
 
 var disable = disableScrollLock;
+/**
+ * Site some global responsive site settings.
+ *
+ * @param {Element|Window} [element=window]
+ * @returns {boolean}
+ */
+
+var siteResponsiveness = function siteResponsiveness() {
+  if (_global__WEBPACK_IMPORTED_MODULE_0__["site"].winWidth >= _global__WEBPACK_IMPORTED_MODULE_0__["site"].width.large) {
+    _global__WEBPACK_IMPORTED_MODULE_0__["site"].isDesktop = true;
+  } else if (_global__WEBPACK_IMPORTED_MODULE_0__["site"].winWidth <= _global__WEBPACK_IMPORTED_MODULE_0__["site"].width.large && _global__WEBPACK_IMPORTED_MODULE_0__["site"].winWidth >= _global__WEBPACK_IMPORTED_MODULE_0__["site"].width.medium) {
+    _global__WEBPACK_IMPORTED_MODULE_0__["site"].isTablet = true;
+  } else {
+    _global__WEBPACK_IMPORTED_MODULE_0__["site"].isMobile = true;
+  }
+};
+/**
+ * @type {function}
+ * @ignore
+ * @deprecated
+ */
 
 /***/ }),
 /* 5 */

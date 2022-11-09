@@ -11,7 +11,7 @@ import getScrollbarWidth from './js/getScrollbarWidth';
 import { setImageSource } from './js/lazyLoad';
 import { setRandomColour, attachClickEvent } from './js/randomColours';
 
-import { DOM } from './js/global';
+import { DOM, site } from './js/global';
 
 // global
 $(document).ready(() => {
@@ -29,4 +29,7 @@ $(document).ready(() => {
         setRandomColour();
         setTimeout(attachClickEvent, 100);
     }
+    console.log(
+        `isDesktop: ${site.isDesktop}. isTablet: ${site.isTablet}. isMobile: ${site.isMobile}`
+    );
 });
