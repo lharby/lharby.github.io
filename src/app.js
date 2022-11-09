@@ -21,9 +21,11 @@ $(document).ready(() => {
     indexPage();
     date();
     getScrollbarWidth();
-    setImageSource();
     toggleContrast();
     obfuscateEmail();
+    if (!site.isMobile) {
+        setImageSource();
+    }
     if (DOM.classList.contains('contact')) {
         appendForm();
     }
@@ -31,7 +33,4 @@ $(document).ready(() => {
         setRandomColour();
         setTimeout(attachClickEvent, 100);
     }
-    console.log(
-        `isDesktop: ${site.isDesktop}. isTablet: ${site.isTablet}. isMobile: ${site.isMobile}`
-    );
 });

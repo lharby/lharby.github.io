@@ -123,9 +123,12 @@ $(document).ready(function () {
   Object(_js_indexPage__WEBPACK_IMPORTED_MODULE_4__["default"])();
   Object(_js_date__WEBPACK_IMPORTED_MODULE_5__["default"])();
   Object(_js_getScrollbarWidth__WEBPACK_IMPORTED_MODULE_9__["default"])();
-  Object(_js_lazyLoad__WEBPACK_IMPORTED_MODULE_10__["setImageSource"])();
   Object(_js_toggleContrast__WEBPACK_IMPORTED_MODULE_6__["default"])();
   Object(_js_obfuscateEmail__WEBPACK_IMPORTED_MODULE_7__["default"])();
+
+  if (!_js_global__WEBPACK_IMPORTED_MODULE_1__["site"].isMobile) {
+    Object(_js_lazyLoad__WEBPACK_IMPORTED_MODULE_10__["setImageSource"])();
+  }
 
   if (_js_global__WEBPACK_IMPORTED_MODULE_1__["DOM"].classList.contains('contact')) {
     Object(_js_appendForm__WEBPACK_IMPORTED_MODULE_8__["default"])();
@@ -135,8 +138,6 @@ $(document).ready(function () {
     Object(_js_randomColours__WEBPACK_IMPORTED_MODULE_11__["setRandomColour"])();
     setTimeout(_js_randomColours__WEBPACK_IMPORTED_MODULE_11__["attachClickEvent"], 100);
   }
-
-  console.log("isDesktop: ".concat(_js_global__WEBPACK_IMPORTED_MODULE_1__["site"].isDesktop, ". isTablet: ").concat(_js_global__WEBPACK_IMPORTED_MODULE_1__["site"].isTablet, ". isMobile: ").concat(_js_global__WEBPACK_IMPORTED_MODULE_1__["site"].isMobile));
 });
 
 /***/ }),
