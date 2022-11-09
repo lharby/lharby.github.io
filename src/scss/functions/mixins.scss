@@ -40,7 +40,7 @@ https://slackwise.org.uk
 
 @mixin scrollBarColour {
     &::-webkit-scrollbar-thumb {
-        background-color: var(--selection-background);
+        background-color: #{var(--selection-background)};
     }
 }
 
