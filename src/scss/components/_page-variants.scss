@@ -42,6 +42,8 @@ html {
         }
 
         body {
+            @include scrollBar;
+
             &.scroll-lock {
                 .logo {
                     filter: blur(1px);
@@ -50,10 +52,6 @@ html {
                         filter: none;
                     }
                 }
-            }
-
-            &::-webkit-scrollbar-thumb {
-                background-color: var(--selection-background);
             }
         }
 

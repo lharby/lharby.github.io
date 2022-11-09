@@ -70,6 +70,8 @@ https://slackwise.org.uk
             300ms,
             $animation__ease-default
         );
+        @include scrollBar;
+        @include scrollBarColour;
         position: fixed;
         right: 0;
         top: 0;
