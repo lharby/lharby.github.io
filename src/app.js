@@ -1,6 +1,7 @@
 import styles from './scss/main.scss';
 
 import './js/global';
+import { siteResponsiveness } from './js/utils';
 import navigation from './js/navigation';
 import indexPage from './js/indexPage';
 import date from './js/date';
@@ -15,6 +16,7 @@ import { DOM, site } from './js/global';
 
 // global
 $(document).ready(() => {
+    siteResponsiveness();
     navigation();
     indexPage();
     date();

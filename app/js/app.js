@@ -93,15 +93,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_main_scss__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _js_global__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var _js_navigation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
-/* harmony import */ var _js_indexPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
-/* harmony import */ var _js_date__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
-/* harmony import */ var _js_toggleContrast__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7);
-/* harmony import */ var _js_obfuscateEmail__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8);
-/* harmony import */ var _js_appendForm__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(9);
-/* harmony import */ var _js_getScrollbarWidth__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(10);
-/* harmony import */ var _js_lazyLoad__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(11);
-/* harmony import */ var _js_randomColours__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(12);
+/* harmony import */ var _js_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
+/* harmony import */ var _js_navigation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var _js_indexPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
+/* harmony import */ var _js_date__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
+/* harmony import */ var _js_toggleContrast__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7);
+/* harmony import */ var _js_obfuscateEmail__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(8);
+/* harmony import */ var _js_appendForm__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(9);
+/* harmony import */ var _js_getScrollbarWidth__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(10);
+/* harmony import */ var _js_lazyLoad__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(11);
+/* harmony import */ var _js_randomColours__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(12);
+
 
 
 
@@ -116,21 +118,22 @@ __webpack_require__.r(__webpack_exports__);
  // global
 
 $(document).ready(function () {
-  Object(_js_navigation__WEBPACK_IMPORTED_MODULE_2__["default"])();
-  Object(_js_indexPage__WEBPACK_IMPORTED_MODULE_3__["default"])();
-  Object(_js_date__WEBPACK_IMPORTED_MODULE_4__["default"])();
-  Object(_js_getScrollbarWidth__WEBPACK_IMPORTED_MODULE_8__["default"])();
-  Object(_js_lazyLoad__WEBPACK_IMPORTED_MODULE_9__["setImageSource"])();
-  Object(_js_toggleContrast__WEBPACK_IMPORTED_MODULE_5__["default"])();
-  Object(_js_obfuscateEmail__WEBPACK_IMPORTED_MODULE_6__["default"])();
+  Object(_js_utils__WEBPACK_IMPORTED_MODULE_2__["siteResponsiveness"])();
+  Object(_js_navigation__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  Object(_js_indexPage__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  Object(_js_date__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  Object(_js_getScrollbarWidth__WEBPACK_IMPORTED_MODULE_9__["default"])();
+  Object(_js_lazyLoad__WEBPACK_IMPORTED_MODULE_10__["setImageSource"])();
+  Object(_js_toggleContrast__WEBPACK_IMPORTED_MODULE_6__["default"])();
+  Object(_js_obfuscateEmail__WEBPACK_IMPORTED_MODULE_7__["default"])();
 
   if (_js_global__WEBPACK_IMPORTED_MODULE_1__["DOM"].classList.contains('contact')) {
-    Object(_js_appendForm__WEBPACK_IMPORTED_MODULE_7__["default"])();
+    Object(_js_appendForm__WEBPACK_IMPORTED_MODULE_8__["default"])();
   }
 
   if (_js_global__WEBPACK_IMPORTED_MODULE_1__["DOM"].classList.contains('high-contrast')) {
-    Object(_js_randomColours__WEBPACK_IMPORTED_MODULE_10__["setRandomColour"])();
-    setTimeout(_js_randomColours__WEBPACK_IMPORTED_MODULE_10__["attachClickEvent"], 100);
+    Object(_js_randomColours__WEBPACK_IMPORTED_MODULE_11__["setRandomColour"])();
+    setTimeout(_js_randomColours__WEBPACK_IMPORTED_MODULE_11__["attachClickEvent"], 100);
   }
 
   console.log("isDesktop: ".concat(_js_global__WEBPACK_IMPORTED_MODULE_1__["site"].isDesktop, ". isTablet: ").concat(_js_global__WEBPACK_IMPORTED_MODULE_1__["site"].isTablet, ". isMobile: ").concat(_js_global__WEBPACK_IMPORTED_MODULE_1__["site"].isMobile));
