@@ -27,10 +27,10 @@ https://slackwise.org.uk
     }
 
     a {
-        border-bottom: 3px solid $colour__white;
+        border-bottom: 2px solid $colour__white;
 
         &:hover {
-            border-bottom: 3px solid transparent;
+            border-bottom: 2px solid transparent;
         }
     }
 
@@ -49,7 +49,6 @@ https://slackwise.org.uk
                 @include mobile(0, $mobile-size) {
                     margin-right: $default__spacer;
                 }
-                
             }
 
             a {
@@ -59,15 +58,23 @@ https://slackwise.org.uk
                     border-bottom: 0;
 
                     img {
-                        @include hover($animation__type-default, $animation__speed-default, $animation__ease-default);
+                        @include hover(
+                            $animation__type-default,
+                            $animation__speed-default,
+                            $animation__ease-default
+                        );
                     }
                 }
 
                 img {
-                    @include hover($animation__type-default, $animation__speed-default, $animation__ease-default);
+                    @include hover(
+                        $animation__type-default,
+                        $animation__speed-default,
+                        $animation__ease-default
+                    );
                     width: 3rem;
                     filter: invert(1);
-                    
+
                     @include mobile(0, $mobile-size) {
                         width: 2rem;
                     }
