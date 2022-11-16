@@ -11,20 +11,20 @@ const outputFolder = 'app/';
 
 const configFE = {
     entry: {
-        app:  srcFolder + 'app.js',
-        'app.min':  srcFolder + 'app.js'
+        app: srcFolder + 'app.js',
+        'app.min': srcFolder + 'app.js',
     },
     target: 'web',
     output: {
         path: path.join(__dirname, outputFolder + 'js/'),
-        filename: '[name].js'
+        filename: '[name].js',
     },
     plugins: [
         new MiniCssExtractPlugin({
             filename: '../css/[name].css',
-            allChunks: true
+            allChunks: true,
         }),
-        new Dotenv()
+        new Dotenv(),
     ],
     module: {
         rules: [
@@ -34,9 +34,9 @@ const configFE = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env']
-                    }
-                }
+                        presets: ['@babel/preset-env'],
+                    },
+                },
             },
             {
                 test: /\.s[ac]ss$/i,
@@ -45,32 +45,32 @@ const configFE = {
                         loader: MiniCssExtractPlugin.loader,
                     },
                     {
-                        loader: 'css-loader'
+                        loader: 'css-loader',
                     },
                     {
                         loader: 'sass-loader',
                         options: {
                             sassOptions: {
-                              importer: globImporter()
-                            }
-                        }
-                    }
-                ]
-            }
-        ]
+                                importer: globImporter(),
+                            },
+                        },
+                    },
+                ],
+            },
+        ],
     },
     optimization: {
         minimize: true,
         minimizer: [
             new TerserPlugin({
                 include: /\.min\.js$/,
-                sourceMap: true
+                sourceMap: true,
             }),
-            new OptimizeCSSAssetsPlugin({})
-        ]
+            new OptimizeCSSAssetsPlugin({}),
+        ],
     },
     watch: true,
-    mode: 'none'
+    mode: 'none',
 };
 
 module.exports = [configFE];
