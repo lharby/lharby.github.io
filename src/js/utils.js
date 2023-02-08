@@ -1,7 +1,7 @@
-import { site } from './global';
+import { site, BODY, HIDDEN_CLASS } from './global';
 
 /**
- * A bunch of utilities to check whether or not a symbol fits certain criteria.
+ * A bunch of utilities.
  *
  */
 
@@ -74,8 +74,8 @@ export function enableScrollLock() {
         htmlTag.style.overflow = 'hidden';
         htmlTag.style.width = '100%';
 
-        // Trigger event on target. You can listen for it using document.body.addEventListener("akqa.scrollLock:enable", callbackHere)
-        // triggerCustomEvent(document.body, "akqa.scrollLock:enable");
+        // Trigger event on target. You can listen for it using document.body.addEventListener("site.scrollLock:enable", callbackHere)
+        // triggerCustomEvent(document.body, "site.scrollLock:enable");
 
         // Remember state
         isScrollLocked = true;
@@ -107,8 +107,8 @@ export function disableScrollLock() {
         // Set the scroll position to what it was before
         window.scrollTo(scrollPosition.left, scrollTop);
 
-        // Trigger event on target. You can listen for it using document.body.addEventListener("akqa.scrollLock:disable", callbackHere)
-        // (document.body, "akqa.scrollLock:disable");
+        // Trigger event on target. You can listen for it using document.body.addEventListener("site.scrollLock:disable", callbackHere)
+        // (document.body, "site.scrollLock:disable");
 
         // Remember state
         isScrollLocked = false;
@@ -141,9 +141,3 @@ export const siteResponsiveness = () => {
         site.isMobile = true;
     }
 };
-
-/**
- * @type {function}
- * @ignore
- * @deprecated
- */
