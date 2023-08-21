@@ -415,7 +415,6 @@ input,
 select,
 textarea {
     font-family: inherit; // 1
-    font-size: 100%; // 2
     margin: 0; // 3
     vertical-align: baseline; // 4
     @if $legacy_support_for_ie {
