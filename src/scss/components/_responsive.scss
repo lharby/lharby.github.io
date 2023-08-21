@@ -18,7 +18,7 @@ https://slackwise.org.uk
     display: flex;
     flex-flow: initial;
     justify-content: flex-start;
-    column-gap: 2rem;
+    column-gap: $gap__column;
 }
 
 .el {
@@ -27,57 +27,57 @@ https://slackwise.org.uk
 
     &-1 {
         flex: 0 0 8.33333%;
-        max-width: 8.33333%;
+        max-width: calc(8.33333% - 1rem);
     }
 
     &-2 {
         flex: 0 0 16.66667%;
-        max-width: 16.66667%;
+        max-width: calc(16.66667% - 1rem);
     }
 
     &-3 {
         flex: 0 0 25%;
-        max-width: 25%;
+        max-width: calc(25% - 1rem);
     }
 
     &-4 {
         flex: 0 0 33.33333%;
-        max-width: 33.33333%;
+        max-width: calc(33.33333% - 1rem);
     }
 
     &-5 {
         flex: 0 0 41.66667%;
-        max-width: 41.66667%;
+        max-width: calc(41.66667% - 1rem);
     }
 
     &-6 {
         flex: 0 0 50%;
-        max-width: 50%;
+        max-width: calc(50% - 1rem);
     }
 
     &-7 {
         flex: 0 0 58.33333%;
-        max-width: 58.33333%;
+        max-width: calc(58.33333% - 1rem);
     }
 
     &-8 {
         flex: 0 0 66.66667%;
-        max-width: 66.66667%;
+        max-width: calc(66.66667% - 1rem);
     }
 
     &-9 {
         flex: 0 0 75%;
-        max-width: 75%;
+        max-width: calc(75% - 1rem);
     }
 
     &-10 {
         flex: 0 0 83.33333%;
-        max-width: 83.33333%;
+        max-width: calc(83.33333% - 1rem);
     }
 
     &-11 {
         flex: 0 0 91.66667%;
-        max-width: 91.66667%;
+        max-width: calc(91.66667% - 1rem);
     }
 
     &-12 {
