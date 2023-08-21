@@ -73,6 +73,14 @@ html {
                     }
                 }
             }
+
+            &__plain-link {
+                &:hover {
+                    img {
+                        opacity: 1;
+                    }
+                }
+            }
         }
 
         .menu__toggle {

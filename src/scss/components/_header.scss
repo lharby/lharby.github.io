@@ -63,39 +63,4 @@ https://slackwise.org.uk
             top: 0.5rem;
         }
     }
-
-    .nav-wrapper {
-        @include hover(
-            $animation__type-default,
-            300ms,
-            $animation__ease-default
-        );
-        position: fixed;
-        right: 0;
-        top: 0;
-        transform: translateX(200%);
-        height: 100%;
-        width: 50%;
-        z-index: 5;
-        background-color: $colour__dark-grey;
-        padding: 5rem 0 0 1.5rem;
-        overflow-y: auto;
-
-        &--open {
-            @include hover(
-                $animation__type-default,
-                300ms,
-                $animation__ease-default
-            );
-            transform: translateX(0%);
-        }
-
-        @include mobile(0, $mobile-size) {
-            width: 100%;
-        }
-
-        &__plain-link {
-            border-bottom: none;
-        }
-    }
 }
