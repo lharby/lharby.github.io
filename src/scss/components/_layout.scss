@@ -26,17 +26,13 @@ html {
 
 body {
     @include scrollBar;
+    @include defaultFont;
     margin: 0;
     padding: 0;
     background-color: $colour__orange-background;
     color: $colour__white;
     font-family: $primary-font;
-    font-size: 2rem;
     overflow-x: hidden;
-
-    @include mobile(0, $mobile-size) {
-        font-size: 1.75rem;
-    }
 
     &.scroll-lock {
         .logo {

@@ -5,6 +5,14 @@ https://slackwise.org.uk
 2012 - present
 */
 
+@mixin defaultFont() {
+    font-size: 2rem;
+
+    @include mobile(0, $mobile-size) {
+        font-size: 1.75rem;
+    }
+}
+
 @mixin hover($type, $speed, $ease) {
     transition: $type $speed $ease;
 }

@@ -33,6 +33,7 @@ input[type="search"],
 select,
 textarea,
 button {
+    @include defaultFont;
     color: $colour__black;
     font-weight: normal;
 }
