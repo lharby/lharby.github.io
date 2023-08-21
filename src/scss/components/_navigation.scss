@@ -22,6 +22,10 @@ https://slackwise.org.uk
     padding: 5rem 0 0 1.5rem;
     overflow-y: auto;
 
+    @include mobile(0, $mobile-size) {
+        width: 100%;
+    }
+
     &--open {
         @include hover(
             $animation__type-default,
@@ -31,6 +35,18 @@ https://slackwise.org.uk
         transform: translateX(0%);
     }
 
+    &__first {
+        padding-bottom: 0.5rem;
+
+        img {
+            max-width: 4.5rem;
+
+            @include mobile(0, $mobile-size) {
+                max-width: 3rem;
+            }
+        }
+    }
+
     &__plain-link {
         border-bottom: none !important;
 
@@ -38,9 +54,5 @@ https://slackwise.org.uk
             text-decoration: none;
             border-bottom: none;
         }
-    }
-
-    @include mobile(0, $mobile-size) {
-        width: 100%;
     }
 }
