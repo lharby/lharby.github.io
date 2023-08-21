@@ -74,6 +74,14 @@ button {
     }
 }
 
+a img {
+    @include hover(
+        $animation__type-default,
+        $animation__speed-default,
+        $animation__ease-default
+    );
+}
+
 ul,
 ol {
     margin: 0;
