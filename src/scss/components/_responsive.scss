@@ -14,6 +14,8 @@ https://slackwise.org.uk
 }
 
 .el {
+    display: flex;
+
     &-1 {
         flex: 0 0 8.33333%;
         max-width: 8.33333%;
