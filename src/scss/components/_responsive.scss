@@ -83,6 +83,10 @@ https://slackwise.org.uk
         flex: 0 0 100%;
         max-width: 100%;
     }
+
+    img {
+        width: 100%;
+    }
 }
 
 @include tablet($tablet-size) {
