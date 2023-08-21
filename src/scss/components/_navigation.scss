@@ -32,7 +32,7 @@ https://slackwise.org.uk
     }
 
     &__plain-link {
-        border-bottom: none;
+        border-bottom: none !important;
 
         &:hover {
             text-decoration: none;

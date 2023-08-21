@@ -32,6 +32,7 @@ body {
     color: $colour__white;
     font-family: $primary-font;
     font-size: 2rem;
+    overflow-x: hidden;
 
     @include mobile(0, $mobile-size) {
         font-size: 1.75rem;
