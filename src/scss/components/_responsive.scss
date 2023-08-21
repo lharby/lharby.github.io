@@ -13,6 +13,13 @@ https://slackwise.org.uk
     display: block;
 }
 
+.row {
+    align-items: flex-start;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
 .el {
     display: flex;
 
