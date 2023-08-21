@@ -13,6 +13,12 @@ html {
     }
 }
 
+*,
+:after,
+:before {
+    box-sizing: inherit
+}
+
 ::selection {
     background-color: $colour__black;
     color: $colour__white;
