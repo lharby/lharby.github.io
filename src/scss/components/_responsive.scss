@@ -16,8 +16,9 @@ https://slackwise.org.uk
 .row {
     align-items: flex-start;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
+    flex-flow: initial;
+    justify-content: space-around;
+    column-gap: 2rem;
 }
 
 .el {
@@ -90,6 +91,11 @@ https://slackwise.org.uk
 }
 
 @include tablet($tablet-size) {
+    .row {
+        column-gap: 0;
+        flex-flow: row wrap;
+    }
+
     [class^='el'] {
         display: flex;
         flex: 0 0 100%;
