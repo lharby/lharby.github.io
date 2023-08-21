@@ -206,7 +206,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 
 /**
- * A bunch of utilities to check whether or not a symbol fits certain criteria.
+ * A bunch of utilities.
  *
  */
 
@@ -273,8 +273,8 @@ function enableScrollLock() {
     htmlTag.style.marginTop = "".concat(-scrollPosition.top, "px");
     htmlTag.style.position = 'fixed';
     htmlTag.style.overflow = 'hidden';
-    htmlTag.style.width = '100%'; // Trigger event on target. You can listen for it using document.body.addEventListener("akqa.scrollLock:enable", callbackHere)
-    // triggerCustomEvent(document.body, "akqa.scrollLock:enable");
+    htmlTag.style.width = '100%'; // Trigger event on target. You can listen for it using document.body.addEventListener("site.scrollLock:enable", callbackHere)
+    // triggerCustomEvent(document.body, "site.scrollLock:enable");
     // Remember state
 
     isScrollLocked = true;
@@ -302,8 +302,8 @@ function disableScrollLock() {
     htmlTag.style.overflow = '';
     htmlTag.style.width = ''; // Set the scroll position to what it was before
 
-    window.scrollTo(scrollPosition.left, scrollTop); // Trigger event on target. You can listen for it using document.body.addEventListener("akqa.scrollLock:disable", callbackHere)
-    // (document.body, "akqa.scrollLock:disable");
+    window.scrollTo(scrollPosition.left, scrollTop); // Trigger event on target. You can listen for it using document.body.addEventListener("site.scrollLock:disable", callbackHere)
+    // (document.body, "site.scrollLock:disable");
     // Remember state
 
     isScrollLocked = false;
@@ -332,11 +332,6 @@ var siteResponsiveness = function siteResponsiveness() {
     _global__WEBPACK_IMPORTED_MODULE_0__["site"].isMobile = true;
   }
 };
-/**
- * @type {function}
- * @ignore
- * @deprecated
- */
 
 /***/ }),
 /* 4 */

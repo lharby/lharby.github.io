@@ -25,10 +25,10 @@ body {
     background-color: $colour__orange-background;
     color: $colour__white;
     font-family: $primary-font;
-    font-size: 3.25em;
+    font-size: 2.25em;
 
     @include mobile(0, $mobile-size) {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 
     &.scroll-lock {
