@@ -6,11 +6,7 @@ https://slackwise.org.uk
 */
 
 /* append form */
-import {
-    DOM,
-    REMOTE_SERVER,
-    REMOTE_PATH
-} from './global';
+import { DOM, REMOTE_SERVER, REMOTE_PATH } from './global';
 
 const template = `
     <form action="" method="post" class="form">
@@ -25,7 +21,7 @@ const template = `
         </div>
         <div class="form-control">
             <label class="el-4" for="contact-no">Contact number</label>
-            <input class="el-5" type="contact-no" id="contact-no">
+            <input class="el-5" type="text" id="contact-no">
         </div>
         <div class="form-control">
             <label class="el-4" for="comments">Comments</label>
@@ -45,9 +41,12 @@ const appendForm = () => {
     wrapper.innerHTML = template;
     const form = wrapper.querySelector('.form');
     DOM.addEventListener('click', event => {
-        if(event.target.classList.contains('submit')) {
+        if (event.target.classList.contains('submit')) {
             event.preventDefault();
-            form.setAttribute('action', `${REMOTE_SERVER}${REMOTE_PATH}/includes/mailer.php`);
+            form.setAttribute(
+                'action',
+                `${REMOTE_SERVER}${REMOTE_PATH}/includes/mailer.php`
+            );
             form.submit();
         }
     });
