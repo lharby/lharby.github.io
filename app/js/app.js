@@ -689,7 +689,8 @@ var attachClickEvent = function attachClickEvent() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/* harmony import */ var _cookies__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(14);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var _cookies__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(14);
 /*
 Luke Harby
 slackwise LTD
@@ -701,20 +702,24 @@ https://slackwise.org.uk
 
 
 
+
 var entry = function entry() {
-  var cookieIsSet = Object(_cookies__WEBPACK_IMPORTED_MODULE_1__["getCookie"])('entry');
+  var cookieIsSet = Object(_cookies__WEBPACK_IMPORTED_MODULE_2__["getCookie"])('entry');
   var wrapper = document.querySelector('.entry');
 
   if (cookieIsSet) {
     wrapper.classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"], _global__WEBPACK_IMPORTED_MODULE_0__["VISIBILITY_HIDDEN_CLASS"]);
+    Object(_utils__WEBPACK_IMPORTED_MODULE_1__["disableScrollLock"])();
   } else {
     wrapper.classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"], _global__WEBPACK_IMPORTED_MODULE_0__["VISIBILITY_HIDDEN_CLASS"]);
+    Object(_utils__WEBPACK_IMPORTED_MODULE_1__["enableScrollLock"])();
   }
 
   wrapper.addEventListener('click', function (e) {
     e.preventDefault();
     wrapper.classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["VISIBILITY_HIDDEN_CLASS"], _global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"]);
-    Object(_cookies__WEBPACK_IMPORTED_MODULE_1__["setCookie"])('entry', 1, 7);
+    Object(_cookies__WEBPACK_IMPORTED_MODULE_2__["setCookie"])('entry', 1, 7);
+    Object(_utils__WEBPACK_IMPORTED_MODULE_1__["disableScrollLock"])();
   });
 };
 
