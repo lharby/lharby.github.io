@@ -6,7 +6,6 @@ https://slackwise.org.uk
 */
 
 /* global */
-$('html').removeClass('no-js');
 
 const DOM = document.querySelector('html');
 const BODY = DOM.querySelector('body');
@@ -27,6 +26,9 @@ const site = {
     isDesktop: false,
     winWidth: $(window).width(),
 };
+
+DOM.classList.remove('no-js');
+DOM.classList.remove('visibility-hidden');
 
 export {
     DOM,

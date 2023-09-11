@@ -13,6 +13,16 @@ https://slackwise.org.uk
     display: none;
 }
 
+.visibility-hidden {
+    visibility: hidden;
+}
+
+.no-js {
+    .visibility-hidden {
+        visibility: visible;
+    }
+}
+
 .tumblr iframe[class^='tmblr-iframe'] {
     display: none !important;
 }

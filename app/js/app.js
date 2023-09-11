@@ -168,7 +168,6 @@ https://slackwise.org.uk
 */
 
 /* global */
-$('html').removeClass('no-js');
 var DOM = document.querySelector('html');
 var BODY = DOM.querySelector('body');
 var HIDDEN_CLASS = 'hidden';
@@ -187,6 +186,8 @@ var site = {
   isDesktop: false,
   winWidth: $(window).width()
 };
+DOM.classList.remove('no-js');
+DOM.classList.remove('visibility-hidden');
 
 
 /***/ }),
