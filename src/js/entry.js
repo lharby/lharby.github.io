@@ -6,12 +6,13 @@ https://slackwise.org.uk
 */
 
 /* entry function */
-import { DOM, HIDDEN_CLASS, VISIBILITY_HIDDEN_CLASS } from "./global";
+import { HIDDEN_CLASS, VISIBILITY_HIDDEN_CLASS } from "./global";
 import { enableScrollLock, disableScrollLock } from './utils';
 import { setCookie, getCookie } from "./cookies";
 
 const entry = () => {
     const cookieIsSet = getCookie('entry');
+    console.log(`cookieIsSet: ${cookieIsSet}`)
     const wrapper = document.querySelector('.entry');
     if (cookieIsSet) {
         wrapper.classList.add(HIDDEN_CLASS, VISIBILITY_HIDDEN_CLASS);

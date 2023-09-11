@@ -705,6 +705,7 @@ https://slackwise.org.uk
 
 var entry = function entry() {
   var cookieIsSet = Object(_cookies__WEBPACK_IMPORTED_MODULE_2__["getCookie"])('entry');
+  console.log("cookieIsSet: ".concat(cookieIsSet));
   var wrapper = document.querySelector('.entry');
 
   if (cookieIsSet) {
