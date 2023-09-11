@@ -1,0 +1,26 @@
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+.entry {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: $colour__white;
+    z-index: $z-top;
+
+    img {
+        max-width: 100%;
+        width: 22rem;
+    }
+}
