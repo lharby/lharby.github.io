@@ -706,13 +706,14 @@ var entry = function entry() {
   var wrapper = document.querySelector('.entry');
 
   if (cookieIsSet) {
-    wrapper.classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["VISIBILITY_HIDDEN_CLASS"]);
+    wrapper.classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"], _global__WEBPACK_IMPORTED_MODULE_0__["VISIBILITY_HIDDEN_CLASS"]);
   } else {
-    wrapper.classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["VISIBILITY_HIDDEN_CLASS"]);
+    wrapper.classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"], _global__WEBPACK_IMPORTED_MODULE_0__["VISIBILITY_HIDDEN_CLASS"]);
   }
 
-  wrapper.addEventListener('click', function () {
-    wrapper.classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["VISIBILITY_HIDDEN_CLASS"]);
+  wrapper.addEventListener('click', function (e) {
+    e.preventDefault();
+    wrapper.classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["VISIBILITY_HIDDEN_CLASS"], _global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"]);
     Object(_cookies__WEBPACK_IMPORTED_MODULE_1__["setCookie"])('entry', 1, 7);
   });
 };
