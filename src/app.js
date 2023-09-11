@@ -5,6 +5,7 @@ import { siteResponsiveness } from './js/utils';
 import navigation from './js/navigation';
 import indexPage from './js/indexPage';
 import date from './js/date';
+import entry from './js/entry';
 import toggleContrast from './js/toggleContrast';
 import obfuscateEmail from './js/obfuscateEmail';
 import appendForm from './js/appendForm';
@@ -20,6 +21,7 @@ $(document).ready(() => {
     navigation();
     indexPage();
     date();
+    entry();
     getScrollbarWidth();
     toggleContrast();
     obfuscateEmail();

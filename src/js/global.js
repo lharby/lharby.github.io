@@ -10,6 +10,7 @@ https://slackwise.org.uk
 const DOM = document.querySelector('html');
 const BODY = DOM.querySelector('body');
 const HIDDEN_CLASS = 'hidden';
+const VISIBILITY_HIDDEN_CLASS = 'visibility-hidden';
 const EMAIL_ADDRESS = process.env.NEXT_PUBLIC_EMAIL_ADDRESS;
 const REMOTE_DOMAIN = process.env.NEXT_PUBLIC_REMOTE_DOMAIN;
 const REMOTE_SERVER = process.env.NEXT_PUBLIC_REMOTE_SERVER;
@@ -34,6 +35,7 @@ export {
     DOM,
     BODY,
     HIDDEN_CLASS,
+    VISIBILITY_HIDDEN_CLASS,
     EMAIL_ADDRESS,
     REMOTE_DOMAIN,
     REMOTE_SERVER,
