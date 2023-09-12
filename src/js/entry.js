@@ -10,7 +10,7 @@ import { HIDDEN_CLASS, VISIBILITY_HIDDEN_CLASS } from "./global";
 import { enableScrollLock, disableScrollLock } from './utils';
 import { setCookie, getCookie } from "./cookies";
 
-const fadeOutClass = ' fade-out';
+const fadeOutClass = 'fade-out';
 
 const entry = () => {
     const cookieIsSet = getCookie('entry');
@@ -27,9 +27,10 @@ const entry = () => {
         entryElem.classList.add(fadeOutClass);
         setCookie('entry', 1, 7);
         disableScrollLock();
+        animationEnded();
     });
 
-    entryElem.addEventListener("animationend", () => {
+    const animationEnded = entryElem.addEventListener("animationend", () => {
         entryElem.classList.add(VISIBILITY_HIDDEN_CLASS, HIDDEN_CLASS);
         entryElem.classList.remove(fadeOutClass)
     });
