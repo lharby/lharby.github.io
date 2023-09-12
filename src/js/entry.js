@@ -27,12 +27,10 @@ const entry = () => {
         entryElem.classList.add(fadeOutClass);
         setCookie('entry', 1, 7);
         disableScrollLock();
-        animationEnded();
-    });
-
-    const animationEnded = entryElem.addEventListener("animationend", () => {
-        entryElem.classList.add(VISIBILITY_HIDDEN_CLASS, HIDDEN_CLASS);
-        entryElem.classList.remove(fadeOutClass)
+        entryElem.addEventListener("animationend", () => {
+            entryElem.classList.add(VISIBILITY_HIDDEN_CLASS, HIDDEN_CLASS);
+            entryElem.classList.remove(fadeOutClass)
+        });
     });
 }
 
