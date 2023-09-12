@@ -20,7 +20,7 @@ https://slackwise.org.uk
     z-index: $z-top;
 
     &.fade-out {
-        animation: animate-opacity-reverse 3s linear;
+        animation: animate-opacity-reverse 500ms linear;
     }
 
     img {
