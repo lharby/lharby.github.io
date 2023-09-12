@@ -705,13 +705,13 @@ https://slackwise.org.uk
 
 var entry = function entry() {
   var cookieIsSet = Object(_cookies__WEBPACK_IMPORTED_MODULE_2__["getCookie"])('entry');
-  console.log("cookieIsSet: ".concat(cookieIsSet));
   var wrapper = document.querySelector('.entry');
 
   if (cookieIsSet) {
     wrapper.classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"], _global__WEBPACK_IMPORTED_MODULE_0__["VISIBILITY_HIDDEN_CLASS"]);
     Object(_utils__WEBPACK_IMPORTED_MODULE_1__["disableScrollLock"])();
   } else {
+    _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"]);
     wrapper.classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"], _global__WEBPACK_IMPORTED_MODULE_0__["VISIBILITY_HIDDEN_CLASS"]);
     Object(_utils__WEBPACK_IMPORTED_MODULE_1__["enableScrollLock"])();
   }
@@ -719,6 +719,7 @@ var entry = function entry() {
   wrapper.addEventListener('click', function (e) {
     e.preventDefault();
     wrapper.classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["VISIBILITY_HIDDEN_CLASS"], _global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"]);
+    _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"]);
     Object(_cookies__WEBPACK_IMPORTED_MODULE_2__["setCookie"])('entry', 1, 7);
     Object(_utils__WEBPACK_IMPORTED_MODULE_1__["disableScrollLock"])();
   });
