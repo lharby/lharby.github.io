@@ -1,0 +1,33 @@
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+@include keyframes(animate-greyscale) {
+    0% {
+        filter: grayscale(1);
+    }
+    100% {
+        filter: grayscale(0);
+    }
+}
+
+@include keyframes(animate-opacity) {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opcacity: 1;
+    }
+}
+
+@include keyframes(animate-opacity-reverse) {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opcacity: 0;
+    }
+}

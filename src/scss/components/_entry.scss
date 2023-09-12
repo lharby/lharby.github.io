@@ -6,6 +6,7 @@ https://slackwise.org.uk
 */
 
 .entry {
+    animation: animate-opacity 3s linear;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
@@ -20,9 +21,13 @@ https://slackwise.org.uk
     z-index: $z-top;
 
     img {
-        @include animation-mixin(negative, invert, 0, 1);
+        animation: animate-greyscale 5s linear;
         animation: negative 3000 ease;
         max-width: 100%;
         width: 22rem;
+    }
+
+    &.fade-out {
+        animation: animate-opacity-reverse 3s linear;
     }
 }

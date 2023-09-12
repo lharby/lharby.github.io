@@ -68,13 +68,6 @@ https://slackwise.org.uk
     }
 }
 
-@mixin animation-mixin($name, $filter, $amount1, $amount2) {
-    @keyframes #{$name} {
-        0% {filter: $filter($amount1);}
-        100% {filter: $filter($amount2);}
-    }
-}
-
 @mixin keyframes($name) {
     @-webkit-keyframes #{$name} {
         @content;
