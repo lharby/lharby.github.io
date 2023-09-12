@@ -21,6 +21,7 @@ https://slackwise.org.uk
 
     img {
         @include animation-mixin(negative, invert, 0, 1);
+        animation: negative 3000 ease;
         max-width: 100%;
         width: 22rem;
     }
