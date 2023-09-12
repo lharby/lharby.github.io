@@ -10,21 +10,23 @@ import { DOM, HIDDEN_CLASS, VISIBILITY_HIDDEN_CLASS } from "./global";
 import { enableScrollLock, disableScrollLock } from './utils';
 import { setCookie, getCookie } from "./cookies";
 
+const pageWrapper = DOM.querySelector('.pageWrapper');
+
 const entry = () => {
     const cookieIsSet = getCookie('entry');
-    const wrapper = document.querySelector('.entry');
+    const entryElem = document.querySelector('.entry');
     if (cookieIsSet) {
-        wrapper.classList.add(HIDDEN_CLASS, VISIBILITY_HIDDEN_CLASS);
+        entryElem.classList.add(HIDDEN_CLASS, VISIBILITY_HIDDEN_CLASS);
         disableScrollLock();
     } else {
-        DOM.classList.add(HIDDEN_CLASS);
-        wrapper.classList.remove(HIDDEN_CLASS, VISIBILITY_HIDDEN_CLASS);
+        pageWrapper.classList.add(HIDDEN_CLASS);
+        entryElem.classList.remove(HIDDEN_CLASS, VISIBILITY_HIDDEN_CLASS);
         enableScrollLock();
     }
-    wrapper.addEventListener('click', (e) => {
+    entryElem.addEventListener('click', (e) => {
         e.preventDefault();
-        wrapper.classList.add(VISIBILITY_HIDDEN_CLASS, HIDDEN_CLASS);
-        DOM.classList.remove(HIDDEN_CLASS);
+        entryElem.classList.add(VISIBILITY_HIDDEN_CLASS, HIDDEN_CLASS);
+        pageWrapper.classList.remove(HIDDEN_CLASS);
         setCookie('entry', 1, 7);
         disableScrollLock();
     });
