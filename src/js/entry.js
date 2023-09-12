@@ -10,7 +10,7 @@ import { DOM, HIDDEN_CLASS, VISIBILITY_HIDDEN_CLASS } from "./global";
 import { enableScrollLock, disableScrollLock } from './utils';
 import { setCookie, getCookie } from "./cookies";
 
-const pageWrapper = DOM.querySelector('.pageWrapper');
+const pageWrapper = DOM.querySelector('#pageWrapper');
 
 const entry = () => {
     const cookieIsSet = getCookie('entry');

@@ -702,7 +702,7 @@ https://slackwise.org.uk
 
 
 
-var pageWrapper = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.pageWrapper');
+var pageWrapper = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('#pageWrapper');
 
 var entry = function entry() {
   var cookieIsSet = Object(_cookies__WEBPACK_IMPORTED_MODULE_2__["getCookie"])('entry');
