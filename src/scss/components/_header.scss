@@ -7,7 +7,11 @@ https://slackwise.org.uk
 
 .tumblr {
     #header {
-        margin: 7px 0 0 7px;
+        margin: 0.6rem 0 0 1.5rem;
+
+        @include mobile(0, $mobile-size) {
+            margin: -0.05rem 0 0 1.5rem;
+        }
     }
 
     header {

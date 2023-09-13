@@ -10,10 +10,6 @@ https://slackwise.org.uk
     flex-direction: column;
     margin-bottom: 5rem;
 
-    @include mobile(0, $mobile-size) {
-        padding-left: 1.5rem;
-    }
-
     li,
     a {
         font-family: $primary-font;

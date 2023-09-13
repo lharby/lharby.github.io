@@ -6,11 +6,7 @@ https://slackwise.org.uk
 */
 
 .nav-wrapper {
-    @include hover(
-        $animation__type-default,
-        300ms,
-        $animation__ease-default
-    );
+    @include hover($animation__type-default, 300ms, $animation__ease-default);
     position: fixed;
     right: 0;
     top: 0;
@@ -39,7 +35,7 @@ https://slackwise.org.uk
         padding-bottom: 0.5rem !important;
 
         img {
-            max-width: 4.5rem;
+            max-width: 4rem;
 
             @include mobile(0, $mobile-size) {
                 max-width: 3rem;
