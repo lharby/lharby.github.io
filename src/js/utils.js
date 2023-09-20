@@ -1,4 +1,4 @@
-import { site, BODY, HIDDEN_CLASS } from './global';
+import { site, BODY } from './global';
 
 /**
  * A bunch of utilities.
@@ -140,4 +140,8 @@ export const siteResponsiveness = () => {
     } else {
         site.isMobile = true;
     }
+};
+
+export const scrollToTop = () => {
+    BODY.scrollIntoView({behavior: 'smooth'});    
 };
