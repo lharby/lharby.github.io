@@ -487,7 +487,9 @@ var closeNavigation = function closeNavigation() {
   }
 
   target.addEventListener('animationend', function () {
+    console.log('scrollTop before: ', target.scrollTop);
     target.scrollTop = 0;
+    console.log('scrollTop after: ', target.scrollTop);
   });
 };
 
