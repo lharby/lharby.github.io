@@ -502,7 +502,7 @@ var router = function router() {
     item.addEventListener('click', function (event) {
       event.preventDefault();
       event.stopPropagation();
-      body.classList.add(loadingClass);
+      _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.add(loadingClass);
 
       if (href === '/') {
         hrefSplit = '/';
@@ -512,7 +512,7 @@ var router = function router() {
         return res.text();
       }).then(function (html) {
         Object(_navigation__WEBPACK_IMPORTED_MODULE_2__["closeNavigation"])();
-        body.classList.remove(loadingClass);
+        _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(loadingClass);
         _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].removeAttribute('class');
 
         if (hrefSplit) {
@@ -528,7 +528,7 @@ var router = function router() {
         Object(_app__WEBPACK_IMPORTED_MODULE_1__["initDynamicFunctions"])();
       })["catch"](function (err) {
         console.warn('Something went wrong.', err);
-        body.classList.remove(loadingClass);
+        _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(loadingClass);
       });
     });
   });
