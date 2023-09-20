@@ -433,8 +433,10 @@ var wrapper = 'nav-wrapper';
 var target = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector(".".concat(wrapper));
 var overlay = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.overlay');
 var trigger = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelectorAll('.menu__toggle');
+var navLinks = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelectorAll('.pages li a');
 var overlayOpenClass = 'overlay__open';
 var scrollLockClass = 'scroll-lock';
+var isAjax = false;
 
 var navigation = function navigation() {
   _toConsumableArray(trigger).forEach(function (item) {
@@ -461,6 +463,10 @@ var navigation = function navigation() {
   });
 };
 
+navLinks.addEventListener('click', function () {
+  isAjax = true;
+});
+
 var openNavigation = function openNavigation() {
   target.classList.add("".concat(wrapper, "--open"));
   _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.add(scrollLockClass);
@@ -473,7 +479,10 @@ var closeNavigation = function closeNavigation() {
   _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(scrollLockClass);
   overlay.classList.remove(overlayOpenClass);
   Object(_utils__WEBPACK_IMPORTED_MODULE_1__["disableScrollLock"])();
-  Object(_utils__WEBPACK_IMPORTED_MODULE_1__["scrollToTop"])();
+
+  if (isAjax) {
+    Object(_utils__WEBPACK_IMPORTED_MODULE_1__["scrollToTop"])();
+  }
 };
 
 

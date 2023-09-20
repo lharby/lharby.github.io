@@ -13,8 +13,10 @@ const wrapper = 'nav-wrapper';
 const target = DOM.querySelector(`.${wrapper}`);
 const overlay = DOM.querySelector('.overlay');
 const trigger = DOM.querySelectorAll('.menu__toggle');
+const navLinks = DOM.querySelectorAll('.pages li a');
 const overlayOpenClass = 'overlay__open';
 const scrollLockClass = 'scroll-lock';
+let isAjax = false;
 
 const navigation = () => {
     [...trigger].forEach(item => {
@@ -41,6 +43,10 @@ const navigation = () => {
     });
 }
 
+navLinks.addEventListener('click', () => {
+    isAjax = true;
+});
+
 const openNavigation = () => {
     target.classList.add(`${wrapper}--open`);
     BODY.classList.add(scrollLockClass);
@@ -53,7 +59,9 @@ const closeNavigation = () => {
     BODY.classList.remove(scrollLockClass);
     overlay.classList.remove(overlayOpenClass);
     disableScrollLock();
-    scrollToTop();
+    if (isAjax) {
+        scrollToTop();
+    }
 }
 
 export  {
