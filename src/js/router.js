@@ -10,7 +10,6 @@ https://slackwise.org.uk
 import { BODY, WRAPPER, PAGE_WRAPPER, LOADING_CLASS } from "./global";
 import { initDynamicFunctions } from "../app";
 import { closeNavigation } from "./navigation";
-import { scrollToTop } from "./utils";
 
 let documentTitle;
 
@@ -53,7 +52,7 @@ const router = () => {
                     updateContent(html);
                     document.title = documentTitle;
                     history.pushState({ path: href }, documentTitle, hrefSplit);
-                    scrollToTop();
+                    BODY.scrollIntoView({ behavior: smooth });
                     initDynamicFunctions();
                 })
                 .catch((err) => {

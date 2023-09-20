@@ -6,7 +6,7 @@ https://slackwise.org.uk
 */
 
 /* lazyload function */
-const images = document.querySelectorAll('#posts img');
+let images = document.querySelectorAll('#posts img');
 
 const observeImages = () => {
     images.forEach(img => {
@@ -15,6 +15,7 @@ const observeImages = () => {
 };
 
 const setImageSource = () => {
+    images = document.querySelectorAll('#posts img');
     images.forEach(item => {
         const newSrc = item.src.replace('500', '1280');
         item.setAttribute('data-src', newSrc);
