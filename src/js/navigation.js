@@ -43,9 +43,12 @@ const navigation = () => {
     });
 }
 
-navLinks.addEventListener('click', () => {
-    isAjax = true;
+navLinks.forEach(item => {
+    item.addEventListener('click', () => {
+        isAjax = true;
+    });
 });
+
 
 const openNavigation = () => {
     target.classList.add(`${wrapper}--open`);

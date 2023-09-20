@@ -463,8 +463,10 @@ var navigation = function navigation() {
   });
 };
 
-navLinks.addEventListener('click', function () {
-  isAjax = true;
+navLinks.forEach(function (item) {
+  item.addEventListener('click', function () {
+    isAjax = true;
+  });
 });
 
 var openNavigation = function openNavigation() {
