@@ -17,6 +17,11 @@ https://slackwise.org.uk
     visibility: hidden;
 }
 
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
 .no-js {
     &.visibility-hidden {
         visibility: visible;

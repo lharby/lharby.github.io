@@ -6,72 +6,77 @@ https://slackwise.org.uk
 */
 
 .footer {
-  display: flex;
-  padding: $default__spacer $default__spacer 2rem;
-  background-color: $colour__dark-grey;
-  color: $colour__white;
-  font-size: 1.4rem;
-  justify-content: space-between;
-
-  @include mobile(0, $mobile-size) {
-    flex-direction: column-reverse;
-
-    ul {
-      margin-bottom: $default__spacer * 2;
-    }
-  }
-
-  a {
-    position: relative;
+    @include hover(
+        $animation__type-default,
+        $animation__speed-default,
+        $animation__ease-default
+    );
+    display: flex;
+    padding: $default__spacer $default__spacer 2rem;
+    background-color: $colour__dark-grey;
     color: $colour__white;
-    border-bottom: 1px solid $colour__white;
+    font-size: 1.4rem;
+    justify-content: space-between;
 
-    &:hover {
-      border-bottom: 1px solid transparent;
+    @include mobile(0, $mobile-size) {
+        flex-direction: column-reverse;
+
+        ul {
+            margin-bottom: $default__spacer * 2;
+        }
     }
 
-    &:after {
-      position: absolute;
-      font-family: $icon-font;
-      content: "\f30f";
-      transform: rotate(-45deg);
-      top: 0.4rem;
-      right: -1.4rem;
-    }
-  }
+    a {
+        position: relative;
+        color: $colour__white;
+        border-bottom: 1px solid $colour__white;
 
-  li[class^="ion-"]:before {
-    margin-right: 0.5rem;
-  }
+        &:hover {
+            border-bottom: 1px solid transparent;
+        }
 
-  .no-link {
-    border-bottom: none;
-
-    &:hover {
-      border-bottom: none !important;
+        &:after {
+            position: absolute;
+            font-family: $icon-font;
+            content: '\f30f';
+            transform: rotate(-45deg);
+            top: 0.4rem;
+            right: -1.4rem;
+        }
     }
 
-    &:after {
-      content: "";
+    li[class^='ion-']:before {
+        margin-right: 0.5rem;
     }
-  }
 
-  .toggle-contrast {
-    &:after {
-      font-family: $primary-font;
-      content: "High contrast version";
-      position: static;
+    .no-link {
+        border-bottom: none;
+
+        &:hover {
+            border-bottom: none !important;
+        }
+
+        &:after {
+            content: '';
+        }
     }
-  }
+
+    .toggle-contrast {
+        &:after {
+            font-family: $primary-font;
+            content: 'High contrast version';
+            position: static;
+        }
+    }
 }
 
 .legal {
-  display: flex;
-  align-self: end;
-  font-size: 1rem;
-  margin-bottom: -$default__spacer;
+    display: flex;
+    align-self: end;
+    font-size: 1rem;
+    margin-bottom: -$default__spacer;
 
-  @include mobile(0, $mobile-size) {
-    position: absolute;
-  }
+    @include mobile(0, $mobile-size) {
+        position: absolute;
+    }
 }

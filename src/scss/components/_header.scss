@@ -15,6 +15,11 @@ https://slackwise.org.uk
     }
 
     header {
+        @include hover(
+            $animation__type-default,
+            $animation__speed-default,
+            $animation__ease-default
+        );
         height: 10rem;
         position: fixed;
         z-index: 1;
