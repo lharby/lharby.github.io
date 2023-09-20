@@ -470,6 +470,7 @@ navLinks.forEach(function (item) {
 });
 
 var openNavigation = function openNavigation() {
+  target.scrollTop = 0;
   target.classList.add("".concat(wrapper, "--open"));
   _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.add(scrollLockClass);
   overlay.classList.add(overlayOpenClass);
@@ -484,15 +485,12 @@ var closeNavigation = function closeNavigation() {
 
   if (isAjax) {
     Object(_utils__WEBPACK_IMPORTED_MODULE_1__["scrollToTop"])();
-  }
+  } // target.addEventListener('transitionend', (e) => {
+  //     if (e.propertyName === 'transform') {
+  //         target.scrollTop = 0;
+  //     }
+  // });
 
-  target.addEventListener('transitionend', function (e) {
-    if (e.propertyName === 'transform') {
-      target.scrollTop = 0;
-    }
-
-    console.log(e.propertyName);
-  });
 };
 
 

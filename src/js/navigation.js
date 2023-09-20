@@ -51,6 +51,7 @@ navLinks.forEach(item => {
 
 
 const openNavigation = () => {
+    target.scrollTop = 0;
     target.classList.add(`${wrapper}--open`);
     BODY.classList.add(scrollLockClass);
     overlay.classList.add(overlayOpenClass);
@@ -65,12 +66,11 @@ const closeNavigation = () => {
     if (isAjax) {
         scrollToTop();
     }
-    target.addEventListener('transitionend', (e) => {
-        if (e.propertyName === 'transform') {
-            target.scrollTop = 0;
-        }
-        console.log(e.propertyName);
-    });
+    // target.addEventListener('transitionend', (e) => {
+    //     if (e.propertyName === 'transform') {
+    //         target.scrollTop = 0;
+    //     }
+    // });
 }
 
 export  {
