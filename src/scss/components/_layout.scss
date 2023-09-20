@@ -16,7 +16,7 @@ html {
 *,
 :after,
 :before {
-    box-sizing: inherit
+    box-sizing: inherit;
 }
 
 ::selection {
@@ -27,6 +27,11 @@ html {
 body {
     @include scrollBar;
     @include defaultFont;
+    @include hover(
+        $animation__type-default,
+        $animation__speed-default,
+        $animation__ease-default
+    );
     margin: 0;
     padding: 0;
     background-color: $colour__orange-background;
