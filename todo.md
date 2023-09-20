@@ -1,6 +1,6 @@
 *feature/singlePageApplication*
 
-Initialise SPA functionality with graceful degredation
+Initialise SPA functionality with graceful degredation - DONE
 
 -   For each internal link bind an event listener
 -   Fetch the url from the href
@@ -16,18 +16,20 @@ Initialise SPA functionality with graceful degredation
 -   Update page titles?
 -   Rebind any click handlers to content loaded via ajax?
 
-List initOnce functions
+List initOnce functions - DONE
 
-List initDynamic function (on ajaxEnd, or bind to popstate if possible)
+List initDynamic function (on ajaxEnd, or bind to popstate if possible) - DONE
 
-Call initOnce on initial page load
+Call initOnce on initial page load - DONE
 
-Wrap initDynamic functions to specific callbacks etc. So they can be reinitialised en masse.
+Wrap initDynamic functions to specific callbacks etc. So they can be reinitialised en masse. - DONE
 
-Also ensure these functions run if client lands on sub page `/contact` for example
+Also ensure these functions run if client lands on sub page `/contact` for example - DONE
 
-Remove `indexPage.js` potentially.
+Remove `indexPage.js` potentially. - DONE
 
 *Fixes*
 
-Reset scroll top on nav after closing
+Reset scroll top on nav after closing - DONE
+
+Set scrollbar colour after ajax page load
