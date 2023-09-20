@@ -25,7 +25,7 @@ const entry = () => {
     entryElem.addEventListener('click', (e) => {
         e.preventDefault();
         entryElem.classList.add(fadeOutClass);
-        setCookie('entry', 1, 7);
+        setCookie('entry', 1, 1);
         disableScrollLock();
         entryElem.addEventListener("animationend", () => {
             entryElem.classList.add(VISIBILITY_HIDDEN_CLASS, HIDDEN_CLASS);
