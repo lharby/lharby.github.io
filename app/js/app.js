@@ -131,16 +131,15 @@ var initOnceFunctions = function initOnceFunctions() {
   Object(_js_entry__WEBPACK_IMPORTED_MODULE_7__["default"])();
   Object(_js_getScrollbarWidth__WEBPACK_IMPORTED_MODULE_11__["default"])();
   Object(_js_toggleContrast__WEBPACK_IMPORTED_MODULE_8__["default"])();
-
-  if (!_js_global__WEBPACK_IMPORTED_MODULE_1__["site"].isMobile) {
-    Object(_js_lazyLoad__WEBPACK_IMPORTED_MODULE_12__["setImageSource"])();
-  }
-
   initDynamicFunctions();
 };
 
 var initDynamicFunctions = function initDynamicFunctions() {
   Object(_js_obfuscateEmail__WEBPACK_IMPORTED_MODULE_9__["default"])();
+
+  if (!_js_global__WEBPACK_IMPORTED_MODULE_1__["site"].isMobile) {
+    Object(_js_lazyLoad__WEBPACK_IMPORTED_MODULE_12__["setImageSource"])();
+  }
 
   if (_js_global__WEBPACK_IMPORTED_MODULE_1__["DOM"].classList.contains('high-contrast')) {
     Object(_js_randomColours__WEBPACK_IMPORTED_MODULE_13__["setRandomColour"])();
@@ -361,7 +360,7 @@ var siteResponsiveness = function siteResponsiveness() {
   }
 };
 var scrollToTop = function scrollToTop() {
-  _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].scrollIntoView({
+  document.body.scrollIntoView({
     behavior: 'smooth'
   });
 };

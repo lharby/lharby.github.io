@@ -25,14 +25,14 @@ const initOnceFunctions = () => {
     entry();
     getScrollbarWidth();
     toggleContrast();
-    if (!site.isMobile) {
-        setImageSource();
-    }
     initDynamicFunctions();
 };
 
 const initDynamicFunctions = () => {
     obfuscateEmail();
+    if (!site.isMobile) {
+        setImageSource();
+    }
     if (DOM.classList.contains('high-contrast')) {
         setRandomColour();
         setTimeout(attachClickEvent, 100);
