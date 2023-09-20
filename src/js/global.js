@@ -12,6 +12,7 @@ const BODY = DOM.querySelector('body');
 const WRAPPER = DOM.querySelector('#wrapper');
 const PAGE_WRAPPER = DOM.querySelector('#pageWrapper');
 const HIDDEN_CLASS = 'hidden';
+const LOADING_CLASS = 'loading';
 const VISIBILITY_HIDDEN_CLASS = 'visibility-hidden';
 const EMAIL_ADDRESS = process.env.NEXT_PUBLIC_EMAIL_ADDRESS;
 const REMOTE_DOMAIN = process.env.NEXT_PUBLIC_REMOTE_DOMAIN;
@@ -40,6 +41,7 @@ export {
     PAGE_WRAPPER,
     HIDDEN_CLASS,
     VISIBILITY_HIDDEN_CLASS,
+    LOADING_CLASS,
     EMAIL_ADDRESS,
     REMOTE_DOMAIN,
     REMOTE_SERVER,

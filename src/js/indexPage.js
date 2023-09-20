@@ -6,23 +6,19 @@ https://slackwise.org.uk
 */
 
 /* index page */
-import { DOM } from './global';
+import { WRAPPER } from './global';
 
 const indexPage = () => {
     const url = document.location.pathname.split('/');
     const primaryDir = url[1];
-    const secondaryDir = url[2];
-    const tertiaryDir = url[3];
 
     if (!primaryDir) {
-        DOM.classList.add('index');
-    } else if (tertiaryDir) {
-        DOM.classList.add(primaryDir, secondaryDir, tertiaryDir);
-    } else if (secondaryDir) {
-        DOM.classList.add(primaryDir, secondaryDir);
+        WRAPPER.classList.add('index');
     } else {
-        DOM.classList.add(primaryDir);
+        WRAPPER.classList.add(primaryDir);
     }
 }
 
-export default indexPage;
+export {
+    indexPage
+};
