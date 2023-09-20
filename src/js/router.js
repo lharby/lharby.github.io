@@ -7,7 +7,7 @@ https://slackwise.org.uk
 
 /* router */
 
-import { BODY, WRAPPER, PAGE_WRAPPER, LOADING_CLASS } from "./global";
+import { BODY, WRAPPER, PAGE_WRAPPER, LOADING_CLASS, isAjax } from "./global";
 import { initDynamicFunctions } from "../app";
 import { closeNavigation } from "./navigation";
 
@@ -41,6 +41,7 @@ const router = () => {
                     return res.text();
                 })
                 .then((html) => {
+                    isAjax = true;
                     closeNavigation();
                     BODY.classList.remove(LOADING_CLASS);
                     WRAPPER.removeAttribute('class');
@@ -52,7 +53,6 @@ const router = () => {
                     updateContent(html);
                     document.title = documentTitle;
                     history.pushState({ path: href }, documentTitle, hrefSplit);
-                    BODY.scrollIntoView({ behavior: 'smooth' });
                     initDynamicFunctions();
                 })
                 .catch((err) => {

@@ -182,6 +182,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOTE_DOMAIN", function() { return REMOTE_DOMAIN; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOTE_SERVER", function() { return REMOTE_SERVER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOTE_PATH", function() { return REMOTE_PATH; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isAjax", function() { return isAjax; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "site", function() { return site; });
 /*
 Luke Harby
@@ -202,6 +203,7 @@ var EMAIL_ADDRESS = "studiomalarkeyuk@gmail.com";
 var REMOTE_DOMAIN = "https://lharby.github.io/";
 var REMOTE_SERVER = "https://slackwise.org.uk/sites/";
 var REMOTE_PATH = "studio-malarkey";
+var isAjax = false;
 var site = {
   width: {
     small: 480,
@@ -362,7 +364,7 @@ var siteResponsiveness = function siteResponsiveness() {
   }
 };
 var scrollToTop = function scrollToTop() {
-  document.body.scrollIntoView({
+  _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].scrollIntoView({
     behavior: 'smooth'
   });
 };
@@ -444,6 +446,10 @@ var closeNavigation = function closeNavigation() {
   _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(scrollLockClass);
   overlay.classList.remove(overlayOpenClass);
   Object(_utils__WEBPACK_IMPORTED_MODULE_1__["disableScrollLock"])();
+
+  if (_global__WEBPACK_IMPORTED_MODULE_0__["isAjax"]) {
+    Object(_utils__WEBPACK_IMPORTED_MODULE_1__["scrollToTop"])();
+  }
 };
 
 
@@ -868,6 +874,7 @@ var router = function router() {
       fetch(href).then(function (res) {
         return res.text();
       }).then(function (html) {
+        isAjax = true;
         Object(_navigation__WEBPACK_IMPORTED_MODULE_2__["closeNavigation"])();
         _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
         _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].removeAttribute('class');
@@ -883,9 +890,6 @@ var router = function router() {
         history.pushState({
           path: href
         }, documentTitle, hrefSplit);
-        _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].scrollIntoView({
-          behavior: 'smooth'
-        });
         Object(_app__WEBPACK_IMPORTED_MODULE_1__["initDynamicFunctions"])();
       })["catch"](function (err) {
         console.warn('Something went wrong.', err);

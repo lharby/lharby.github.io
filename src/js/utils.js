@@ -143,5 +143,5 @@ export const siteResponsiveness = () => {
 };
 
 export const scrollToTop = () => {
-    document.body.scrollIntoView({behavior: 'smooth'});
+    BODY.scrollIntoView({behavior: 'smooth'});
 };
