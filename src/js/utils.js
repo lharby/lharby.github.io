@@ -1,4 +1,4 @@
-import { site, DOC } from './global';
+import { site, BODY } from './global';
 
 /**
  * A bunch of utilities.
@@ -143,5 +143,5 @@ export const siteResponsiveness = () => {
 };
 
 export const scrollToTop = () => {
-    DOC.scrollIntoView({behavior: 'smooth'});    
+    BODY.scrollIntoView({behavior: 'smooth'});
 };

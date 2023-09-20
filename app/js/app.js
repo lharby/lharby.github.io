@@ -362,7 +362,7 @@ var siteResponsiveness = function siteResponsiveness() {
   }
 };
 var scrollToTop = function scrollToTop() {
-  _global__WEBPACK_IMPORTED_MODULE_0__["DOC"].scrollIntoView({
+  _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].scrollIntoView({
     behavior: 'smooth'
   });
 };
