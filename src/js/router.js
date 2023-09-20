@@ -45,13 +45,15 @@ const router = () => {
                     closeNavigation();
                     BODY.classList.remove(LOADING_CLASS);
                     WRAPPER.removeAttribute('class');
-                    if (hrefSplit) {
+                    if (hrefSplit !== '/') {
                         WRAPPER.classList.add(hrefSplit);
+                    } else {
+                        WRAPPER.classList.add('index');
                     }
-                    scrollToTop();
                     updateContent(html);
                     document.title = documentTitle;
                     history.pushState({ path: href }, documentTitle, hrefSplit);
+                    scrollToTop();
                     initDynamicFunctions();
                 })
                 .catch((err) => {

@@ -362,7 +362,7 @@ var siteResponsiveness = function siteResponsiveness() {
   }
 };
 var scrollToTop = function scrollToTop() {
-  _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].scrollIntoView({
+  _global__WEBPACK_IMPORTED_MODULE_0__["DOC"].scrollIntoView({
     behavior: 'smooth'
   });
 };
@@ -873,16 +873,18 @@ var router = function router() {
         _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
         _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].removeAttribute('class');
 
-        if (hrefSplit) {
+        if (hrefSplit !== '/') {
           _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(hrefSplit);
+        } else {
+          _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add('index');
         }
 
-        Object(_utils__WEBPACK_IMPORTED_MODULE_3__["scrollToTop"])();
         updateContent(html);
         document.title = documentTitle;
         history.pushState({
           path: href
         }, documentTitle, hrefSplit);
+        Object(_utils__WEBPACK_IMPORTED_MODULE_3__["scrollToTop"])();
         Object(_app__WEBPACK_IMPORTED_MODULE_1__["initDynamicFunctions"])();
       })["catch"](function (err) {
         console.warn('Something went wrong.', err);
