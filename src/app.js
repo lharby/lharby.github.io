@@ -13,10 +13,9 @@ import getScrollbarWidth from './js/getScrollbarWidth';
 import { setImageSource } from './js/lazyLoad';
 import { setRandomColour, attachClickEvent } from './js/randomColours';
 
-import { DOM, site } from './js/global';
+import { DOM, WRAPPER, site } from './js/global';
 
-// global
-$(document).ready(() => {
+const initOnceFunctions = () => {
     siteResponsiveness();
     navigation();
     indexPage();
@@ -35,4 +34,24 @@ $(document).ready(() => {
         setRandomColour();
         setTimeout(attachClickEvent, 100);
     }
+}
+
+const initDynamicFunctions = () => {
+    obfuscateEmail();
+    if (DOM.classList.contains('high-contrast')) {
+        setRandomColour();
+        setTimeout(attachClickEvent, 100);
+    }
+    if (WRAPPER.classList.contains('contact')) {
+        appendForm();
+    }
+}
+
+// global
+$(document).ready(() => {
+    initOnceFunctions();
 });
+
+export {
+    initDynamicFunctions,
+};

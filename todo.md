@@ -1,4 +1,4 @@
-feature/singlePageApplication
+*feature/singlePageApplication*
 
 Initialise SPA functionality with graceful degredation
 
@@ -10,6 +10,7 @@ Initialise SPA functionality with graceful degredation
 -   Append the new html content to the wrapper
 -   If navigation open, close navigation (import close Navigation)
 -   Reset any specific page classes/styles (scroll lock etc)
+-   Scroll to top of document
 -   Update pushState
 -   Remove ajax loading class
 -   Update page titles?
@@ -17,7 +18,7 @@ Initialise SPA functionality with graceful degredation
 
 List initOnce functions
 
-List initDynamic function
+List initDynamic function (on ajaxEnd, or bind to popstate if possible)
 
 Call initOnce on initial page load
 
@@ -26,3 +27,7 @@ Wrap initDynamic functions to specific callbacks etc. So they can be reinitialis
 Also ensure these functions run if client lands on sub page `/contact` for example
 
 Remove `indexPage.js` potentially.
+
+*Fixes*
+
+Reset scroll top on nav after closing

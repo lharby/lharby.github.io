@@ -9,6 +9,7 @@ https://slackwise.org.uk
 
 const DOM = document.querySelector('html');
 const BODY = DOM.querySelector('body');
+const WRAPPER = DOM.querySelector('#wrapper');
 const HIDDEN_CLASS = 'hidden';
 const VISIBILITY_HIDDEN_CLASS = 'visibility-hidden';
 const EMAIL_ADDRESS = process.env.NEXT_PUBLIC_EMAIL_ADDRESS;
@@ -34,6 +35,7 @@ DOM.classList.remove('visibility-hidden');
 export {
     DOM,
     BODY,
+    WRAPPER,
     HIDDEN_CLASS,
     VISIBILITY_HIDDEN_CLASS,
     EMAIL_ADDRESS,
