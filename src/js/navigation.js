@@ -6,7 +6,7 @@ https://slackwise.org.uk
 */
 
 /* navigation */
-import { DOM, BODY, isAjax } from './global';
+import { DOM, BODY } from './global';
 import { enableScrollLock, disableScrollLock, scrollToTop } from './utils';
 
 const wrapper = 'nav-wrapper';
@@ -53,9 +53,7 @@ const closeNavigation = () => {
     BODY.classList.remove(scrollLockClass);
     overlay.classList.remove(overlayOpenClass);
     disableScrollLock();
-    if (isAjax) {
-        scrollToTop();
-    }
+    scrollToTop();
 }
 
 export  {

@@ -180,7 +180,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOTE_DOMAIN", function() { return REMOTE_DOMAIN; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOTE_SERVER", function() { return REMOTE_SERVER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOTE_PATH", function() { return REMOTE_PATH; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isAjax", function() { return isAjax; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "site", function() { return site; });
 /*
 Luke Harby
@@ -201,7 +200,6 @@ var EMAIL_ADDRESS = "studiomalarkeyuk@gmail.com";
 var REMOTE_DOMAIN = "https://lharby.github.io/";
 var REMOTE_SERVER = "https://slackwise.org.uk/sites/";
 var REMOTE_PATH = "studio-malarkey";
-var isAjax = false;
 var site = {
   width: {
     small: 480,
@@ -444,10 +442,7 @@ var closeNavigation = function closeNavigation() {
   _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(scrollLockClass);
   overlay.classList.remove(overlayOpenClass);
   Object(_utils__WEBPACK_IMPORTED_MODULE_1__["disableScrollLock"])();
-
-  if (_global__WEBPACK_IMPORTED_MODULE_0__["isAjax"]) {
-    Object(_utils__WEBPACK_IMPORTED_MODULE_1__["scrollToTop"])();
-  }
+  Object(_utils__WEBPACK_IMPORTED_MODULE_1__["scrollToTop"])();
 };
 
 
@@ -814,8 +809,6 @@ var attachClickEvent = function attachClickEvent() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "router", function() { return router; });
 /* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "isAjax", function() { return _global__WEBPACK_IMPORTED_MODULE_0__["isAjax"]; });
-
 /* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 /* harmony import */ var _navigation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
@@ -874,7 +867,6 @@ var router = function router() {
       fetch(href).then(function (res) {
         return res.text();
       }).then(function (html) {
-        isAjax = true;
         Object(_navigation__WEBPACK_IMPORTED_MODULE_2__["closeNavigation"])();
         _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
         _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].removeAttribute('class');
