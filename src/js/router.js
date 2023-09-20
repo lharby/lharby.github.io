@@ -52,7 +52,7 @@ const router = () => {
                     updateContent(html);
                     document.title = documentTitle;
                     history.pushState({ path: href }, documentTitle, hrefSplit);
-                    BODY.scrollIntoView({ behavior: smooth });
+                    BODY.scrollIntoView({ behavior: 'smooth' });
                     initDynamicFunctions();
                 })
                 .catch((err) => {

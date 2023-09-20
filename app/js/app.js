@@ -884,7 +884,7 @@ var router = function router() {
           path: href
         }, documentTitle, hrefSplit);
         _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].scrollIntoView({
-          behavior: smooth
+          behavior: 'smooth'
         });
         Object(_app__WEBPACK_IMPORTED_MODULE_1__["initDynamicFunctions"])();
       })["catch"](function (err) {
