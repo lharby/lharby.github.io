@@ -295,11 +295,10 @@ function enableScrollLock() {
     var scrollPosition = getElementScroll(); // Reset scroll position
 
     window.scrollTo(scrollPosition.left, 0);
-    var scrollBarWidth = getComputedStyle(document.documentElement).getPropertyValue('--scrollbar-width');
     var htmlTag = document.documentElement;
     htmlTag.classList.add(className);
     htmlTag.style.marginTop = "".concat(-scrollPosition.top, "px");
-    htmlTag.style.marginLeft = scrollBarWidth;
+    htmlTag.style.marginLeft = 0;
     htmlTag.style.position = 'fixed';
     htmlTag.style.overflow = 'hidden';
     htmlTag.style.width = '100%'; // Trigger event on target. You can listen for it using document.body.addEventListener("site.scrollLock:enable", callbackHere)
