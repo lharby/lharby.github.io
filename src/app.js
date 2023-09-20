@@ -40,7 +40,6 @@ const initDynamicFunctions = () => {
     if (WRAPPER.classList.contains('contact')) {
         appendForm();
     }
-    console.log('initDynamicFunctions');
 };
 
 // global

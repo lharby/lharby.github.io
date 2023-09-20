@@ -65,4 +65,5 @@ const router = () => {
 
 export {
     router,
+    isAjax
 };
