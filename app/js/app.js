@@ -485,6 +485,12 @@ var closeNavigation = function closeNavigation() {
   if (isAjax) {
     Object(_utils__WEBPACK_IMPORTED_MODULE_1__["scrollToTop"])();
   }
+
+  target.addEventListener('animationend', function () {
+    target.scroll({
+      top: 0
+    });
+  });
 };
 
 

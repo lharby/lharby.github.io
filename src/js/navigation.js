@@ -65,6 +65,9 @@ const closeNavigation = () => {
     if (isAjax) {
         scrollToTop();
     }
+    target.addEventListener('animationend', () => {
+        target.scroll({ top: 0 });
+    });
 }
 
 export  {
