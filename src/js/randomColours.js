@@ -25,6 +25,8 @@ const setRandomColour = () => {
         '--selection-background',
         colours[rndColour]
     );
+    console.log(colours[rndColour]);
+    console.log(document.documentElement.style.getPropertyValue('--selection-background'));
 };
 
 const attachClickEvent = () => {
@@ -34,4 +36,7 @@ const attachClickEvent = () => {
     menuClose.click();
 };
 
-export { setRandomColour, attachClickEvent };
+export {
+    setRandomColour,
+    attachClickEvent
+};

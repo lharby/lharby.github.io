@@ -900,6 +900,8 @@ var rndColour = Math.floor(Math.random() * colours.length);
 
 var setRandomColour = function setRandomColour() {
   document.documentElement.style.setProperty('--selection-background', colours[rndColour]);
+  console.log(colours[rndColour]);
+  console.log(document.documentElement.style.getPropertyValue('--selection-background'));
 };
 
 var attachClickEvent = function attachClickEvent() {
