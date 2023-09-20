@@ -67,9 +67,13 @@ export function enableScrollLock() {
         // Reset scroll position
         window.scrollTo(scrollPosition.left, 0);
 
+        const scrollBarWidth = getComputedStyle(document.documentElement)
+            .getPropertyValue('--scrollbar-width');
+
         const htmlTag = document.documentElement;
         htmlTag.classList.add(className);
         htmlTag.style.marginTop = `${-scrollPosition.top}px`;
+        htmlTag.style.marginLeft = scrollBarWidth;
         htmlTag.style.position = 'fixed';
         htmlTag.style.overflow = 'hidden';
         htmlTag.style.width = '100%';
@@ -100,6 +104,7 @@ export function disableScrollLock() {
         const htmlTag = document.documentElement;
         htmlTag.classList.remove(className);
         htmlTag.style.marginTop = '';
+        htmlTag.style.marginLeft = '';
         htmlTag.style.position = '';
         htmlTag.style.overflow = '';
         htmlTag.style.width = '';
