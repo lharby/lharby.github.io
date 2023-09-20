@@ -486,10 +486,12 @@ var closeNavigation = function closeNavigation() {
     Object(_utils__WEBPACK_IMPORTED_MODULE_1__["scrollToTop"])();
   }
 
-  target.addEventListener('transitionend', function () {
-    console.log('scrollTop before: ', target.scrollTop);
-    target.scrollTop = 0;
-    console.log('scrollTop after: ', target.scrollTop);
+  target.addEventListener('transitionend', function (e) {
+    if (e.propertyName === 'transform') {
+      target.scrollTop = 0;
+    }
+
+    console.log(e.propertyName);
   });
 };
 

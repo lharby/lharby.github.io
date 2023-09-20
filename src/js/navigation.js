@@ -65,10 +65,11 @@ const closeNavigation = () => {
     if (isAjax) {
         scrollToTop();
     }
-    target.addEventListener('transitionend', () => {
-        console.log('scrollTop before: ', target.scrollTop);
-        target.scrollTop = 0;
-        console.log('scrollTop after: ', target.scrollTop);
+    target.addEventListener('transitionend', (e) => {
+        if (e.propertyName === 'transform') {
+            target.scrollTop = 0;
+        }
+        console.log(e.propertyName);
     });
 }
 

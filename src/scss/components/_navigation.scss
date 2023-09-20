@@ -6,7 +6,7 @@ https://slackwise.org.uk
 */
 
 .nav-wrapper {
-    @include hover($animation__type-default, 300ms, $animation__ease-default);
+    @include hover(transform, 300ms, $animation__ease-default);
     position: fixed;
     right: 0;
     top: 0;
@@ -24,7 +24,7 @@ https://slackwise.org.uk
 
     &--open {
         @include hover(
-            $animation__type-default,
+            transform,
             300ms,
             $animation__ease-default
         );
