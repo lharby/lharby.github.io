@@ -141,7 +141,6 @@ var initOnceFunctions = function initOnceFunctions() {
 
 var initDynamicFunctions = function initDynamicFunctions() {
   Object(_js_obfuscateEmail__WEBPACK_IMPORTED_MODULE_9__["default"])();
-  Object(_js_router__WEBPACK_IMPORTED_MODULE_5__["router"])();
 
   if (_js_global__WEBPACK_IMPORTED_MODULE_1__["DOM"].classList.contains('high-contrast')) {
     Object(_js_randomColours__WEBPACK_IMPORTED_MODULE_13__["setRandomColour"])();

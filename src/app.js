@@ -33,7 +33,6 @@ const initOnceFunctions = () => {
 
 const initDynamicFunctions = () => {
     obfuscateEmail();
-    router();
     if (DOM.classList.contains('high-contrast')) {
         setRandomColour();
         setTimeout(attachClickEvent, 100);
