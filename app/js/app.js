@@ -486,7 +486,7 @@ var closeNavigation = function closeNavigation() {
     Object(_utils__WEBPACK_IMPORTED_MODULE_1__["scrollToTop"])();
   }
 
-  target.addEventListener('animationend', function () {
+  target.addEventListener('transitionend', function () {
     console.log('scrollTop before: ', target.scrollTop);
     target.scrollTop = 0;
     console.log('scrollTop after: ', target.scrollTop);

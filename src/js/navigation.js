@@ -65,7 +65,7 @@ const closeNavigation = () => {
     if (isAjax) {
         scrollToTop();
     }
-    target.addEventListener('animationend', () => {
+    target.addEventListener('transitionend', () => {
         console.log('scrollTop before: ', target.scrollTop);
         target.scrollTop = 0;
         console.log('scrollTop after: ', target.scrollTop);
