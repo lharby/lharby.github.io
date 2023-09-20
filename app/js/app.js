@@ -487,9 +487,7 @@ var closeNavigation = function closeNavigation() {
   }
 
   target.addEventListener('animationend', function () {
-    target.scroll({
-      top: 0
-    });
+    target.scrollTop = 0;
   });
 };
 

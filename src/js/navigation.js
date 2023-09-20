@@ -66,7 +66,7 @@ const closeNavigation = () => {
         scrollToTop();
     }
     target.addEventListener('animationend', () => {
-        target.scroll({ top: 0 });
+        target.scrollTop = 0;
     });
 }
 
