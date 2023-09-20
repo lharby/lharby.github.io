@@ -19,6 +19,7 @@ const configFE = {
         path: path.join(__dirname, outputFolder + 'js/'),
         filename: '[name].js',
     },
+    devtool: 'source-map',
     plugins: [
         new MiniCssExtractPlugin({
             filename: '../css/[name].css',
