@@ -16,10 +16,13 @@ Initialise SPA functionality with graceful degredation
 -   Rebind any click handlers to content loaded via ajax?
 
 List initOnce functions
+
 List initDynamic function
 
 Call initOnce on initial page load
-Bind initDynamic functions to specific callbacks etc.
+
+Wrap initDynamic functions to specific callbacks etc. So they can be reinitialised en masse.
+
 Also ensure these functions run if client lands on sub page `/contact` for example
 
 Remove `indexPage.js` potentially.
