@@ -455,11 +455,15 @@ var navigation = function navigation() {
   });
 
   overlay.addEventListener('click', function () {
+    isAjax = false;
+
     if (overlay.classList.contains(overlayOpenClass)) {
       closeNavigation();
     }
   });
   window.addEventListener('keydown', function (event) {
+    isAjax = false;
+
     if (event.key === 'Escape' && overlay.classList.contains(overlayOpenClass)) {
       closeNavigation();
     }
@@ -488,12 +492,7 @@ var closeNavigation = function closeNavigation() {
 
   if (isAjax) {
     Object(_utils__WEBPACK_IMPORTED_MODULE_1__["scrollToTop"])();
-  } // target.addEventListener('transitionend', (e) => {
-  //     if (e.propertyName === 'transform') {
-  //         target.scrollTop = 0;
-  //     }
-  // });
-
+  }
 };
 
 

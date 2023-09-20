@@ -31,12 +31,14 @@ const navigation = () => {
     });
 
     overlay.addEventListener('click', () => {
+        isAjax = false;
         if (overlay.classList.contains(overlayOpenClass)) {
             closeNavigation();
         }
     });
 
     window.addEventListener('keydown', event => {
+        isAjax = false;
         if (event.key === 'Escape' && overlay.classList.contains(overlayOpenClass)) {
             closeNavigation();
         }
@@ -66,11 +68,6 @@ const closeNavigation = () => {
     if (isAjax) {
         scrollToTop();
     }
-    // target.addEventListener('transitionend', (e) => {
-    //     if (e.propertyName === 'transform') {
-    //         target.scrollTop = 0;
-    //     }
-    // });
 }
 
 export  {
