@@ -1,4 +1,4 @@
-*feature/singlePageApplication*
+_feature/singlePageApplication_
 
 Initialise SPA functionality with graceful degredation - DONE
 
@@ -28,8 +28,8 @@ Also ensure these functions run if client lands on sub page `/contact` for examp
 
 Remove `indexPage.js` potentially. - DONE
 
-*Fixes*
+_Fixes_
 
 Reset scroll top on nav after closing - DONE
 
-Set scrollbar colour after ajax page load
+Set scrollbar colour after ajax page load - DONE
