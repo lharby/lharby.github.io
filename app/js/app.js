@@ -138,10 +138,7 @@ var initDynamicFunctions = function initDynamicFunctions() {
     Object(_js_lazyLoad__WEBPACK_IMPORTED_MODULE_12__["setImageSource"])();
   }
   if (_js_global__WEBPACK_IMPORTED_MODULE_1__["DOM"].classList.contains('high-contrast')) {
-    setTimeout(function () {
-      Object(_js_randomColours__WEBPACK_IMPORTED_MODULE_13__["setRandomColour"])();
-    }, 500);
-    setTimeout(_js_randomColours__WEBPACK_IMPORTED_MODULE_13__["attachClickEvent"], 100);
+    Object(_js_randomColours__WEBPACK_IMPORTED_MODULE_13__["setRandomColour"])();
   }
   if (_js_global__WEBPACK_IMPORTED_MODULE_1__["WRAPPER"].classList.contains('contact')) {
     Object(_js_appendForm__WEBPACK_IMPORTED_MODULE_10__["default"])();
@@ -753,7 +750,6 @@ var observer = new IntersectionObserver(lazyLoad, options);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setRandomColour", function() { return setRandomColour; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "attachClickEvent", function() { return attachClickEvent; });
 /* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /*
 Luke Harby
@@ -768,14 +764,15 @@ var colours = ['#ee4800', '#60c600', '#00ffff', '#ff7f00', '#ff6ccc', '#848382',
 var setRandomColour = function setRandomColour() {
   var rndColour = Math.floor(Math.random() * colours.length);
   document.documentElement.style.setProperty('--selection-background', colours[rndColour]);
-  console.log(colours[rndColour]);
 };
-var attachClickEvent = function attachClickEvent() {
-  var menuOpen = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.menu__toggle');
-  var menuClose = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.menu__toggle--close');
-  menuOpen.click();
-  menuClose.click();
-};
+
+// const attachClickEvent = () => {
+//     const menuOpen = DOM.querySelector('.menu__toggle');
+//     const menuClose = DOM.querySelector('.menu__toggle--close');
+//     menuOpen.click();
+//     menuClose.click();
+// };
+
 
 
 /***/ }),

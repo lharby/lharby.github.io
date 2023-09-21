@@ -12,7 +12,7 @@ import obfuscateEmail from './js/obfuscateEmail';
 import appendForm from './js/appendForm';
 import getScrollbarWidth from './js/getScrollbarWidth';
 import { setImageSource } from './js/lazyLoad';
-import { setRandomColour, attachClickEvent } from './js/randomColours';
+import { setRandomColour } from './js/randomColours';
 
 import { DOM, WRAPPER, site } from './js/global';
 
@@ -34,10 +34,7 @@ const initDynamicFunctions = () => {
         setImageSource();
     }
     if (DOM.classList.contains('high-contrast')) {
-        setTimeout(() => {
-            setRandomColour();
-        }, 500);
-        setTimeout(attachClickEvent, 100);
+        setRandomColour();
     }
     if (WRAPPER.classList.contains('contact')) {
         appendForm();

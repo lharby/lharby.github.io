@@ -24,14 +24,13 @@ const setRandomColour = () => {
         '--selection-background',
         colours[rndColour]
     );
-    console.log(colours[rndColour]);
 };
 
-const attachClickEvent = () => {
-    const menuOpen = DOM.querySelector('.menu__toggle');
-    const menuClose = DOM.querySelector('.menu__toggle--close');
-    menuOpen.click();
-    menuClose.click();
-};
+// const attachClickEvent = () => {
+//     const menuOpen = DOM.querySelector('.menu__toggle');
+//     const menuClose = DOM.querySelector('.menu__toggle--close');
+//     menuOpen.click();
+//     menuClose.click();
+// };
 
-export { setRandomColour, attachClickEvent };
+export { setRandomColour };
