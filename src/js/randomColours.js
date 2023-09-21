@@ -26,8 +26,8 @@ const setRandomColour = () => {
     );
     console.log(
         '%c %s',
-        `background-color: ${colours[rndColour]}; color: black`,
-        colours[rndColour]
+        `background-color: ${colours[rndColour]}; color: white`,
+        `rndColour: ${colours[rndColour]}`
     );
 };
 
