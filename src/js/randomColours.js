@@ -18,15 +18,13 @@ const colours = [
     '#d2dd26',
 ];
 
-const rndColour = Math.floor(Math.random() * colours.length);
-
 const setRandomColour = () => {
+    const rndColour = Math.floor(Math.random() * colours.length);
     document.documentElement.style.setProperty(
         '--selection-background',
         colours[rndColour]
     );
     console.log(colours[rndColour]);
-    console.log(document.documentElement.style.getPropertyValue('--selection-background'));
 };
 
 const attachClickEvent = () => {
@@ -36,7 +34,4 @@ const attachClickEvent = () => {
     menuClose.click();
 };
 
-export {
-    setRandomColour,
-    attachClickEvent
-};
+export { setRandomColour, attachClickEvent };
