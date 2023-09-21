@@ -34,7 +34,9 @@ const initDynamicFunctions = () => {
         setImageSource();
     }
     if (DOM.classList.contains('high-contrast')) {
-        setRandomColour();
+        setTimeout(() => {
+            setRandomColour();
+        }, 500);
         setTimeout(attachClickEvent, 100);
     }
     if (WRAPPER.classList.contains('contact')) {
@@ -47,6 +49,4 @@ $(document).ready(() => {
     initOnceFunctions();
 });
 
-export {
-    initDynamicFunctions,
-};
+export { initDynamicFunctions };
