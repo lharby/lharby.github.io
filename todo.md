@@ -33,3 +33,5 @@ _Fixes_
 Reset scroll top on nav after closing - DONE
 
 Set scrollbar colour after ajax page load - DONE
+
+Move the remove visibility classlist to the wrapper an not the html element so we can fade in out the entry element.

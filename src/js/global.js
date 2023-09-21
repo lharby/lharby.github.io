@@ -28,11 +28,11 @@ const site = {
     isMobile: false,
     isTablet: false,
     isDesktop: false,
-    winWidth: $(window).width(),
+    winWidth: window.innerWidth,
 };
 
 DOM.classList.remove('no-js');
-DOM.classList.remove('visibility-hidden');
+DOM.classList.remove('visibility-hidden'); // TODO move this to the wrapper, and also check the entry JS
 
 export {
     DOM,
