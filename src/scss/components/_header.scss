@@ -59,7 +59,7 @@ https://slackwise.org.uk
     }
 
     .menu__toggle {
-        @include no-outline;
+        @include outline;
         position: fixed;
         right: $default__spacer;
         top: 1rem;

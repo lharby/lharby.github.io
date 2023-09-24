@@ -62,6 +62,10 @@ https://slackwise.org.uk
     }
 }
 
+@mixin outline {
+    outline: thin dotted $colour__dark-grey;
+}
+
 @mixin emptyContent {
     &:empty {
         display: none;
