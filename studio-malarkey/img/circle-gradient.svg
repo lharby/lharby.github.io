@@ -1,8 +1,8 @@
-<svg viewBox="0 0 100 100">
+<svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 100 100">
   <defs>
     <filter id="blur" color-interpolation-filters="linear" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur in="SourceGraphic" stdDeviation="10"></feGaussianBlur>
-    </filter> 
+    </filter>
     <mask id="circle">
       <circle cx="50" cy="50" r="50" fill="white"></circle>
     </mask>
