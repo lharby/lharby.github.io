@@ -91,6 +91,20 @@ html {
             }
         }
 
+        .toggle-contrast {
+            img {
+                display: inline-block;
+            }
+
+            &:after {
+                content: 'Colour version';
+            }
+        }
+
+        .ion-contrast:before {
+            display: none;
+        }
+
         #posts {
             [href] {
                 border-bottom: 1px solid $colour__black !important;
@@ -98,17 +112,6 @@ html {
                 &:hover {
                     border-bottom: 1px solid transparent !important;
                 }
-            }
-        }
-
-        .toggle-contrast {
-
-            img {
-                display: inline-block;
-            }
-
-            &:after {
-                content: 'Colour version';
             }
         }
 
