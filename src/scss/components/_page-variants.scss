@@ -102,6 +102,11 @@ html {
         }
 
         .toggle-contrast {
+
+            img {
+                display: inline-block;
+            }
+
             &:after {
                 content: 'Colour version';
             }
