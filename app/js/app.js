@@ -508,10 +508,20 @@ https://slackwise.org.uk
 
 
 
+var url = document.location.pathname.split('/');
+var primaryDir = url[1];
 var documentTitle;
 
 // create fuction to load content just for the indedx page
-
+var loadindexPageContent = function loadindexPageContent() {
+  fetch('/home').then(function (res) {
+    return res.text();
+  }).then(function (html) {
+    _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].removeAttribute('class');
+    updateContent(html);
+    document.title = documentTitle;
+  });
+};
 var updateContent = function updateContent(input) {
   _global__WEBPACK_IMPORTED_MODULE_0__["PAGE_WRAPPER"].replaceChildren();
   var parser = new DOMParser();
@@ -560,6 +570,9 @@ var router = function router() {
     });
   });
 };
+if (!primaryDir) {
+  loadindexPageContent();
+}
 
 
 /***/ }),

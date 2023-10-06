@@ -11,9 +11,20 @@ import { BODY, WRAPPER, PAGE_WRAPPER, LOADING_CLASS } from './global';
 import { initDynamicFunctions } from '../app';
 import { closeNavigation } from './navigation';
 
+const url = document.location.pathname.split('/');
+const primaryDir = url[1];
 let documentTitle;
 
 // create fuction to load content just for the indedx page
+const loadindexPageContent = () => {
+    fetch('/home')
+        .then(res => res.text())
+        .then(html => {
+            WRAPPER.removeAttribute('class');
+            updateContent(html);
+            document.title = documentTitle;
+        });
+};
 
 const updateContent = input => {
     PAGE_WRAPPER.replaceChildren();
@@ -66,5 +77,9 @@ const router = () => {
         });
     });
 };
+
+if (!primaryDir) {
+    loadindexPageContent();
+}
 
 export { router };
