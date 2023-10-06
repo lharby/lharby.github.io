@@ -516,6 +516,7 @@ var getLinks = function getLinks() {
   var internal = _toConsumableArray(links).filter(function (item) {
     return item.getAttribute('href').startsWith('/');
   });
+  console.log("internal ".concat((internal, internal.length)));
   return internal;
 };
 var updateContent = function updateContent(input) {

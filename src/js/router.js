@@ -20,6 +20,7 @@ const getLinks = () => {
     const internal = [...links].filter(item =>
         item.getAttribute('href').startsWith('/')
     );
+    console.log(`internal ${(internal, internal.length)}`);
     return internal;
 };
 
