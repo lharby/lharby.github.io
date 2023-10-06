@@ -49,6 +49,7 @@ const router = () => {
             event.stopPropagation();
             BODY.classList.add(LOADING_CLASS);
             if (href === '/') {
+                href = '/home';
                 hrefSplit = '/';
             }
             fetch(href)

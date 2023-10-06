@@ -543,6 +543,7 @@ var router = function router() {
       event.stopPropagation();
       _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
       if (href === '/') {
+        href = '/home';
         hrefSplit = '/';
       }
       fetch(href).then(function (res) {
