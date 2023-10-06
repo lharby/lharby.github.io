@@ -39,6 +39,7 @@ const updateContent = input => {
 
 const router = () => {
     getLinks();
+    internal.classList.add('internal');
     internal.forEach(item => {
         let href = item.getAttribute('href');
         let hrefSplit = href.split('/')[1];

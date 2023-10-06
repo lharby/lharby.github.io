@@ -533,6 +533,7 @@ var updateContent = function updateContent(input) {
 };
 var router = function router() {
   getLinks();
+  internal.classList.add('internal');
   internal.forEach(function (item) {
     var href = item.getAttribute('href');
     var hrefSplit = href.split('/')[1];
