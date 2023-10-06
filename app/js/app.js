@@ -532,7 +532,7 @@ var loadIndexPageContent = function loadIndexPageContent() {
     // history.pushState({ path: href }, documentTitle, hrefSplit);
     links = document.querySelectorAll('a');
     internal = _toConsumableArray(links).filter(function (item) {
-      return item.currentTarget.getAttribute('href').startsWith('/');
+      return item.getAttribute('href').startsWith('/');
     });
     console.log("internal ".concat((internal, internal.length)));
     Object(_app__WEBPACK_IMPORTED_MODULE_1__["initDynamicFunctions"])();
@@ -555,7 +555,7 @@ var router = function router() {
     return item.getAttribute('href').startsWith('/');
   });
   internal.forEach(function (item) {
-    href = item.currentTarget.getAttribute('href');
+    href = item.getAttribute('href');
     hrefSplit = href.split('/')[1];
     item.addEventListener('click', function (event) {
       event.preventDefault();
@@ -590,9 +590,11 @@ var router = function router() {
     });
   });
 };
-if (!primaryDir) {
-  loadIndexPageContent();
-}
+
+// if (!primaryDir) {
+//     loadIndexPageContent();
+// }
+
 
 
 /***/ }),

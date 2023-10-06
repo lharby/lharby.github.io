@@ -34,7 +34,7 @@ const loadIndexPageContent = () => {
             // history.pushState({ path: href }, documentTitle, hrefSplit);
             links = document.querySelectorAll('a');
             internal = [...links].filter(item =>
-                item.currentTarget.getAttribute('href').startsWith('/')
+                item.getAttribute('href').startsWith('/')
             );
             console.log(`internal ${(internal, internal.length)}`);
             initDynamicFunctions();
@@ -61,7 +61,7 @@ const router = () => {
     );
 
     internal.forEach(item => {
-        href = item.currentTarget.getAttribute('href');
+        href = item.getAttribute('href');
         hrefSplit = href.split('/')[1];
         item.addEventListener('click', event => {
             event.preventDefault();
@@ -98,8 +98,8 @@ const router = () => {
     });
 };
 
-if (!primaryDir) {
-    loadIndexPageContent();
-}
+// if (!primaryDir) {
+//     loadIndexPageContent();
+// }
 
 export { router };
