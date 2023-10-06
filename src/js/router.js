@@ -38,6 +38,7 @@ const router = () => {
     // let internal = [...links].filter(item =>
     //     item.getAttribute('href').startsWith('/')
     // );
+    getLinks();
 
     internal.forEach(item => {
         let href = item.getAttribute('href');

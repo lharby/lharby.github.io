@@ -532,7 +532,7 @@ var router = function router() {
   // let internal = [...links].filter(item =>
   //     item.getAttribute('href').startsWith('/')
   // );
-
+  getLinks();
   internal.forEach(function (item) {
     var href = item.getAttribute('href');
     var hrefSplit = href.split('/')[1];
