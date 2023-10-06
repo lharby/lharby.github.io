@@ -15,15 +15,12 @@ const url = document.location.pathname.split('/');
 const primaryDir = url[1];
 let documentTitle;
 
-// create fuction to load content just for the indedx page
-const loadindexPageContent = () => {
-    fetch('/home')
-        .then(res => res.text())
-        .then(html => {
-            WRAPPER.removeAttribute('class');
-            updateContent(html);
-            document.title = documentTitle;
-        });
+const getLinks = () => {
+    const links = document.querySelectorAll('a');
+    const internal = [...links].filter(item =>
+        item.getAttribute('href').startsWith('/')
+    );
+    return internal;
 };
 
 const updateContent = input => {
@@ -33,6 +30,7 @@ const updateContent = input => {
     const container = doc.querySelector('#container');
     PAGE_WRAPPER.appendChild(container);
     documentTitle = doc.querySelector('title').textContent;
+    getLinks();
 };
 
 const router = () => {
@@ -69,6 +67,7 @@ const router = () => {
                     document.title = documentTitle;
                     history.pushState({ path: href }, documentTitle, hrefSplit);
                     initDynamicFunctions();
+                    getLinks();
                     // if body is scrolled, init scrollToTop function
                 })
                 .catch(err => {
@@ -77,6 +76,16 @@ const router = () => {
                 });
         });
     });
+};
+
+const loadindexPageContent = () => {
+    fetch('/home')
+        .then(res => res.text())
+        .then(html => {
+            WRAPPER.removeAttribute('class');
+            updateContent(html);
+            document.title = documentTitle;
+        });
 };
 
 if (!primaryDir) {

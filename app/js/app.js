@@ -511,16 +511,12 @@ https://slackwise.org.uk
 var url = document.location.pathname.split('/');
 var primaryDir = url[1];
 var documentTitle;
-
-// create fuction to load content just for the indedx page
-var loadindexPageContent = function loadindexPageContent() {
-  fetch('/home').then(function (res) {
-    return res.text();
-  }).then(function (html) {
-    _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].removeAttribute('class');
-    updateContent(html);
-    document.title = documentTitle;
+var getLinks = function getLinks() {
+  var links = document.querySelectorAll('a');
+  var internal = _toConsumableArray(links).filter(function (item) {
+    return item.getAttribute('href').startsWith('/');
   });
+  return internal;
 };
 var updateContent = function updateContent(input) {
   _global__WEBPACK_IMPORTED_MODULE_0__["PAGE_WRAPPER"].replaceChildren();
@@ -529,6 +525,7 @@ var updateContent = function updateContent(input) {
   var container = doc.querySelector('#container');
   _global__WEBPACK_IMPORTED_MODULE_0__["PAGE_WRAPPER"].appendChild(container);
   documentTitle = doc.querySelector('title').textContent;
+  getLinks();
 };
 var router = function router() {
   var links = document.querySelectorAll('a');
@@ -563,12 +560,22 @@ var router = function router() {
           path: href
         }, documentTitle, hrefSplit);
         Object(_app__WEBPACK_IMPORTED_MODULE_1__["initDynamicFunctions"])();
+        getLinks();
         // if body is scrolled, init scrollToTop function
       })["catch"](function (err) {
         console.warn('Something went wrong.', err);
         _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
       });
     });
+  });
+};
+var loadindexPageContent = function loadindexPageContent() {
+  fetch('/home').then(function (res) {
+    return res.text();
+  }).then(function (html) {
+    _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].removeAttribute('class');
+    updateContent(html);
+    document.title = documentTitle;
   });
 };
 if (!primaryDir) {
