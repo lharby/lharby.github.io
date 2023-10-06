@@ -14,8 +14,6 @@ import { scrollToTop } from './utils';
 
 const url = document.location.pathname.split('/');
 const primaryDir = url[1];
-let links;
-let internal;
 let href;
 let hrefSplit;
 let documentTitle;
@@ -55,8 +53,8 @@ const updateContent = input => {
 };
 
 const router = () => {
-    links = document.querySelectorAll('a');
-    internal = [...links].filter(item =>
+    let links = document.querySelectorAll('a');
+    let internal = [...links].filter(item =>
         item.getAttribute('href').startsWith('/')
     );
 

@@ -512,8 +512,6 @@ https://slackwise.org.uk
 
 var url = document.location.pathname.split('/');
 var primaryDir = url[1];
-var links;
-var internal;
 var href;
 var hrefSplit;
 var documentTitle;
@@ -550,8 +548,8 @@ var updateContent = function updateContent(input) {
   documentTitle = doc.querySelector('title').textContent;
 };
 var router = function router() {
-  links = document.querySelectorAll('a');
-  internal = _toConsumableArray(links).filter(function (item) {
+  var links = document.querySelectorAll('a');
+  var internal = _toConsumableArray(links).filter(function (item) {
     return item.getAttribute('href').startsWith('/');
   });
   internal.forEach(function (item) {
