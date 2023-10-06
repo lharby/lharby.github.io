@@ -34,10 +34,10 @@ const updateContent = input => {
 };
 
 const router = () => {
-    let links = document.querySelectorAll('a');
-    let internal = [...links].filter(item =>
-        item.getAttribute('href').startsWith('/')
-    );
+    // let links = document.querySelectorAll('a');
+    // let internal = [...links].filter(item =>
+    //     item.getAttribute('href').startsWith('/')
+    // );
 
     internal.forEach(item => {
         let href = item.getAttribute('href');

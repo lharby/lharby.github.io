@@ -528,10 +528,11 @@ var updateContent = function updateContent(input) {
   documentTitle = doc.querySelector('title').textContent;
 };
 var router = function router() {
-  var links = document.querySelectorAll('a');
-  var internal = _toConsumableArray(links).filter(function (item) {
-    return item.getAttribute('href').startsWith('/');
-  });
+  // let links = document.querySelectorAll('a');
+  // let internal = [...links].filter(item =>
+  //     item.getAttribute('href').startsWith('/')
+  // );
+
   internal.forEach(function (item) {
     var href = item.getAttribute('href');
     var hrefSplit = href.split('/')[1];
