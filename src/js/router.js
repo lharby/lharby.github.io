@@ -54,6 +54,7 @@ const router = () => {
     );
 
     internal.forEach(item => {
+        console.log(`internal ${(internal, internal.length)}`);
         href = item.getAttribute('href');
         hrefSplit = href.split('/')[1];
         item.addEventListener('click', event => {
@@ -63,6 +64,7 @@ const router = () => {
             if (href === '/') {
                 hrefSplit = '/';
             }
+            console.log(`href: ${href}`);
             fetch(href)
                 .then(res => {
                     return res.text();

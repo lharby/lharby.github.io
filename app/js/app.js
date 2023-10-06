@@ -550,6 +550,7 @@ var router = function router() {
     return item.getAttribute('href').startsWith('/');
   });
   internal.forEach(function (item) {
+    console.log("internal ".concat((internal, internal.length)));
     href = item.getAttribute('href');
     hrefSplit = href.split('/')[1];
     item.addEventListener('click', function (event) {
@@ -559,6 +560,7 @@ var router = function router() {
       if (href === '/') {
         hrefSplit = '/';
       }
+      console.log("href: ".concat(href));
       fetch(href).then(function (res) {
         return res.text();
       }).then(function (html) {
