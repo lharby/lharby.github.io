@@ -512,6 +512,7 @@ https://slackwise.org.uk
 
 var url = document.location.pathname.split('/');
 var primaryDir = url[1];
+var internal;
 var href;
 var hrefSplit;
 var documentTitle;
@@ -527,9 +528,11 @@ var loadIndexPageContent = function loadIndexPageContent() {
     _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].removeAttribute('class');
     updateContent(html);
     document.title = documentTitle;
-    history.pushState({
-      path: href
-    }, documentTitle, hrefSplit);
+    // history.pushState({ path: href }, documentTitle, hrefSplit);
+    internal = _toConsumableArray(links).filter(function (item) {
+      return item.getAttribute('href').startsWith('/');
+    });
+    console.log("internal ".concat((internal, internal.length)));
     Object(_app__WEBPACK_IMPORTED_MODULE_1__["initDynamicFunctions"])();
   })["catch"](function (err) {
     console.warn('Something went wrong.', err);
@@ -546,11 +549,10 @@ var updateContent = function updateContent(input) {
 };
 var router = function router() {
   var links = document.querySelectorAll('a');
-  var internal = _toConsumableArray(links).filter(function (item) {
+  internal = _toConsumableArray(links).filter(function (item) {
     return item.getAttribute('href').startsWith('/');
   });
   internal.forEach(function (item) {
-    console.log("internal ".concat((internal, internal.length)));
     href = item.getAttribute('href');
     hrefSplit = href.split('/')[1];
     item.addEventListener('click', function (event) {

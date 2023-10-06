@@ -14,6 +14,7 @@ import { scrollToTop } from './utils';
 
 const url = document.location.pathname.split('/');
 const primaryDir = url[1];
+let internal;
 let href;
 let hrefSplit;
 let documentTitle;
@@ -29,7 +30,11 @@ const loadIndexPageContent = () => {
             WRAPPER.removeAttribute('class');
             updateContent(html);
             document.title = documentTitle;
-            history.pushState({ path: href }, documentTitle, hrefSplit);
+            // history.pushState({ path: href }, documentTitle, hrefSplit);
+            internal = [...links].filter(item =>
+                item.getAttribute('href').startsWith('/')
+            );
+            console.log(`internal ${(internal, internal.length)}`);
             initDynamicFunctions();
         })
         .catch(err => {
@@ -49,12 +54,11 @@ const updateContent = input => {
 
 const router = () => {
     let links = document.querySelectorAll('a');
-    let internal = [...links].filter(item =>
+    internal = [...links].filter(item =>
         item.getAttribute('href').startsWith('/')
     );
 
     internal.forEach(item => {
-        console.log(`internal ${(internal, internal.length)}`);
         href = item.getAttribute('href');
         hrefSplit = href.split('/')[1];
         item.addEventListener('click', event => {
