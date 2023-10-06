@@ -30,7 +30,6 @@ const updateContent = input => {
     const container = doc.querySelector('#container');
     PAGE_WRAPPER.appendChild(container);
     documentTitle = doc.querySelector('title').textContent;
-    getLinks();
 };
 
 const router = () => {
@@ -85,6 +84,7 @@ const loadindexPageContent = () => {
             WRAPPER.removeAttribute('class');
             updateContent(html);
             document.title = documentTitle;
+            getLinks();
         });
 };
 

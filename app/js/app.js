@@ -525,7 +525,6 @@ var updateContent = function updateContent(input) {
   var container = doc.querySelector('#container');
   _global__WEBPACK_IMPORTED_MODULE_0__["PAGE_WRAPPER"].appendChild(container);
   documentTitle = doc.querySelector('title').textContent;
-  getLinks();
 };
 var router = function router() {
   var links = document.querySelectorAll('a');
@@ -576,6 +575,7 @@ var loadindexPageContent = function loadindexPageContent() {
     _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].removeAttribute('class');
     updateContent(html);
     document.title = documentTitle;
+    getLinks();
   });
 };
 if (!primaryDir) {
