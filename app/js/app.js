@@ -510,14 +510,18 @@ https://slackwise.org.uk
 
 var url = document.location.pathname.split('/');
 var primaryDir = url[1];
+var links = document.querySelectorAll('a');
+var internal = _toConsumableArray(links).filter(function (item) {
+  return item.getAttribute('href').startsWith('/');
+});
 var documentTitle;
+console.log("internal ".concat((internal, internal.length)));
 var getLinks = function getLinks() {
-  var links = document.querySelectorAll('a');
-  var internal = _toConsumableArray(links).filter(function (item) {
+  links = document.querySelectorAll('a');
+  internal = _toConsumableArray(links).filter(function (item) {
     return item.getAttribute('href').startsWith('/');
   });
   console.log("internal ".concat((internal, internal.length)));
-  return internal;
 };
 var updateContent = function updateContent(input) {
   _global__WEBPACK_IMPORTED_MODULE_0__["PAGE_WRAPPER"].replaceChildren();
@@ -528,10 +532,6 @@ var updateContent = function updateContent(input) {
   documentTitle = doc.querySelector('title').textContent;
 };
 var router = function router() {
-  // let links = document.querySelectorAll('a');
-  // let internal = [...links].filter(item =>
-  //     item.getAttribute('href').startsWith('/')
-  // );
   getLinks();
   internal.forEach(function (item) {
     var href = item.getAttribute('href');

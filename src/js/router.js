@@ -13,15 +13,19 @@ import { closeNavigation } from './navigation';
 
 const url = document.location.pathname.split('/');
 const primaryDir = url[1];
+let links = document.querySelectorAll('a');
+let internal = [...links].filter(item =>
+    item.getAttribute('href').startsWith('/')
+);
 let documentTitle;
+console.log(`internal ${(internal, internal.length)}`);
 
 const getLinks = () => {
-    const links = document.querySelectorAll('a');
-    const internal = [...links].filter(item =>
+    links = document.querySelectorAll('a');
+    internal = [...links].filter(item =>
         item.getAttribute('href').startsWith('/')
     );
     console.log(`internal ${(internal, internal.length)}`);
-    return internal;
 };
 
 const updateContent = input => {
@@ -34,12 +38,7 @@ const updateContent = input => {
 };
 
 const router = () => {
-    // let links = document.querySelectorAll('a');
-    // let internal = [...links].filter(item =>
-    //     item.getAttribute('href').startsWith('/')
-    // );
     getLinks();
-
     internal.forEach(item => {
         let href = item.getAttribute('href');
         let hrefSplit = href.split('/')[1];
