@@ -125,7 +125,6 @@ var initOnceFunctions = function initOnceFunctions() {
   Object(_js_utils__WEBPACK_IMPORTED_MODULE_2__["siteResponsiveness"])();
   Object(_js_indexPage__WEBPACK_IMPORTED_MODULE_3__["indexPage"])();
   Object(_js_navigation__WEBPACK_IMPORTED_MODULE_4__["navigation"])();
-  Object(_js_router__WEBPACK_IMPORTED_MODULE_5__["router"])();
   Object(_js_date__WEBPACK_IMPORTED_MODULE_6__["default"])();
   Object(_js_entry__WEBPACK_IMPORTED_MODULE_7__["default"])();
   Object(_js_getScrollbarWidth__WEBPACK_IMPORTED_MODULE_11__["default"])();
@@ -134,6 +133,7 @@ var initOnceFunctions = function initOnceFunctions() {
 };
 var initDynamicFunctions = function initDynamicFunctions() {
   Object(_js_obfuscateEmail__WEBPACK_IMPORTED_MODULE_9__["default"])();
+  Object(_js_router__WEBPACK_IMPORTED_MODULE_5__["router"])();
   if (!_js_global__WEBPACK_IMPORTED_MODULE_1__["site"].isMobile) {
     Object(_js_lazyLoad__WEBPACK_IMPORTED_MODULE_12__["setImageSource"])();
   }

@@ -20,7 +20,6 @@ const initOnceFunctions = () => {
     siteResponsiveness();
     indexPage();
     navigation();
-    router();
     date();
     entry();
     getScrollbarWidth();
@@ -30,6 +29,7 @@ const initOnceFunctions = () => {
 
 const initDynamicFunctions = () => {
     obfuscateEmail();
+    router();
     if (!site.isMobile) {
         setImageSource();
     }
