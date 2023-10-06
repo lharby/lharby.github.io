@@ -10,38 +10,10 @@ https://slackwise.org.uk
 import { BODY, WRAPPER, PAGE_WRAPPER, LOADING_CLASS } from './global';
 import { initDynamicFunctions } from '../app';
 import { closeNavigation } from './navigation';
-import { scrollToTop } from './utils';
 
-const url = document.location.pathname.split('/');
-const primaryDir = url[1];
-let href;
-let hrefSplit;
 let documentTitle;
 
 // create fuction to load content just for the indedx page
-const loadIndexPageContent = () => {
-    href = '/home';
-    hrefSplit = '/';
-    fetch(href)
-        .then(res => res.text())
-        .then(html => {
-            BODY.classList.remove(LOADING_CLASS);
-            WRAPPER.removeAttribute('class');
-            updateContent(html);
-            document.title = documentTitle;
-            // history.pushState({ path: href }, documentTitle, hrefSplit);
-            links = document.querySelectorAll('a');
-            internal = [...links].filter(item =>
-                item.getAttribute('href').startsWith('/')
-            );
-            console.log(`internal ${(internal, internal.length)}`);
-            initDynamicFunctions();
-        })
-        .catch(err => {
-            console.warn('Something went wrong.', err);
-            BODY.classList.remove(LOADING_CLASS);
-        });
-};
 
 const updateContent = input => {
     PAGE_WRAPPER.replaceChildren();
@@ -59,8 +31,8 @@ const router = () => {
     );
 
     internal.forEach(item => {
-        href = item.getAttribute('href');
-        hrefSplit = href.split('/')[1];
+        let href = item.getAttribute('href');
+        let hrefSplit = href.split('/')[1];
         item.addEventListener('click', event => {
             event.preventDefault();
             event.stopPropagation();
@@ -68,7 +40,6 @@ const router = () => {
             if (href === '/') {
                 hrefSplit = '/';
             }
-            console.log(`href: ${href}`);
             fetch(href)
                 .then(res => {
                     return res.text();
@@ -95,9 +66,5 @@ const router = () => {
         });
     });
 };
-
-// if (!primaryDir) {
-//     loadIndexPageContent();
-// }
 
 export { router };
