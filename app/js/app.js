@@ -540,14 +540,12 @@ var internal = _toConsumableArray(links).filter(function (item) {
 });
 
 var documentTitle;
-console.log("internal ".concat((internal, internal.length)));
 
 var getLinks = function getLinks() {
   links = document.querySelectorAll('a');
   internal = _toConsumableArray(links).filter(function (item) {
     return item.getAttribute('href').startsWith('/');
   });
-  console.log("internal ".concat((internal, internal.length)));
 };
 
 var updateContent = function updateContent(input) {
@@ -565,7 +563,6 @@ var router = function router() {
     _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(indexClass);
   }
 
-  getLinks();
   internal.forEach(function (item) {
     item.classList.add('internal');
     var href = item.getAttribute('href');
@@ -615,6 +612,7 @@ var loadindexPageContent = function loadindexPageContent() {
     updateContent(html);
     document.title = documentTitle;
     getLinks();
+    router();
   });
 };
 

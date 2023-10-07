@@ -19,14 +19,12 @@ let internal = [...links].filter(item =>
     item.getAttribute('href').startsWith('/')
 );
 let documentTitle;
-console.log(`internal ${(internal, internal.length)}`);
 
 const getLinks = () => {
     links = document.querySelectorAll('a');
     internal = [...links].filter(item =>
         item.getAttribute('href').startsWith('/')
     );
-    console.log(`internal ${(internal, internal.length)}`);
 };
 
 const updateContent = input => {
@@ -43,7 +41,6 @@ const router = () => {
         loadindexPageContent();
         WRAPPER.classList.add(indexClass);
     }
-    getLinks();
     internal.forEach(item => {
         item.classList.add('internal');
         let href = item.getAttribute('href');
@@ -91,6 +88,7 @@ const loadindexPageContent = () => {
             updateContent(html);
             document.title = documentTitle;
             getLinks();
+            router();
         });
 };
 
