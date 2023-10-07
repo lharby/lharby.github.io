@@ -64,10 +64,6 @@ const router = () => {
     });
 };
 
-if (remove) {
-    internal.forEach(item => item.removeEventListener('click', attachClickEvent));
-};
-
 const loadindexPageContent = () => {
     fetch('/home')
         .then(res => res.text())
@@ -94,9 +90,5 @@ const updateContent = input => {
     PAGE_WRAPPER.appendChild(container);
     documentTitle = doc.querySelector('title').textContent;
 };
-
-const attachClickEvent = () => {
-    remove = true;
-}
 
 export { router };

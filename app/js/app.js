@@ -588,14 +588,6 @@ var router = function router() {
   });
 };
 
-if (remove) {
-  internal.forEach(function (item) {
-    return item.removeEventListener('click', attachClickEvent);
-  });
-}
-
-;
-
 var loadindexPageContent = function loadindexPageContent() {
   fetch('/home').then(function (res) {
     return res.text();
@@ -621,10 +613,6 @@ var updateContent = function updateContent(input) {
   var container = doc.querySelector('#container');
   _global__WEBPACK_IMPORTED_MODULE_0__["PAGE_WRAPPER"].appendChild(container);
   documentTitle = doc.querySelector('title').textContent;
-};
-
-var attachClickEvent = function attachClickEvent() {
-  remove = true;
 };
 
 
