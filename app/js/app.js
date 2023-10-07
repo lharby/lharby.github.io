@@ -560,6 +560,11 @@ var updateContent = function updateContent(input) {
 };
 
 var router = function router() {
+  if (!primaryDir) {
+    loadindexPageContent();
+    _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(indexClass);
+  }
+
   getLinks();
   internal.forEach(function (item) {
     item.classList.add('internal');
@@ -593,8 +598,7 @@ var router = function router() {
         history.pushState({
           path: href
         }, documentTitle, hrefSplit);
-        Object(_app__WEBPACK_IMPORTED_MODULE_1__["initDynamicFunctions"])();
-        getLinks(); // if body is scrolled, init scrollToTop function
+        Object(_app__WEBPACK_IMPORTED_MODULE_1__["initDynamicFunctions"])(); // if body is scrolled, init scrollToTop function
       })["catch"](function (err) {
         console.warn('Something went wrong.', err);
         _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
@@ -613,11 +617,6 @@ var loadindexPageContent = function loadindexPageContent() {
     getLinks();
   });
 };
-
-if (!primaryDir) {
-  loadindexPageContent();
-  _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(indexClass);
-}
 
 
 

@@ -39,6 +39,10 @@ const updateContent = input => {
 };
 
 const router = () => {
+    if (!primaryDir) {
+        loadindexPageContent();
+        WRAPPER.classList.add(indexClass);
+    }
     getLinks();
     internal.forEach(item => {
         item.classList.add('internal');
@@ -69,7 +73,6 @@ const router = () => {
                     document.title = documentTitle;
                     history.pushState({ path: href }, documentTitle, hrefSplit);
                     initDynamicFunctions();
-                    getLinks();
                     // if body is scrolled, init scrollToTop function
                 })
                 .catch(err => {
@@ -90,10 +93,5 @@ const loadindexPageContent = () => {
             getLinks();
         });
 };
-
-if (!primaryDir) {
-    loadindexPageContent();
-    WRAPPER.classList.add(indexClass);
-}
 
 export { router };
