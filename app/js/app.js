@@ -595,7 +595,7 @@ var router = function router() {
 
         updateContent(html);
         document.title = documentTitle;
-        history.pushState({
+        history.replaceState({
           path: href
         }, documentTitle, hrefSplit);
         Object(_app__WEBPACK_IMPORTED_MODULE_1__["initDynamicFunctions"])(); // if body is scrolled, init scrollToTop function

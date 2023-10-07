@@ -71,7 +71,7 @@ const router = () => {
                     }
                     updateContent(html);
                     document.title = documentTitle;
-                    history.pushState({ path: href }, documentTitle, hrefSplit);
+                    history.replaceState({ path: href }, documentTitle, hrefSplit);
                     initDynamicFunctions();
                     // if body is scrolled, init scrollToTop function
                 })
