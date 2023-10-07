@@ -19,6 +19,7 @@ import { DOM, WRAPPER, site } from './js/global';
 const initOnceFunctions = () => {
     siteResponsiveness();
     indexPage();
+    router();
     navigation();
     date();
     entry();
@@ -29,7 +30,6 @@ const initOnceFunctions = () => {
 
 const initDynamicFunctions = () => {
     obfuscateEmail();
-    router();
     if (!site.isMobile) {
         setImageSource();
     }
