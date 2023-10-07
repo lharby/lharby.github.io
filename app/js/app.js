@@ -547,6 +547,7 @@ var router = function router() {
     _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(indexClass);
   }
 
+  getLinks();
   internal.forEach(function (item) {
     item.classList.add('internal');
     var href = item.getAttribute('href');

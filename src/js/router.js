@@ -25,6 +25,7 @@ const router = () => {
         loadindexPageContent();
         WRAPPER.classList.add(indexClass);
     }
+    getLinks();
     internal.forEach(item => {
         item.classList.add('internal');
         let href = item.getAttribute('href');
