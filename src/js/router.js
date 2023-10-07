@@ -20,34 +20,16 @@ let internal = [...links].filter(item =>
 );
 let documentTitle;
 
-const getLinks = () => {
-    links = document.querySelectorAll('a');
-    internal = [...links].filter(item =>
-        item.getAttribute('href').startsWith('/')
-    );
-
-};
-
-const updateContent = input => {
-    PAGE_WRAPPER.replaceChildren();
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(input, 'text/html');
-    const container = doc.querySelector('#container');
-    PAGE_WRAPPER.appendChild(container);
-    documentTitle = doc.querySelector('title').textContent;
-};
-
 const router = () => {
     if (!primaryDir) {
         loadindexPageContent();
         WRAPPER.classList.add(indexClass);
     }
-    getLinks();
     internal.forEach(item => {
         item.classList.add('internal');
         let href = item.getAttribute('href');
         let hrefSplit = href.split('/')[1];
-        item.addEventListener('click', event => {
+        item.addEventListener('click', (event, attachClickEvent) => {
             event.preventDefault();
             event.stopPropagation();
             BODY.classList.add(LOADING_CLASS);
@@ -82,6 +64,10 @@ const router = () => {
     });
 };
 
+if (remove) {
+    internal.forEach(item => item.removeEventListener('click', attachClickEvent));
+};
+
 const loadindexPageContent = () => {
     fetch('/home')
         .then(res => res.text())
@@ -92,5 +78,25 @@ const loadindexPageContent = () => {
             getLinks();
         });
 };
+
+const getLinks = () => {
+    links = document.querySelectorAll('a');
+    internal = [...links].filter(item =>
+        item.getAttribute('href').startsWith('/')
+    );
+};
+
+const updateContent = input => {
+    PAGE_WRAPPER.replaceChildren();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(input, 'text/html');
+    const container = doc.querySelector('#container');
+    PAGE_WRAPPER.appendChild(container);
+    documentTitle = doc.querySelector('title').textContent;
+};
+
+const attachClickEvent = () => {
+    remove = true;
+}
 
 export { router };

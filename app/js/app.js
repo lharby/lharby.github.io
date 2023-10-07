@@ -541,34 +541,17 @@ var internal = _toConsumableArray(links).filter(function (item) {
 
 var documentTitle;
 
-var getLinks = function getLinks() {
-  links = document.querySelectorAll('a');
-  internal = _toConsumableArray(links).filter(function (item) {
-    return item.getAttribute('href').startsWith('/');
-  });
-};
-
-var updateContent = function updateContent(input) {
-  _global__WEBPACK_IMPORTED_MODULE_0__["PAGE_WRAPPER"].replaceChildren();
-  var parser = new DOMParser();
-  var doc = parser.parseFromString(input, 'text/html');
-  var container = doc.querySelector('#container');
-  _global__WEBPACK_IMPORTED_MODULE_0__["PAGE_WRAPPER"].appendChild(container);
-  documentTitle = doc.querySelector('title').textContent;
-};
-
 var router = function router() {
   if (!primaryDir) {
     loadindexPageContent();
     _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(indexClass);
   }
 
-  getLinks();
   internal.forEach(function (item) {
     item.classList.add('internal');
     var href = item.getAttribute('href');
     var hrefSplit = href.split('/')[1];
-    item.addEventListener('click', function (event) {
+    item.addEventListener('click', function (event, attachClickEvent) {
       event.preventDefault();
       event.stopPropagation();
       _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
@@ -605,6 +588,14 @@ var router = function router() {
   });
 };
 
+if (remove) {
+  internal.forEach(function (item) {
+    return item.removeEventListener('click', attachClickEvent);
+  });
+}
+
+;
+
 var loadindexPageContent = function loadindexPageContent() {
   fetch('/home').then(function (res) {
     return res.text();
@@ -614,6 +605,26 @@ var loadindexPageContent = function loadindexPageContent() {
     document.title = documentTitle;
     getLinks();
   });
+};
+
+var getLinks = function getLinks() {
+  links = document.querySelectorAll('a');
+  internal = _toConsumableArray(links).filter(function (item) {
+    return item.getAttribute('href').startsWith('/');
+  });
+};
+
+var updateContent = function updateContent(input) {
+  _global__WEBPACK_IMPORTED_MODULE_0__["PAGE_WRAPPER"].replaceChildren();
+  var parser = new DOMParser();
+  var doc = parser.parseFromString(input, 'text/html');
+  var container = doc.querySelector('#container');
+  _global__WEBPACK_IMPORTED_MODULE_0__["PAGE_WRAPPER"].appendChild(container);
+  documentTitle = doc.querySelector('title').textContent;
+};
+
+var attachClickEvent = function attachClickEvent() {
+  remove = true;
 };
 
 
