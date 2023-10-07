@@ -13,6 +13,7 @@ import { closeNavigation } from './navigation';
 
 const url = document.location.pathname.split('/');
 const primaryDir = url[1];
+const indexClass = 'index';
 let links = document.querySelectorAll('a');
 let internal = [...links].filter(item =>
     item.getAttribute('href').startsWith('/')
@@ -62,7 +63,7 @@ const router = () => {
                     if (hrefSplit !== '/') {
                         WRAPPER.classList.add(hrefSplit);
                     } else {
-                        WRAPPER.classList.add('index');
+                        WRAPPER.classList.add(indexClass);
                     }
                     updateContent(html);
                     document.title = documentTitle;
@@ -92,6 +93,7 @@ const loadindexPageContent = () => {
 
 if (!primaryDir) {
     loadindexPageContent();
+    WRAPPER.classList.add(indexClass);
 }
 
 export { router };

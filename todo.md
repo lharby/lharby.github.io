@@ -30,7 +30,7 @@ Remove `indexPage.js` potentially. - DONE
 
 _Fixes_
 
-Reset scroll top on nav after closing - DONE
+Reset scroll top on nav after closing - TODO
 
 Set scrollbar colour after ajax page load - DONE
 
