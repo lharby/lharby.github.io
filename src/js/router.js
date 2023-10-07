@@ -25,6 +25,7 @@ const getLinks = () => {
     internal = [...links].filter(item =>
         item.getAttribute('href').startsWith('/')
     );
+
 };
 
 const updateContent = input => {
@@ -41,6 +42,7 @@ const router = () => {
         loadindexPageContent();
         WRAPPER.classList.add(indexClass);
     }
+    getLinks();
     internal.forEach(item => {
         item.classList.add('internal');
         let href = item.getAttribute('href');
@@ -88,7 +90,6 @@ const loadindexPageContent = () => {
             updateContent(html);
             document.title = documentTitle;
             getLinks();
-            router();
         });
 };
 
