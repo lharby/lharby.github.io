@@ -10,6 +10,7 @@ https://slackwise.org.uk
 import { BODY, WRAPPER, PAGE_WRAPPER, LOADING_CLASS } from './global';
 import { initDynamicFunctions } from '../app';
 import { closeNavigation } from './navigation';
+import { scrollToTop } from './utils';
 
 const url = document.location.pathname.split('/');
 const primaryDir = url[1];
@@ -51,7 +52,7 @@ const router = () => {
                     document.title = documentTitle;
                     history.replaceState({ path: href }, documentTitle, hrefSplit);
                     initDynamicFunctions();
-                    // if body is scrolled, init scrollToTop function
+                    scrollToTop(true);
                 })
                 .catch(err => {
                     console.warn('Something went wrong.', err);

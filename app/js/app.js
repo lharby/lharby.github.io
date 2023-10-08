@@ -362,7 +362,12 @@ var siteResponsiveness = function siteResponsiveness() {
     _global__WEBPACK_IMPORTED_MODULE_0__["site"].isMobile = true;
   }
 };
-var scrollToTop = function scrollToTop() {
+var scrollToTop = function scrollToTop(isXOffset) {
+  if (window.scrollY > 0) {
+    isXOffset = true;
+    console.log(window.scrollY);
+  }
+
   _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].scrollIntoView({
     behavior: 'smooth'
   });
@@ -507,6 +512,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 /* harmony import */ var _navigation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -527,6 +533,7 @@ https://slackwise.org.uk
 */
 
 /* loadindexPageContent */
+
 
 
 
@@ -575,7 +582,8 @@ var router = function router() {
         history.replaceState({
           path: href
         }, documentTitle, hrefSplit);
-        Object(_app__WEBPACK_IMPORTED_MODULE_1__["initDynamicFunctions"])(); // if body is scrolled, init scrollToTop function
+        Object(_app__WEBPACK_IMPORTED_MODULE_1__["initDynamicFunctions"])();
+        Object(_utils__WEBPACK_IMPORTED_MODULE_3__["scrollToTop"])(true);
       })["catch"](function (err) {
         console.warn('Something went wrong.', err);
         _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
