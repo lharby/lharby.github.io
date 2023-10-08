@@ -26,6 +26,10 @@ https://slackwise.org.uk
     &.visibility-hidden {
         visibility: visible;
     }
+
+    .wrapper {
+        display: block !important;
+    }
 }
 
 .tumblr iframe[class^='tmblr-iframe'] {

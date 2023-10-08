@@ -67,7 +67,7 @@ const loadIndexPageContent = () => {
         fetch('/home')
         .then(res => res.text())
         .then(html => {
-            WRAPPER.removeAttribute('class');
+            // WRAPPER.className = '';
             WRAPPER.classList.add(indexClass);
             updateContent(html);
             document.title = documentTitle;

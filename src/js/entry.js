@@ -6,7 +6,7 @@ https://slackwise.org.uk
 */
 
 /* entry function */
-import { HIDDEN_CLASS, VISIBILITY_HIDDEN_CLASS } from "./global";
+import { WRAPPER, HIDDEN_CLASS, VISIBILITY_HIDDEN_CLASS } from "./global";
 import { enableScrollLock, disableScrollLock } from './utils';
 import { setCookie, getCookie } from "./cookies";
 
@@ -20,6 +20,7 @@ const entry = () => {
         disableScrollLock();
     } else {
         entryElem.classList.remove(HIDDEN_CLASS, VISIBILITY_HIDDEN_CLASS);
+        WRAPPER.classList.remove(HIDDEN_CLASS);
         enableScrollLock();
     }
     entryElem.addEventListener('click', (e) => {
@@ -29,7 +30,8 @@ const entry = () => {
         disableScrollLock();
         entryElem.addEventListener("animationend", () => {
             entryElem.classList.add(VISIBILITY_HIDDEN_CLASS, HIDDEN_CLASS);
-            entryElem.classList.remove(fadeOutClass)
+            entryElem.classList.remove(fadeOutClass);
+            WRAPPER.classList.remove(HIDDEN_CLASS);
         });
     });
 }

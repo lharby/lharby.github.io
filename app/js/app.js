@@ -95,11 +95,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_main_scss__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _js_global__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 /* harmony import */ var _js_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
-/* harmony import */ var _js_indexPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
-/* harmony import */ var _js_navigation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
-/* harmony import */ var _js_loadIndexPageContent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
-/* harmony import */ var _js_date__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7);
-/* harmony import */ var _js_entry__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(8);
+/* harmony import */ var _js_entry__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8);
+/* harmony import */ var _js_indexPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4);
+/* harmony import */ var _js_navigation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5);
+/* harmony import */ var _js_loadIndexPageContent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(6);
+/* harmony import */ var _js_date__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(7);
 /* harmony import */ var _js_toggleContrast__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(10);
 /* harmony import */ var _js_obfuscateEmail__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(11);
 /* harmony import */ var _js_appendForm__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(12);
@@ -124,11 +124,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var initOnceFunctions = function initOnceFunctions() {
   Object(_js_utils__WEBPACK_IMPORTED_MODULE_2__["siteResponsiveness"])();
-  Object(_js_indexPage__WEBPACK_IMPORTED_MODULE_3__["indexPage"])();
-  Object(_js_loadIndexPageContent__WEBPACK_IMPORTED_MODULE_5__["loadIndexPageContent"])();
-  Object(_js_navigation__WEBPACK_IMPORTED_MODULE_4__["navigation"])();
-  Object(_js_date__WEBPACK_IMPORTED_MODULE_6__["default"])();
-  Object(_js_entry__WEBPACK_IMPORTED_MODULE_7__["default"])();
+  Object(_js_entry__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  Object(_js_indexPage__WEBPACK_IMPORTED_MODULE_4__["indexPage"])();
+  Object(_js_loadIndexPageContent__WEBPACK_IMPORTED_MODULE_6__["loadIndexPageContent"])();
+  Object(_js_navigation__WEBPACK_IMPORTED_MODULE_5__["navigation"])();
+  Object(_js_date__WEBPACK_IMPORTED_MODULE_7__["default"])();
   Object(_js_getScrollbarWidth__WEBPACK_IMPORTED_MODULE_11__["default"])();
   Object(_js_toggleContrast__WEBPACK_IMPORTED_MODULE_8__["default"])();
   initDynamicFunctions();
@@ -590,7 +590,7 @@ var loadIndexPageContent = function loadIndexPageContent() {
     fetch('/home').then(function (res) {
       return res.text();
     }).then(function (html) {
-      _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].removeAttribute('class');
+      // WRAPPER.className = '';
       _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(indexClass);
       updateContent(html);
       document.title = documentTitle;
@@ -679,6 +679,7 @@ var entry = function entry() {
     Object(_utils__WEBPACK_IMPORTED_MODULE_1__["disableScrollLock"])();
   } else {
     entryElem.classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"], _global__WEBPACK_IMPORTED_MODULE_0__["VISIBILITY_HIDDEN_CLASS"]);
+    _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"]);
     Object(_utils__WEBPACK_IMPORTED_MODULE_1__["enableScrollLock"])();
   }
 
@@ -690,6 +691,7 @@ var entry = function entry() {
     entryElem.addEventListener("animationend", function () {
       entryElem.classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["VISIBILITY_HIDDEN_CLASS"], _global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"]);
       entryElem.classList.remove(fadeOutClass);
+      _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"]);
     });
   });
 };
