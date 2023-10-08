@@ -4,7 +4,7 @@ import './js/global';
 import { siteResponsiveness } from './js/utils';
 import { indexPage } from './js/indexPage';
 import { navigation } from './js/navigation';
-import { router } from './js/router';
+import { loadIndexPageContent } from './js/loadIndexPageContent';
 import date from './js/date';
 import entry from './js/entry';
 import toggleContrast from './js/toggleContrast';
@@ -19,7 +19,7 @@ import { DOM, WRAPPER, site } from './js/global';
 const initOnceFunctions = () => {
     siteResponsiveness();
     indexPage();
-    router();
+    loadIndexPageContent();
     navigation();
     date();
     entry();

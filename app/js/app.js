@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _js_indexPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var _js_navigation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
-/* harmony import */ var _js_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
+/* harmony import */ var _js_loadIndexPageContent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
 /* harmony import */ var _js_date__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7);
 /* harmony import */ var _js_entry__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(8);
 /* harmony import */ var _js_toggleContrast__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(10);
@@ -125,7 +125,7 @@ __webpack_require__.r(__webpack_exports__);
 var initOnceFunctions = function initOnceFunctions() {
   Object(_js_utils__WEBPACK_IMPORTED_MODULE_2__["siteResponsiveness"])();
   Object(_js_indexPage__WEBPACK_IMPORTED_MODULE_3__["indexPage"])();
-  Object(_js_router__WEBPACK_IMPORTED_MODULE_5__["router"])();
+  Object(_js_loadIndexPageContent__WEBPACK_IMPORTED_MODULE_5__["loadIndexPageContent"])();
   Object(_js_navigation__WEBPACK_IMPORTED_MODULE_4__["navigation"])();
   Object(_js_date__WEBPACK_IMPORTED_MODULE_6__["default"])();
   Object(_js_entry__WEBPACK_IMPORTED_MODULE_7__["default"])();
@@ -503,7 +503,7 @@ var closeNavigation = function closeNavigation() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "router", function() { return router; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loadIndexPageContent", function() { return loadIndexPageContent; });
 /* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 /* harmony import */ var _navigation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
@@ -526,7 +526,7 @@ https://slackwise.org.uk
 2012 - present
 */
 
-/* router */
+/* loadindexPageContent */
 
 
 
@@ -542,11 +542,6 @@ var internal = _toConsumableArray(links).filter(function (item) {
 var documentTitle;
 
 var router = function router() {
-  if (!primaryDir) {
-    loadindexPageContent();
-    _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(indexClass);
-  }
-
   getLinks();
   internal.forEach(function (item) {
     item.classList.add('internal');
@@ -589,15 +584,25 @@ var router = function router() {
   });
 };
 
-var loadindexPageContent = function loadindexPageContent() {
-  fetch('/home').then(function (res) {
-    return res.text();
-  }).then(function (html) {
-    _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].removeAttribute('class');
-    updateContent(html);
-    document.title = documentTitle;
-    getLinks();
-  });
+var loadIndexPageContent = function loadIndexPageContent() {
+  if (!primaryDir) {
+    _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
+    fetch('/home').then(function (res) {
+      return res.text();
+    }).then(function (html) {
+      _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].removeAttribute('class');
+      _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(indexClass);
+      updateContent(html);
+      document.title = documentTitle;
+      router();
+      _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
+    })["catch"](function (err) {
+      console.warn('Something went wrong.', err);
+      _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
+    });
+  } else {
+    router();
+  }
 };
 
 var getLinks = function getLinks() {

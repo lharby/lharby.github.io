@@ -5,7 +5,7 @@ https://slackwise.org.uk
 2012 - present
 */
 
-/* router */
+/* loadindexPageContent */
 
 import { BODY, WRAPPER, PAGE_WRAPPER, LOADING_CLASS } from './global';
 import { initDynamicFunctions } from '../app';
@@ -21,10 +21,6 @@ let internal = [...links].filter(item =>
 let documentTitle;
 
 const router = () => {
-    if (!primaryDir) {
-        loadindexPageContent();
-        WRAPPER.classList.add(indexClass);
-    }
     getLinks();
     internal.forEach(item => {
         item.classList.add('internal');
@@ -65,15 +61,26 @@ const router = () => {
     });
 };
 
-const loadindexPageContent = () => {
-    fetch('/home')
+const loadIndexPageContent = () => {
+    if (!primaryDir) {
+        BODY.classList.add(LOADING_CLASS);
+        fetch('/home')
         .then(res => res.text())
         .then(html => {
             WRAPPER.removeAttribute('class');
+            WRAPPER.classList.add(indexClass);
             updateContent(html);
             document.title = documentTitle;
-            getLinks();
+            router();
+            BODY.classList.remove(LOADING_CLASS);
+        })
+        .catch(err =>  {
+            console.warn('Something went wrong.', err);
+            BODY.classList.remove(LOADING_CLASS);
         });
+    } else {
+        router();
+    }
 };
 
 const getLinks = () => {
@@ -92,4 +99,4 @@ const updateContent = input => {
     documentTitle = doc.querySelector('title').textContent;
 };
 
-export { router };
+export { loadIndexPageContent };
