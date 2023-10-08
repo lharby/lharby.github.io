@@ -50,11 +50,12 @@ const router = () => {
                     }
                     updateContent(html);
                     document.title = documentTitle;
-                    history.replaceState({ path: href }, documentTitle, hrefSplit);
+                    history.pushState({ path: href }, documentTitle, hrefSplit);
                     initDynamicFunctions();
                     if (window.scrollY > 0) {
                         scrollToTop();                        
                     }
+                    getLinks();
                 })
                 .catch(err => {
                     console.warn('Something went wrong.', err);

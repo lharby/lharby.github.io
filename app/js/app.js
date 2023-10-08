@@ -574,7 +574,7 @@ var router = function router() {
 
         updateContent(html);
         document.title = documentTitle;
-        history.replaceState({
+        history.pushState({
           path: href
         }, documentTitle, hrefSplit);
         Object(_app__WEBPACK_IMPORTED_MODULE_1__["initDynamicFunctions"])();
@@ -582,6 +582,8 @@ var router = function router() {
         if (window.scrollY > 0) {
           Object(_utils__WEBPACK_IMPORTED_MODULE_3__["scrollToTop"])();
         }
+
+        getLinks();
       })["catch"](function (err) {
         console.warn('Something went wrong.', err);
         _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
