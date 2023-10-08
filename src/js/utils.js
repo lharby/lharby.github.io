@@ -144,10 +144,6 @@ export const siteResponsiveness = () => {
     }
 };
 
-export const scrollToTop = (isXOffset) => {
-    if (window.scrollY > 0) {
-        isXOffset = true;
-        console.log(window.scrollY);
-    }
+export const scrollToTop = () => {
     BODY.scrollIntoView({behavior: 'smooth'});
 };

@@ -362,12 +362,7 @@ var siteResponsiveness = function siteResponsiveness() {
     _global__WEBPACK_IMPORTED_MODULE_0__["site"].isMobile = true;
   }
 };
-var scrollToTop = function scrollToTop(isXOffset) {
-  if (window.scrollY > 0) {
-    isXOffset = true;
-    console.log(window.scrollY);
-  }
-
+var scrollToTop = function scrollToTop() {
   _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].scrollIntoView({
     behavior: 'smooth'
   });
@@ -583,7 +578,10 @@ var router = function router() {
           path: href
         }, documentTitle, hrefSplit);
         Object(_app__WEBPACK_IMPORTED_MODULE_1__["initDynamicFunctions"])();
-        Object(_utils__WEBPACK_IMPORTED_MODULE_3__["scrollToTop"])(true);
+
+        if (window.scrollY > 0) {
+          Object(_utils__WEBPACK_IMPORTED_MODULE_3__["scrollToTop"])();
+        }
       })["catch"](function (err) {
         console.warn('Something went wrong.', err);
         _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
@@ -598,12 +596,12 @@ var loadIndexPageContent = function loadIndexPageContent() {
     fetch('/home').then(function (res) {
       return res.text();
     }).then(function (html) {
-      // WRAPPER.className = '';
       _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(indexClass);
       updateContent(html);
       document.title = documentTitle;
       router();
       _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
+      getLinks();
     })["catch"](function (err) {
       console.warn('Something went wrong.', err);
       _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);

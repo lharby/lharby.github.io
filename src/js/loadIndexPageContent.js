@@ -52,7 +52,9 @@ const router = () => {
                     document.title = documentTitle;
                     history.replaceState({ path: href }, documentTitle, hrefSplit);
                     initDynamicFunctions();
-                    scrollToTop(true);
+                    if (window.scrollY > 0) {
+                        scrollToTop();                        
+                    }
                 })
                 .catch(err => {
                     console.warn('Something went wrong.', err);
@@ -68,12 +70,12 @@ const loadIndexPageContent = () => {
         fetch('/home')
         .then(res => res.text())
         .then(html => {
-            // WRAPPER.className = '';
             WRAPPER.classList.add(indexClass);
             updateContent(html);
             document.title = documentTitle;
             router();
             BODY.classList.remove(LOADING_CLASS);
+            getLinks();
         })
         .catch(err =>  {
             console.warn('Something went wrong.', err);
