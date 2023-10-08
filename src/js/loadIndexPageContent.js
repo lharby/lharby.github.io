@@ -52,9 +52,7 @@ const router = () => {
                     document.title = documentTitle;
                     history.pushState({ path: href }, documentTitle, hrefSplit);
                     initDynamicFunctions();
-                    if (window.scrollY > 0) {
-                        scrollToTop();                        
-                    }
+                    scrollToTop();
                     getLinks();
                 })
                 .catch(err => {

@@ -578,11 +578,7 @@ var router = function router() {
           path: href
         }, documentTitle, hrefSplit);
         Object(_app__WEBPACK_IMPORTED_MODULE_1__["initDynamicFunctions"])();
-
-        if (window.scrollY > 0) {
-          Object(_utils__WEBPACK_IMPORTED_MODULE_3__["scrollToTop"])();
-        }
-
+        Object(_utils__WEBPACK_IMPORTED_MODULE_3__["scrollToTop"])();
         getLinks();
       })["catch"](function (err) {
         console.warn('Something went wrong.', err);
