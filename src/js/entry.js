@@ -17,10 +17,11 @@ const entry = () => {
     const entryElem = document.querySelector('.entry');
     if (cookieIsSet) {
         entryElem.classList.add(HIDDEN_CLASS, VISIBILITY_HIDDEN_CLASS);
+        WRAPPER.classList.remove(HIDDEN_CLASS);
         disableScrollLock();
     } else {
         entryElem.classList.remove(HIDDEN_CLASS, VISIBILITY_HIDDEN_CLASS);
-        WRAPPER.classList.remove(HIDDEN_CLASS);
+
         enableScrollLock();
     }
     entryElem.addEventListener('click', (e) => {
