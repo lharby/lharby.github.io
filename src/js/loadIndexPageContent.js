@@ -24,7 +24,6 @@ let documentTitle;
 const router = () => {
     getLinks();
     internal.forEach(item => {
-        item.classList.add('internal');
         let href = item.getAttribute('href');
         let hrefSplit = href.split('/')[1];
         item.addEventListener('click', (event, attachClickEvent) => {
@@ -67,19 +66,19 @@ const loadIndexPageContent = () => {
     if (!primaryDir) {
         BODY.classList.add(LOADING_CLASS);
         fetch('/home')
-        .then(res => res.text())
-        .then(html => {
-            WRAPPER.classList.add(indexClass);
-            updateContent(html);
-            document.title = documentTitle;
-            router();
-            BODY.classList.remove(LOADING_CLASS);
-            getLinks();
-        })
-        .catch(err =>  {
-            console.warn('Something went wrong.', err);
-            BODY.classList.remove(LOADING_CLASS);
-        });
+            .then(res => res.text())
+            .then(html => {
+                WRAPPER.classList.add(indexClass);
+                updateContent(html);
+                document.title = documentTitle;
+                router();
+                BODY.classList.remove(LOADING_CLASS);
+                getLinks();
+            })
+            .catch(err => {
+                console.warn('Something went wrong.', err);
+                BODY.classList.remove(LOADING_CLASS);
+            });
     } else {
         router();
     }
