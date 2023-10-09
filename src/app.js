@@ -35,7 +35,7 @@ const initDynamicFunctions = () => {
     }
     if (DOM.classList.contains('high-contrast')) {
         setRandomColour();
-        setTimeout(attachClickEvent, 100);
+        // setTimeout(attachClickEvent, 100);
     }
     if (WRAPPER.classList.contains('contact')) {
         appendForm();
