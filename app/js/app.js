@@ -490,6 +490,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 /* harmony import */ var _navigation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var _randomColours__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(15);
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -509,6 +510,7 @@ https://slackwise.org.uk
 
 
 
+
 var url = document.location.pathname.split('/');
 var primaryDir = url[1];
 var indexClass = 'index';
@@ -522,7 +524,7 @@ var router = function router() {
   internal.forEach(function (item) {
     var href = item.getAttribute('href');
     var hrefSplit = href.split('/')[1];
-    item.addEventListener('click', function (event, attachClickEvent) {
+    item.addEventListener('click', function (event) {
       event.preventDefault();
       event.stopPropagation();
       _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
@@ -534,7 +536,6 @@ var router = function router() {
         return res.text();
       }).then(function (html) {
         Object(_navigation__WEBPACK_IMPORTED_MODULE_2__["closeNavigation"])();
-        _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
         _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].removeAttribute('class');
         if (hrefSplit !== '/') {
           _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(hrefSplit);
@@ -542,13 +543,10 @@ var router = function router() {
           _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(indexClass);
         }
         updateContent(html);
-        Object(_utils__WEBPACK_IMPORTED_MODULE_3__["scrollToTop"])();
-        document.title = documentTitle;
         history.pushState({
           path: href
         }, documentTitle, hrefSplit);
-        Object(_app__WEBPACK_IMPORTED_MODULE_1__["initDynamicFunctions"])();
-        getLinks();
+        routerCallback();
       })["catch"](function (err) {
         console.warn('Something went wrong.', err);
         _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
@@ -562,12 +560,9 @@ var loadIndexPageContent = function loadIndexPageContent() {
     fetch('/home').then(function (res) {
       return res.text();
     }).then(function (html) {
-      _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(indexClass);
       updateContent(html);
-      document.title = documentTitle;
       router();
-      _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
-      getLinks();
+      routerCallback();
     })["catch"](function (err) {
       console.warn('Something went wrong.', err);
       _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
@@ -589,6 +584,14 @@ var updateContent = function updateContent(input) {
   var container = doc.querySelector('#container');
   _global__WEBPACK_IMPORTED_MODULE_0__["PAGE_WRAPPER"].appendChild(container);
   documentTitle = doc.querySelector('title').textContent;
+};
+var routerCallback = function routerCallback() {
+  _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
+  Object(_utils__WEBPACK_IMPORTED_MODULE_3__["scrollToTop"])();
+  document.title = documentTitle;
+  Object(_app__WEBPACK_IMPORTED_MODULE_1__["initDynamicFunctions"])();
+  getLinks();
+  Object(_randomColours__WEBPACK_IMPORTED_MODULE_4__["attachClickEvent"])();
 };
 
 

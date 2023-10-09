@@ -11,6 +11,7 @@ import { BODY, WRAPPER, PAGE_WRAPPER, LOADING_CLASS } from './global';
 import { initDynamicFunctions } from '../app';
 import { closeNavigation } from './navigation';
 import { scrollToTop } from './utils';
+import { attachClickEvent } from './randomColours';
 
 const url = document.location.pathname.split('/');
 const primaryDir = url[1];
@@ -26,7 +27,7 @@ const router = () => {
     internal.forEach(item => {
         let href = item.getAttribute('href');
         let hrefSplit = href.split('/')[1];
-        item.addEventListener('click', (event, attachClickEvent) => {
+        item.addEventListener('click', event => {
             event.preventDefault();
             event.stopPropagation();
             BODY.classList.add(LOADING_CLASS);
@@ -38,7 +39,6 @@ const router = () => {
                 .then(res => res.text())
                 .then(html => {
                     closeNavigation();
-                    BODY.classList.remove(LOADING_CLASS);
                     WRAPPER.removeAttribute('class');
                     if (hrefSplit !== '/') {
                         WRAPPER.classList.add(hrefSplit);
@@ -46,11 +46,8 @@ const router = () => {
                         WRAPPER.classList.add(indexClass);
                     }
                     updateContent(html);
-                    scrollToTop();
-                    document.title = documentTitle;
                     history.pushState({ path: href }, documentTitle, hrefSplit);
-                    initDynamicFunctions();
-                    getLinks();
+                    routerCallback();
                 })
                 .catch(err => {
                     console.warn('Something went wrong.', err);
@@ -66,12 +63,9 @@ const loadIndexPageContent = () => {
         fetch('/home')
             .then(res => res.text())
             .then(html => {
-                WRAPPER.classList.add(indexClass);
                 updateContent(html);
-                document.title = documentTitle;
                 router();
-                BODY.classList.remove(LOADING_CLASS);
-                getLinks();
+                routerCallback();
             })
             .catch(err => {
                 console.warn('Something went wrong.', err);
@@ -96,6 +90,15 @@ const updateContent = input => {
     const container = doc.querySelector('#container');
     PAGE_WRAPPER.appendChild(container);
     documentTitle = doc.querySelector('title').textContent;
+};
+
+const routerCallback = () => {
+    BODY.classList.remove(LOADING_CLASS);
+    scrollToTop();
+    document.title = documentTitle;
+    initDynamicFunctions();
+    getLinks();
+    attachClickEvent();
 };
 
 export { loadIndexPageContent };
