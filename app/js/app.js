@@ -368,8 +368,10 @@ var scrollToTop = function scrollToTop(callback) {
     behavior: 'smooth'
   });
   if (window.onscrollend !== 'undefined') {
-    console.log('scroll ended');
-    callback();
+    addEventListener('scrollend', function () {
+      console.log('scroll ended');
+      callback();
+    });
   }
 };
 
