@@ -547,9 +547,11 @@ var router = function router() {
           path: href
         }, documentTitle, hrefSplit);
         routerCallback();
-      }).then(_randomColours__WEBPACK_IMPORTED_MODULE_4__["attachClickEvent"])["catch"](function (err) {
+      })["catch"](function (err) {
         console.warn('Something went wrong.', err);
         _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
+      }).then(function () {
+        return _randomColours__WEBPACK_IMPORTED_MODULE_4__["attachClickEvent"];
       });
     });
   });

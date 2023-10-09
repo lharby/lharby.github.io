@@ -49,11 +49,11 @@ const router = () => {
                     history.pushState({ path: href }, documentTitle, hrefSplit);
                     routerCallback();
                 })
-                .then(attachClickEvent)
                 .catch(err => {
                     console.warn('Something went wrong.', err);
                     BODY.classList.remove(LOADING_CLASS);
-                });
+                })
+                .then(() => attachClickEvent);
         });
     });
 };
