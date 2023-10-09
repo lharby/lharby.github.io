@@ -368,6 +368,7 @@ var scrollToTop = function scrollToTop(callback) {
     behavior: 'smooth'
   });
   if (window.onscrollend !== 'undefined') {
+    console.log('scroll ended');
     callback();
   }
 };
@@ -593,7 +594,7 @@ var routerCallback = function routerCallback() {
   document.title = documentTitle;
   Object(_app__WEBPACK_IMPORTED_MODULE_1__["initDynamicFunctions"])();
   getLinks();
-  Object(_utils__WEBPACK_IMPORTED_MODULE_3__["scrollToTop"])(_randomColours__WEBPACK_IMPORTED_MODULE_4__["attachClickEvent"]);
+  Object(_utils__WEBPACK_IMPORTED_MODULE_3__["scrollToTop"])();
 };
 
 

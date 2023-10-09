@@ -97,7 +97,7 @@ const routerCallback = () => {
     document.title = documentTitle;
     initDynamicFunctions();
     getLinks();
-    scrollToTop(attachClickEvent);
+    scrollToTop();
 };
 
 export { loadIndexPageContent };
