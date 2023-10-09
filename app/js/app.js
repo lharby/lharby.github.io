@@ -878,15 +878,10 @@ https://slackwise.org.uk
 /* random colours function */
 
 var colours = ['#ee4800', '#60c600', '#00ffff', '#ff7f00', '#ff6ccc', '#848382', '#d2dd26'];
-var randomColour = function randomColour() {
+var setRandomColour = function setRandomColour() {
   var rndColour = Math.floor(Math.random() * colours.length);
   document.documentElement.style.setProperty('--selection-background', colours[rndColour]);
   console.log('%c %s', "background-color: ".concat(colours[rndColour], "; color: white"), "rndColour: ".concat(colours[rndColour]));
-};
-var setRandomColour = function setRandomColour() {
-  return setTimeout(function () {
-    randomColour();
-  }, 100);
 };
 var attachClickEvent = function attachClickEvent() {
   var menuOpen = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.menu__toggle');
