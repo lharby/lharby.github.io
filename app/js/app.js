@@ -884,7 +884,7 @@ var randomColour = function randomColour() {
   console.log('%c %s', "background-color: ".concat(colours[rndColour], "; color: white"), "rndColour: ".concat(colours[rndColour]));
 };
 var setRandomColour = setTimeout(function () {
-  randomColour();
+  randomColour;
 }, 100);
 var attachClickEvent = function attachClickEvent() {
   var menuOpen = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.menu__toggle');

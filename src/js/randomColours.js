@@ -32,7 +32,7 @@ const randomColour = () => {
 };
 
 const setRandomColour = setTimeout(() => {
-    randomColour();
+    randomColour;
 }, 100);
 
 const attachClickEvent = () => {
