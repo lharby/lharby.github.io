@@ -35,9 +35,7 @@ const router = () => {
                 hrefSplit = '/';
             }
             fetch(href)
-                .then(res => {
-                    return res.text();
-                })
+                .then(res => res.text())
                 .then(html => {
                     closeNavigation();
                     BODY.classList.remove(LOADING_CLASS);
