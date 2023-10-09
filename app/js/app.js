@@ -139,9 +139,7 @@ var initDynamicFunctions = function initDynamicFunctions() {
   }
   if (_js_global__WEBPACK_IMPORTED_MODULE_1__["DOM"].classList.contains('high-contrast')) {
     Object(_js_randomColours__WEBPACK_IMPORTED_MODULE_13__["setRandomColour"])();
-    // setTimeout(attachClickEvent, 100);
   }
-
   if (_js_global__WEBPACK_IMPORTED_MODULE_1__["WRAPPER"].classList.contains('contact')) {
     Object(_js_appendForm__WEBPACK_IMPORTED_MODULE_10__["default"])();
   }
