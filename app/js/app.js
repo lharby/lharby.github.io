@@ -543,12 +543,12 @@ var router = function router() {
           _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(indexClass);
         }
         updateContent(html);
+        Object(_utils__WEBPACK_IMPORTED_MODULE_3__["scrollToTop"])();
         document.title = documentTitle;
         history.pushState({
           path: href
         }, documentTitle, hrefSplit);
         Object(_app__WEBPACK_IMPORTED_MODULE_1__["initDynamicFunctions"])();
-        Object(_utils__WEBPACK_IMPORTED_MODULE_3__["scrollToTop"])();
         getLinks();
       })["catch"](function (err) {
         console.warn('Something went wrong.', err);

@@ -48,10 +48,10 @@ const router = () => {
                         WRAPPER.classList.add(indexClass);
                     }
                     updateContent(html);
+                    scrollToTop();
                     document.title = documentTitle;
                     history.pushState({ path: href }, documentTitle, hrefSplit);
                     initDynamicFunctions();
-                    scrollToTop();
                     getLinks();
                 })
                 .catch(err => {
