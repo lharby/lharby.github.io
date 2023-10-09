@@ -18,7 +18,7 @@ const colours = [
     '#d2dd26',
 ];
 
-const setRandomColour = () => {
+const randomColour = () => {
     const rndColour = Math.floor(Math.random() * colours.length);
     document.documentElement.style.setProperty(
         '--selection-background',
@@ -30,6 +30,10 @@ const setRandomColour = () => {
         `rndColour: ${colours[rndColour]}`
     );
 };
+
+const setRandomColour = setTimeout(() => {
+    randomColour();
+}, 100);
 
 const attachClickEvent = () => {
     const menuOpen = DOM.querySelector('.menu__toggle');
