@@ -546,7 +546,7 @@ var router = function router() {
         history.pushState({
           path: href
         }, documentTitle, hrefSplit);
-        routerCallback();
+        routerPromise();
       })["catch"](function (err) {
         console.warn('Something went wrong.', err);
         _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
@@ -562,7 +562,7 @@ var loadIndexPageContent = function loadIndexPageContent() {
     }).then(function (html) {
       updateContent(html);
       router();
-      routerCallback();
+      routerPromise();
     })["catch"](function (err) {
       console.warn('Something went wrong.', err);
       _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
@@ -591,8 +591,12 @@ var routerCallback = function routerCallback() {
   document.title = documentTitle;
   Object(_app__WEBPACK_IMPORTED_MODULE_1__["initDynamicFunctions"])();
   getLinks();
-  Object(_randomColours__WEBPACK_IMPORTED_MODULE_4__["attachClickEvent"])();
 };
+var routerPromise = new Promise(function (resolve, reject) {
+  resolve();
+  reject();
+});
+routerPromise.then(routerCallback).then(_randomColours__WEBPACK_IMPORTED_MODULE_4__["attachClickEvent"]);
 
 
 /***/ }),
