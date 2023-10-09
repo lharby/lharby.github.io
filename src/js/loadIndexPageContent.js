@@ -47,7 +47,7 @@ const router = () => {
                     }
                     updateContent(html);
                     history.pushState({ path: href }, documentTitle, hrefSplit);
-                    routerPromise();
+                    routerCallback();
                 })
                 .catch(err => {
                     console.warn('Something went wrong.', err);
@@ -65,7 +65,7 @@ const loadIndexPageContent = () => {
             .then(html => {
                 updateContent(html);
                 router();
-                routerPromise();
+                routerCallback();
             })
             .catch(err => {
                 console.warn('Something went wrong.', err);
@@ -98,13 +98,7 @@ const routerCallback = () => {
     document.title = documentTitle;
     initDynamicFunctions();
     getLinks();
+    attachClickEvent();
 };
-
-const routerPromise = new Promise((resolve, reject) => {
-    resolve();
-    reject();
-});
-
-routerPromise.then(routerCallback).then(attachClickEvent);
 
 export { loadIndexPageContent };
