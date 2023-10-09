@@ -100,7 +100,6 @@ const routerCallback = () => {
     initDynamicFunctions();
     getLinks();
     scrollToTop();
-    console.log('routerCallback complete');
 };
 
 export { loadIndexPageContent };

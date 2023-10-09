@@ -595,7 +595,6 @@ var routerCallback = function routerCallback() {
   Object(_app__WEBPACK_IMPORTED_MODULE_1__["initDynamicFunctions"])();
   getLinks();
   Object(_utils__WEBPACK_IMPORTED_MODULE_3__["scrollToTop"])();
-  console.log('routerCallback complete');
 };
 
 
