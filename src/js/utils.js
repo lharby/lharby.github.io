@@ -144,6 +144,9 @@ export const siteResponsiveness = () => {
     }
 };
 
-export const scrollToTop = () => {
+export const scrollToTop = callback => {
     BODY.scrollIntoView({ behavior: 'smooth' });
+    if (window.onscrollend !== 'undefined') {
+        callback();
+    }
 };

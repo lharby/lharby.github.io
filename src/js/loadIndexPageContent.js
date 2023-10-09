@@ -94,11 +94,10 @@ const updateContent = input => {
 
 const routerCallback = () => {
     BODY.classList.remove(LOADING_CLASS);
-    scrollToTop();
     document.title = documentTitle;
     initDynamicFunctions();
     getLinks();
-    attachClickEvent();
+    scrollToTop(attachClickEvent);
 };
 
 export { loadIndexPageContent };
