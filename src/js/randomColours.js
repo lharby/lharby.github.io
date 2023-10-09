@@ -31,9 +31,10 @@ const randomColour = () => {
     );
 };
 
-const setRandomColour = setTimeout(() => {
-    randomColour;
-}, 100);
+const setRandomColour = () =>
+    setTimeout(() => {
+        randomColour();
+    }, 100);
 
 const attachClickEvent = () => {
     const menuOpen = DOM.querySelector('.menu__toggle');

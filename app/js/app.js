@@ -883,9 +883,11 @@ var randomColour = function randomColour() {
   document.documentElement.style.setProperty('--selection-background', colours[rndColour]);
   console.log('%c %s', "background-color: ".concat(colours[rndColour], "; color: white"), "rndColour: ".concat(colours[rndColour]));
 };
-var setRandomColour = setTimeout(function () {
-  randomColour;
-}, 100);
+var setRandomColour = function setRandomColour() {
+  return setTimeout(function () {
+    randomColour();
+  }, 100);
+};
 var attachClickEvent = function attachClickEvent() {
   var menuOpen = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.menu__toggle');
   var menuClose = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.menu__toggle--close');
