@@ -490,7 +490,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 /* harmony import */ var _navigation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
-/* harmony import */ var _randomColours__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(15);
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -505,7 +504,6 @@ https://slackwise.org.uk
 */
 
 /* loadindexPageContent */
-
 
 
 
@@ -550,8 +548,6 @@ var router = function router() {
       })["catch"](function (err) {
         console.warn('Something went wrong.', err);
         _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
-      }).then(function () {
-        return _randomColours__WEBPACK_IMPORTED_MODULE_4__["attachClickEvent"];
       });
     });
   });
@@ -568,8 +564,6 @@ var loadIndexPageContent = function loadIndexPageContent() {
     })["catch"](function (err) {
       console.warn('Something went wrong.', err);
       _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
-    }).then(function () {
-      return _randomColours__WEBPACK_IMPORTED_MODULE_4__["attachClickEvent"];
     });
   } else {
     router();

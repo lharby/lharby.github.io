@@ -11,7 +11,6 @@ import { BODY, WRAPPER, PAGE_WRAPPER, LOADING_CLASS } from './global';
 import { initDynamicFunctions } from '../app';
 import { closeNavigation } from './navigation';
 import { scrollToTop } from './utils';
-import { attachClickEvent } from './randomColours';
 
 const url = document.location.pathname.split('/');
 const primaryDir = url[1];
@@ -52,8 +51,7 @@ const router = () => {
                 .catch(err => {
                     console.warn('Something went wrong.', err);
                     BODY.classList.remove(LOADING_CLASS);
-                })
-                .then(() => attachClickEvent);
+                });
         });
     });
 };
@@ -71,8 +69,7 @@ const loadIndexPageContent = () => {
             .catch(err => {
                 console.warn('Something went wrong.', err);
                 BODY.classList.remove(LOADING_CLASS);
-            })
-            .then(() => attachClickEvent);
+            });
     } else {
         router();
     }
