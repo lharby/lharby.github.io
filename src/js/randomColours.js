@@ -36,6 +36,7 @@ const attachClickEvent = () => {
     const menuClose = DOM.querySelector('.menu__toggle--close');
     menuOpen.click();
     menuClose.click();
+    console.log('attachClickEvent complete');
 };
 
 export { setRandomColour, attachClickEvent };

@@ -144,12 +144,6 @@ export const siteResponsiveness = () => {
     }
 };
 
-export const scrollToTop = callback => {
+export const scrollToTop = () => {
     BODY.scrollIntoView({ behavior: 'smooth' });
-    if (window.onscrollend !== 'undefined') {
-        addEventListener('scrollend', () => {
-            console.log('scroll ended');
-            callback();
-        });
-    }
 };
