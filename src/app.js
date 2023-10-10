@@ -3,7 +3,6 @@ import styles from './scss/main.scss';
 import './js/global';
 import { siteResponsiveness } from './js/utils';
 import entry from './js/entry';
-import { indexPage } from './js/indexPage';
 import { navigation } from './js/navigation';
 import { loadIndexPageContent } from './js/loadIndexPageContent';
 import date from './js/date';
@@ -19,7 +18,6 @@ import { DOM, WRAPPER, site } from './js/global';
 const initOnceFunctions = () => {
     siteResponsiveness();
     entry();
-    indexPage();
     loadIndexPageContent();
     navigation();
     date();

@@ -96,17 +96,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_global__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 /* harmony import */ var _js_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _js_entry__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
-/* harmony import */ var _js_indexPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
-/* harmony import */ var _js_navigation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7);
-/* harmony import */ var _js_loadIndexPageContent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8);
-/* harmony import */ var _js_date__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(9);
-/* harmony import */ var _js_toggleContrast__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(10);
-/* harmony import */ var _js_obfuscateEmail__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(11);
-/* harmony import */ var _js_appendForm__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(12);
-/* harmony import */ var _js_getScrollbarWidth__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(13);
-/* harmony import */ var _js_lazyLoad__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(14);
-/* harmony import */ var _js_randomColours__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(15);
-
+/* harmony import */ var _js_navigation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7);
+/* harmony import */ var _js_loadIndexPageContent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8);
+/* harmony import */ var _js_date__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(9);
+/* harmony import */ var _js_toggleContrast__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(10);
+/* harmony import */ var _js_obfuscateEmail__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(11);
+/* harmony import */ var _js_appendForm__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(12);
+/* harmony import */ var _js_getScrollbarWidth__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(13);
+/* harmony import */ var _js_lazyLoad__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(14);
+/* harmony import */ var _js_randomColours__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(15);
 
 
 
@@ -124,24 +122,23 @@ __webpack_require__.r(__webpack_exports__);
 var initOnceFunctions = function initOnceFunctions() {
   Object(_js_utils__WEBPACK_IMPORTED_MODULE_2__["siteResponsiveness"])();
   Object(_js_entry__WEBPACK_IMPORTED_MODULE_3__["default"])();
-  Object(_js_indexPage__WEBPACK_IMPORTED_MODULE_4__["indexPage"])();
-  Object(_js_loadIndexPageContent__WEBPACK_IMPORTED_MODULE_6__["loadIndexPageContent"])();
-  Object(_js_navigation__WEBPACK_IMPORTED_MODULE_5__["navigation"])();
-  Object(_js_date__WEBPACK_IMPORTED_MODULE_7__["default"])();
-  Object(_js_getScrollbarWidth__WEBPACK_IMPORTED_MODULE_11__["default"])();
-  Object(_js_toggleContrast__WEBPACK_IMPORTED_MODULE_8__["default"])();
+  Object(_js_loadIndexPageContent__WEBPACK_IMPORTED_MODULE_5__["loadIndexPageContent"])();
+  Object(_js_navigation__WEBPACK_IMPORTED_MODULE_4__["navigation"])();
+  Object(_js_date__WEBPACK_IMPORTED_MODULE_6__["default"])();
+  Object(_js_getScrollbarWidth__WEBPACK_IMPORTED_MODULE_10__["default"])();
+  Object(_js_toggleContrast__WEBPACK_IMPORTED_MODULE_7__["default"])();
   initDynamicFunctions();
 };
 var initDynamicFunctions = function initDynamicFunctions() {
-  Object(_js_obfuscateEmail__WEBPACK_IMPORTED_MODULE_9__["default"])();
+  Object(_js_obfuscateEmail__WEBPACK_IMPORTED_MODULE_8__["default"])();
   if (!_js_global__WEBPACK_IMPORTED_MODULE_1__["site"].isMobile) {
-    Object(_js_lazyLoad__WEBPACK_IMPORTED_MODULE_12__["setImageSource"])();
+    Object(_js_lazyLoad__WEBPACK_IMPORTED_MODULE_11__["setImageSource"])();
   }
   if (_js_global__WEBPACK_IMPORTED_MODULE_1__["DOM"].classList.contains('high-contrast')) {
-    Object(_js_randomColours__WEBPACK_IMPORTED_MODULE_13__["setRandomColour"])();
+    Object(_js_randomColours__WEBPACK_IMPORTED_MODULE_12__["setRandomColour"])();
   }
   if (_js_global__WEBPACK_IMPORTED_MODULE_1__["WRAPPER"].classList.contains('contact')) {
-    Object(_js_appendForm__WEBPACK_IMPORTED_MODULE_10__["default"])();
+    Object(_js_appendForm__WEBPACK_IMPORTED_MODULE_9__["default"])();
   }
 };
 
@@ -457,34 +454,7 @@ function deleteCookie(name) {
 }
 
 /***/ }),
-/* 6 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "indexPage", function() { return indexPage; });
-/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/*
-Luke Harby
-slackwise LTD
-https://slackwise.org.uk
-2012 - present
-*/
-
-/* index page */
-
-var indexPage = function indexPage() {
-  var url = document.location.pathname.split('/');
-  var primaryDir = url[1];
-  if (!primaryDir) {
-    _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add('index');
-  } else {
-    _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(primaryDir);
-  }
-};
-
-
-/***/ }),
+/* 6 */,
 /* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -655,6 +625,7 @@ var loadIndexPageContent = function loadIndexPageContent() {
       _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
     });
   } else {
+    _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(indexClass);
     router();
   }
 };
