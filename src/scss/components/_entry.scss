@@ -20,11 +20,11 @@ https://slackwise.org.uk
     z-index: $z-top;
 
     &.fade-out {
-        animation: animate-opacity-reverse 500ms ease-in;
+        animation: animate-opacity-reverse 400ms ease-in;
     }
 
     img {
-        animation: animate-greyscale 5s ease-in-out;
+        animation: animate-greyscale 400ms ease-in-out;
         max-width: 100%;
         width: 22rem;
     }
