@@ -95,11 +95,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_main_scss__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _js_global__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 /* harmony import */ var _js_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
-/* harmony import */ var _js_entry__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8);
-/* harmony import */ var _js_indexPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4);
-/* harmony import */ var _js_navigation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5);
-/* harmony import */ var _js_loadIndexPageContent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(6);
-/* harmony import */ var _js_date__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(7);
+/* harmony import */ var _js_entry__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
+/* harmony import */ var _js_indexPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
+/* harmony import */ var _js_navigation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7);
+/* harmony import */ var _js_loadIndexPageContent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8);
+/* harmony import */ var _js_date__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(9);
 /* harmony import */ var _js_toggleContrast__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(10);
 /* harmony import */ var _js_obfuscateEmail__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(11);
 /* harmony import */ var _js_appendForm__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(12);
@@ -375,6 +375,93 @@ var scrollToTop = function scrollToTop() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var _cookies__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+/* entry function */
+
+
+
+var fadeOutClass = 'fade-out';
+var entry = function entry() {
+  var cookieIsSet = Object(_cookies__WEBPACK_IMPORTED_MODULE_2__["getCookie"])('entry');
+  var entryElem = document.querySelector('.entry');
+  if (cookieIsSet) {
+    entryElem.classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"], _global__WEBPACK_IMPORTED_MODULE_0__["VISIBILITY_HIDDEN_CLASS"]);
+    _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"]);
+    Object(_utils__WEBPACK_IMPORTED_MODULE_1__["disableScrollLock"])();
+  } else {
+    entryElem.classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"], _global__WEBPACK_IMPORTED_MODULE_0__["VISIBILITY_HIDDEN_CLASS"]);
+    Object(_utils__WEBPACK_IMPORTED_MODULE_1__["enableScrollLock"])();
+  }
+  entryElem.addEventListener('click', function (e) {
+    e.preventDefault();
+    entryElem.classList.add(fadeOutClass);
+    _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"]);
+    Object(_cookies__WEBPACK_IMPORTED_MODULE_2__["setCookie"])('entry', 1, 1);
+    Object(_utils__WEBPACK_IMPORTED_MODULE_1__["disableScrollLock"])();
+    entryElem.addEventListener("animationend", function () {
+      entryElem.classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["VISIBILITY_HIDDEN_CLASS"], _global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"]);
+      entryElem.classList.remove(fadeOutClass);
+    });
+  });
+};
+/* harmony default export */ __webpack_exports__["default"] = (entry);
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setCookie", function() { return setCookie; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCookie", function() { return getCookie; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteCookie", function() { return deleteCookie; });
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+function setCookie(name, value, days) {
+  var expires = "";
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+function getCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1, c.length);
+    }
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+function deleteCookie(name) {
+  document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "indexPage", function() { return indexPage; });
 /* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /*
@@ -398,7 +485,7 @@ var indexPage = function indexPage() {
 
 
 /***/ }),
-/* 5 */
+/* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -480,7 +567,7 @@ var closeNavigation = function closeNavigation() {
 
 
 /***/ }),
-/* 6 */
+/* 8 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -488,8 +575,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loadIndexPageContent", function() { return loadIndexPageContent; });
 /* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
-/* harmony import */ var _navigation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
+/* harmony import */ var _navigation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+var _ref;
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -513,7 +601,7 @@ var url = document.location.pathname.split('/');
 var primaryDir = url[1];
 var indexClass = 'index';
 var links = document.querySelectorAll('a');
-var internal = _toConsumableArray(links).filter(function (item) {
+var internal = (_ref = _toConsumableArray(links)) === null || _ref === void 0 ? void 0 : _ref.filter(function (item) {
   return item.getAttribute('href').startsWith('/');
 });
 var documentTitle;
@@ -570,8 +658,9 @@ var loadIndexPageContent = function loadIndexPageContent() {
   }
 };
 var getLinks = function getLinks() {
+  var _ref2;
   links = document.querySelectorAll('a');
-  internal = _toConsumableArray(links).filter(function (item) {
+  internal = (_ref2 = _toConsumableArray(links)) === null || _ref2 === void 0 ? void 0 : _ref2.filter(function (item) {
     return item.getAttribute('href').startsWith('/');
   });
 };
@@ -593,7 +682,7 @@ var routerCallback = function routerCallback() {
 
 
 /***/ }),
-/* 7 */
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -614,93 +703,6 @@ var date = function date() {
   dateWrapper.textContent = getYear;
 };
 /* harmony default export */ __webpack_exports__["default"] = (date);
-
-/***/ }),
-/* 8 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
-/* harmony import */ var _cookies__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9);
-/*
-Luke Harby
-slackwise LTD
-https://slackwise.org.uk
-2012 - present
-*/
-
-/* entry function */
-
-
-
-var fadeOutClass = 'fade-out';
-var entry = function entry() {
-  var cookieIsSet = Object(_cookies__WEBPACK_IMPORTED_MODULE_2__["getCookie"])('entry');
-  var entryElem = document.querySelector('.entry');
-  if (cookieIsSet) {
-    entryElem.classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"], _global__WEBPACK_IMPORTED_MODULE_0__["VISIBILITY_HIDDEN_CLASS"]);
-    _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"]);
-    Object(_utils__WEBPACK_IMPORTED_MODULE_1__["disableScrollLock"])();
-  } else {
-    entryElem.classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"], _global__WEBPACK_IMPORTED_MODULE_0__["VISIBILITY_HIDDEN_CLASS"]);
-    Object(_utils__WEBPACK_IMPORTED_MODULE_1__["enableScrollLock"])();
-  }
-  entryElem.addEventListener('click', function (e) {
-    e.preventDefault();
-    entryElem.classList.add(fadeOutClass);
-    _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"]);
-    Object(_cookies__WEBPACK_IMPORTED_MODULE_2__["setCookie"])('entry', 1, 1);
-    Object(_utils__WEBPACK_IMPORTED_MODULE_1__["disableScrollLock"])();
-    entryElem.addEventListener("animationend", function () {
-      entryElem.classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["VISIBILITY_HIDDEN_CLASS"], _global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"]);
-      entryElem.classList.remove(fadeOutClass);
-    });
-  });
-};
-/* harmony default export */ __webpack_exports__["default"] = (entry);
-
-/***/ }),
-/* 9 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setCookie", function() { return setCookie; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCookie", function() { return getCookie; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteCookie", function() { return deleteCookie; });
-/*
-Luke Harby
-slackwise LTD
-https://slackwise.org.uk
-2012 - present
-*/
-
-function setCookie(name, value, days) {
-  var expires = "";
-  if (days) {
-    var date = new Date();
-    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-    expires = "; expires=" + date.toUTCString();
-  }
-  document.cookie = name + "=" + (value || "") + expires + "; path=/";
-}
-function getCookie(name) {
-  var nameEQ = name + "=";
-  var ca = document.cookie.split(';');
-  for (var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1, c.length);
-    }
-    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-  }
-  return null;
-}
-function deleteCookie(name) {
-  document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-}
 
 /***/ }),
 /* 10 */

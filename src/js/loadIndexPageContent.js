@@ -16,7 +16,7 @@ const url = document.location.pathname.split('/');
 const primaryDir = url[1];
 const indexClass = 'index';
 let links = document.querySelectorAll('a');
-let internal = [...links].filter(item =>
+let internal = [...links]?.filter(item =>
     item.getAttribute('href').startsWith('/')
 );
 let documentTitle;
@@ -77,7 +77,7 @@ const loadIndexPageContent = () => {
 
 const getLinks = () => {
     links = document.querySelectorAll('a');
-    internal = [...links].filter(item =>
+    internal = [...links]?.filter(item =>
         item.getAttribute('href').startsWith('/')
     );
 };
