@@ -602,7 +602,8 @@ var primaryDir = url[1];
 var indexClass = 'index';
 var links = document.querySelectorAll('a');
 var internal = (_ref = _toConsumableArray(links)) === null || _ref === void 0 ? void 0 : _ref.filter(function (item) {
-  return item.getAttribute('href').startsWith('/');
+  var _item$getAttribute;
+  return (_item$getAttribute = item.getAttribute('href')) === null || _item$getAttribute === void 0 ? void 0 : _item$getAttribute.startsWith('/');
 });
 var documentTitle;
 var router = function router() {
@@ -661,7 +662,8 @@ var getLinks = function getLinks() {
   var _ref2;
   links = document.querySelectorAll('a');
   internal = (_ref2 = _toConsumableArray(links)) === null || _ref2 === void 0 ? void 0 : _ref2.filter(function (item) {
-    return item.getAttribute('href').startsWith('/');
+    var _item$getAttribute2;
+    return (_item$getAttribute2 = item.getAttribute('href')) === null || _item$getAttribute2 === void 0 ? void 0 : _item$getAttribute2.startsWith('/');
   });
 };
 var updateContent = function updateContent(input) {
