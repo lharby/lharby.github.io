@@ -59,9 +59,13 @@ https://slackwise.org.uk
 }
 
 html.high-contrast {
-    .accordion {
-        &__item {
-            border-bottom: none;
+    #posts {
+        .post {
+            .accordion {
+                &__item {
+                    border-bottom: none;
+                }
+            }
         }
     }
 }
