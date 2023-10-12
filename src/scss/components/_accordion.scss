@@ -1,0 +1,19 @@
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+.accordion {
+    > li {
+        > a {
+            text-decoration: none;
+        }
+    }
+
+    ul {
+        overflow: hidden;
+        height: 0;
+    }
+}

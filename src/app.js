@@ -12,6 +12,7 @@ import appendForm from './js/appendForm';
 import getScrollbarWidth from './js/getScrollbarWidth';
 import { setImageSource } from './js/lazyLoad';
 import { setRandomColour } from './js/randomColours';
+import { accordion } from './js/accordion';
 
 import { DOM, WRAPPER, site } from './js/global';
 
@@ -36,6 +37,9 @@ const initDynamicFunctions = () => {
     }
     if (WRAPPER.classList.contains('contact')) {
         appendForm();
+    }
+    if (WRAPPER.classList.contains('frequently-asked-questions')) {
+        accordion();
     }
 };
 
