@@ -15,6 +15,10 @@ https://slackwise.org.uk
         align-items: center;
         padding: 1rem 0;
 
+        &::before {
+            content: 'Q. ';
+        }
+
         &::after {
             content: '\f489';
             font-family: $icon-font;
@@ -40,6 +44,10 @@ https://slackwise.org.uk
             height: auto;
             overflow: auto;
             padding: 2rem 0;
+
+            &:before {
+                content: 'A. ';
+            }
 
             @include mobile(0, $mobile-size) {
                 padding: 1.5rem 0;
