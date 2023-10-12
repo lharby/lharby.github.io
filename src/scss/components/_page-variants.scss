@@ -113,6 +113,12 @@ html {
                     border-bottom: 1px solid transparent !important;
                 }
             }
+
+            .accordion {
+                [href] {
+                    border-bottom: none !important;
+                }
+            }
         }
 
         .form {
