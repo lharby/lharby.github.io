@@ -63,7 +63,7 @@ html.high-contrast {
         .post {
             .accordion {
                 [href] {
-                    border-bottom: none;
+                    border-bottom: none !important;
                 }
             }
         }
