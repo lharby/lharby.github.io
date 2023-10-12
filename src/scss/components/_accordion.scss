@@ -6,6 +6,10 @@ https://slackwise.org.uk
 */
 
 .accordion {
+    li {
+        display: flex;
+    }
+
     &__item {
         text-decoration: none;
         border-bottom: none !important;
