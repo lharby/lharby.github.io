@@ -24,6 +24,17 @@ https://slackwise.org.uk
         ~ ul {
             height: auto;
             overflow: auto;
+            padding: 2rem 0;
+        }
+    }
+}
+
+.no-js {
+    .accordion {
+        ul ul {
+            height: auto;
+            overflow: auto;
+            padding: 2rem 0;
         }
     }
 }
