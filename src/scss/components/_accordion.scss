@@ -27,6 +27,21 @@ https://slackwise.org.uk
             padding: 2rem 0;
         }
     }
+
+    li[class^='ion-'] {
+        &:before {
+            margin-right: 0.5rem;
+        }
+
+        a:after {
+            position: absolute;
+            font-family: $icon-font;
+            content: '\f30f';
+            transform: rotate(-45deg);
+            top: 0.4rem;
+            right: -1.4rem;
+        }
+    }
 }
 
 .no-js {

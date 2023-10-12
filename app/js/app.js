@@ -891,7 +891,7 @@ https://slackwise.org.uk
 /* accordion function */
 var accordion = function accordion() {
   var container = document.querySelector('.accordion');
-  var trigger = container.querySelectorAll('li > a');
+  var trigger = container.querySelectorAll('.accordion__item');
   var openClass = 'open';
   trigger.forEach(function (item) {
     item.addEventListener('click', function (event) {
