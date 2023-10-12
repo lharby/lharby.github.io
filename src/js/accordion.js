@@ -8,7 +8,7 @@ https://slackwise.org.uk
 /* accordion function */
 const accordion = () => {
     const container = document.querySelector('.accordion');
-    const trigger = container.querySelectorAll('> li > a');
+    const trigger = container.querySelectorAll('li > a');
     const openClass = 'open';
     trigger.forEach(item => {
         item.addEventListener('click', event => {

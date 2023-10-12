@@ -18,4 +18,10 @@ https://slackwise.org.uk
         overflow: hidden;
         height: 0;
     }
+
+    .open {
+        ~ ul {
+            height: auto;
+            overflow: auto;
+    }
 }
