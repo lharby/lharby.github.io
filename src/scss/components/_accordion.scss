@@ -17,6 +17,9 @@ https://slackwise.org.uk
 
         &::after {
             content: '\f489';
+            font-family: $icon-font;
+            position: absolute;
+            right: 1rem;
         }
     }
 
@@ -27,10 +30,7 @@ https://slackwise.org.uk
 
     .open {
         &::after {
-            font-family: $icon-font;
             content: '\f462';
-            position: absolute;
-            right: 1rem;
         }
 
         ~ ul {
