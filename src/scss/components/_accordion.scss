@@ -13,13 +13,21 @@ https://slackwise.org.uk
         position: relative;
         padding: 1rem 0;
 
+        &:hover {
+            color: $colour__black;
+        }
+
         &::after {
             content: '\f489';
             font-family: $icon-font;
             position: absolute;
-            right: 2rem;
+            right: 0;
             font-size: $default__spacer * 2;
             top: 0.8rem;
+
+            @include mobile(0, $mobile-size) {
+                font-size: 2.5rem;
+            }
         }
     }
 
@@ -32,6 +40,10 @@ https://slackwise.org.uk
         &::after {
             content: '\f462';
             top: 0.75rem;
+
+            @include mobile(0, $mobile-size) {
+                top: 0.8rem;
+            }
         }
 
         ~ ul {
