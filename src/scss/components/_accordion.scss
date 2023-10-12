@@ -35,6 +35,13 @@ https://slackwise.org.uk
     ul {
         overflow: hidden;
         height: 0;
+
+        li:first-child {
+            &:before {
+                content: 'A. ';
+                white-space: pre;
+            }
+        }
     }
 
     .open {
@@ -46,11 +53,6 @@ https://slackwise.org.uk
             height: auto;
             overflow: auto;
             padding: 2rem 0;
-
-            &:before {
-                content: 'A. ;';
-                white-space: pre;
-            }
 
             @include mobile(0, $mobile-size) {
                 padding: 1.5rem 0;
