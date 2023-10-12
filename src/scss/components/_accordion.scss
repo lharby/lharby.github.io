@@ -13,6 +13,11 @@ https://slackwise.org.uk
     &__item {
         text-decoration: none;
         border-bottom: none !important;
+        display: block;
+
+        &::after {
+            content: '\f489';
+        }
     }
 
     ul {
@@ -21,10 +26,21 @@ https://slackwise.org.uk
     }
 
     .open {
+        &::after {
+            font-family: $icon-font;
+            content: '\f462';
+            position: absolute;
+            right: 1rem;
+        }
+
         ~ ul {
             height: auto;
             overflow: auto;
             padding: 2rem 0;
+
+            @include mobile(0, $mobile-size) {
+                padding: 1.5rem 0;
+            }
         }
     }
 
