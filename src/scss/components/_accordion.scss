@@ -11,18 +11,20 @@ https://slackwise.org.uk
         border-bottom: none !important;
         display: flex;
         position: relative;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
         padding: 1rem 0;
 
         &::before {
             content: 'Q. ';
+            white-space: pre;
         }
 
         &::after {
             content: '\f489';
             font-family: $icon-font;
             font-size: $default__spacer * 2;
+            margin-left: auto;
 
             @include mobile(0, $mobile-size) {
                 font-size: 2.5rem;
@@ -46,7 +48,8 @@ https://slackwise.org.uk
             padding: 2rem 0;
 
             &:before {
-                content: 'A. ';
+                content: 'A. ;';
+                white-space: pre;
             }
 
             @include mobile(0, $mobile-size) {
