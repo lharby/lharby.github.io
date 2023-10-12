@@ -17,8 +17,6 @@ const indexPage = () => {
     } else {
         WRAPPER.classList.add(primaryDir);
     }
-}
-
-export {
-    indexPage
 };
+
+export { indexPage };

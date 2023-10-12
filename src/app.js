@@ -2,6 +2,7 @@ import styles from './scss/main.scss';
 
 import './js/global';
 import { siteResponsiveness } from './js/utils';
+import { indexPage } from './js/indexPage';
 import entry from './js/entry';
 import { navigation } from './js/navigation';
 import { loadIndexPageContent } from './js/loadIndexPageContent';
@@ -18,6 +19,7 @@ import { DOM, WRAPPER, site } from './js/global';
 
 const initOnceFunctions = () => {
     siteResponsiveness();
+    indexPage();
     entry();
     loadIndexPageContent();
     navigation();
