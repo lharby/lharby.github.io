@@ -62,7 +62,7 @@ html.high-contrast {
     #posts {
         .post {
             .accordion {
-                &__item {
+                [href] {
                     border-bottom: none;
                 }
             }
