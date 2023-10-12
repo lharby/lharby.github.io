@@ -89,7 +89,7 @@ https://slackwise.org.uk
 
 #posts {
     .accordion {
-        > [href] {
+        li > [href] {
             border-bottom: none !important;
         }
     }
