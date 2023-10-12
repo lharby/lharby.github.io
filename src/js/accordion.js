@@ -11,11 +11,14 @@ const accordion = () => {
     const trigger = container.querySelectorAll('> li > a');
     const openClass = 'open';
     trigger.forEach(item => {
-        if (item.classList.contains(openClass)) {
-            item.classList.remove(openClass);
-        } else {
-            item.classList.add(openClass);
-        }
+        item.addEventListener('click', event => {
+            event.preventDefault();
+            if (item.classList.contains(openClass)) {
+                item.classList.remove(openClass);
+            } else {
+                item.classList.add(openClass);
+            }
+        });
     });
 };
 

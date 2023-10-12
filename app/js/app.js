@@ -891,11 +891,14 @@ var accordion = function accordion() {
   var trigger = container.querySelectorAll('> li > a');
   var openClass = 'open';
   trigger.forEach(function (item) {
-    if (item.classList.contains(openClass)) {
-      item.classList.remove(openClass);
-    } else {
-      item.classList.add(openClass);
-    }
+    item.addEventListener('click', function (event) {
+      event.preventDefault();
+      if (item.classList.contains(openClass)) {
+        item.classList.remove(openClass);
+      } else {
+        item.classList.add(openClass);
+      }
+    });
   });
 };
 
