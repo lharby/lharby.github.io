@@ -8,11 +8,11 @@ https://slackwise.org.uk
 .accordion {
     > li {
         padding: 1rem 0;
+    }
 
-        > a {
-            text-decoration: none;
-            border-bottom: none;
-        }
+    &__item {
+        text-decoration: none;
+        border-bottom: none;
     }
 
     ul {
