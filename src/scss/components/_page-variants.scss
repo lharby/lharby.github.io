@@ -118,6 +118,14 @@ html {
                 [href] {
                     border-bottom: none !important;
                 }
+
+                li [href] {
+                    border-bottom: 1px solid $colour__black !important;
+
+                    &:hover {
+                        border-bottom: 1px solid transparent !important;
+                    }
+                }
             }
         }
 
