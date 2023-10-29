@@ -29,7 +29,7 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}"/>
     {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
     <!-- DEFAULT COLORS -->
     <meta name="text:Disqus Shortname" content="" />
     <meta name="color:Background" content="#eeeeee"/>
@@ -75,9 +75,13 @@
             <a href="/" class="logo">
                 <img src="https://lharby.github.io/studio-malarkey/img/logo.svg" alt="Studio Malarkey logo" class="logo__image" />
             </a>
-            <a href="#" class="menu__toggle ion-navicon"></a>
-            <div class="nav-wrapper"><!-- navWrapper -->
-                <a href="#" class="menu__toggle menu__toggle--close ion-ios-close-empty"></a>
+            <a href="#" class="menu__toggle ion-navicon" aria-label="Open navigation">
+                <span class="hidden">Open navigation</span>
+            </a>
+            <nav class="nav-wrapper"><!-- navWrapper -->
+                <a href="#" class="menu__toggle menu__toggle--close ion-ios-close-empty" aria-label="Close navigation">
+                    <span class="hidden">Close navigation</span>
+                </a>
                 <div id="header">
                     {block:IfLogoImage}
                     <h1><img src="{image:Logo}"/></h1>
@@ -92,8 +96,9 @@
                     {/block:IfNotLogoImage}
                     <ul class="pages">
                         <li class="nav-wrapper__first">
-                        <a href="/" class="nav-wrapper__plain-link">
-                            <img src="https://lharby.github.io/studio-malarkey/img/m-red.svg" />
+                        <a href="/" class="nav-wrapper__plain-link" aria-label="Home">
+                            <span class="hidden">Home</span>
+                            <img src="https://lharby.github.io/studio-malarkey/img/m-red.svg" alt="" />
                         </a>
                         </li>
                         {block:HasPages}
@@ -111,7 +116,7 @@
                             <ul class="pages__social-links">
                                 <li>
                                     <a href="https://www.instagram.com/studiomalarkey/" target="_blank">
-                                        <img src="https://lharby.github.io/studio-malarkey/img/icon-instagram.svg">
+                                        <img src="https://lharby.github.io/studio-malarkey/img/icon-instagram.svg" alt="Studio Malarkey logo">
                                     </a>
                                 </li>
                             </ul>
@@ -123,11 +128,11 @@
                     {block:IfNotHeaderText}
                     {/block:IfNotHeaderText}
                 </div>
-            </div><!-- end navWrapper -->
+            </nav><!-- end navWrapper -->
             <div class="overlay"></div>
         </header>
         <div id="pageWrapper"><!-- pageWrapper -->
-            <div id="container"><!-- container -->
+            <main id="container"><!-- container -->
                 <div id="contents"><!-- contents -->
                     <ol id="posts"><!-- posts -->
                         {block:Posts inlineMediaWidth="1280"}
@@ -144,7 +149,7 @@
                                     {LinkOpenTag}
                                         <img src="{PhotoURL-500}" {block:HighRes}style="display:none"{/block:HighRes} />
                                         {block:HighRes}
-                                        <img src="{PhotoURL-HighRes}" class="highres">
+                                        <img src="{PhotoURL-HighRes}" class="highres" alt="Post image">
                                         {/block:HighRes}
                                     {LinkCloseTag}
                                     {block:Caption}
@@ -170,7 +175,7 @@
                                     {block:Photos}
                                         <img src="{PhotoURL-500}" {block:HighRes}style="display:none"{/block:HighRes} />
                                         {block:HighRes}
-                                            <img src="{PhotoURL-HighRes}" class="highres" />
+                                            <img src="{PhotoURL-HighRes}" class="highres" alt="Post image"/>
                                         {/block:HighRes}
                                     {/block:Photos}
                                     {block:Caption}
@@ -198,7 +203,7 @@
                             {block:Link}
                                 <li class="post link">
                                     {block:Thumbnail}
-                                        <img src="{Thumbnail-HighRes}" />
+                                        <img src="{Thumbnail-HighRes}" alt="Thumbnail image"/>
                                     {/block:Thumbnail}
                                     <a href="{URL}" class="link" {Target}>{Name}</a>
                                     {block:Description}
@@ -302,7 +307,7 @@
                         </ol>
                     {/block:IndexPage}
                 </div><!-- end contents -->
-            </div><!-- end container -->
+            </main><!-- end container -->
         </div><!-- end pageWrapper -->
         <footer id="footer" class="footer"><!-- footer -->
             <ul>
@@ -310,9 +315,18 @@
                 <li>3rd Floor, 1 Foundry Street</li>
                 <li>Northampton</li>
                 <li>NN1 1PR</li>
-                <li class="ion-ios-location-outline"><a href="https://www.google.co.uk/maps/place/Phipps+Northampton+Brewery+Company/@52.2348978,-0.9000615,17z/data=!3m2!4b1!5s0x48770ee165e876b3:0x1f310add1054f9a0!4m5!3m4!1s0x4877736c5f378f23:0x2f2141e5d4b9274f!8m2!3d52.2348978!4d-0.8978675" target="_blank">Map</a></li>
-                <li class="ion-paper-airplane"><a href="#" class="email-address">email</a></li>
-                <li class="ion-contrast"><a href="#" class="toggle-contrast no-link"><img src="https://lharby.github.io/studio-malarkey/img/circle-gradient.svg" alt="" /></a></li>
+                <li class="ion-ios-location-outline">
+                    <a href="https://www.google.co.uk/maps/place/Phipps+Northampton+Brewery+Company/@52.2348978,-0.9000615,17z/data=!3m2!4b1!5s0x48770ee165e876b3:0x1f310add1054f9a0!4m5!3m4!1s0x4877736c5f378f23:0x2f2141e5d4b9274f!8m2!3d52.2348978!4d-0.8978675" target="_blank">Map</a>
+                </li>
+                <li class="ion-paper-airplane">
+                    <a href="#" class="email-address">email</a>
+                </li>
+                <li class="ion-contrast">
+                    <a href="#" class="toggle-contrast no-link" aria-label="Toggle contrast">
+                        <span class="hidden">Toggle contrast</span>
+                        <img src="https://lharby.github.io/studio-malarkey/img/circle-gradient.svg" alt="" />
+                    </a>
+                </li>
             </ul>
             <ul>
                 <li>Connect</li>
@@ -321,27 +335,10 @@
             <div class="legal">&copy; Studio MALARKEY&nbsp;<span class="date-wrapper"></span></div>
         </footer><!-- end footer -->
     </div>
-    
-    <a href="#" class="entry visibility-hidden hidden">
+    <a href="#" class="entry visibility-hidden hidden" aria-label="Enter website">
+        <span class="hidden">Enter website</span>
         <img src="https://lharby.github.io/studio-malarkey/img/logo.svg" alt="Studio Malarkey logo"/>
     </a>
-
-    {block:IfDisqusShortname}
-    <script type="text/javascript">
-        //<![CDATA[
-        (function() {
-            var links = document.getElementsByTagName('a');
-            var query = '?';
-            for(var i = 0; i < links.length; i++) {
-            if(links[i].href.indexOf('#disqus_thread') >= 0) {
-                query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
-            }
-            }
-            document.write('<script charset="utf-8" type="text/javascript" src="https://disqus.com/forums/{text:Disqus Shortname}/get_num_replies.js' + query + '"></' + 'script>');
-        })();
-        //]]>
-    </script>
-    {/block:IfDisqusShortname}
     <script type="text/javascript" src="https://lharby.github.io/app/js/app.min.js"></script>
 </body>
 </html>

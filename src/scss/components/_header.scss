@@ -61,7 +61,8 @@ https://slackwise.org.uk
     .menu__toggle {
         @include outline;
         position: fixed;
-        right: $default__spacer;
+        right: 0.5rem;
+        padding: 0 1rem;
         top: 1rem;
         font-size: $default__spacer * 2;
         color: $colour__white;
