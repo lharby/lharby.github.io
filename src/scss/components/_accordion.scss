@@ -15,11 +15,6 @@ https://slackwise.org.uk
         align-items: center;
         padding: 1rem 0;
 
-        &::before {
-            content: 'Q. ';
-            white-space: pre;
-        }
-
         &::after {
             content: '\f489';
             font-family: $icon-font;
@@ -35,13 +30,6 @@ https://slackwise.org.uk
     ul {
         overflow: hidden;
         height: 0;
-
-        li:first-child {
-            &:before {
-                content: 'A. ';
-                white-space: pre;
-            }
-        }
     }
 
     .open {
