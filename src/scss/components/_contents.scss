@@ -7,7 +7,7 @@ https://slackwise.org.uk
 
 .tumblr {
     #contents {
-        width: initial;
+        width: 90%;
 
         a {
             color: $colour__white;
@@ -22,5 +22,13 @@ https://slackwise.org.uk
     .description {
         background-color: transparent;
         margin-top: 0.75rem;
+    }
+}
+
+@include tablet($tablet-size) {
+    .tumblr {
+        #contents {
+            width: 100%;
+        }
     }
 }
