@@ -710,9 +710,10 @@ var getLinks = function getLinks() {
   internal = (_ref2 = _toConsumableArray(links)) === null || _ref2 === void 0 ? void 0 : _ref2.filter(function (item) {
     var _item$getAttribute2;
 
-    (_item$getAttribute2 = item.getAttribute('href')) === null || _item$getAttribute2 === void 0 || _item$getAttribute2.startsWith('/');
-    item.classList.add('internal');
-    return item;
+    return (_item$getAttribute2 = item.getAttribute('href')) === null || _item$getAttribute2 === void 0 ? void 0 : _item$getAttribute2.startsWith('/');
+  });
+  internal.forEach(function (item) {
+    return item.classList.add('internal');
   });
   console.log(internal);
   console.log("internal length: ".concat(internal.length));

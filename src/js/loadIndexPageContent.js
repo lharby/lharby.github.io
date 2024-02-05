@@ -78,11 +78,10 @@ const loadIndexPageContent = () => {
 
 const getLinks = () => {
     links = document.querySelectorAll('a');
-    internal = [...links]?.filter(item => {
+    internal = [...links]?.filter(item => 
         item.getAttribute('href')?.startsWith('/')
-        item.classList.add('internal');
-        return item;
-    });
+    );
+    internal.forEach(item => item.classList.add('internal'));
     console.log(internal);
     console.log(`internal length: ${internal.length}`);
 };
