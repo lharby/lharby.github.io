@@ -81,6 +81,7 @@ const getLinks = () => {
     internal = [...links]?.filter(item =>
         item.getAttribute('href')?.startsWith('/')
     );
+    console.log(`internal: ${internal}, internal length: ${internal.length}`);
 };
 
 const updateContent = input => {

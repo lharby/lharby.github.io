@@ -712,6 +712,7 @@ var getLinks = function getLinks() {
 
     return (_item$getAttribute2 = item.getAttribute('href')) === null || _item$getAttribute2 === void 0 ? void 0 : _item$getAttribute2.startsWith('/');
   });
+  console.log("internal: ".concat(internal, ", internal length: ").concat(internal.length));
 };
 
 var updateContent = function updateContent(input) {
