@@ -39,3 +39,7 @@ https://slackwise.org.uk
 .default-spacing {
     margin-bottom: $default__spacer;
 }
+
+.font-small {
+    @include smallFont;
+}

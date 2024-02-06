@@ -13,6 +13,14 @@ https://slackwise.org.uk
     }
 }
 
+@mixin smallFont() {
+    font-size: $font-size__small;
+
+    @include mobile(0, $mobile-size) {
+        font-size: $font-size__xsmall;
+    }
+}
+
 @mixin hover($type, $speed, $ease) {
     transition: $type $speed $ease;
 }
