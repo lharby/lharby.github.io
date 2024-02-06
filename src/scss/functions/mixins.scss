@@ -6,10 +6,10 @@ https://slackwise.org.uk
 */
 
 @mixin defaultFont() {
-    font-size: 2rem;
+    font-size: $font-size__normal;
 
     @include mobile(0, $mobile-size) {
-        font-size: 1.75rem;
+        font-size: $font-size__medium;
     }
 }
 
