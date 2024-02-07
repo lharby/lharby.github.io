@@ -20,10 +20,12 @@ let internal;
 let documentTitle;
 
 const router = () => {
-    internal.forEach((item, index) => {
+    getLinks();
+    internal.forEach(item => {
+        console.log(internal);
+        console.log(`internal length: ${internal.length}`);
         let href = item.getAttribute('href');
         let hrefSplit = href.split('/')[1];
-        console.log(item, index);
         item.addEventListener('click', event => {
             event.preventDefault();
             event.stopPropagation();
@@ -52,7 +54,6 @@ const router = () => {
                 });
         });
     });
-    getLinks();
 };
 
 const loadIndexPageContent = () => {
@@ -66,7 +67,7 @@ const loadIndexPageContent = () => {
                 routerCallback();
             })
             .catch(err => {
-                console.log('Something went wrong.', err);
+                console.warn('Something went wrong.', err);
                 BODY.classList.remove(LOADING_CLASS);
             });
     } else {

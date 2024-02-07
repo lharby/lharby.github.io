@@ -606,10 +606,12 @@ var links;
 var internal;
 var documentTitle;
 var router = function router() {
-  internal.forEach(function (item, index) {
+  getLinks();
+  internal.forEach(function (item) {
+    console.log(internal);
+    console.log("internal length: ".concat(internal.length));
     var href = item.getAttribute('href');
     var hrefSplit = href.split('/')[1];
-    console.log(item, index);
     item.addEventListener('click', function (event) {
       event.preventDefault();
       event.stopPropagation();
@@ -639,7 +641,6 @@ var router = function router() {
       });
     });
   });
-  getLinks();
 };
 var loadIndexPageContent = function loadIndexPageContent() {
   if (!primaryDir) {
@@ -651,7 +652,7 @@ var loadIndexPageContent = function loadIndexPageContent() {
       router();
       routerCallback();
     })["catch"](function (err) {
-      console.log('Something went wrong.', err);
+      console.warn('Something went wrong.', err);
       _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
     });
   } else {
