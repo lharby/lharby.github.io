@@ -22,9 +22,6 @@ let documentTitle;
 const router = () => {
     getLinks();
     internal.forEach(item => {
-        console.log(internal);
-        console.log(`internal length: ${internal.length}`);
-        console.log(item);
         let href = item.getAttribute('href');
         let hrefSplit = href.split('/')[1];
         item.addEventListener('click', event => {
@@ -64,7 +61,6 @@ const loadIndexPageContent = () => {
             .then(res => res.text())
             .then(html => {
                 updateContent(html);
-                router();
                 routerCallback();
             })
             .catch(err => {
@@ -73,8 +69,8 @@ const loadIndexPageContent = () => {
             });
     } else {
         WRAPPER.classList.add(indexClass);
-        router();
     }
+    router();
 };
 
 const getLinks = () => {

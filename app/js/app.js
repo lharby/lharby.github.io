@@ -608,9 +608,6 @@ var documentTitle;
 var router = function router() {
   getLinks();
   internal.forEach(function (item) {
-    console.log(internal);
-    console.log("internal length: ".concat(internal.length));
-    console.log(item);
     var href = item.getAttribute('href');
     var hrefSplit = href.split('/')[1];
     item.addEventListener('click', function (event) {
@@ -650,7 +647,6 @@ var loadIndexPageContent = function loadIndexPageContent() {
       return res.text();
     }).then(function (html) {
       updateContent(html);
-      router();
       routerCallback();
     })["catch"](function (err) {
       console.warn('Something went wrong.', err);
@@ -658,8 +654,8 @@ var loadIndexPageContent = function loadIndexPageContent() {
     });
   } else {
     _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(indexClass);
-    router();
   }
+  router();
 };
 var getLinks = function getLinks() {
   var _ref;
