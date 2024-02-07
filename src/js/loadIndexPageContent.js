@@ -15,10 +15,10 @@ import { scrollToTop } from './utils';
 const url = document.location.pathname.split('/');
 const primaryDir = url[1];
 const indexClass = 'index';
-let links = document.querySelectorAll('a');
-let internal = [...links]?.filter(item =>
-    item.getAttribute('href')?.startsWith('/')
-);
+// let links = document.querySelectorAll('a');
+// let internal = [...links]?.filter(item =>
+//     item.getAttribute('href')?.startsWith('/')
+// );
 let documentTitle;
 
 const router = () => {
