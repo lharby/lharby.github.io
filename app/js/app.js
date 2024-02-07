@@ -647,6 +647,7 @@ var loadIndexPageContent = function loadIndexPageContent() {
       return res.text();
     }).then(function (html) {
       updateContent(html);
+      router();
       routerCallback();
     })["catch"](function (err) {
       console.warn('Something went wrong.', err);
@@ -654,8 +655,9 @@ var loadIndexPageContent = function loadIndexPageContent() {
     });
   } else {
     _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(indexClass);
+    router();
+    routerCallback();
   }
-  router();
 };
 var getLinks = function getLinks() {
   var _ref;
@@ -667,6 +669,8 @@ var getLinks = function getLinks() {
   internal.forEach(function (item) {
     return item.classList.add('internal');
   });
+  console.log(internal);
+  console.log("internal length: ".concat(internal.length));
 };
 var updateContent = function updateContent(input) {
   _global__WEBPACK_IMPORTED_MODULE_0__["PAGE_WRAPPER"].replaceChildren();

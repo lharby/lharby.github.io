@@ -61,6 +61,7 @@ const loadIndexPageContent = () => {
             .then(res => res.text())
             .then(html => {
                 updateContent(html);
+                router();
                 routerCallback();
             })
             .catch(err => {
@@ -69,8 +70,9 @@ const loadIndexPageContent = () => {
             });
     } else {
         WRAPPER.classList.add(indexClass);
+        router();
+        routerCallback();
     }
-    router();
 };
 
 const getLinks = () => {
@@ -79,6 +81,8 @@ const getLinks = () => {
         item.getAttribute('href')?.startsWith('/')
     );
     internal.forEach(item => item.classList.add('internal'));
+    console.log(internal);
+    console.log(`internal length: ${internal.length}`);
 };
 
 const updateContent = input => {
