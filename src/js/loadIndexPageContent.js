@@ -15,11 +15,14 @@ import { scrollToTop } from './utils';
 const url = document.location.pathname.split('/');
 const primaryDir = url[1];
 const indexClass = 'index';
-let links;
-let internal;
+let links = document.querySelectorAll('a');
+let internal = [...links]?.filter(item =>
+    item.getAttribute('href')?.startsWith('/')
+);
 let documentTitle;
 
 const router = () => {
+    getLinks();
     internal.forEach(item => {
         let href = item.getAttribute('href');
         let hrefSplit = href.split('/')[1];
@@ -79,6 +82,8 @@ const getLinks = () => {
         item.getAttribute('href')?.startsWith('/')
     );
     internal.forEach(item => item.classList.add('internal'));
+    console.log(internal);
+    console.log(`internal length: ${internal.length}`);
 };
 
 const updateContent = input => {
@@ -96,10 +101,6 @@ const routerCallback = () => {
     getLinks();
     initDynamicFunctions();
     scrollToTop();
-    console.log(internal);
-    console.log(`internal length: ${internal.length}`);
 };
-
-getLinks();
 
 export { loadIndexPageContent };
