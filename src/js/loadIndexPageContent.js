@@ -20,7 +20,6 @@ let internal;
 let documentTitle;
 
 const router = () => {
-    getLinks();
     internal.forEach((item, index) => {
         let href = item.getAttribute('href');
         let hrefSplit = href.split('/')[1];
@@ -48,11 +47,12 @@ const router = () => {
                     routerCallback();
                 })
                 .catch(err => {
-                    console.warn('Something went wrong.', err);
+                    console.log('Something went wrong.', err);
                     BODY.classList.remove(LOADING_CLASS);
                 });
         });
     });
+    getLinks();
 };
 
 const loadIndexPageContent = () => {
@@ -66,7 +66,7 @@ const loadIndexPageContent = () => {
                 routerCallback();
             })
             .catch(err => {
-                console.warn('Something went wrong.', err);
+                console.log('Something went wrong.', err);
                 BODY.classList.remove(LOADING_CLASS);
             });
     } else {

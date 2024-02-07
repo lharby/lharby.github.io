@@ -606,7 +606,6 @@ var links;
 var internal;
 var documentTitle;
 var router = function router() {
-  getLinks();
   internal.forEach(function (item, index) {
     var href = item.getAttribute('href');
     var hrefSplit = href.split('/')[1];
@@ -635,11 +634,12 @@ var router = function router() {
         }, documentTitle, hrefSplit);
         routerCallback();
       })["catch"](function (err) {
-        console.warn('Something went wrong.', err);
+        console.log('Something went wrong.', err);
         _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
       });
     });
   });
+  getLinks();
 };
 var loadIndexPageContent = function loadIndexPageContent() {
   if (!primaryDir) {
@@ -651,7 +651,7 @@ var loadIndexPageContent = function loadIndexPageContent() {
       router();
       routerCallback();
     })["catch"](function (err) {
-      console.warn('Something went wrong.', err);
+      console.log('Something went wrong.', err);
       _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
     });
   } else {
