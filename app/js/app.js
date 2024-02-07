@@ -605,7 +605,6 @@ var indexClass = 'index';
 var links;
 var internal;
 var documentTitle;
-getLinks();
 var router = function router() {
   internal.forEach(function (item) {
     var href = item.getAttribute('href');
@@ -686,6 +685,7 @@ var routerCallback = function routerCallback() {
   console.log(internal);
   console.log("internal length: ".concat(internal.length));
 };
+getLinks();
 
 
 /***/ }),

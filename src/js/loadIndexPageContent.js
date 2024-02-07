@@ -19,8 +19,6 @@ let links;
 let internal;
 let documentTitle;
 
-getLinks();
-
 const router = () => {
     internal.forEach(item => {
         let href = item.getAttribute('href');
@@ -101,5 +99,7 @@ const routerCallback = () => {
     console.log(internal);
     console.log(`internal length: ${internal.length}`);
 };
+
+getLinks();
 
 export { loadIndexPageContent };
