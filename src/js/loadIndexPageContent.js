@@ -22,6 +22,9 @@ let documentTitle;
 const router = () => {
     getLinks();
     internal.forEach(item => {
+        console.log(internal);
+        console.log(`internal length: ${internal.length}`);
+        console.log(item);
         let href = item.getAttribute('href');
         let hrefSplit = href.split('/')[1];
         item.addEventListener('click', event => {
@@ -80,8 +83,6 @@ const getLinks = () => {
         item.getAttribute('href')?.startsWith('/')
     );
     internal.forEach(item => item.classList.add('internal'));
-    console.log(internal);
-    console.log(`internal length: ${internal.length}`);
 };
 
 const updateContent = input => {

@@ -608,6 +608,9 @@ var documentTitle;
 var router = function router() {
   getLinks();
   internal.forEach(function (item) {
+    console.log(internal);
+    console.log("internal length: ".concat(internal.length));
+    console.log(item);
     var href = item.getAttribute('href');
     var hrefSplit = href.split('/')[1];
     item.addEventListener('click', function (event) {
@@ -668,8 +671,6 @@ var getLinks = function getLinks() {
   internal.forEach(function (item) {
     return item.classList.add('internal');
   });
-  console.log(internal);
-  console.log("internal length: ".concat(internal.length));
 };
 var updateContent = function updateContent(input) {
   _global__WEBPACK_IMPORTED_MODULE_0__["PAGE_WRAPPER"].replaceChildren();
