@@ -19,41 +19,6 @@ let links;
 let internal;
 let documentTitle;
 
-const router = () => {
-    getLinks();
-    internal.forEach(item => {
-        let href = item.getAttribute('href');
-        let hrefSplit = href.split('/')[1];
-        item.addEventListener('click', event => {
-            event.preventDefault();
-            event.stopPropagation();
-            BODY.classList.add(LOADING_CLASS);
-            if (href === '/') {
-                href = '/home';
-                hrefSplit = '/';
-            }
-            fetch(href)
-                .then(res => res.text())
-                .then(html => {
-                    closeNavigation();
-                    WRAPPER.removeAttribute('class');
-                    if (hrefSplit !== '/') {
-                        WRAPPER.classList.add(hrefSplit);
-                    } else {
-                        WRAPPER.classList.add(indexClass);
-                    }
-                    updateContent(html);
-                    history.pushState({ path: href }, documentTitle, hrefSplit);
-                    routerCallback();
-                })
-                .catch(err => {
-                    console.warn('Something went wrong.', err);
-                    BODY.classList.remove(LOADING_CLASS);
-                });
-        });
-    });
-};
-
 const loadIndexPageContent = () => {
     if (!primaryDir) {
         BODY.classList.add(LOADING_CLASS);
@@ -61,7 +26,7 @@ const loadIndexPageContent = () => {
             .then(res => res.text())
             .then(html => {
                 updateContent(html);
-                router();
+                // router();
                 routerCallback();
             })
             .catch(err => {
@@ -70,7 +35,7 @@ const loadIndexPageContent = () => {
             });
     } else {
         WRAPPER.classList.add(indexClass);
-        router();
+        // router();
     }
 };
 
@@ -100,5 +65,39 @@ const routerCallback = () => {
     initDynamicFunctions();
     scrollToTop();
 };
+
+getLinks();
+
+internal.forEach(item => {
+    let href = item.getAttribute('href');
+    let hrefSplit = href.split('/')[1];
+    item.addEventListener('click', event => {
+        event.preventDefault();
+        event.stopPropagation();
+        BODY.classList.add(LOADING_CLASS);
+        if (href === '/') {
+            href = '/home';
+            hrefSplit = '/';
+        }
+        fetch(href)
+            .then(res => res.text())
+            .then(html => {
+                closeNavigation();
+                WRAPPER.removeAttribute('class');
+                if (hrefSplit !== '/') {
+                    WRAPPER.classList.add(hrefSplit);
+                } else {
+                    WRAPPER.classList.add(indexClass);
+                }
+                updateContent(html);
+                history.pushState({ path: href }, documentTitle, hrefSplit);
+                routerCallback();
+            })
+            .catch(err => {
+                console.warn('Something went wrong.', err);
+                BODY.classList.remove(LOADING_CLASS);
+            });
+    });
+});
 
 export { loadIndexPageContent };

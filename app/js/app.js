@@ -605,41 +605,6 @@ var indexClass = 'index';
 var links;
 var internal;
 var documentTitle;
-var router = function router() {
-  getLinks();
-  internal.forEach(function (item) {
-    var href = item.getAttribute('href');
-    var hrefSplit = href.split('/')[1];
-    item.addEventListener('click', function (event) {
-      event.preventDefault();
-      event.stopPropagation();
-      _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
-      if (href === '/') {
-        href = '/home';
-        hrefSplit = '/';
-      }
-      fetch(href).then(function (res) {
-        return res.text();
-      }).then(function (html) {
-        Object(_navigation__WEBPACK_IMPORTED_MODULE_2__["closeNavigation"])();
-        _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].removeAttribute('class');
-        if (hrefSplit !== '/') {
-          _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(hrefSplit);
-        } else {
-          _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(indexClass);
-        }
-        updateContent(html);
-        history.pushState({
-          path: href
-        }, documentTitle, hrefSplit);
-        routerCallback();
-      })["catch"](function (err) {
-        console.warn('Something went wrong.', err);
-        _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
-      });
-    });
-  });
-};
 var loadIndexPageContent = function loadIndexPageContent() {
   if (!primaryDir) {
     _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
@@ -647,7 +612,7 @@ var loadIndexPageContent = function loadIndexPageContent() {
       return res.text();
     }).then(function (html) {
       updateContent(html);
-      router();
+      // router();
       routerCallback();
     })["catch"](function (err) {
       console.warn('Something went wrong.', err);
@@ -655,9 +620,10 @@ var loadIndexPageContent = function loadIndexPageContent() {
     });
   } else {
     _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(indexClass);
-    router();
+    // router();
   }
 };
+
 var getLinks = function getLinks() {
   var _ref;
   links = document.querySelectorAll('a');
@@ -686,6 +652,39 @@ var routerCallback = function routerCallback() {
   Object(_app__WEBPACK_IMPORTED_MODULE_1__["initDynamicFunctions"])();
   Object(_utils__WEBPACK_IMPORTED_MODULE_3__["scrollToTop"])();
 };
+getLinks();
+internal.forEach(function (item) {
+  var href = item.getAttribute('href');
+  var hrefSplit = href.split('/')[1];
+  item.addEventListener('click', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
+    if (href === '/') {
+      href = '/home';
+      hrefSplit = '/';
+    }
+    fetch(href).then(function (res) {
+      return res.text();
+    }).then(function (html) {
+      Object(_navigation__WEBPACK_IMPORTED_MODULE_2__["closeNavigation"])();
+      _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].removeAttribute('class');
+      if (hrefSplit !== '/') {
+        _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(hrefSplit);
+      } else {
+        _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(indexClass);
+      }
+      updateContent(html);
+      history.pushState({
+        path: href
+      }, documentTitle, hrefSplit);
+      routerCallback();
+    })["catch"](function (err) {
+      console.warn('Something went wrong.', err);
+      _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
+    });
+  });
+});
 
 
 /***/ }),
