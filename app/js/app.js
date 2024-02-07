@@ -602,10 +602,8 @@ https://slackwise.org.uk
 var url = document.location.pathname.split('/');
 var primaryDir = url[1];
 var indexClass = 'index';
-// let links = document.querySelectorAll('a');
-// let internal = [...links]?.filter(item =>
-//     item.getAttribute('href')?.startsWith('/')
-// );
+var links;
+var internal;
 var documentTitle;
 var router = function router() {
   getLinks();
