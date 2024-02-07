@@ -610,7 +610,7 @@ var internal = (_ref = _toConsumableArray(links)) === null || _ref === void 0 ? 
 });
 var documentTitle;
 var router = function router() {
-  getLinks();
+  // getLinks();
   internal.forEach(function (item) {
     var href = item.getAttribute('href');
     var hrefSplit = href.split('/')[1];

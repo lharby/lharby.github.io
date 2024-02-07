@@ -22,7 +22,7 @@ let internal = [...links]?.filter(item =>
 let documentTitle;
 
 const router = () => {
-    getLinks();
+    // getLinks();
     internal.forEach(item => {
         let href = item.getAttribute('href');
         let hrefSplit = href.split('/')[1];
@@ -78,7 +78,7 @@ const loadIndexPageContent = () => {
 
 const getLinks = () => {
     links = document.querySelectorAll('a');
-    internal = [...links]?.filter(item => 
+    internal = [...links]?.filter(item =>
         item.getAttribute('href')?.startsWith('/')
     );
     internal.forEach(item => item.classList.add('internal'));
