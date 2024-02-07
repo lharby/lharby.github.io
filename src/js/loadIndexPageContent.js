@@ -22,8 +22,6 @@ let documentTitle;
 const router = () => {
     getLinks();
     internal.forEach(item => {
-        console.log(internal);
-        console.log(`internal length: ${internal.length}`);
         let href = item.getAttribute('href');
         let hrefSplit = href.split('/')[1];
         item.addEventListener('click', event => {

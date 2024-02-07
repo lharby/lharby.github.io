@@ -608,8 +608,6 @@ var documentTitle;
 var router = function router() {
   getLinks();
   internal.forEach(function (item) {
-    console.log(internal);
-    console.log("internal length: ".concat(internal.length));
     var href = item.getAttribute('href');
     var hrefSplit = href.split('/')[1];
     item.addEventListener('click', function (event) {
