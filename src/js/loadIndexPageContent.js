@@ -71,7 +71,6 @@ const loadIndexPageContent = () => {
     } else {
         WRAPPER.classList.add(indexClass);
         router();
-        routerCallback();
     }
 };
 
@@ -96,7 +95,7 @@ const updateContent = input => {
 
 const routerCallback = () => {
     BODY.classList.remove(LOADING_CLASS);
-    document.title = documentTitle;
+    document.title = documentTitle || document.title;
     getLinks();
     initDynamicFunctions();
     scrollToTop();
