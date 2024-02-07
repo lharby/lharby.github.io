@@ -46,7 +46,6 @@ const router = () => {
                     }
                     updateContent(html);
                     history.pushState({ path: href }, documentTitle, hrefSplit);
-                    router();
                     routerCallback();
                 })
                 .catch(err => {

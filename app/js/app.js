@@ -636,7 +636,6 @@ var router = function router() {
         history.pushState({
           path: href
         }, documentTitle, hrefSplit);
-        router();
         routerCallback();
       })["catch"](function (err) {
         console.warn('Something went wrong.', err);
