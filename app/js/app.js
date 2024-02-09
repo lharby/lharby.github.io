@@ -580,12 +580,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 /* harmony import */ var _navigation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 /*
 Luke Harby
 slackwise LTD
@@ -602,15 +596,24 @@ https://slackwise.org.uk
 var url = document.location.pathname.split('/');
 var primaryDir = url[1];
 var indexClass = 'index';
-var links;
-var internal;
 var documentTitle;
+document.addEventListener('click', function (event) {
+  var _tgt$getAttribute;
+  var tgt = event.target.closest('a');
+  if (!tgt || !((_tgt$getAttribute = tgt.getAttribute('href')) !== null && _tgt$getAttribute !== void 0 && _tgt$getAttribute.startsWith('/'))) {
+    return;
+  }
+  event.preventDefault();
+  tgt.classList.add('internal');
+  console.log(tgt);
+});
 var router = function router() {
-  getLinks();
-  internal.forEach(function (item) {
-    var href = item.getAttribute('href');
+  document.addEventListener('click', function (event) {
+    var _link$getAttribute;
+    var link = event.target.closest('a');
+    var href = link.getAttribute('href');
     var hrefSplit = href.split('/')[1];
-    item.addEventListener('click', function (event) {
+    if (link && (_link$getAttribute = link.getAttribute('href')) !== null && _link$getAttribute !== void 0 && _link$getAttribute.startsWith('/')) {
       event.preventDefault();
       event.stopPropagation();
       _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
@@ -637,7 +640,9 @@ var router = function router() {
         console.log('Something went wrong.', err);
         _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
       });
-    });
+    } else {
+      return;
+    }
   });
 };
 var loadIndexPageContent = function loadIndexPageContent() {
@@ -657,17 +662,6 @@ var loadIndexPageContent = function loadIndexPageContent() {
     _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(indexClass);
     router();
   }
-};
-var getLinks = function getLinks() {
-  var _ref;
-  links = document.querySelectorAll('a');
-  internal = (_ref = _toConsumableArray(links)) === null || _ref === void 0 ? void 0 : _ref.filter(function (item) {
-    var _item$getAttribute;
-    return (_item$getAttribute = item.getAttribute('href')) === null || _item$getAttribute === void 0 ? void 0 : _item$getAttribute.startsWith('/');
-  });
-  internal.forEach(function (item) {
-    return item.classList.add('internal');
-  });
 };
 var updateContent = function updateContent(input) {
   _global__WEBPACK_IMPORTED_MODULE_0__["PAGE_WRAPPER"].replaceChildren();

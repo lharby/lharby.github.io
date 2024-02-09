@@ -15,16 +15,24 @@ import { scrollToTop } from './utils';
 const url = document.location.pathname.split('/');
 const primaryDir = url[1];
 const indexClass = 'index';
-let links;
-let internal;
 let documentTitle;
 
+document.addEventListener('click', event => {
+    const tgt = event.target.closest('a');
+    if (!tgt || !tgt.getAttribute('href')?.startsWith('/')) {
+        return;
+    }
+    event.preventDefault();
+    tgt.classList.add('internal');
+    console.log(tgt);
+});
+
 const router = () => {
-    getLinks();
-    internal.forEach(item => {
-        let href = item.getAttribute('href');
+    document.addEventListener('click', event => {
+        const link = event.target.closest('a');
+        let href = link.getAttribute('href');
         let hrefSplit = href.split('/')[1];
-        item.addEventListener('click', event => {
+        if (link && link.getAttribute('href')?.startsWith('/')) {
             event.preventDefault();
             event.stopPropagation();
             BODY.classList.add(LOADING_CLASS);
@@ -50,7 +58,9 @@ const router = () => {
                     console.log('Something went wrong.', err);
                     BODY.classList.remove(LOADING_CLASS);
                 });
-        });
+        } else {
+            return;
+        }
     });
 };
 
@@ -72,14 +82,6 @@ const loadIndexPageContent = () => {
         WRAPPER.classList.add(indexClass);
         router();
     }
-};
-
-const getLinks = () => {
-    links = document.querySelectorAll('a');
-    internal = [...links]?.filter(item =>
-        item.getAttribute('href')?.startsWith('/')
-    );
-    internal.forEach(item => item.classList.add('internal'));
 };
 
 const updateContent = input => {
