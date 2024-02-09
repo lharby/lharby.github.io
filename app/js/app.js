@@ -664,7 +664,6 @@ var updateContent = function updateContent(input) {
 var routerCallback = function routerCallback() {
   _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
   document.title = documentTitle || document.title;
-  getLinks();
   Object(_app__WEBPACK_IMPORTED_MODULE_1__["initDynamicFunctions"])();
   Object(_utils__WEBPACK_IMPORTED_MODULE_3__["scrollToTop"])();
 };
