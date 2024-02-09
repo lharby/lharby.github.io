@@ -301,7 +301,7 @@ function enableScrollLock() {
     htmlTag.style.marginTop = "".concat(-scrollPosition.top, "px");
     htmlTag.style.marginLeft = 0;
     htmlTag.style.position = 'fixed';
-    htmlTag.style.overflowX = 'hidden';
+    htmlTag.style.overflow = 'hidden';
     htmlTag.style.width = '100%';
 
     // Trigger event on target. You can listen for it using document.body.addEventListener("site.scrollLock:enable", callbackHere)
@@ -331,7 +331,7 @@ function disableScrollLock() {
     htmlTag.style.marginTop = '';
     htmlTag.style.marginLeft = '';
     htmlTag.style.position = '';
-    htmlTag.style.overflowX = '';
+    htmlTag.style.overflow = '';
     htmlTag.style.width = '';
 
     // Set the scroll position to what it was before
