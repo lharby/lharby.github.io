@@ -17,16 +17,6 @@ const primaryDir = url[1];
 const indexClass = 'index';
 let documentTitle;
 
-document.addEventListener('click', event => {
-    const tgt = event.target.closest('a');
-    if (!tgt || !tgt.getAttribute('href')?.startsWith('/')) {
-        return;
-    }
-    event.preventDefault();
-    tgt.classList.add('internal');
-    console.log(tgt);
-});
-
 const router = () => {
     document.addEventListener('click', event => {
         const link = event.target.closest('a');

@@ -597,16 +597,6 @@ var url = document.location.pathname.split('/');
 var primaryDir = url[1];
 var indexClass = 'index';
 var documentTitle;
-document.addEventListener('click', function (event) {
-  var _tgt$getAttribute;
-  var tgt = event.target.closest('a');
-  if (!tgt || !((_tgt$getAttribute = tgt.getAttribute('href')) !== null && _tgt$getAttribute !== void 0 && _tgt$getAttribute.startsWith('/'))) {
-    return;
-  }
-  event.preventDefault();
-  tgt.classList.add('internal');
-  console.log(tgt);
-});
 var router = function router() {
   document.addEventListener('click', function (event) {
     var _link$getAttribute;
