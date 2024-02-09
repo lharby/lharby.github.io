@@ -20,15 +20,15 @@ let documentTitle;
 const router = () => {
     document.addEventListener('click', event => {
         const link = event.target.closest('a');
-        let href = link.getAttribute('href');
-        let hrefSplit = href.split('/')[1];
         if (link && link.getAttribute('href')?.startsWith('/')) {
             event.preventDefault();
             event.stopPropagation();
+            let href = link.getAttribute('href');
+            let hrefSplit = href.split('/')[1];
             BODY.classList.add(LOADING_CLASS);
             if (href === '/') {
+                hrefSplit = href;
                 href = '/home';
-                hrefSplit = '/';
             }
             fetch(href)
                 .then(res => res.text())

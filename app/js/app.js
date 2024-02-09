@@ -601,15 +601,15 @@ var router = function router() {
   document.addEventListener('click', function (event) {
     var _link$getAttribute;
     var link = event.target.closest('a');
-    var href = link.getAttribute('href');
-    var hrefSplit = href.split('/')[1];
     if (link && (_link$getAttribute = link.getAttribute('href')) !== null && _link$getAttribute !== void 0 && _link$getAttribute.startsWith('/')) {
       event.preventDefault();
       event.stopPropagation();
+      var href = link.getAttribute('href');
+      var hrefSplit = href.split('/')[1];
       _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
       if (href === '/') {
+        hrefSplit = href;
         href = '/home';
-        hrefSplit = '/';
       }
       fetch(href).then(function (res) {
         return res.text();
