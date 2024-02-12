@@ -44,3 +44,7 @@ https://slackwise.org.uk
 .font-small {
     @include smallFont;
 }
+
+.image-caption {
+    margin-top: - $default__spacer;
+}

@@ -15,6 +15,8 @@ const observeImages = () => {
 };
 
 const setImageSource = () => {
+    // TODO add null exception here. 
+    // And better define the 500, 1280 params
     images = document.querySelectorAll('#posts img');
     images.forEach(item => {
         const newSrc = item.src.replace('500', '1280');
