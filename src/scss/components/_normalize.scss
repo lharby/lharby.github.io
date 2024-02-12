@@ -101,7 +101,7 @@ html {
     color: $color;
     -webkit-text-size-adjust: 100%; // 2
     -ms-text-size-adjust: 100%; // 2
-    overflow-y: scroll; /* 3 */
+    // overflow-y: scroll; /* 3 */
 }
 
 // Addresses font-family inconsistency between 'textarea' and other form elements.
