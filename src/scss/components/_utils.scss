@@ -6,7 +6,8 @@ https://slackwise.org.uk
 */
 
 :root {
-    --selection-background: #eeeeee;
+    --selection-background: $colour__pale-grey;
+    --scrollbar-width: 0;
 }
 
 .hidden {
