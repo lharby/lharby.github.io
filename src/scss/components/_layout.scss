@@ -21,7 +21,7 @@ html {
 }
 
 body {
-    // @include scrollBar;
+    @include scrollBar;
     @include defaultFont;
     @include hover(
         $animation__type-default,
