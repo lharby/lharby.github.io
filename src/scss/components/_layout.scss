@@ -34,6 +34,10 @@ body {
     color: $colour__white;
     font-family: $primary-font;
 
+    &::-webkit-scrollbar {
+        width: var(--scrollbar-width);
+    }
+
     &.scroll-lock {
         .logo {
             filter: grayscale(1) brightness(0) invert(1) blur(1px);
@@ -42,10 +46,6 @@ body {
                 filter: none;
             }
         }
-    }
-
-    &::-webkit-scrollbar {
-        width: var(--scrollbar-width);
     }
 }
 

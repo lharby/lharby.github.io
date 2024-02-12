@@ -42,6 +42,7 @@ html {
         }
 
         body {
+            @include scrollBar;
             @include scrollBarColour;
 
             &.scroll-lock {
@@ -56,6 +57,7 @@ html {
         }
 
         .nav-wrapper {
+            @include scrollBar;
             @include scrollBarColour;
             background-color: $colour__black;
 
