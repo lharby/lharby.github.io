@@ -21,6 +21,7 @@ html {
 }
 
 body {
+    @include scrollBar;
     @include defaultFont;
     @include hover(
         $animation__type-default,
@@ -32,20 +33,6 @@ body {
     background-color: $colour__orange-background;
     color: $colour__white;
     font-family: $primary-font;
-    scrollbar-color: $colour__black $colour__pale-grey;
-
-    &::-webkit-scrollbar-track {
-        background-color: $colour__pale-grey;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background-color: $colour__black;
-        outline: none;
-    }
-
-    &::-webkit-scrollbar {
-        width: var(--scrollbar-width);
-    }
 
     &.scroll-lock {
         .logo {
