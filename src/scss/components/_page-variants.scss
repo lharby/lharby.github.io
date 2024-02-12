@@ -42,8 +42,11 @@ html {
         }
 
         body {
-            @include scrollBar;
-            @include scrollBarColour;
+            scrollbar-color: #{var(--selection-background)} $colour__pale-grey;
+
+            &::-webkit-scrollbar-thumb {
+                background-color: #{var(--selection-background)};
+            }
 
             &.scroll-lock {
                 .logo {
@@ -57,8 +60,6 @@ html {
         }
 
         .nav-wrapper {
-            @include scrollBar;
-            @include scrollBarColour;
             background-color: $colour__black;
 
             a {
