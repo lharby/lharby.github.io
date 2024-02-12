@@ -20,6 +20,10 @@ https://slackwise.org.uk
         }
     }
 
+    &-wrapper {
+        margin-top: $default__spacer;
+    }
+
     input,
     textarea {
         border: none;
