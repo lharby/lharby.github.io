@@ -42,7 +42,7 @@ html {
         }
 
         body {
-            // @include scrollBarColour;
+            @include scrollBarColour;
 
             &.scroll-lock {
                 .logo {

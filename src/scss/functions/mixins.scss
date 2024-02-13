@@ -46,6 +46,10 @@ https://slackwise.org.uk
 @mixin scrollBar {
     scrollbar-color: $colour__black $colour__pale-grey;
 
+    &::-webkit-scrollbar {
+        width: 1rem;
+    }
+
     &::-webkit-scrollbar-track {
         background-color: $colour__pale-grey;
     }
@@ -58,6 +62,10 @@ https://slackwise.org.uk
 
 @mixin scrollBarColour {
     scrollbar-color: #{var(--selection-background)} $colour__pale-grey;
+
+    &::-webkit-scrollbar {
+        width: 1rem;
+    }
 
     &::-webkit-scrollbar-thumb {
         background-color: #{var(--selection-background)};
