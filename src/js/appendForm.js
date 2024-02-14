@@ -21,7 +21,7 @@ const template = `
         </div>
         <div class="form-control">
             <label class="el-4" for="contact-no">Contact number</label>
-            <input class="el-5" type="text" id="contact-no">
+            <input class="el-5" type="text" name="contact-no" id="contact-no">
         </div>
         <div class="form-control">
             <label class="el-4" for="comments">Comments</label>
