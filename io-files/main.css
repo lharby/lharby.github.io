@@ -11,6 +11,21 @@
     font-style: italic;
 }
 
+a,
+a:link,
+a:hover,
+a:visited {
+    transition: all 200ms ease-in;
+}
+
+a {
+    border-bottom: 1px solid #000000;
+}
+
+a:hover {
+    border-bottom: 1px solid transparent;
+}
+
 body {
     font-family: Elstob;
 }
