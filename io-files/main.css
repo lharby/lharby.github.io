@@ -14,3 +14,14 @@
 body {
     font-family: Elstob;
 }
+
+main {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-weight: 200;
+}
+
