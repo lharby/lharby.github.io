@@ -25,6 +25,7 @@ main {
 
 .flat-list {
     display: flex;
+    font-size: 75%;
 }
 
 .flat-list li {
@@ -38,5 +39,6 @@ main {
 h1 {
     font-weight: 200;
     font-style: italic;
+    margin-top: 0;
 }
 
