@@ -1,14 +1,23 @@
 @font-face {
     font-family: 'Elstob';
-    src:url("https://psb1558.github.io/Elstob-font/webfiles/Elstob.woff2");
+    src: url('https://psb1558.github.io/Elstob-font/webfiles/Elstob.woff2');
     font-weight: 200 800;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'Elstob';
-    src:url("https://psb1558.github.io/Elstob-font/webfiles/Elstob-Italic.woff2");
+    src: url('https://psb1558.github.io/Elstob-font/webfiles/Elstob-Italic.woff2');
     font-weight: 200 800;
     font-style: italic;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: Elstob;
 }
 
 a,
@@ -24,10 +33,6 @@ a {
 
 a:hover {
     border-bottom: 1px solid transparent;
-}
-
-body {
-    font-family: Elstob;
 }
 
 main {
@@ -56,4 +61,3 @@ h1 {
     font-style: italic;
     margin-top: 0;
 }
-
