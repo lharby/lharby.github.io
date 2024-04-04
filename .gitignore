@@ -13,3 +13,6 @@ npm-debug.log
 
 # env files
 .env
+
+# doc files / audit etc. 
+docs
