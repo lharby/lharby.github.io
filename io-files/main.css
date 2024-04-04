@@ -11,6 +11,30 @@
     font-style: italic;
 }
 
+* {
+    box-sizing: border-box;
+  
+    /* Color scheme */
+    --textcolor: #121212;
+    --bgcolor: #f9f9f9;
+    --color-white: #FFFFFF;
+    --color-grey: #d9d9d9;
+
+    /* spacing */
+    --default-spacer: 1.5rem;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: Elstob;
+    position: relative;
+    margin: 0 auto; /* centers the layout */
+    color: var(--textcolor)
+}
+
 a,
 a:link,
 a:hover,
@@ -19,41 +43,88 @@ a:visited {
 }
 
 a {
-    border-bottom: 1px solid #000000;
+    border-bottom: 1px solid var(--textcolor);
 }
 
 a:hover {
     border-bottom: 1px solid transparent;
 }
 
-body {
-    font-family: Elstob;
-}
+/* ------- Header ------- */
 
-main {
-    padding: 1rem;
+header,
+footer {
+    padding: 1vw 1vw 0 1vw;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: calc(100% - 2rem);
+    flex-wrap: wrap;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
 }
 
-.flat-list {
-    display: flex;
-    font-size: 75%;
-}
-
-.flat-list li {
-    margin-right: 1rem;
-}
-
-.flat-list li:last-of-type {
-    margin-right: 0;
-}
-
-h1 {
+header h1 {
     font-weight: 200;
     font-style: italic;
     margin-top: 0;
 }
 
+header h1 a {
+    border-bottom: 1px solid transparent;
+}
+
+/* ------- Navigation ------- */
+
+/* ------- Sections ------- */
+
+section {
+    padding: calc(6em + 3vw) 1vw 8vw 1vw;
+    /* ! Everything below is needed ! */
+    /* display: none; */
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--color-white);
+}
+  
+section:target {
+    /* Show section */
+    /* display: block; */
+    opacity: 1;
+    z-index: 1;
+}
+  
+section#index {
+    /* Show #home by default */
+    /* display: block; */
+    opacity: 1;
+    z-index: 1;
+}
+
+/* ------- Footer ------- */
+
+footer {
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem 0.5rem 0.2rem;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--color-grey) !important;
+    font-size: 60%;
+}
+
+/* ------- Lists ------- */
+
+.flat-list {
+    display: flex;
+}
+
+.flat-list li {
+    margin-right: var(--default-spacer);
+}
+
+.flat-list li:last-of-type {
+    margin-right: 0;
+}
