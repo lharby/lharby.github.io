@@ -120,6 +120,7 @@ footer {
 
 .flat-list {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .flat-list li {
@@ -128,4 +129,10 @@ footer {
 
 .flat-list li:last-of-type {
     margin-right: 0;
+}
+
+/* ------- Images ------- */
+
+.img__small {
+    max-width: 200px;
 }
