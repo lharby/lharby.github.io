@@ -5,37 +5,6 @@ https://slackwise.org.uk
 2012 - present
 */
 
-.menu__toggle {
-    position: fixed;
-    right: 0.5rem;
-    padding: 0 1rem;
-    top: 1rem;
-    font-size: $default__spacer * 2;
-    color: $colour__white;
-    background: none;
-
-    &:before {
-        font-family: $icon-font;
-        content: "\f20e";
-    }
-
-    &--close {
-        color: $colour__white !important;
-        font-size: 4rem;
-        top: 0.5rem;
-    }
-}
-
-#menu__toggle:checked {
-    .menu__toggle:before {
-        content: "\f404";
-    }
-    & ~ .nav-wrapper {
-        @include hover(transform, 300ms, $animation__ease-default);
-        transform: translateX(0%);
-    }
-}
-
 .nav-wrapper {
     @include hover(transform, 300ms, $animation__ease-default);
     position: fixed;
@@ -44,7 +13,7 @@ https://slackwise.org.uk
     transform: translateX(200%);
     height: 100%;
     width: 50%;
-    z-index: $z-top + 4;
+    z-index: 5;
     background-color: $colour__dark-grey;
     padding: 5rem 0 0 1.5rem;
     overflow-y: auto;
@@ -53,10 +22,10 @@ https://slackwise.org.uk
         width: 100%;
     }
 
-    // &--open {
-    //     @include hover(transform, 300ms, $animation__ease-default);
-    //     transform: translateX(0%);
-    // }
+    &--open {
+        @include hover(transform, 300ms, $animation__ease-default);
+        transform: translateX(0%);
+    }
 
     &__first {
         padding-bottom: 0.5rem !important;

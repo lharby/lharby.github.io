@@ -57,4 +57,21 @@ https://slackwise.org.uk
             }
         }
     }
+
+    .menu__toggle {
+        @include outline;
+        position: fixed;
+        right: 0.5rem;
+        padding: 0 1rem;
+        top: 1rem;
+        font-size: $default__spacer * 2;
+        color: $colour__white;
+        background: none;
+
+        &--close {
+            color: $colour__white !important;
+            font-size: 4rem;
+            top: 0.5rem;
+        }
+    }
 }
