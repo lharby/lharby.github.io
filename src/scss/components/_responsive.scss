@@ -18,6 +18,7 @@ https://slackwise.org.uk
     display: flex;
     flex-flow: initial;
     justify-content: flex-start;
+    flex-wrap: wrap;
     column-gap: $gap__column;
 }
 
