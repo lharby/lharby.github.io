@@ -6,6 +6,8 @@ https://slackwise.org.uk
 */
 
 .table {
+    margin-bottom: $default__spacer;
+
     thead tr {
         background-color: $colour__pale-grey;
     }
