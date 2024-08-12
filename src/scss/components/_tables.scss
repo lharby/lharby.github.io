@@ -1,0 +1,21 @@
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+.table {
+    thead tr {
+        background-color: $colour__pale-grey;
+    }
+
+    th {
+        font-weight: normal;
+        text-align: left;
+    }
+    
+    td {
+        padding: 0.25rem;
+    }
+}
