@@ -12,12 +12,21 @@ https://slackwise.org.uk
         background-color: $colour__pale-grey;
     }
 
+    tr:nth-child(even) {
+        td,
+        th {
+            background-color: $colour__palest-grey;
+        }    
+    }
+
     th {
         font-weight: normal;
         text-align: left;
     }
     
+    th,
     td {
         padding: 0.25rem;
+        border: 1px solid $colour__white;
     }
 }
