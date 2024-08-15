@@ -9,13 +9,13 @@ https://slackwise.org.uk
     margin-bottom: $default__spacer;
 
     thead tr {
-        background-color: $colour__pale-grey;
+        background-color: $colour__dark-grey;
     }
 
     tr:nth-child(even) {
         td,
         th {
-            background-color: $colour__palest-grey;
+            background-color: $colour__dark-grey;
         }    
     }
 

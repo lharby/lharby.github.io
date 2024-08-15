@@ -140,13 +140,13 @@ html {
 
         .table {
             thead tr {
-                background-color: $colour__grey;
+                background-color: $colour__pale-grey;
             }
 
             tr:nth-child(even) {
                 td,
                 th {
-                    background-color: $colour__grey;
+                    background-color: $colour__palest-grey;
                 }    
             }
         }
