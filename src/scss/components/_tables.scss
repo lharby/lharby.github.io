@@ -19,14 +19,14 @@ https://slackwise.org.uk
         }    
     }
 
-    th {
-        font-weight: normal;
-        text-align: left;
-    }
-    
     th,
     td {
         padding: 0 .5rem;
         border: 1px solid $colour__white;
+    }
+
+    th {
+        font-weight: normal;
+        text-align: left;
     }
 }
