@@ -137,5 +137,18 @@ html {
                 border: 1px solid $colour__black;
             }
         }
+
+        .table {
+            thead tr {
+                background-color: $colour__grey;
+            }
+
+            tr:nth-child(even) {
+                td,
+                th {
+                    background-color: $colour__grey;
+                }    
+            }
+        }
     }
 }
