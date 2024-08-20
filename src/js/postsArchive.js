@@ -11,7 +11,7 @@ import { removeChildNodes } from './utils';
 
 const postsArchive = () => {
     const wrapper = DOM.querySelector('.tumblr-posts');
-    const template = `<li>Dicks</li>`;
+    const template = `<li>Temporary</li>`;
     removeChildNodes(wrapper);
     wrapper.insertAdjacentHTML('beforeend', template);
 };

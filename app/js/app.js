@@ -1005,7 +1005,7 @@ https://slackwise.org.uk
 
 var postsArchive = function postsArchive() {
   var wrapper = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.tumblr-posts');
-  var template = "<li>Dicks</li>";
+  var template = "<li>Temporary</li>";
   Object(_utils__WEBPACK_IMPORTED_MODULE_1__["removeChildNodes"])(wrapper);
   wrapper.insertAdjacentHTML('beforeend', template);
 };
