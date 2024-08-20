@@ -107,6 +107,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_lazyLoad__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(14);
 /* harmony import */ var _js_randomColours__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(15);
 /* harmony import */ var _js_accordion__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(16);
+/* harmony import */ var _js_postsArchive__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(17);
+
 
 
 
@@ -153,6 +155,10 @@ var initDynamicFunctions = function initDynamicFunctions() {
 
   if (_js_global__WEBPACK_IMPORTED_MODULE_1__["WRAPPER"].classList.contains('frequently-asked-questions')) {
     Object(_js_accordion__WEBPACK_IMPORTED_MODULE_14__["accordion"])();
+  }
+
+  if (_js_global__WEBPACK_IMPORTED_MODULE_1__["WRAPPER"].classList.contains('posts-archive')) {
+    Object(_js_postsArchive__WEBPACK_IMPORTED_MODULE_15__["postsArchive"])();
   }
 }; // global
 
@@ -235,6 +241,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "disableScrollLock", function() { return disableScrollLock; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "disable", function() { return disable; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "siteResponsiveness", function() { return siteResponsiveness; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeChildNodes", function() { return removeChildNodes; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scrollToTop", function() { return scrollToTop; });
 /* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 
@@ -366,6 +373,9 @@ var siteResponsiveness = function siteResponsiveness() {
   } else {
     _global__WEBPACK_IMPORTED_MODULE_0__["site"].isMobile = true;
   }
+};
+var removeChildNodes = function removeChildNodes(elem) {
+  elem.replaceChildren();
 };
 var scrollToTop = function scrollToTop() {
   _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].scrollIntoView({
@@ -969,6 +979,35 @@ var accordion = function accordion() {
       }
     });
   });
+};
+
+
+
+/***/ }),
+/* 17 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "postsArchive", function() { return postsArchive; });
+/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+/* postsArchive function */
+
+
+
+var postsArchive = function postsArchive() {
+  var wrapper = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.tumblr-posts');
+  var template = "<li>Dicks</li>";
+  Object(_utils__WEBPACK_IMPORTED_MODULE_1__["removeChildNodes"])(wrapper);
+  wrapper.insertAdjacentHTML('beforeend', template);
 };
 
 

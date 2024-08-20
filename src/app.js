@@ -14,6 +14,7 @@ import getScrollbarWidth from './js/getScrollbarWidth';
 import { setImageSource } from './js/lazyLoad';
 import { setRandomColour } from './js/randomColours';
 import { accordion } from './js/accordion';
+import { postsArchive } from './js/postsArchive';
 
 import { DOM, WRAPPER, site } from './js/global';
 
@@ -42,6 +43,9 @@ const initDynamicFunctions = () => {
     }
     if (WRAPPER.classList.contains('frequently-asked-questions')) {
         accordion();
+    }
+    if (WRAPPER.classList.contains('posts-archive')) {
+        postsArchive();
     }
 };
 

@@ -144,6 +144,10 @@ export const siteResponsiveness = () => {
     }
 };
 
+export const removeChildNodes = (elem) => {
+    elem.replaceChildren();
+};
+
 export const scrollToTop = () => {
     BODY.scrollIntoView({ behavior: 'smooth' });
 };
