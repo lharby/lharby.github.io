@@ -34,8 +34,9 @@ https://slackwise.org.uk
                 max-width: 50%;
             }
 
-            a {
+            > a {
                 color: $colour__black;
+                z-index: $z-top;
             }
             
             img {

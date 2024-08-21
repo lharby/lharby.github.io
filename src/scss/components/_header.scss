@@ -22,7 +22,7 @@ https://slackwise.org.uk
         );
         height: 10rem;
         position: fixed;
-        z-index: 1;
+        z-index: $z-top + 1;
         background-color: $colour__orange-background;
         top: 0;
         width: 100%;
