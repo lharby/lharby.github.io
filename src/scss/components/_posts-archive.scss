@@ -16,7 +16,7 @@ https://slackwise.org.uk
     }
 
     .tumblr-posts {
-        li {
+        > li {
             flex: 0 0 16.66667%;
             max-width: 16.66667%;
             position: relative;
@@ -36,6 +36,7 @@ https://slackwise.org.uk
 
             a {
                 color: $colour__black;
+                border-bottom: none !important;
             }
             
             img {
