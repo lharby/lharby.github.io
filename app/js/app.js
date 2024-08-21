@@ -1020,6 +1020,7 @@ https://slackwise.org.uk
 var API_KEY = "Quz8UcJXgTqT3zUdmoyoyn4nOAEHBZ5kVD1NwuKGDkQ0K3nogf";
 var API_BASE_URL = "api.tumblr.com/v2/blog/";
 var API_BLOG = "jessicaharbydotcom.tumblr.com";
+var parser = new DOMParser();
 
 var postsArchive = function postsArchive() {
   var wrapper = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.tumblr-posts');

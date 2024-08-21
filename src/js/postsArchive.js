@@ -13,9 +13,9 @@ import { getPostTypes } from './getPostTypes';
 const API_KEY = process.env.NEXT_PUBLIC_TUMBLR_API_KEY;
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 const API_BLOG = process.env.NEXT_PUBLIC_API_BLOG;
+const parser = new DOMParser();
 
 const postsArchive = () => {
-    
     const wrapper = DOM.querySelector('.tumblr-posts');
     let limit = 20;
     const options = {
