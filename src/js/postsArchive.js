@@ -58,8 +58,8 @@ const postsArchive = () => {
                     setAjaxComplete();
                 }
             })
-            .catch(() => {
-                errorRefreshPosts('an error');
+            .catch((err) => {
+                console.log(`There was an error: ${err}`)
                 setAjaxComplete();
             })
     };

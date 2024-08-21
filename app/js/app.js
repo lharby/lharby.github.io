@@ -1071,8 +1071,8 @@ var postsArchive = function postsArchive() {
       } else {
         Object(_utils__WEBPACK_IMPORTED_MODULE_1__["setAjaxComplete"])();
       }
-    })["catch"](function () {
-      errorRefreshPosts('an error');
+    })["catch"](function (err) {
+      console.log("There was an error: ".concat(err));
       Object(_utils__WEBPACK_IMPORTED_MODULE_1__["setAjaxComplete"])();
     });
   };
