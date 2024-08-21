@@ -36,7 +36,6 @@ https://slackwise.org.uk
 
             a {
                 color: $colour__black;
-                border-bottom: none !important;
             }
             
             img {
@@ -90,7 +89,8 @@ https://slackwise.org.uk
 #posts {
     .tumblr-posts {
         li {
-            a {
+            a,
+            [href] {
                 border-bottom: none !important;
             }
         }
