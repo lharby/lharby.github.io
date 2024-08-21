@@ -1,4 +1,4 @@
-import { site, DOC, BODY } from './global';
+import { site, DOM, BODY } from './global';
 
 /**
  * A bunch of utilities.

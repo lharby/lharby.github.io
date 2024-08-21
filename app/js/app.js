@@ -388,11 +388,11 @@ var scrollToTop = function scrollToTop() {
 
 var loadingClass = 'loading';
 var setAjaxLoading = function setAjaxLoading(elem) {
-  elem = elem || DOM;
+  elem = elem || _global__WEBPACK_IMPORTED_MODULE_0__["DOM"];
   elem.classList.add(loadingClass);
 };
 var setAjaxComplete = function setAjaxComplete(elem) {
-  elem = elem || DOM;
+  elem = elem || _global__WEBPACK_IMPORTED_MODULE_0__["DOM"];
   elem.classList.remove(loadingClass);
 };
 
