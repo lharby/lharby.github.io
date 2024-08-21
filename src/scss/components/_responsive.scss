@@ -19,8 +19,8 @@ https://slackwise.org.uk
     flex-flow: initial;
     justify-content: flex-start;
     flex-wrap: wrap;
-    column-gap: $gap__column;
-    row-gap: $gap__column;
+    column-gap: $gap__desktop;
+    row-gap: $gap__desktop;
 }
 
 .el {
@@ -94,7 +94,8 @@ https://slackwise.org.uk
 
 @include tablet($tablet-size) {
     .row {
-        column-gap: 0;
+        column-gap: $gap__mobile;
+        row-gap: $gap__mobile;
         flex-flow: row wrap;
     }
 
