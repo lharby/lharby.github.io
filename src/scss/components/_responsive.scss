@@ -20,6 +20,7 @@ https://slackwise.org.uk
     justify-content: flex-start;
     flex-wrap: wrap;
     column-gap: $gap__column;
+    row-gap: $gap__column;
 }
 
 .el {
