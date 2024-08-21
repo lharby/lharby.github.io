@@ -1055,7 +1055,7 @@ var postsArchive = function postsArchive() {
 
           if (wrapper) {
             var typeString = "el ".concat(type);
-            var template = "<li class='".concat(typeString, "'><a href=").concat(item.post_url, "?showPost=true target='_blank'>").concat(item.body, "</a></li>");
+            var template = "<li class='".concat(typeString, "'><a href=").concat(item.post_url, " target='_blank'>").concat(item.body, "</a></li>");
             wrapper.insertAdjacentHTML('beforeend', template);
           }
         });

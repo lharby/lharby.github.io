@@ -42,7 +42,7 @@ const postsArchive = () => {
                         let type = getPostTypes(doc);
                         if (wrapper) {
                             const typeString = `el ${type}`;
-                            const template = `<li class='${typeString}'><a href=${item.post_url}?showPost=true target='_blank'>${item.body}</a></li>`;
+                            const template = `<li class='${typeString}'><a href=${item.post_url} target='_blank'>${item.body}</a></li>`;
                             wrapper.insertAdjacentHTML('beforeend', template);
                         }
                     });

@@ -86,3 +86,13 @@ https://slackwise.org.uk
         display: none;
     }
 }
+
+#posts {
+    .tumblr-posts {
+        li {
+            a {
+                border-bottom: none !important;
+            }
+        }
+    }
+}
