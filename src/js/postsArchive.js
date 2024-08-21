@@ -7,13 +7,66 @@ https://slackwise.org.uk
 
 /* postsArchive function */
 import { DOM } from './global';
-import { removeChildNodes } from './utils';
+import { removeChildNodes, setAjaxLoading, setAjaxComplete } from './utils';
+import { getPostTypes } from './getPostTypes';
 
 const postsArchive = () => {
+    const apiKey = process.env.NEXT_PUBLIC_TUMBLR_API_KEY;
     const wrapper = DOM.querySelector('.tumblr-posts');
-    const template = `<li>Temporary</li>`;
-    removeChildNodes(wrapper);
-    wrapper.insertAdjacentHTML('beforeend', template);
+    let limit = 20;
+    const options = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    };
+    const retrieveMore = (offset) => {
+        removeChildNodes(wrapper);
+        const url = new URL(`https://${process.env.NEXT_PUBLIC_API_BASE_URL}${process.env.NEXT_PUBLIC_API_BLOG}/posts?offset=${offset}`);
+        url.searchParams.set('api_key', apiKey);
+        setAjaxLoading();
+        fetch(url, options)
+            .then((response) => response.json())
+            .then((response) => {
+                if (response) {
+                    const posts = response?.response?.posts;
+                    const totalPosts = response?.response?.total_posts;
+                    const postLength = posts.length;
+                    posts.forEach((item) => {
+                        doc = parser.parseFromString(item.body ?? '', 'text/html');
+                        let type = getPostTypes(doc);
+                        if (wrapper) {
+                            const typeString = `el ${type}`;
+                            const template = `<li class='${typeString}'><a href=${item.post_url}?showPost=true target='_blank'>${item.body}</a></li>`;
+                            wrapper.insertAdjacentHTML('beforeend', template);
+                        }
+                    });
+    
+                    /* 
+                    As long as our total no of posts is greater than our counter keep iterating over the posts
+                    */
+                    if (totalPosts >= offset && postLength !== 0) {
+                        retrieveMore(offset + limit);
+                    } else if (offset >= totalPosts) {
+                        /* 
+                        Once our counter is larger or the same size as
+                        the total number of posts, 
+                        */
+                        setAjaxComplete();
+                    }
+                } else {
+                    setAjaxComplete();
+                }
+            })
+            .catch(() => {
+                errorRefreshPosts('an error');
+                setAjaxComplete();
+            })
+    };
+    retrieveMore(0);
 };
 
 export { postsArchive };
+
+
+

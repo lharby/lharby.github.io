@@ -1,4 +1,4 @@
-import { site, BODY } from './global';
+import { site, DOC, BODY } from './global';
 
 /**
  * A bunch of utilities.
@@ -150,4 +150,17 @@ export const removeChildNodes = (elem) => {
 
 export const scrollToTop = () => {
     BODY.scrollIntoView({ behavior: 'smooth' });
+};
+
+/* Ajax loaders */
+const loadingClass = 'loading';
+
+export const setAjaxLoading = (elem) => {
+    elem = elem || DOM;
+    elem.classList.add(loadingClass);
+};
+
+export const setAjaxComplete = (elem) => {
+    elem = elem || DOM;
+    elem.classList.remove(loadingClass)
 };
