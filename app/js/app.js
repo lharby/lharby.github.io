@@ -1025,6 +1025,7 @@ var doc;
 
 var postsArchive = function postsArchive() {
   var wrapper = _global__WEBPACK_IMPORTED_MODULE_0__["DOM"].querySelector('.tumblr-posts');
+  Object(_utils__WEBPACK_IMPORTED_MODULE_1__["removeChildNodes"])(wrapper);
   var limit = 20;
   var options = {
     method: 'GET',
@@ -1034,7 +1035,6 @@ var postsArchive = function postsArchive() {
   };
 
   var retrieveMore = function retrieveMore(offset) {
-    Object(_utils__WEBPACK_IMPORTED_MODULE_1__["removeChildNodes"])(wrapper);
     var url = new URL("https://".concat(API_BASE_URL).concat(API_BLOG, "/posts?offset=").concat(offset));
     url.searchParams.set('api_key', API_KEY);
     Object(_utils__WEBPACK_IMPORTED_MODULE_1__["setAjaxLoading"])();

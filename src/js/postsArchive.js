@@ -18,6 +18,7 @@ let doc;
 
 const postsArchive = () => {
     const wrapper = DOM.querySelector('.tumblr-posts');
+    removeChildNodes(wrapper);
     let limit = 20;
     const options = {
         method: 'GET',
@@ -26,7 +27,6 @@ const postsArchive = () => {
         }
     };
     const retrieveMore = (offset) => {
-        removeChildNodes(wrapper);
         const url = new URL(`https://${API_BASE_URL}${API_BLOG}/posts?offset=${offset}`);
         url.searchParams.set('api_key', API_KEY);
         setAjaxLoading();
