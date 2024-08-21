@@ -1,0 +1,11 @@
+.art-space {
+    .row {
+        img {
+            margin-bottom: 0;
+
+            @include tablet($tablet-size) {
+                margin-bottom: 0.75rem;
+            }
+        }
+    }
+}
