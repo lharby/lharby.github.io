@@ -33,6 +33,10 @@ https://slackwise.org.uk
     }
 }
 
+.tmblr-full {
+    position: unset !important;
+}
+
 .tumblr iframe[class^='tmblr-iframe'] {
     display: none !important;
 }
