@@ -10,8 +10,12 @@ import { DOM } from './global';
 import { removeChildNodes, setAjaxLoading, setAjaxComplete } from './utils';
 import { getPostTypes } from './getPostTypes';
 
+const API_KEY = process.env.NEXT_PUBLIC_TUMBLR_API_KEY;
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+const API_BLOG = process.env.NEXT_PUBLIC_API_BLOG;
+
 const postsArchive = () => {
-    const apiKey = process.env.NEXT_PUBLIC_TUMBLR_API_KEY;
+    
     const wrapper = DOM.querySelector('.tumblr-posts');
     let limit = 20;
     const options = {
@@ -22,8 +26,8 @@ const postsArchive = () => {
     };
     const retrieveMore = (offset) => {
         removeChildNodes(wrapper);
-        const url = new URL(`https://${process.env.NEXT_PUBLIC_API_BASE_URL}${process.env.NEXT_PUBLIC_API_BLOG}/posts?offset=${offset}`);
-        url.searchParams.set('api_key', apiKey);
+        const url = new URL(`https://${API_BASE_URL}${API_BLOG}/posts?offset=${offset}`);
+        url.searchParams.set('api_key', API_KEY);
         setAjaxLoading();
         fetch(url, options)
             .then((response) => response.json())
