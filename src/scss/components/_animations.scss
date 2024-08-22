@@ -31,3 +31,11 @@ https://slackwise.org.uk
         opacity: 0;
     }
 }
+
+.fade-in {
+    animation: animate-opacity 400ms ease-in;
+}
+
+.fade-out {
+    animation: animate-opacity-reverse 400ms ease-in;
+}

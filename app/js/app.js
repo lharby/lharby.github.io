@@ -717,6 +717,7 @@ var updateContent = function updateContent(input) {
   var doc = parser.parseFromString(input, 'text/html');
   var container = doc.querySelector('#container');
   _global__WEBPACK_IMPORTED_MODULE_0__["PAGE_WRAPPER"].appendChild(container);
+  _global__WEBPACK_IMPORTED_MODULE_0__["PAGE_WRAPPER"].classList.add('fade-in');
   documentTitle = doc.querySelector('title').textContent;
 };
 

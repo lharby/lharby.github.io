@@ -19,10 +19,6 @@ https://slackwise.org.uk
     background-color: $colour__white;
     z-index: $z-top;
 
-    &.fade-out {
-        animation: animate-opacity-reverse 400ms ease-in;
-    }
-
     img {
         animation: animate-greyscale 4000ms ease-in-out;
         max-width: 100%;
