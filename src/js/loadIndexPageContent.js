@@ -69,7 +69,7 @@ const loadIndexPageContent = () => {
                 BODY.classList.remove(LOADING_CLASS);
             });
     } else {
-        WRAPPER.classList.add(indexClass);
+        // WRAPPER.classList.add(indexClass);
         router();
     }
 };

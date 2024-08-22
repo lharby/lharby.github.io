@@ -708,7 +708,7 @@ var loadIndexPageContent = function loadIndexPageContent() {
       _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
     });
   } else {
-    _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(indexClass);
+    // WRAPPER.classList.add(indexClass);
     router();
   }
 };
