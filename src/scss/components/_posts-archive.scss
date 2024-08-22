@@ -47,7 +47,20 @@ https://slackwise.org.uk
                     }
                 }
             }
-            
+
+
+            a:hover {
+                +,
+                ~ {
+                    img,
+                    audio,
+                    iframe,
+                    video {
+                        opacity: 0;
+                    }
+                }
+            }
+         
             img {
                 background-color: $colour__palest-grey;
                 object-fit: cover;
