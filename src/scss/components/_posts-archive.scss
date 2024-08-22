@@ -43,11 +43,21 @@ https://slackwise.org.uk
                     audio,
                     iframe,
                     video {
+                        @include hover(
+                            opacity,
+                            $animation__speed-fast,
+                            $animation__ease-default
+                        );
                         opacity: 0;
                     }
                 }
 
                 ~ .npf_row {
+                    @include hover(
+                        opacity,
+                        $animation__speed-fast,
+                        $animation__ease-default
+                    );
                     opacity: 0;
                 }
             }
