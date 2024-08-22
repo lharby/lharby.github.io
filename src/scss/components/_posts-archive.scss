@@ -45,7 +45,7 @@ https://slackwise.org.uk
                     video {
                         @include hover(
                             opacity,
-                            $animation__speed-fast,
+                            $animation__speed-default,
                             $animation__ease-default
                         );
                         opacity: 0;
@@ -55,7 +55,7 @@ https://slackwise.org.uk
                 ~ .npf_row {
                     @include hover(
                         opacity,
-                        $animation__speed-fast,
+                        $animation__speed-default,
                         $animation__ease-default
                     );
                     opacity: 0;
