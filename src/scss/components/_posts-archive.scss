@@ -95,6 +95,17 @@ https://slackwise.org.uk
                     }
                 }
             }
+
+            img,
+            audio,
+            iframe,
+            video {
+                @include hover(
+                    opacity,
+                    $animation__speed-default,
+                    $animation__ease-default
+                );
+            }
         }
     }
 
