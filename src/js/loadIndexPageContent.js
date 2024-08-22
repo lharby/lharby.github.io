@@ -80,7 +80,6 @@ const updateContent = input => {
     const doc = parser.parseFromString(input, 'text/html');
     const container = doc.querySelector('#container');
     PAGE_WRAPPER.appendChild(container);
-    PAGE_WRAPPER.classList.add('fade-in');
     documentTitle = doc.querySelector('title').textContent;
 };
 
