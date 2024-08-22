@@ -37,6 +37,15 @@ https://slackwise.org.uk
             > a {
                 color: $colour__black;
                 z-index: $z-top;
+
+                &:hover {
+                    img,
+                    audio,
+                    iframe,
+                    video {
+                        opacity: 0;
+                    }
+                }
             }
             
             img {
@@ -85,8 +94,7 @@ https://slackwise.org.uk
         li {
             a,
             [href] {
-                border-bottom: none !important;
-                transition: none;
+                border-bottom: 1px solid transparent !important;
             }
         }
     }
