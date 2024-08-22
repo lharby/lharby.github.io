@@ -413,15 +413,17 @@ https://slackwise.org.uk
 
 /* index page */
 
+var indexClass = 'index';
 
 var indexPage = function indexPage() {
   var url = document.location.pathname.split('/');
   var primaryDir = url[1];
 
   if (!primaryDir) {
-    _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add('index');
+    _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(indexClass);
   } else {
     _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(primaryDir);
+    _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.remove(indexClass);
   }
 };
 
