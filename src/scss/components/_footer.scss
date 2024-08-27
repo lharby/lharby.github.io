@@ -80,6 +80,12 @@ https://slackwise.org.uk
     .ion-contrast:before {
         display: inline-block;
     }
+
+    &__nav {
+        a:after {
+            content: "";
+        }
+    }
 }
 
 .legal {
