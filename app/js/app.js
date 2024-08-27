@@ -680,7 +680,9 @@ var router = function router() {
         }
 
         updateContent(html);
-        history.pushState({}, documentTitle, hrefSplit);
+        history.pushState({
+          path: href
+        }, documentTitle, "/".concat(hrefSplit));
         routerCallback();
       })["catch"](function (err) {
         console.log('Something went wrong.', err);

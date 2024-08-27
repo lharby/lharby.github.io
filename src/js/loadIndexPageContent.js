@@ -41,7 +41,7 @@ const router = () => {
                         WRAPPER.classList.add(indexClass);
                     }
                     updateContent(html);
-                    history.pushState({}, documentTitle, hrefSplit);
+                    history.pushState({ path: href }, documentTitle, `/${hrefSplit}`);
                     routerCallback();
                 })
                 .catch(err => {
