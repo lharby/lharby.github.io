@@ -322,11 +322,14 @@
                 <li class="ion-paper-airplane">
                     <a href="#" class="email-address">email</a>
                 </li>
-                <li class="ion-contrast">
+                <li class="ion-contrast default-spacing">
                     <a href="#" class="toggle-contrast no-link" aria-label="Toggle contrast">
                         <span class="hidden">Toggle contrast</span>
                         <img src="https://lharby.github.io/studio-malarkey/img/circle-gradient.svg" alt="" />
                     </a>
+                </li>
+                <li>
+                    <div class="legal">&copy; Studio MALARKEY&nbsp;<span class="date-wrapper"></span></div>
                 </li>
             </ul>
             <ul>
@@ -334,6 +337,8 @@
                 <li><a href="https://www.instagram.com/studiomalarkey/" target="_blank">Instagram</a></li>
             </ul>
             <ul class="footer__nav">
+                <li>Navigation</li>
+                <li><a href="/">Home</a></li>
                 {block:HasPages}
                 {block:Pages}
                 <li><a href="{URL}">{Label}</a></li>
@@ -345,10 +350,6 @@
                 {block:SubmissionsEnabled}
                 <li><a href="/submit">{SubmitLabel}</a></li>
                 {/block:SubmissionsEnabled}
-                <li class="default-spacing">&nbsp;</li>
-                <li>
-                    <div class="legal">&copy; Studio MALARKEY&nbsp;<span class="date-wrapper"></span></div>
-                </li>
             </ul>
         </footer><!-- end footer -->
     </div>
