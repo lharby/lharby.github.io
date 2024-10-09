@@ -15,7 +15,7 @@ const fadeOutClass = 'fade-out';
 
 const entry = () => {
     // const cookieIsSet = getCookie('entry');
-    const cookieIsSet = () => retrieveFromSessionStorage('entry');
+    const cookieIsSet = retrieveFromSessionStorage('entry');
     const entryElem = document.querySelector('.entry');
     const entryLink = entryElem.querySelector('[href="#"]')
     console.log(cookieIsSet);

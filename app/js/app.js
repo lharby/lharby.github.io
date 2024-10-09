@@ -454,10 +454,7 @@ var fadeOutClass = 'fade-out';
 
 var entry = function entry() {
   // const cookieIsSet = getCookie('entry');
-  var cookieIsSet = function cookieIsSet() {
-    return Object(_utilsStorage__WEBPACK_IMPORTED_MODULE_2__["retrieveFromSessionStorage"])('entry');
-  };
-
+  var cookieIsSet = Object(_utilsStorage__WEBPACK_IMPORTED_MODULE_2__["retrieveFromSessionStorage"])('entry');
   var entryElem = document.querySelector('.entry');
   var entryLink = entryElem.querySelector('[href="#"]');
   console.log(cookieIsSet);
