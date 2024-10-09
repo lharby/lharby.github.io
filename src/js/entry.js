@@ -8,12 +8,14 @@ https://slackwise.org.uk
 /* entry function */
 import { WRAPPER, HIDDEN_CLASS, VISIBILITY_HIDDEN_CLASS } from "./global";
 import { enableScrollLock, disableScrollLock } from './utils';
-import { setCookie, getCookie } from "./cookies";
+// import { setCookie, getCookie } from "./cookies";
+import { addToSessionStorage, retrieveFromSessionStorage } from './utilsStorage';
 
 const fadeOutClass = 'fade-out';
 
 const entry = () => {
-    const cookieIsSet = getCookie('entry');
+    // const cookieIsSet = getCookie('entry');
+    const cookieIsSet = () => retrieveFromSessionStorage('entry');
     const entryElem = document.querySelector('.entry');
     const entryLink = entryElem.querySelector('[href="#"]')
     if (cookieIsSet) {
@@ -28,7 +30,7 @@ const entry = () => {
         e.preventDefault();
         entryElem.classList.add(fadeOutClass);
         WRAPPER.classList.remove(HIDDEN_CLASS);
-        setCookie('entry', 1, 1);
+        addToSessionStorage('entry', 1);
         disableScrollLock();
         entryElem.addEventListener("animationend", () => {
             entryElem.classList.add(VISIBILITY_HIDDEN_CLASS, HIDDEN_CLASS);
