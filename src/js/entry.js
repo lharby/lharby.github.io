@@ -14,7 +14,7 @@ const fadeOutClass = 'fade-out';
 
 const entry = () => {
     const cookieIsSet = getCookie('entry');
-    const entryElem = document.querySelector('.entry');
+    const entryElem = document.querySelector('.entry [href="#]');
     if (cookieIsSet) {
         entryElem.classList.add(HIDDEN_CLASS, VISIBILITY_HIDDEN_CLASS);
         WRAPPER.classList.remove(HIDDEN_CLASS);
