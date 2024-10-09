@@ -453,7 +453,8 @@ var fadeOutClass = 'fade-out';
 
 var entry = function entry() {
   var cookieIsSet = Object(_cookies__WEBPACK_IMPORTED_MODULE_2__["getCookie"])('entry');
-  var entryElem = document.querySelector('.entry [href="#]');
+  var entryElem = document.querySelector('.entry');
+  var entryLink = entryElem.querySelector('[href="#"]');
 
   if (cookieIsSet) {
     entryElem.classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"], _global__WEBPACK_IMPORTED_MODULE_0__["VISIBILITY_HIDDEN_CLASS"]);
@@ -464,7 +465,7 @@ var entry = function entry() {
     Object(_utils__WEBPACK_IMPORTED_MODULE_1__["enableScrollLock"])();
   }
 
-  entryElem.addEventListener('click', function (e) {
+  entryLink.addEventListener('click', function (e) {
     e.preventDefault();
     entryElem.classList.add(fadeOutClass);
     _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"]);
