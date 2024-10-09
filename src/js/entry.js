@@ -18,6 +18,7 @@ const entry = () => {
     const cookieIsSet = () => retrieveFromSessionStorage('entry');
     const entryElem = document.querySelector('.entry');
     const entryLink = entryElem.querySelector('[href="#"]')
+    console.log(cookieIsSet);
     if (cookieIsSet) {
         entryElem.classList.add(HIDDEN_CLASS, VISIBILITY_HIDDEN_CLASS);
         WRAPPER.classList.remove(HIDDEN_CLASS);

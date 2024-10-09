@@ -460,6 +460,7 @@ var entry = function entry() {
 
   var entryElem = document.querySelector('.entry');
   var entryLink = entryElem.querySelector('[href="#"]');
+  console.log(cookieIsSet);
 
   if (cookieIsSet) {
     entryElem.classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"], _global__WEBPACK_IMPORTED_MODULE_0__["VISIBILITY_HIDDEN_CLASS"]);
