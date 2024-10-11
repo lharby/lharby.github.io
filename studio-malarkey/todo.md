@@ -9,3 +9,6 @@
 - Strip url if navigating from post page to contact page for example (https://studiomalarkey.co.uk/post/759225703566868480, https://studiomalarkey.co.uk/post/759225703566868480/contact) - DONE
 - ADD ALT TAGS EVERYWHERE - DONE
 - Add footer navigation - DONE
+
+#### 11.10.24
+- Add Youtube link
