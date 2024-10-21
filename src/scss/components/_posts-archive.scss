@@ -60,11 +60,18 @@ https://slackwise.org.uk
                     );
                     opacity: 0;
                 }
+
+                .npf_row {
+                    display: none;
+
+                    &:first-of-type {
+                        display: block;
+                    }
+                }
             }
 
             img {
                 background-color: $colour__palest-grey;
-                display: none;
                 object-fit: cover;
                 height: 100%;
                 position: absolute;
