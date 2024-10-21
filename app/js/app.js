@@ -663,7 +663,7 @@ var router = function router() {
       _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
 
       if (href === '/') {
-        hrefSplit = href;
+        hrefSplit = 'home';
         href = '/home';
       }
 
@@ -680,7 +680,9 @@ var router = function router() {
         }
 
         updateContent(html);
-        history.pushState(null, documentTitle, "/".concat(hrefSplit));
+        history.pushState({
+          path: href
+        }, documentTitle, "/".concat(hrefSplit));
         routerCallback();
       })["catch"](function (err) {
         console.log('Something went wrong.', err);

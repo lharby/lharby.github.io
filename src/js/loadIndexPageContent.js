@@ -27,7 +27,7 @@ const router = () => {
             let hrefSplit = href.split('/')[1];
             BODY.classList.add(LOADING_CLASS);
             if (href === '/') {
-                hrefSplit = href;
+                hrefSplit = 'home';
                 href = '/home';
             }
             fetch(href)
@@ -41,7 +41,7 @@ const router = () => {
                         WRAPPER.classList.add(indexClass);
                     }
                     updateContent(html);
-                    history.pushState(null, documentTitle, `/${hrefSplit}`);
+                    history.pushState({ path: href }, documentTitle, `/${hrefSplit}`);
                     routerCallback();
                 })
                 .catch(err => {
