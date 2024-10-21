@@ -27,13 +27,16 @@ https://slackwise.org.uk
         .npf_row {
             display: flex;
             flex:0 0 50%;
-            min-width: 50%;
+            max-width: 50%;
             flex-direction: column;
             margin: 0 0 0.375rem 0!important;
-            
-            // &:nth-child(odd) img {
-            //     padding-right: 0.375rem;
-            // }
+
+
+            @include mobile(0, $mobile-size) {
+                flex:0 0 100%;
+                max-width: 100%;
+            }
+
             
             &:nth-child(even) img {
                 padding-left: 0.375rem;
@@ -41,7 +44,7 @@ https://slackwise.org.uk
             
             &:first-of-type {
                 flex: 0 0 100%;
-                min-width: 100%;
+                max-width: 100%;
                 
                 img {
                     padding: 0;
