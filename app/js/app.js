@@ -447,13 +447,11 @@ https://slackwise.org.uk
 
 /* entry function */
 
- // import { setCookie, getCookie } from "./cookies";
 
 
 var fadeOutClass = 'fade-out';
 
 var entry = function entry() {
-  // const cookieIsSet = getCookie('entry');
   var cookieIsSet = Object(_utilsStorage__WEBPACK_IMPORTED_MODULE_2__["retrieveFromSessionStorage"])('entry');
   var entryElem = document.querySelector('.entry');
 
@@ -466,7 +464,7 @@ var entry = function entry() {
     Object(_utils__WEBPACK_IMPORTED_MODULE_1__["enableScrollLock"])();
   }
 
-  entryElem.addEventListener('click', function (e) {
+  entryElem === null || entryElem === void 0 || entryElem.addEventListener('click', function (e) {
     e.preventDefault();
     entryElem.classList.add(fadeOutClass);
     _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"]);
