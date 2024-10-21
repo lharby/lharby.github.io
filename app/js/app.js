@@ -437,7 +437,7 @@ var indexPage = function indexPage() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
-/* harmony import */ var _utilsStorage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
+/* harmony import */ var _cookies__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
 /*
 Luke Harby
 slackwise LTD
@@ -452,7 +452,7 @@ https://slackwise.org.uk
 var fadeOutClass = 'fade-out';
 
 var entry = function entry() {
-  var cookieIsSet = Object(_utilsStorage__WEBPACK_IMPORTED_MODULE_2__["retrieveFromSessionStorage"])('entry');
+  var cookieIsSet = Object(_cookies__WEBPACK_IMPORTED_MODULE_2__["getCookie"])('entry');
   var entryElem = document.querySelector('.entry');
 
   if (cookieIsSet) {
@@ -468,7 +468,7 @@ var entry = function entry() {
     e.preventDefault();
     entryElem.classList.add(fadeOutClass);
     _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.remove(_global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"]);
-    Object(_utilsStorage__WEBPACK_IMPORTED_MODULE_2__["addToSessionStorage"])('entry', 1);
+    Object(_cookies__WEBPACK_IMPORTED_MODULE_2__["setCookie"])('entry', 1, 1);
     Object(_utils__WEBPACK_IMPORTED_MODULE_1__["disableScrollLock"])();
     entryElem.addEventListener("animationend", function () {
       entryElem.classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["VISIBILITY_HIDDEN_CLASS"], _global__WEBPACK_IMPORTED_MODULE_0__["HIDDEN_CLASS"]);
@@ -485,59 +485,43 @@ var entry = function entry() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addToSessionStorage", function() { return addToSessionStorage; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "retrieveFromSessionStorage", function() { return retrieveFromSessionStorage; });
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setCookie", function() { return setCookie; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCookie", function() { return getCookie; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteCookie", function() { return deleteCookie; });
 /*
 Luke Harby
 slackwise LTD
 https://slackwise.org.uk
 2012 - present
 */
+function setCookie(name, value, days) {
+  var expires = "";
 
-/*
- * To get the value from local storage that matches the given key
- * @param {string} key
- * @returns The value of the key argument
- */
-var retrieveFromSessionStorage = function retrieveFromSessionStorage(key) {
-  if (!key || typeof key !== 'string') {
-    throw new Error('Invalid key');
-  }
-  /*
-   * Handle non-string value with JSON.parse.
-   * Catch string value and return it
-   */
-
-
-  try {
-    return JSON.parse(sessionStorage.getItem(key));
-  } catch (_unused) {
-    return sessionStorage.getItem(key);
-  }
-};
-/*
- * To set the key-value pair to local storage
- * @param {string} key
- * @param {any} value
- * @returns N/A
- */
-
-
-var addToSessionStorage = function addToSessionStorage(key, value) {
-  if (!key || typeof key !== 'string') {
-    throw new Error('Invalid key');
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    expires = "; expires=" + date.toUTCString();
   }
 
-  if (_typeof(value) === 'object') {
-    sessionStorage.setItem(key, JSON.stringify(value));
-  } else {
-    sessionStorage.setItem(key, value);
+  document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+function getCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+
+    while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
   }
-};
 
-
+  return null;
+}
+function deleteCookie(name) {
+  document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
 
 /***/ }),
 /* 7 */

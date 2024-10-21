@@ -1,0 +1,48 @@
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+#wrapper {
+    &.post,
+    &.tagged {
+        .go:has(img) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .npf_row {
+            display: flex;
+            flex:0 0 50%;
+            min-width: 50%;
+            flex-direction: column;
+            
+            &:nth-child(odd) img {
+                padding-right: 0.375rem;
+            }
+            
+            &:nth-child(even) img {
+                padding-left: 0.375rem;
+            }
+            
+            &:first-of-type {
+                flex: 0 0 100%;
+                min-width: 100%;
+                
+                img {
+                    padding: 0;
+                }
+            }
+        
+            img {
+                width: 100% !important;
+                box-sizing: border-box;
+                display: block;
+                margin-bottom: 0.75rem;
+            }
+        }
+    }
+}
+

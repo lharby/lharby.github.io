@@ -8,12 +8,12 @@ https://slackwise.org.uk
 /* entry function */
 import { WRAPPER, HIDDEN_CLASS, VISIBILITY_HIDDEN_CLASS } from "./global";
 import { enableScrollLock, disableScrollLock } from './utils';
-import { addToSessionStorage, retrieveFromSessionStorage } from './utilsStorage';
+import { setCookie, getCookie } from "./cookies";
 
 const fadeOutClass = 'fade-out';
 
 const entry = () => {
-    const cookieIsSet = retrieveFromSessionStorage('entry');
+    const cookieIsSet = getCookie('entry');
     const entryElem = document.querySelector('.entry');
     if (cookieIsSet) {
         entryElem.classList.add(HIDDEN_CLASS, VISIBILITY_HIDDEN_CLASS);
@@ -27,7 +27,7 @@ const entry = () => {
         e.preventDefault();
         entryElem.classList.add(fadeOutClass);
         WRAPPER.classList.remove(HIDDEN_CLASS);
-        addToSessionStorage('entry', 1);
+        setCookie('entry', 1, 1);
         disableScrollLock();
         entryElem.addEventListener("animationend", () => {
             entryElem.classList.add(VISIBILITY_HIDDEN_CLASS, HIDDEN_CLASS);
