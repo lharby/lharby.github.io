@@ -31,9 +31,9 @@ https://slackwise.org.uk
             flex-direction: column;
             margin: 0 0 0.375rem 0!important;
             
-            &:nth-child(odd) img {
-                padding-right: 0.375rem;
-            }
+            // &:nth-child(odd) img {
+            //     padding-right: 0.375rem;
+            // }
             
             &:nth-child(even) img {
                 padding-left: 0.375rem;
