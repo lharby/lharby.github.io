@@ -17,7 +17,6 @@ const entry = () => {
     // const cookieIsSet = getCookie('entry');
     const cookieIsSet = retrieveFromSessionStorage('entry');
     const entryElem = document.querySelector('.entry');
-    const entryLink = entryElem.querySelector('[href="#"]')
     if (cookieIsSet) {
         entryElem.classList.add(HIDDEN_CLASS, VISIBILITY_HIDDEN_CLASS);
         WRAPPER.classList.remove(HIDDEN_CLASS);
@@ -26,7 +25,7 @@ const entry = () => {
         entryElem.classList.remove(HIDDEN_CLASS, VISIBILITY_HIDDEN_CLASS);
         enableScrollLock();
     }
-    entryLink.addEventListener('click', (e) => {
+    entryElem.addEventListener('click', (e) => {
         e.preventDefault();
         entryElem.classList.add(fadeOutClass);
         WRAPPER.classList.remove(HIDDEN_CLASS);
