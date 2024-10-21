@@ -71,10 +71,6 @@ https://slackwise.org.uk
                 left: 0;
                 top: 0;
                 width: 100%;
-
-                &:nth-child(-n+1) {
-                    display: inline-block;
-                }
             }
 
             iframe {
