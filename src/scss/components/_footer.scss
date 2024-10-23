@@ -15,7 +15,7 @@ https://slackwise.org.uk
     padding: $default__spacer $default__spacer 2rem;
     background-color: $colour__dark-grey;
     color: $colour__white;
-    font-size: 1.4rem;
+    font-size: $font-size__small--mid;
     justify-content: space-between;
 
     @include mobile(0, $mobile-size) {
