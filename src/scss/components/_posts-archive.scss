@@ -52,6 +52,10 @@ https://slackwise.org.uk
                     }
                 }
 
+                * {
+                    font-size: 75%;
+                }
+
                 ~ .npf_row {
                     @include hover(
                         opacity,
@@ -67,6 +71,10 @@ https://slackwise.org.uk
                     &:first-of-type {
                         display: block;
                     }
+                }
+
+                p {
+                    margin: 0 !important;
                 }
             }
 
