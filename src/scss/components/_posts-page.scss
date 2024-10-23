@@ -5,6 +5,8 @@ https://slackwise.org.uk
 2012 - present
 */
 
+$margin__small: 0.1875;
+
 #wrapper {
     &.post,
     &.tagged {
@@ -29,7 +31,7 @@ https://slackwise.org.uk
             flex:0 0 50%;
             max-width: 50%;
             flex-direction: column;
-            margin: 0 0 0.375rem 0!important;
+            margin: 0 0 #{$margin__small * 2}rem 0!important;
 
 
             @include mobile(0, $mobile-size) {
@@ -37,9 +39,20 @@ https://slackwise.org.uk
                 max-width: 100%;
             }
 
-            
+            &:nth-child(odd) img {
+                padding-right: #{$margin__small}rem;
+
+                @include mobile(0, $mobile-size) {
+                    padding-right: 0;
+                }
+            }
+
             &:nth-child(even) img {
-                padding-left: 0.375rem;
+                padding-left: #{$margin__small}rem;
+
+                @include mobile(0, $mobile-size) {
+                    padding-left: 0;
+                }
             }
             
             &:first-of-type {

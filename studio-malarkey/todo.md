@@ -1,7 +1,7 @@
 #### 19.08.24
 
 - Make an archive page to be able to load every post. - DONE
-- Check if anything can be done with images wrapping
+- Check if anything can be done with images wrapping - DONE
 
 #### 22.08.24
 
@@ -12,3 +12,4 @@
 
 #### 11.10.24
 - Add Youtube link
+- Add secondary/tertiary dir names if they exist. 
