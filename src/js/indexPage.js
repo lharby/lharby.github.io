@@ -11,13 +11,14 @@ import { WRAPPER } from './global';
 const indexClass = 'index';
 
 const indexPage = () => {
-    const url = document.location.pathname.split('/');
-    const primaryDir = url[1];
+    const paths = document.location.pathname.split('/');
+    const primaryDir = paths[1];
+    const pathsJoined = paths.join(' ');
 
     if (!primaryDir) {
         WRAPPER.classList.add(indexClass);
     } else {
-        WRAPPER.classList.add(primaryDir);
+        WRAPPER.classList.add(pathsJoined);
         WRAPPER.classList.remove(indexClass);
     }
 };
