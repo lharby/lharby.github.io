@@ -13,12 +13,12 @@ const indexClass = 'index';
 const indexPage = () => {
     const paths = document.location.pathname.split('/');
     const primaryDir = paths[1];
-    const pathsJoined = paths.join(' ').trim();
+    // const pathsJoined = paths.join(' ').trim();
 
     if (!primaryDir) {
         WRAPPER.classList.add(indexClass);
     } else {
-        WRAPPER.classList.add(pathsJoined);
+        paths.forEach(item => WRAPPER.classList.add(item))
         WRAPPER.classList.remove(indexClass);
     }
 };
