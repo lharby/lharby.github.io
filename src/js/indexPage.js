@@ -13,7 +13,7 @@ const indexClass = 'index';
 const indexPage = () => {
     const paths = document.location.pathname.split('/');
     const primaryDir = paths[1];
-    const pathsJoined = paths.join(' ');
+    const pathsJoined = paths.join(' ').trim();
 
     if (!primaryDir) {
         WRAPPER.classList.add(indexClass);

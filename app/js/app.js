@@ -418,7 +418,7 @@ var indexClass = 'index';
 var indexPage = function indexPage() {
   var paths = document.location.pathname.split('/');
   var primaryDir = paths[1];
-  var pathsJoined = paths.join(' ');
+  var pathsJoined = paths.join(' ').trim();
 
   if (!primaryDir) {
     _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(indexClass);
