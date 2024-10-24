@@ -11,15 +11,14 @@ import { WRAPPER } from './global';
 const indexClass = 'index';
 
 const indexPage = () => {
-    const paths = document.location.pathname.split('/');
-    const primaryDir = paths[1];
-    // const pathsJoined = paths.join(' ').trim();
+    const arrPaths = document.location.pathname.split('/');
+    const primaryDir = arrPaths[1];
+    let pathnames = arrPaths.filter(item => item !== '');
 
     if (!primaryDir) {
         WRAPPER.classList.add(indexClass);
     } else {
-        // paths.forEach(item => item !== WRAPPER.classList.add(item));
-        WRAPPER.classList.add(primaryDir);
+        WRAPPER.classList.add(...pathnames);
         WRAPPER.classList.remove(indexClass);
     }
 };

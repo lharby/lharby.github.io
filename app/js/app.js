@@ -404,6 +404,18 @@ var setAjaxComplete = function setAjaxComplete(elem) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "indexPage", function() { return indexPage; });
 /* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+
 /*
 Luke Harby
 slackwise LTD
@@ -416,14 +428,19 @@ https://slackwise.org.uk
 var indexClass = 'index';
 
 var indexPage = function indexPage() {
-  var paths = document.location.pathname.split('/');
-  var primaryDir = paths[1]; // const pathsJoined = paths.join(' ').trim();
+  var arrPaths = document.location.pathname.split('/');
+  var primaryDir = arrPaths[1];
+  var pathnames = arrPaths.filter(function (item) {
+    return item !== '';
+  });
 
   if (!primaryDir) {
     _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(indexClass);
   } else {
-    // paths.forEach(item => item !== WRAPPER.classList.add(item));
-    _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(primaryDir);
+    var _WRAPPER$classList;
+
+    (_WRAPPER$classList = _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList).add.apply(_WRAPPER$classList, _toConsumableArray(pathnames));
+
     _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.remove(indexClass);
   }
 };
