@@ -422,9 +422,8 @@ var indexPage = function indexPage() {
   if (!primaryDir) {
     _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(indexClass);
   } else {
-    paths.forEach(function (item) {
-      return _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(item);
-    });
+    // paths.forEach(item => item !== WRAPPER.classList.add(item));
+    _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(primaryDir);
     _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.remove(indexClass);
   }
 };

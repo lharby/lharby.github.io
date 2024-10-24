@@ -18,7 +18,8 @@ const indexPage = () => {
     if (!primaryDir) {
         WRAPPER.classList.add(indexClass);
     } else {
-        paths.forEach(item => WRAPPER.classList.add(item))
+        // paths.forEach(item => item !== WRAPPER.classList.add(item));
+        WRAPPER.classList.add(primaryDir);
         WRAPPER.classList.remove(indexClass);
     }
 };
