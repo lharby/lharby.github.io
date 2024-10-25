@@ -706,7 +706,7 @@ var router = function router() {
         Object(_navigation__WEBPACK_IMPORTED_MODULE_2__["closeNavigation"])();
         _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].removeAttribute('class');
 
-        if (hrefName !== '/') {
+        if (href !== '/home') {
           var _WRAPPER$classList;
 
           (_WRAPPER$classList = _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList).add.apply(_WRAPPER$classList, _toConsumableArray(hrefSplit));

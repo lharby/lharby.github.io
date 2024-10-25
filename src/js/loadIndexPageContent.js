@@ -36,7 +36,7 @@ const router = () => {
                 .then(html => {
                     closeNavigation();
                     WRAPPER.removeAttribute('class');
-                    if (hrefName !== '/') {
+                    if (href !== '/home') {
                         WRAPPER.classList.add(...hrefSplit);
                     } else {
                         WRAPPER.classList.add(indexClass);
