@@ -690,7 +690,9 @@ var router = function router() {
       event.stopPropagation();
       var href = link.getAttribute('href');
       var hrefName = href.substring(1);
-      var hrefSplit = href.split('/');
+      var hrefSplit = href.split('/').filter(function (item) {
+        return item != '';
+      });
       _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
 
       if (href === '/') {

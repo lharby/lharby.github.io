@@ -25,7 +25,7 @@ const router = () => {
             event.stopPropagation();
             let href = link.getAttribute('href');
             let hrefName = href.substring(1);
-            let hrefSplit = href.split('/')
+            let hrefSplit = href.split('/').filter(item => item != '');
             BODY.classList.add(LOADING_CLASS);
             if (href === '/') {
                 hrefName = 'home';
