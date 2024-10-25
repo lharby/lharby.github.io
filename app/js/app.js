@@ -650,6 +650,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 /* harmony import */ var _navigation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+
 /*
 Luke Harby
 slackwise LTD
@@ -677,11 +689,12 @@ var router = function router() {
       event.preventDefault();
       event.stopPropagation();
       var href = link.getAttribute('href');
-      var hrefSplit = href.substring(1);
+      var hrefName = href.substring(1);
+      var hrefSplit = href.split('/');
       _global__WEBPACK_IMPORTED_MODULE_0__["BODY"].classList.add(_global__WEBPACK_IMPORTED_MODULE_0__["LOADING_CLASS"]);
 
       if (href === '/') {
-        hrefSplit = 'home';
+        hrefName = 'home';
         href = '/home';
       }
 
@@ -691,8 +704,10 @@ var router = function router() {
         Object(_navigation__WEBPACK_IMPORTED_MODULE_2__["closeNavigation"])();
         _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].removeAttribute('class');
 
-        if (hrefSplit !== '/') {
-          _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(hrefSplit);
+        if (hrefName !== '/') {
+          var _WRAPPER$classList;
+
+          (_WRAPPER$classList = _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList).add.apply(_WRAPPER$classList, _toConsumableArray(hrefSplit));
         } else {
           _global__WEBPACK_IMPORTED_MODULE_0__["WRAPPER"].classList.add(indexClass);
         }
@@ -700,7 +715,7 @@ var router = function router() {
         updateContent(html);
         history.pushState({
           path: href
-        }, documentTitle, "/".concat(hrefSplit));
+        }, documentTitle, "/".concat(hrefName));
         routerCallback();
       })["catch"](function (err) {
         console.log('Something went wrong.', err);

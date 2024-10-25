@@ -24,10 +24,11 @@ const router = () => {
             event.preventDefault();
             event.stopPropagation();
             let href = link.getAttribute('href');
-            let hrefSplit = href.substring(1);
+            let hrefName = href.substring(1);
+            let hrefSplit = href.split('/')
             BODY.classList.add(LOADING_CLASS);
             if (href === '/') {
-                hrefSplit = 'home';
+                hrefName = 'home';
                 href = '/home';
             }
             fetch(href)
@@ -35,13 +36,13 @@ const router = () => {
                 .then(html => {
                     closeNavigation();
                     WRAPPER.removeAttribute('class');
-                    if (hrefSplit !== '/') {
-                        WRAPPER.classList.add(hrefSplit);
+                    if (hrefName !== '/') {
+                        WRAPPER.classList.add(...hrefSplit);
                     } else {
                         WRAPPER.classList.add(indexClass);
                     }
                     updateContent(html);
-                    history.pushState({ path: href }, documentTitle, `/${hrefSplit}`);
+                    history.pushState({ path: href }, documentTitle, `/${hrefName}`);
                     routerCallback();
                 })
                 .catch(err => {
