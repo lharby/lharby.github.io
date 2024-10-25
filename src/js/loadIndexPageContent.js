@@ -25,7 +25,7 @@ const router = () => {
             event.stopPropagation();
             let href = link.getAttribute('href');
             let hrefName = href.substring(1);
-            let hrefSplit = href.split('/').filter(item => item != '');
+            let arrHrefs = href.split('/').filter(item => item !== '');
             BODY.classList.add(LOADING_CLASS);
             if (href === '/') {
                 hrefName = 'home';
@@ -37,7 +37,7 @@ const router = () => {
                     closeNavigation();
                     WRAPPER.removeAttribute('class');
                     if (href !== '/home') {
-                        WRAPPER.classList.add(...hrefSplit);
+                        WRAPPER.classList.add(...arrHrefs);
                     } else {
                         WRAPPER.classList.add(indexClass);
                     }
