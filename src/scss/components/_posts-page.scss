@@ -49,22 +49,6 @@ $margin__small: 0.1875;
                     padding-right: 0;
                 }
             }
-
-            // &:nth-child(odd) img {
-            //     padding-right: #{$margin__small}rem;
-
-            //     @include mobile(0, $mobile-size) {
-            //         padding-right: 0;
-            //     }
-            // }
-
-            // &:nth-child(even) img {
-            //     padding-left: #{$margin__small}rem;
-
-            //     @include mobile(0, $mobile-size) {
-            //         padding-left: 0;
-            //     }
-            // }
         }
 
         .npf_row {
