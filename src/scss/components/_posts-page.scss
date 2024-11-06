@@ -41,27 +41,36 @@ $margin__small: 0.1875;
                 max-width: 100%;
             }
 
-            &:nth-child(odd) img {
-                padding-right: #{$margin__small}rem;
+            &:nth-child(odd) {
+                padding-right: $margin__small;
 
                 @include mobile(0, $mobile-size) {
                     padding-right: 0;
                 }
             }
 
-            &:nth-child(even) img {
-                padding-left: #{$margin__small}rem;
+            // &:nth-child(odd) img {
+            //     padding-right: #{$margin__small}rem;
 
-                @include mobile(0, $mobile-size) {
-                    padding-left: 0;
-                }
-            }
+            //     @include mobile(0, $mobile-size) {
+            //         padding-right: 0;
+            //     }
+            // }
+
+            // &:nth-child(even) img {
+            //     padding-left: #{$margin__small}rem;
+
+            //     @include mobile(0, $mobile-size) {
+            //         padding-left: 0;
+            //     }
+            // }
         }
 
         .npf_row {
             &:first-of-type {
                 flex: 0 0 100%;
                 max-width: 100%;
+                padding-right: 0;
                 
                 img {
                     padding: 0;
