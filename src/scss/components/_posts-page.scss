@@ -29,6 +29,7 @@ $margin__small: 0.1875;
         
         .npf_row,
         .tmblr-full:has(video) {
+            box-sizing: border-box;
             display: flex;
             flex:0 0 50%;
             max-width: 50%;
@@ -42,7 +43,7 @@ $margin__small: 0.1875;
             }
 
             &:nth-child(odd) {
-                padding-right: $margin__small;
+                padding-right: #{$margin__small * 2}rem;
 
                 @include mobile(0, $mobile-size) {
                     padding-right: 0;
