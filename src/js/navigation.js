@@ -23,6 +23,7 @@ const navigation = () => {
         item.addEventListener('click', event => {
             event.preventDefault();
             if (item.classList.contains('menu__toggle--close')) {
+                isAjax = false;
                 closeNavigation();
             } else {
                 openNavigation();

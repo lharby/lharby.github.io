@@ -589,6 +589,7 @@ var navigation = function navigation() {
       event.preventDefault();
 
       if (item.classList.contains('menu__toggle--close')) {
+        isAjax = false;
         closeNavigation();
       } else {
         openNavigation();
