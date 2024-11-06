@@ -21,12 +21,14 @@ $margin__small: 0.1875;
             }
         }
 
-        .go:has(img) {
+        .go:has(img),
+        .tmblr-full:has(video) {
             display: flex;
             flex-wrap: wrap;
         }
         
-        .npf_row {
+        .npf_row,
+        .tmblr-full:has(video) {
             display: flex;
             flex:0 0 50%;
             max-width: 50%;
