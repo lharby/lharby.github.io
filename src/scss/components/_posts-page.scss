@@ -51,7 +51,8 @@ $margin__small: 0.1875;
             }
         }
 
-        .npf_row {
+        .npf_row,
+        .tmblr-full:has(video) {
             &:first-of-type {
                 flex: 0 0 100%;
                 max-width: 100%;
