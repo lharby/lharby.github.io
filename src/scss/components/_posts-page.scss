@@ -68,6 +68,11 @@ $margin__small: 0.1875;
                 box-sizing: border-box;
                 display: block;
             }
+
+            video {
+                aspect-ratio: 1;
+                background-color: $colour__black;
+            }
         }
 
         p {
