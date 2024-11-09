@@ -12,4 +12,5 @@
 
 #### 11.10.24
 - Add Youtube link
-- Add secondary/tertiary dir names if they exist. 
+- Add Bredbeddle videos to YT
+- Add secondary/tertiary dir names if they exist. - DONE

@@ -15,6 +15,7 @@ import { scrollToTop } from './utils';
 const url = document.location.pathname.split('/');
 const primaryDir = url[1];
 const indexClass = 'index';
+const fadeInClass = 'fade-in';
 let documentTitle;
 
 const router = () => {
@@ -80,6 +81,7 @@ const updateContent = input => {
     const doc = parser.parseFromString(input, 'text/html');
     const container = doc.querySelector('#container');
     PAGE_WRAPPER.appendChild(container);
+    PAGE_WRAPPER.classList.add(fadeInClass);
     documentTitle = doc.querySelector('title').textContent;
 };
 

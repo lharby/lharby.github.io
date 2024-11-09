@@ -678,6 +678,7 @@ https://slackwise.org.uk
 var url = document.location.pathname.split('/');
 var primaryDir = url[1];
 var indexClass = 'index';
+var fadeInClass = 'fade-in';
 var documentTitle;
 
 var router = function router() {
@@ -754,6 +755,7 @@ var updateContent = function updateContent(input) {
   var doc = parser.parseFromString(input, 'text/html');
   var container = doc.querySelector('#container');
   _global__WEBPACK_IMPORTED_MODULE_0__["PAGE_WRAPPER"].appendChild(container);
+  _global__WEBPACK_IMPORTED_MODULE_0__["PAGE_WRAPPER"].classList.add(fadeInClass);
   documentTitle = doc.querySelector('title').textContent;
 };
 
