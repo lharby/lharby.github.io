@@ -5,6 +5,8 @@ https://slackwise.org.uk
 2012 - present
 */
 
+@import '../functions/mixins.scss';
+
 @include keyframes(animate-greyscale) {
     0% {
         filter: grayscale(1);
