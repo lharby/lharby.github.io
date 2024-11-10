@@ -11,6 +11,9 @@
 - Add footer navigation - DONE
 
 #### 11.10.24
-- Add Youtube link
+- Add Youtube link - DONE
 - Add Bredbeddle videos to YT
 - Add secondary/tertiary dir names if they exist. - DONE
+
+#### 10.11.24
+- Make inline critical styles, useful for index page stuff

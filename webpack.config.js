@@ -13,6 +13,7 @@ const configFE = {
     entry: {
         app: srcFolder + 'app.js',
         'app.min': srcFolder + 'app.js',
+        critical: srcFolder + './scss/critical.scss'
     },
     target: 'web',
     output: {
