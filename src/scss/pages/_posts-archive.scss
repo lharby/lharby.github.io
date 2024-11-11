@@ -42,11 +42,7 @@ https://slackwise.org.uk
                     img,
                     audio,
                     iframe,
-                    video,
-                    ~ img,
-                    ~ audio,
-                    ~ iframe,
-                    ~ video {
+                    video {
                         @include hover(
                             opacity,
                             $animation__speed-default,
@@ -75,6 +71,20 @@ https://slackwise.org.uk
 
                 p {
                     margin: 0 !important;
+                }
+            }
+
+            a:hover {
+                ~ img,
+                ~ audio,
+                ~ iframe,
+                ~ video {
+                    @include hover(
+                        opacity,
+                        $animation__speed-default,
+                        $animation__ease-default
+                    );
+                    opacity: 0;
                 }
             }
 
