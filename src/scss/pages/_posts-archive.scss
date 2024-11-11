@@ -74,20 +74,6 @@ https://slackwise.org.uk
                 }
             }
 
-            a:hover {
-                ~ img,
-                ~ audio,
-                ~ iframe,
-                ~ video {
-                    @include hover(
-                        opacity,
-                        $animation__speed-default,
-                        $animation__ease-default
-                    );
-                    opacity: 0;
-                }
-            }
-
             * {
                 font-size: $font-size__small--mid !important;
 
@@ -96,8 +82,7 @@ https://slackwise.org.uk
                 }
             }
 
-            img,
-            video {
+            img {
                 background-color: $colour__palest-grey;
                 object-fit: cover;
                 height: 100%;
@@ -120,6 +105,7 @@ https://slackwise.org.uk
                     display: flex;
                     background: transparent;
                     min-height: 200px;
+                    position: absolute;
                     width: 100%;
 
                     *,
@@ -127,12 +113,6 @@ https://slackwise.org.uk
                     ~ * {
                         pointer-events: none;
                     }
-                }
-            }
-
-            &.video {
-                img {
-                    display: none;
                 }
             }
 
