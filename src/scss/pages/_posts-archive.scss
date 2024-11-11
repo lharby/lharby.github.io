@@ -82,7 +82,8 @@ https://slackwise.org.uk
                 }
             }
 
-            img {
+            img,
+            video {
                 background-color: $colour__palest-grey;
                 object-fit: cover;
                 height: 100%;
@@ -112,6 +113,12 @@ https://slackwise.org.uk
                     ~ * {
                         pointer-events: none;
                     }
+                }
+            }
+
+            &.video {
+                img {
+                    display: none;
                 }
             }
 
