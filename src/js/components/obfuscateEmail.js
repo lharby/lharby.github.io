@@ -6,7 +6,7 @@ https://slackwise.org.uk
 */
 
 /* obfuscate email */
-import { DOM, EMAIL_ADDRESS } from './global';
+import { DOM, EMAIL_ADDRESS } from '../utils/global';
 
 const obfuscateEmail = () => {
     const trigger = DOM.querySelectorAll('.email-address');

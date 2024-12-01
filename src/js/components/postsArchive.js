@@ -6,9 +6,9 @@ https://slackwise.org.uk
 */
 
 /* postsArchive function */
-import { DOM } from './global';
-import { removeChildNodes, setAjaxLoading, setAjaxComplete } from './utils';
-import { getPostTypes } from './getPostTypes';
+import { DOM } from '../utils/global';
+import { removeChildNodes, setAjaxLoading, setAjaxComplete } from '../utils/utils';
+import { getPostTypes } from '../utils/getPostTypes';
 
 const API_KEY = process.env.NEXT_PUBLIC_TUMBLR_API_KEY;
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;

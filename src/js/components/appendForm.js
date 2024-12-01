@@ -6,7 +6,7 @@ https://slackwise.org.uk
 */
 
 /* append form */
-import { DOM, REMOTE_SERVER, REMOTE_PATH } from './global';
+import { DOM, REMOTE_SERVER, REMOTE_PATH } from '../utils/global';
 
 const template = `
     <form action="" method="post" class="form">

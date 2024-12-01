@@ -6,7 +6,7 @@ https://slackwise.org.uk
 */
 
 /* index page */
-import { WRAPPER } from './global';
+import { WRAPPER } from '../utils/global';
 
 const indexClass = 'index';
 

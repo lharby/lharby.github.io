@@ -34,20 +34,13 @@ $margin__small: 0.1875;
             flex:0 0 50%;
             max-width: 50%;
             flex-direction: column;
+            padding-right: #{$margin__small * 2}rem;
             margin: 0 0 #{$margin__small * 2}rem 0!important;
-
 
             @include mobile(0, $mobile-size) {
                 flex:0 0 100%;
                 max-width: 100%;
-            }
-
-            &:nth-child(odd) {
-                padding-right: #{$margin__small * 2}rem;
-
-                @include mobile(0, $mobile-size) {
-                    padding-right: 0;
-                }
+                padding-right: 0;
             }
         }
 

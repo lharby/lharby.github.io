@@ -6,9 +6,9 @@ https://slackwise.org.uk
 */
 
 /* entry function */
-import { WRAPPER, HIDDEN_CLASS, VISIBILITY_HIDDEN_CLASS } from "./global";
-import { enableScrollLock, disableScrollLock } from './utils';
-import { setCookie, getCookie } from "./cookies";
+import { WRAPPER, HIDDEN_CLASS, VISIBILITY_HIDDEN_CLASS } from "../utils/global";
+import { enableScrollLock, disableScrollLock } from '../utils/utils';
+import { setCookie, getCookie } from "../utils/cookies";
 
 const fadeOutClass = 'fade-out';
 

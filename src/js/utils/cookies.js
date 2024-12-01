@@ -5,6 +5,8 @@ https://slackwise.org.uk
 2012 - present
 */
 
+// TODO
+// move this to a utils folder
 export function setCookie(name, value, days) {
     var expires = "";
     if (days) {

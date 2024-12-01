@@ -1,22 +1,22 @@
 import styles from './scss/main.scss';
 
-import './js/global';
-import { siteResponsiveness } from './js/utils';
-import { indexPage } from './js/indexPage';
-import entry from './js/entry';
-import { navigation } from './js/navigation';
-import { loadIndexPageContent } from './js/loadIndexPageContent';
-import date from './js/date';
-import toggleContrast from './js/toggleContrast';
-import obfuscateEmail from './js/obfuscateEmail';
-import appendForm from './js/appendForm';
-import getScrollbarWidth from './js/getScrollbarWidth';
-import { setImageSource } from './js/lazyLoad';
-import { setRandomColour } from './js/randomColours';
-import { accordion } from './js/accordion';
-import { postsArchive } from './js/postsArchive';
+import './js/utils/global';
+import { siteResponsiveness } from './js/utils/utils';
+import { indexPage } from './js/components/indexPage';
+import entry from './js/components/entry';
+import { navigation } from './js/components/navigation';
+import { loadIndexPageContent } from './js/components/loadIndexPageContent';
+import date from './js/components/date';
+import toggleContrast from './js/utils/toggleContrast';
+import obfuscateEmail from './js/components/obfuscateEmail';
+import appendForm from './js/components/appendForm';
+import getScrollbarWidth from './js/utils/getScrollbarWidth';
+import { setImageSource } from './js/utils/lazyLoad';
+import { setRandomColour } from './js/utils/randomColours';
+import { accordion } from './js/components/accordion';
+import { postsArchive } from './js/components/postsArchive';
 
-import { DOM, WRAPPER, site } from './js/global';
+import { DOM, WRAPPER, site } from './js/utils/global';
 
 const initOnceFunctions = () => {
     siteResponsiveness();

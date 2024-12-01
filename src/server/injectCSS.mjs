@@ -2,6 +2,8 @@ import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 
+// TODO 
+// get this to run in parallen in package.json
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const indexFile = path.join(__dirname, '..', '..', 'studio-malarkey/', 'html/', 'index');
 const cssFile = path.join(__dirname, '..', '..', 'app/', 'css/', 'critical.css');

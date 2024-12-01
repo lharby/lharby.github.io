@@ -6,7 +6,7 @@ https://slackwise.org.uk
 */
 
 /* date function */
-import { DOM } from './global';
+import { DOM } from '../utils/global';
 
 const date = () => {
     const dateWrapper = DOM.querySelector('.date-wrapper');

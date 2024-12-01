@@ -7,10 +7,10 @@ https://slackwise.org.uk
 
 /* loadindexPageContent */
 
-import { BODY, WRAPPER, PAGE_WRAPPER, LOADING_CLASS } from './global';
-import { initDynamicFunctions } from '../app';
+import { BODY, WRAPPER, PAGE_WRAPPER, LOADING_CLASS } from '../utils/global';
+import { initDynamicFunctions } from '../../app';
 import { closeNavigation } from './navigation';
-import { scrollToTop } from './utils';
+import { scrollToTop } from '../utils/utils';
 
 const url = document.location.pathname.split('/');
 const primaryDir = url[1];
