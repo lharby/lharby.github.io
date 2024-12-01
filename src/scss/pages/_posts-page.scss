@@ -42,20 +42,7 @@ $margin__small: 0.1875;
                 max-width: 100%;
                 padding-right: 0;
             }
-        }
 
-        .npf_row,
-        .tmblr-full:has(video) {
-            &:first-of-type {
-                flex: 0 0 100%;
-                max-width: 100%;
-                padding-right: 0;
-                
-                img {
-                    padding: 0;
-                }
-            }
-        
             img {
                 width: 100% !important;
                 box-sizing: border-box;
