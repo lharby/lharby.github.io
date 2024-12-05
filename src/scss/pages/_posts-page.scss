@@ -5,8 +5,6 @@ https://slackwise.org.uk
 2012 - present
 */
 
-$margin__small: 0.1875;
-
 #wrapper {
     &.post,
     &.tagged {
@@ -34,8 +32,8 @@ $margin__small: 0.1875;
             flex:0 0 50%;
             max-width: 50%;
             flex-direction: column;
-            padding-right: #{$margin__small * 2}rem;
-            margin: 0 0 #{$margin__small * 2}rem 0!important;
+            padding-right: $margin__small;
+            margin: 0 0 $margin__small 0 !important;
 
             @include mobile(0, $mobile-size) {
                 flex:0 0 100%;

@@ -19,8 +19,8 @@ https://slackwise.org.uk
     flex-flow: initial;
     justify-content: flex-start;
     flex-wrap: wrap;
-    column-gap: $gap__desktop;
-    row-gap: $gap__desktop;
+    column-gap: $margin__small;
+    row-gap: $margin__small;
 }
 
 .el {
@@ -94,8 +94,6 @@ https://slackwise.org.uk
 
 @include tablet($tablet-size) {
     .row {
-        column-gap: $gap__mobile;
-        row-gap: $gap__mobile;
         flex-flow: row wrap;
     }
 
@@ -107,6 +105,11 @@ https://slackwise.org.uk
 }
 
 @include mobile(0, $mobile-size) {
+    // .row {
+    //     column-gap: $gap__mobile;
+    //     row-gap: $gap__mobile;
+    // }
+
     .mobile-hidden,
     .mobile-visible {
         display: block;

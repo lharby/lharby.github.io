@@ -35,7 +35,10 @@ $font-size__xsmall: 1rem;
 
 $img-path: '/img/';
 
+// spacing
 $default__spacer: 1.5rem;
+$margin__small--unit: 0.375;
+$margin__small: #{$margin__small--unit}rem;
 
 // responsive
 $mobile-size: 740px !default;
