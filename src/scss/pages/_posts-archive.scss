@@ -113,6 +113,7 @@ https://slackwise.org.uk
                     + *, 
                     ~ * {
                         pointer-events: none;
+                        display: none;
                     }
                 }
             }
