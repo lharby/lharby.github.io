@@ -106,14 +106,13 @@ https://slackwise.org.uk
                     display: flex;
                     background: transparent;
                     min-height: 200px;
-                    position: absolute;
+                    position: relative;
                     width: 100%;
 
                     *,
                     + *, 
                     ~ * {
                         pointer-events: none;
-                        display: none;
                     }
                 }
             }
